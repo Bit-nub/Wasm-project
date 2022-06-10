@@ -5,9 +5,14 @@ echo "resolving dependencies"
 pathToScript=`pwd`
 
 #sudo apt install wabt
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+# Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421
+echo "deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
+echo "deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
+
 
 ##llvm dependencies
-sudo apt install llvm wabt lld-15.0
+sudo apt install llvm-14 wabt lld-14 clang-14
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 cd && git clone https://github.com/CraneStation/wasi-libc.git 
 cd wasi-libc && make install INSTALL_DIR=/tmp/wasi-libc && export PATH="/usr/local/opt/llvm/bin:$PATH"
