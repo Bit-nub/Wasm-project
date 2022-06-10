@@ -68,12 +68,12 @@ path4="/wasi-sdk-wasm-out/"
 cheerp="/opt/cheerp/bin/clang"
 #wasi="/home/theos/wasi-sdk-14.0/"
 
-mkdir "$path1" && mkdir "$path2" && mkdir "$path3" && mkdir "$path4"
+mkdir "$pathToScript$path1" && mkdir "$pathToScript$path2" && mkdir "$pathToScript$path3" && mkdir "$pathToScript$path4"
 
-cp $pathnameext $path1 
-cp $pathnameext $path2 
-cp $pathnameext $path3 
-cp $pathnameext $path4
+cp $pathnameext $pathToScript$path1 
+cp $pathnameext $pathToScript$path2 
+cp $pathnameext $pathToScript$path3 
+cp $pathnameext $pathToScript$path4
 
 
 ##cheerp##
