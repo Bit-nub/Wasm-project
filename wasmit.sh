@@ -7,7 +7,7 @@ pathToScript=`pwd`
 #sudo apt install wabt
 
 ##llvm dependencies
-sudo apt install llvm wabt lld
+sudo apt install llvm wabt lld-15.0
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 cd && git clone https://github.com/CraneStation/wasi-libc.git 
 cd wasi-libc && make install INSTALL_DIR=/tmp/wasi-libc && export PATH="/usr/local/opt/llvm/bin:$PATH"
@@ -80,7 +80,7 @@ cp $pathnameext $pathToScript$path4
 
 ##cheerp##
 echo "cheerp setup for input file $i ..."
-$cheerp -target cheerp $pathToScript$path1$nameext -O3 -o $pathToScript$path1$name"cheerp.js"
+#$cheerp -target cheerp $pathToScript$path1$nameext -O3 -o $pathToScript$path1$name"cheerp.js"
 $cheerp -target cheerp -cheerp-mode=wasm -cheerp-wasm-loader=$pathToScript$path1$name"cheerp.js" -o0 -o $path1$name"cheerp.wasm" $path1$nameext -cheerp-pretty-code -cheerp-no-lto
 wasm2wat $pathToScript$path1$name"cheerp.wasm" -o $pathToScript$path1$name"cheerp.wat"
 echo "done"
