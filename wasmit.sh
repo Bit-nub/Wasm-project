@@ -5,14 +5,14 @@ echo "resolving dependencies"
 pathToScript=`pwd`
 
 #sudo apt install wabt
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+#wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 # Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421
-echo "deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
-echo "deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
+#echo "deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
+#echo "deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
 
 
 ##llvm dependencies
-sudo apt install llvm-14 wabt lld-14 clang-14
+sudo apt install llvm wabt lld clang gcc
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 cd && git clone https://github.com/CraneStation/wasi-libc.git 
 cd wasi-libc && make install INSTALL_DIR=/tmp/wasi-libc && export PATH="/usr/local/opt/llvm/bin:$PATH"
@@ -71,6 +71,8 @@ path2="/llvm-clang-wasm-out/"
 path3="/emcc-wasm-out/"
 path4="/wasi-sdk-wasm-out/"
 
+libclang_rt="libclang*/precompiled/"
+
 #pathx="llvm-clang-wasm-out/"
 cheerp="/opt/cheerp/bin/clang"
 #wasi="/home/theos/wasi-sdk-14.0/"
@@ -95,13 +97,19 @@ echo "done"
 echo "llvm-clang setup for input file $i ..."
 ##cd "/home/theos/wasi-libc/" && make install INSTALL_DIR=/tmp/wasi-libc && export PATH=/usr/local/opt/llvm/bin:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
-cd $pathToScript$path2 && clang --target=wasm32-uknown-wasi --sysroot /tmp/wasi-libc -emit-llvm -c -S  $nameext
-cd ".."
-echo "clang done"
-cd $pathToScript$path2 && llc -march=wasm32 -filetype=obj $name".ll" 
+#cd $pathToScript$path2 && clang --target=wasm32-uknown-wasi --sysroot /tmp/wasi-libc -emit-llvm -c -S  $nameext
+#cd ".."
+#echo "clang done"
+#cd $pathToScript$path2 && llc -march=wasm32 -filetype=obj $name".ll" 
 #wasm-objdump -x $path2$name.o
-wasm-ld -m wasm32 -L/tmp/wasi-libc/lib/wasm32-wasi --import-memory --no-entry --export-all $pathToScript$path2$name".o" -lc  -o $pathToScript$path2$name"llvm.wasm"
-wasm2wat $pathToScript$path2$name"llvm.wasm" -o $pathToScript$path2$name"llvm.wat"
+#wasm-ld -m wasm32 -L/tmp/wasi-libc/lib/wasm32-wasi --import-memory --no-entry --export-all $pathToScript$path2$name".o" -lc  -o $pathToScript$path2$name"llvm.wasm"
+cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo rm wasi && sudo mkdir wasi
+cd
+git clone https://github.com/jedisct1/libclang_rt.builtins-wasm32.a.git
+cd $libclang_rt && sudo cp libclang_rt.builtins-wasm32.a /usr/lib/llvm-11/lib/clang/11.*/lib/wasi/ 
+cd $pathToScript$path2 && clang-11 --target=wasm32-unkown-wasi --sysroot /tmp/wasi-libc -Os -s -o $name"llvm.wasm" $nameext
+cd
+wasm2wat --enable-all $pathToScript$path2$name"llvm.wasm" -o $pathToScript$path2$name"llvm.wat"
 echo "done"
 
 
