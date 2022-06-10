@@ -29,9 +29,11 @@ echo "emscripten dependencies are installed"
 
 
 ## cheerp dependencies
-sudo add-apt-repository  http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial
+#sudo add-apt-repository  http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main
+echo "deb http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main " | sudo tee -a /etc/apt/sources.list
+
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 84540D4B9BF457D5
-sudo apt update && sudo apt upgrade
+sudo apt update
 sudo apt install cheerp-core
 echo "cheerp dependencies are installed"
 
@@ -39,7 +41,7 @@ echo "cheerp dependencies are installed"
 ## wasi-sdk dependencies
 export WASI_VERSION=14 
 export WASI_VERSION_FULL=${WASI_VERSION}.0 
-Wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_VERSION}/wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz 
+wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_VERSION}/wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz 
 tar xvf wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz
 export WASI_SDK_PATH=`pwd`/wasi-sdk-${WASI_VERSION_FULL} 
 CC="${WASI_SDK_PATH}/bin/clang --sysroot=${WASI_SDK_PATH}/share/wasi-sysroot" 
@@ -88,10 +90,10 @@ echo "done"
 echo "llvm-clang setup for input file $i ..."
 ##cd "/home/theos/wasi-libc/" && make install INSTALL_DIR=/tmp/wasi-libc && export PATH=/usr/local/opt/llvm/bin:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
-clang --target=wasm32-uknown-wasi --sysroot /tmp/wasi-libc -emit-llvm -c -S  $pathToScript$path2$nameext
+cd $pathToScript$path2 && clang --target=wasm32-uknown-wasi --sysroot /tmp/wasi-libc -emit-llvm -c -S  $nameext
 cd ".."
 echo "clang done"
-llc -march=wasm32 -filetype=obj $pathToScript$path2$name".ll" 
+cd $pathToScript$path2 && llc -march=wasm32 -filetype=obj $name".ll" 
 #wasm-objdump -x $path2$name.o
 wasm-ld -m wasm32 -L/tmp/wasi-libc/lib/wasm32-wasi --import-memory --no-entry --export-all $pathToScript$path2$name".o" -lc  -o $pathToScript$path2$name"llvm.wasm"
 wasm2wat $pathToScript$path2$name"llvm.wasm" -o $pathToScript$path2$name"llvm.wat"
