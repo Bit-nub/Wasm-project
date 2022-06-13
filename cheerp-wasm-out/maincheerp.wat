@@ -4810,7 +4810,7 @@
                               local.get 1
                               i32.const 88
                               i32.store8 offset=69
-                              global.get 8
+                              global.get 10
                               local.set 8
                               br 8 (;@5;)
                               br 6 (;@7;)
@@ -4895,7 +4895,7 @@
                             i32.eq
                             select
                             local.set 7
-                            global.get 8
+                            global.get 10
                             local.set 8
                             br 8 (;@4;)
                             br 5 (;@7;)
@@ -5012,13 +5012,13 @@
                             local.get 1
                             i32.const 45
                             i32.store8 offset=67
-                            global.get 8
+                            global.get 10
                             local.set 8
                             i32.const 10
                             local.set 7
                             br 9 (;@3;)
                           else
-                            global.get 8
+                            global.get 10
                             local.set 8
                             i32.const 10
                             local.set 7
@@ -6376,7 +6376,7 @@
     i32.load)
   (func $_sbrk_r (type 5) (param i32 i32) (result i32)
     (local i32 i32 i32)
-    global.get 11
+    global.get 8
     i32.load
     local.tee 2
     i32.eqz
@@ -6384,19 +6384,19 @@
       i32.const 1049884
       i32.load
       local.set 2
-      global.get 11
+      global.get 8
       local.get 2
       i32.store
     end
     local.get 1
     i32.eqz
     if  ;; label = @1
-      global.get 10
+      global.get 11
       i32.load
       local.tee 2
       return
     end
-    global.get 10
+    global.get 11
     i32.load
     local.set 3
     local.get 1
@@ -6417,18 +6417,18 @@
         i32.const -1
         return
       end
-      global.get 10
+      global.get 11
       i32.load
       local.set 4
-      global.get 10
+      global.get 11
       local.get 3
       local.get 4
       i32.add
       i32.store
     end
-    global.get 11
+    global.get 8
     local.get 1
-    global.get 11
+    global.get 8
     i32.load
     i32.add
     i32.store
@@ -7231,10 +7231,10 @@
   (global (;5;) i32 (i32.const 1050160))
   (global (;6;) i32 (i32.const 1050056))
   (global (;7;) i32 (i32.const 1050264))
-  (global (;8;) i32 (i32.const 1049888))
+  (global (;8;) i32 (i32.const 1050416))
   (global (;9;) i32 (i32.const 1048844))
-  (global (;10;) i32 (i32.const 1048840))
-  (global (;11;) i32 (i32.const 1050416))
+  (global (;10;) i32 (i32.const 1049888))
+  (global (;11;) i32 (i32.const 1048840))
   (global (;12;) i32 (i32.const 1048832))
   (export "memory" (memory 0))
   (export "_main" (func $main))

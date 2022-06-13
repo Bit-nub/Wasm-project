@@ -404,53 +404,41 @@
         i32.add
         call 0
         br_if 0 (;@2;)
-        block  ;; label = @3
-          block  ;; label = @4
-            local.get 1
-            i32.load offset=12
-            local.tee 2
-            br_if 0 (;@4;)
-            i32.const 0
-            local.set 2
-            br 1 (;@3;)
-          end
-          local.get 0
-          local.get 2
-          i32.const 2
-          i32.shl
-          local.tee 2
-          i32.const 19
-          i32.add
-          i32.const -16
-          i32.and
-          i32.sub
-          local.tee 0
-          local.tee 3
-          global.set 0
-          local.get 3
-          local.get 1
-          i32.load offset=8
-          i32.const 15
-          i32.add
-          i32.const -16
-          i32.and
-          i32.sub
-          local.tee 3
-          global.set 0
-          local.get 0
-          local.get 2
-          i32.add
-          i32.const 0
-          i32.store
-          local.get 0
-          local.get 3
-          call 1
-          br_if 2 (;@1;)
-          local.get 1
-          i32.load offset=12
-          local.set 2
-        end
+        local.get 0
+        local.get 1
+        i32.load offset=12
+        i32.const 2
+        i32.shl
+        local.tee 2
+        i32.const 19
+        i32.add
+        i32.const -16
+        i32.and
+        i32.sub
+        local.tee 0
+        local.tee 3
+        global.set 0
+        local.get 3
+        local.get 1
+        i32.load offset=8
+        i32.const 15
+        i32.add
+        i32.const -16
+        i32.and
+        i32.sub
+        local.tee 3
+        global.set 0
+        local.get 0
         local.get 2
+        i32.add
+        i32.const 0
+        i32.store
+        local.get 0
+        local.get 3
+        call 1
+        br_if 1 (;@1;)
+        local.get 1
+        i32.load offset=12
         local.get 0
         call 14
         local.set 0
@@ -556,88 +544,95 @@
     local.get 2
     i32.add
     local.set 6
-    i32.const 2
-    local.set 7
     local.get 3
     i32.const 16
     i32.add
-    local.set 1
+    local.set 4
+    i32.const 2
+    local.set 7
     block  ;; label = @1
       block  ;; label = @2
         block  ;; label = @3
           block  ;; label = @4
-            local.get 0
-            i32.load offset=60
-            local.get 3
-            i32.const 16
-            i32.add
-            i32.const 2
-            local.get 3
-            i32.const 12
-            i32.add
-            call 3
-            call 55
-            br_if 0 (;@4;)
+            block  ;; label = @5
+              local.get 0
+              i32.load offset=60
+              local.get 3
+              i32.const 16
+              i32.add
+              i32.const 2
+              local.get 3
+              i32.const 12
+              i32.add
+              call 3
+              call 55
+              i32.eqz
+              br_if 0 (;@5;)
+              local.get 4
+              local.set 5
+              br 1 (;@4;)
+            end
             loop  ;; label = @5
               local.get 6
               local.get 3
               i32.load offset=12
-              local.tee 4
+              local.tee 1
               i32.eq
               br_if 2 (;@3;)
+              block  ;; label = @6
+                local.get 1
+                i32.const -1
+                i32.gt_s
+                br_if 0 (;@6;)
+                local.get 4
+                local.set 5
+                br 4 (;@2;)
+              end
               local.get 4
-              i32.const -1
-              i32.le_s
-              br_if 3 (;@2;)
               local.get 1
               local.get 4
-              local.get 1
               i32.load offset=4
               local.tee 8
               i32.gt_u
-              local.tee 5
+              local.tee 9
               i32.const 3
               i32.shl
               i32.add
-              local.tee 9
-              local.get 9
+              local.tee 5
+              local.get 5
               i32.load
-              local.get 4
+              local.get 1
               local.get 8
               i32.const 0
-              local.get 5
+              local.get 9
               select
               i32.sub
               local.tee 8
               i32.add
               i32.store
-              local.get 1
+              local.get 4
               i32.const 12
               i32.const 4
-              local.get 5
+              local.get 9
               select
               i32.add
-              local.tee 9
-              local.get 9
+              local.tee 4
+              local.get 4
               i32.load
               local.get 8
               i32.sub
               i32.store
               local.get 6
-              local.get 4
+              local.get 1
               i32.sub
               local.set 6
+              local.get 5
+              local.set 4
               local.get 0
               i32.load offset=60
-              local.get 1
-              i32.const 8
-              i32.add
-              local.get 1
               local.get 5
-              select
-              local.tee 1
               local.get 7
-              local.get 5
+              local.get 9
               i32.sub
               local.tee 7
               local.get 3
@@ -669,11 +664,11 @@
         i32.add
         i32.store offset=16
         local.get 2
-        local.set 4
+        local.set 1
         br 1 (;@1;)
       end
       i32.const 0
-      local.set 4
+      local.set 1
       local.get 0
       i32.const 0
       i32.store offset=28
@@ -691,16 +686,16 @@
       i32.eq
       br_if 0 (;@1;)
       local.get 2
-      local.get 1
+      local.get 5
       i32.load offset=4
       i32.sub
-      local.set 4
+      local.set 1
     end
     local.get 3
     i32.const 32
     i32.add
     global.set 0
-    local.get 4)
+    local.get 1)
   (func (;23;) (type 3) (param i32) (result i32)
     i32.const 0)
   (func (;24;) (type 6) (param i32 i64 i32) (result i64)
@@ -709,12 +704,19 @@
     (local i32)
     block  ;; label = @1
       block  ;; label = @2
-        local.get 1
-        local.get 0
-        i32.xor
-        i32.const 3
-        i32.and
-        br_if 0 (;@2;)
+        block  ;; label = @3
+          local.get 1
+          local.get 0
+          i32.xor
+          i32.const 3
+          i32.and
+          i32.eqz
+          br_if 0 (;@3;)
+          local.get 1
+          i32.load8_u
+          local.set 2
+          br 1 (;@2;)
+        end
         block  ;; label = @3
           local.get 1
           i32.const 3
@@ -784,11 +786,11 @@
         end
       end
       local.get 0
-      local.get 1
-      i32.load8_u
-      local.tee 2
+      local.get 2
       i32.store8
       local.get 2
+      i32.const 255
+      i32.and
       i32.eqz
       br_if 0 (;@1;)
       loop  ;; label = @2
@@ -1190,54 +1192,56 @@
         br_if 1 (;@1;)
       end
       block  ;; label = @2
-        local.get 0
-        i32.load8_u
-        local.get 1
-        i32.const 255
-        i32.and
-        i32.eq
-        br_if 0 (;@2;)
-        local.get 2
-        i32.const 4
-        i32.lt_u
-        br_if 0 (;@2;)
-        local.get 1
-        i32.const 255
-        i32.and
-        i32.const 16843009
-        i32.mul
-        local.set 4
-        loop  ;; label = @3
+        block  ;; label = @3
           local.get 0
-          i32.load
-          local.get 4
-          i32.xor
-          local.tee 3
-          i32.const -1
-          i32.xor
-          local.get 3
-          i32.const -16843009
-          i32.add
+          i32.load8_u
+          local.get 1
+          i32.const 255
           i32.and
-          i32.const -2139062144
-          i32.and
-          br_if 1 (;@2;)
-          local.get 0
-          i32.const 4
-          i32.add
-          local.set 0
-          local.get 2
-          i32.const -4
-          i32.add
-          local.tee 2
-          i32.const 3
-          i32.gt_u
+          i32.eq
           br_if 0 (;@3;)
+          local.get 2
+          i32.const 4
+          i32.lt_u
+          br_if 0 (;@3;)
+          local.get 1
+          i32.const 255
+          i32.and
+          i32.const 16843009
+          i32.mul
+          local.set 4
+          loop  ;; label = @4
+            local.get 0
+            i32.load
+            local.get 4
+            i32.xor
+            local.tee 3
+            i32.const -1
+            i32.xor
+            local.get 3
+            i32.const -16843009
+            i32.add
+            i32.and
+            i32.const -2139062144
+            i32.and
+            br_if 2 (;@2;)
+            local.get 0
+            i32.const 4
+            i32.add
+            local.set 0
+            local.get 2
+            i32.const -4
+            i32.add
+            local.tee 2
+            i32.const 3
+            i32.gt_u
+            br_if 0 (;@4;)
+          end
         end
+        local.get 2
+        i32.eqz
+        br_if 1 (;@1;)
       end
-      local.get 2
-      i32.eqz
-      br_if 0 (;@1;)
       local.get 1
       i32.const 255
       i32.and
@@ -1729,7 +1733,7 @@
         i32.ge_s
         br_if 0 (;@2;)
         i32.const -1
-        local.set 1
+        local.set 4
         br 1 (;@1;)
       end
       block  ;; label = @2
@@ -1812,7 +1816,7 @@
       local.get 7
       i32.const 32
       i32.and
-      local.set 1
+      local.set 4
       block  ;; label = @2
         local.get 8
         i32.eqz
@@ -1834,14 +1838,11 @@
         i32.const 0
         i32.store offset=28
         local.get 0
-        i32.const 0
-        i32.store offset=16
-        local.get 0
         i32.load offset=20
         local.set 3
         local.get 0
-        i32.const 0
-        i32.store offset=20
+        i64.const 0
+        i64.store offset=16
         local.get 2
         i32.const -1
         local.get 3
@@ -1852,7 +1853,7 @@
       local.get 0
       i32.load
       local.tee 3
-      local.get 1
+      local.get 4
       i32.or
       i32.store
       i32.const -1
@@ -1861,7 +1862,7 @@
       i32.const 32
       i32.and
       select
-      local.set 1
+      local.set 4
       local.get 6
       i32.eqz
       br_if 0 (;@1;)
@@ -1872,7 +1873,7 @@
     i32.const 208
     i32.add
     global.set 0
-    local.get 1)
+    local.get 4)
   (func (;43;) (type 15) (param i32 i32 i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i64)
     global.get 0
@@ -2316,10 +2317,10 @@
                               local.set 22
                               local.get 1
                               i32.load8_s
-                              i32.const -65
+                              i32.const -123
                               i32.add
-                              i32.const 57
-                              i32.gt_u
+                              i32.const -58
+                              i32.lt_u
                               br_if 10 (;@3;)
                               local.get 7
                               local.get 1
@@ -2706,8 +2707,6 @@
                                           local.set 20
                                           br 11 (;@8;)
                                         end
-                                        i32.const 0
-                                        local.set 17
                                         local.get 7
                                         i32.load offset=64
                                         local.tee 1
@@ -2717,11 +2716,11 @@
                                         local.set 12
                                         local.get 12
                                         local.get 12
+                                        local.get 20
                                         i32.const 2147483647
                                         local.get 20
-                                        local.get 20
-                                        i32.const 0
-                                        i32.lt_s
+                                        i32.const 2147483647
+                                        i32.lt_u
                                         select
                                         call 38
                                         local.tee 1
@@ -2778,12 +2777,12 @@
                                     i32.const 8
                                     i32.add
                                     i32.store offset=64
-                                    i32.const -1
-                                    local.set 20
                                     local.get 7
                                     i32.const 8
                                     i32.add
                                     local.set 13
+                                    i32.const -1
+                                    local.set 20
                                   end
                                   i32.const 0
                                   local.set 1
@@ -3032,14 +3031,14 @@
                   local.get 9
                   local.set 22
                 end
+                local.get 20
                 local.get 22
                 local.get 12
                 i32.sub
                 local.tee 18
                 local.get 20
-                local.get 20
                 local.get 18
-                i32.lt_s
+                i32.gt_s
                 select
                 local.tee 20
                 i32.const 2147483647
@@ -3049,14 +3048,14 @@
                 br_if 2 (;@4;)
                 i32.const 61
                 local.set 22
+                local.get 19
                 local.get 17
                 local.get 20
                 i32.add
                 local.tee 15
                 local.get 19
-                local.get 19
                 local.get 15
-                i32.lt_s
+                i32.gt_s
                 select
                 local.tee 1
                 local.get 13
@@ -3605,13 +3604,13 @@
     local.tee 5
     global.set 0
     block  ;; label = @1
-      local.get 4
-      i32.const 73728
-      i32.and
-      br_if 0 (;@1;)
       local.get 2
       local.get 3
       i32.le_s
+      br_if 0 (;@1;)
+      local.get 4
+      i32.const 73728
+      i32.and
       br_if 0 (;@1;)
       local.get 5
       local.get 1
@@ -3620,27 +3619,27 @@
       local.get 2
       local.get 3
       i32.sub
-      local.tee 2
+      local.tee 3
       i32.const 256
-      local.get 2
+      local.get 3
       i32.const 256
       i32.lt_u
-      local.tee 3
+      local.tee 2
       select
       call 27
       drop
       block  ;; label = @2
-        local.get 3
+        local.get 2
         br_if 0 (;@2;)
         loop  ;; label = @3
           local.get 0
           local.get 5
           i32.const 256
           call 44
-          local.get 2
+          local.get 3
           i32.const -256
           i32.add
-          local.tee 2
+          local.tee 3
           i32.const 255
           i32.gt_u
           br_if 0 (;@3;)
@@ -3648,7 +3647,7 @@
       end
       local.get 0
       local.get 5
-      local.get 2
+      local.get 3
       call 44
     end
     local.get 5
@@ -3663,7 +3662,7 @@
     i32.const 10
     call 42)
   (func (;52;) (type 7) (param i32 f64 i32 i32 i32 i32) (result i32)
-    (local i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i64 i64 f64)
+    (local i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i64 i64 f64)
     global.get 0
     i32.const 560
     i32.sub
@@ -3678,7 +3677,7 @@
       block  ;; label = @2
         local.get 1
         call 54
-        local.tee 23
+        local.tee 24
         i64.const -1
         i64.gt_s
         br_if 0 (;@2;)
@@ -3690,7 +3689,7 @@
         f64.neg
         local.tee 1
         call 54
-        local.set 23
+        local.set 24
         br 1 (;@1;)
       end
       block  ;; label = @2
@@ -3719,7 +3718,7 @@
     end
     block  ;; label = @1
       block  ;; label = @2
-        local.get 23
+        local.get 24
         i64.const 9218868437227405312
         i64.and
         i64.const 9218868437227405312
@@ -3766,11 +3765,11 @@
         i32.const 8192
         i32.xor
         call 50
-        local.get 2
-        local.get 10
         local.get 10
         local.get 2
-        i32.lt_s
+        local.get 10
+        local.get 2
+        i32.gt_s
         select
         local.set 12
         br 1 (;@1;)
@@ -3851,13 +3850,13 @@
         local.get 6
         i32.const 48
         i32.add
-        local.get 6
-        i32.const 336
-        i32.add
+        i32.const 0
+        i32.const 288
         local.get 16
         i32.const 0
         i32.lt_s
         select
+        i32.add
         local.tee 17
         local.set 11
         loop  ;; label = @3
@@ -3904,6 +3903,8 @@
             i32.const 1
             i32.ge_s
             br_if 0 (;@4;)
+            local.get 16
+            local.set 3
             local.get 11
             local.set 10
             local.get 17
@@ -3912,14 +3913,16 @@
           end
           local.get 17
           local.set 18
+          local.get 16
+          local.set 3
           loop  ;; label = @4
-            local.get 16
+            local.get 3
             i32.const 29
-            local.get 16
+            local.get 3
             i32.const 29
             i32.lt_s
             select
-            local.set 16
+            local.set 3
             block  ;; label = @5
               local.get 11
               i32.const -4
@@ -3928,26 +3931,26 @@
               local.get 18
               i32.lt_u
               br_if 0 (;@5;)
-              local.get 16
+              local.get 3
               i64.extend_i32_u
-              local.set 24
+              local.set 25
               i64.const 0
-              local.set 23
+              local.set 24
               loop  ;; label = @6
                 local.get 10
                 local.get 10
                 i64.load32_u
-                local.get 24
+                local.get 25
                 i64.shl
-                local.get 23
+                local.get 24
                 i64.const 4294967295
                 i64.and
                 i64.add
-                local.tee 23
-                local.get 23
+                local.tee 24
+                local.get 24
                 i64.const 1000000000
                 i64.div_u
-                local.tee 23
+                local.tee 24
                 i64.const 1000000000
                 i64.mul
                 i64.sub
@@ -3960,7 +3963,7 @@
                 i32.ge_u
                 br_if 0 (;@6;)
               end
-              local.get 23
+              local.get 24
               i32.wrap_i64
               local.tee 10
               i32.eqz
@@ -3991,30 +3994,28 @@
             local.get 6
             local.get 6
             i32.load offset=44
-            local.get 16
+            local.get 3
             i32.sub
-            local.tee 16
+            local.tee 3
             i32.store offset=44
             local.get 10
             local.set 11
-            local.get 16
+            local.get 3
             i32.const 0
             i32.gt_s
             br_if 0 (;@4;)
           end
         end
-        local.get 15
-        i32.const 25
-        i32.add
-        i32.const 9
-        i32.div_u
-        local.set 11
         block  ;; label = @3
-          local.get 16
+          local.get 3
           i32.const -1
           i32.gt_s
           br_if 0 (;@3;)
-          local.get 11
+          local.get 15
+          i32.const 25
+          i32.add
+          i32.const 9
+          i32.div_u
           i32.const 1
           i32.add
           local.set 19
@@ -4023,84 +4024,85 @@
           i32.eq
           local.set 20
           loop  ;; label = @4
-            i32.const 9
             i32.const 0
-            local.get 16
+            local.get 3
             i32.sub
-            local.get 16
-            i32.const -9
+            local.tee 11
+            i32.const 9
+            local.get 11
+            i32.const 9
             i32.lt_s
             select
-            local.set 12
+            local.set 21
             block  ;; label = @5
               block  ;; label = @6
                 local.get 18
                 local.get 10
-                i32.ge_u
+                i32.lt_u
                 br_if 0 (;@6;)
-                i32.const 1000000000
-                local.get 12
-                i32.shr_u
-                local.set 21
-                i32.const -1
-                local.get 12
-                i32.shl
-                i32.const -1
-                i32.xor
-                local.set 22
-                i32.const 0
-                local.set 16
-                local.get 18
-                local.set 11
-                loop  ;; label = @7
-                  local.get 11
-                  local.get 11
-                  i32.load
-                  local.tee 3
-                  local.get 12
-                  i32.shr_u
-                  local.get 16
-                  i32.add
-                  i32.store
-                  local.get 3
-                  local.get 22
-                  i32.and
-                  local.get 21
-                  i32.mul
-                  local.set 16
-                  local.get 11
-                  i32.const 4
-                  i32.add
-                  local.tee 11
-                  local.get 10
-                  i32.lt_u
-                  br_if 0 (;@7;)
-                end
                 local.get 18
                 i32.load
                 local.set 11
-                local.get 16
-                i32.eqz
-                br_if 1 (;@5;)
-                local.get 10
-                local.get 16
+                br 1 (;@5;)
+              end
+              i32.const 1000000000
+              local.get 21
+              i32.shr_u
+              local.set 22
+              i32.const -1
+              local.get 21
+              i32.shl
+              i32.const -1
+              i32.xor
+              local.set 23
+              i32.const 0
+              local.set 3
+              local.get 18
+              local.set 11
+              loop  ;; label = @6
+                local.get 11
+                local.get 11
+                i32.load
+                local.tee 12
+                local.get 21
+                i32.shr_u
+                local.get 3
+                i32.add
                 i32.store
-                local.get 10
+                local.get 12
+                local.get 23
+                i32.and
+                local.get 22
+                i32.mul
+                local.set 3
+                local.get 11
                 i32.const 4
                 i32.add
-                local.set 10
-                br 1 (;@5;)
+                local.tee 11
+                local.get 10
+                i32.lt_u
+                br_if 0 (;@6;)
               end
               local.get 18
               i32.load
               local.set 11
+              local.get 3
+              i32.eqz
+              br_if 0 (;@5;)
+              local.get 10
+              local.get 3
+              i32.store
+              local.get 10
+              i32.const 4
+              i32.add
+              local.set 10
             end
             local.get 6
             local.get 6
             i32.load offset=44
-            local.get 12
+            local.get 21
             i32.add
-            local.tee 16
+            local.tee 3
             i32.store offset=44
             local.get 17
             local.get 18
@@ -4127,14 +4129,14 @@
             i32.gt_s
             select
             local.set 10
-            local.get 16
+            local.get 3
             i32.const 0
             i32.lt_s
             br_if 0 (;@4;)
           end
         end
         i32.const 0
-        local.set 16
+        local.set 3
         block  ;; label = @3
           local.get 18
           local.get 10
@@ -4147,21 +4149,21 @@
           i32.shr_s
           i32.const 9
           i32.mul
-          local.set 16
+          local.set 3
           i32.const 10
           local.set 11
           local.get 18
           i32.load
-          local.tee 3
+          local.tee 12
           i32.const 10
           i32.lt_u
           br_if 0 (;@3;)
           loop  ;; label = @4
-            local.get 16
+            local.get 3
             i32.const 1
             i32.add
-            local.set 16
-            local.get 3
+            local.set 3
+            local.get 12
             local.get 11
             i32.const 10
             i32.mul
@@ -4173,18 +4175,18 @@
         block  ;; label = @3
           local.get 15
           i32.const 0
-          local.get 16
+          local.get 3
           local.get 14
           i32.const 102
           i32.eq
           select
           i32.sub
-          local.get 14
-          i32.const 103
-          i32.eq
           local.get 15
           i32.const 0
           i32.ne
+          local.get 14
+          i32.const 103
+          i32.eq
           i32.and
           i32.sub
           local.tee 11
@@ -4202,26 +4204,35 @@
           local.get 11
           i32.const 9216
           i32.add
-          local.tee 3
+          local.tee 12
           i32.const 9
           i32.div_s
-          local.tee 21
+          local.tee 22
           i32.const 2
           i32.shl
-          local.get 17
+          local.get 6
+          i32.const 48
           i32.add
-          i32.const -4092
+          i32.const 4
+          i32.const 292
+          local.get 16
+          i32.const 0
+          i32.lt_s
+          select
           i32.add
-          local.set 12
+          i32.add
+          i32.const -4096
+          i32.add
+          local.set 21
           i32.const 10
           local.set 11
           block  ;; label = @4
-            local.get 3
-            local.get 21
+            local.get 12
+            local.get 22
             i32.const 9
             i32.mul
             i32.sub
-            local.tee 3
+            local.tee 12
             i32.const 7
             i32.gt_s
             br_if 0 (;@4;)
@@ -4230,34 +4241,34 @@
               i32.const 10
               i32.mul
               local.set 11
-              local.get 3
+              local.get 12
               i32.const 1
               i32.add
-              local.tee 3
+              local.tee 12
               i32.const 8
               i32.ne
               br_if 0 (;@5;)
             end
           end
-          local.get 12
+          local.get 21
           i32.const 4
           i32.add
-          local.set 22
+          local.set 23
           block  ;; label = @4
             block  ;; label = @5
-              local.get 12
+              local.get 21
               i32.load
-              local.tee 3
-              local.get 3
+              local.tee 12
+              local.get 12
               local.get 11
               i32.div_u
               local.tee 19
               local.get 11
               i32.mul
               i32.sub
-              local.tee 21
+              local.tee 22
               br_if 0 (;@5;)
-              local.get 22
+              local.get 23
               local.get 10
               i32.eq
               br_if 1 (;@4;)
@@ -4274,11 +4285,11 @@
                 i32.const 1000000000
                 i32.ne
                 br_if 1 (;@5;)
-                local.get 12
+                local.get 21
                 local.get 18
                 i32.le_u
                 br_if 1 (;@5;)
-                local.get 12
+                local.get 21
                 i32.const -4
                 i32.add
                 i32.load8_u
@@ -4293,23 +4304,23 @@
             f64.const 0x1p-1 (;=0.5;)
             f64.const 0x1p+0 (;=1;)
             f64.const 0x1.8p+0 (;=1.5;)
-            local.get 22
+            local.get 23
             local.get 10
             i32.eq
             select
             f64.const 0x1.8p+0 (;=1.5;)
-            local.get 21
+            local.get 22
             local.get 11
             i32.const 1
             i32.shr_u
-            local.tee 22
+            local.tee 23
             i32.eq
             select
-            local.get 21
             local.get 22
+            local.get 23
             i32.lt_u
             select
-            local.set 25
+            local.set 26
             block  ;; label = @5
               local.get 7
               br_if 0 (;@5;)
@@ -4318,27 +4329,27 @@
               i32.const 45
               i32.ne
               br_if 0 (;@5;)
-              local.get 25
+              local.get 26
               f64.neg
-              local.set 25
+              local.set 26
               local.get 1
               f64.neg
               local.set 1
             end
-            local.get 12
-            local.get 3
             local.get 21
+            local.get 12
+            local.get 22
             i32.sub
-            local.tee 3
+            local.tee 12
             i32.store
             local.get 1
-            local.get 25
+            local.get 26
             f64.add
             local.get 1
             f64.eq
             br_if 0 (;@4;)
+            local.get 21
             local.get 12
-            local.get 3
             local.get 11
             i32.add
             local.tee 11
@@ -4349,14 +4360,14 @@
               i32.lt_u
               br_if 0 (;@5;)
               loop  ;; label = @6
-                local.get 12
+                local.get 21
                 i32.const 0
                 i32.store
                 block  ;; label = @7
-                  local.get 12
+                  local.get 21
                   i32.const -4
                   i32.add
-                  local.tee 12
+                  local.tee 21
                   local.get 18
                   i32.ge_u
                   br_if 0 (;@7;)
@@ -4367,8 +4378,8 @@
                   i32.const 0
                   i32.store
                 end
-                local.get 12
-                local.get 12
+                local.get 21
+                local.get 21
                 i32.load
                 i32.const 1
                 i32.add
@@ -4387,21 +4398,21 @@
             i32.shr_s
             i32.const 9
             i32.mul
-            local.set 16
+            local.set 3
             i32.const 10
             local.set 11
             local.get 18
             i32.load
-            local.tee 3
+            local.tee 12
             i32.const 10
             i32.lt_u
             br_if 0 (;@4;)
             loop  ;; label = @5
-              local.get 16
+              local.get 3
               i32.const 1
               i32.add
-              local.set 16
-              local.get 3
+              local.set 3
+              local.get 12
               local.get 11
               i32.const 10
               i32.mul
@@ -4410,7 +4421,7 @@
               br_if 0 (;@5;)
             end
           end
-          local.get 12
+          local.get 21
           i32.const 4
           i32.add
           local.tee 11
@@ -4427,7 +4438,7 @@
             local.tee 11
             local.get 18
             i32.le_u
-            local.tee 3
+            local.tee 12
             br_if 1 (;@3;)
             local.get 11
             i32.const -4
@@ -4450,7 +4461,7 @@
             local.set 21
             br 1 (;@3;)
           end
-          local.get 16
+          local.get 3
           i32.const -1
           i32.xor
           i32.const -1
@@ -4459,20 +4470,20 @@
           local.get 15
           select
           local.tee 10
-          local.get 16
+          local.get 3
           i32.gt_s
-          local.get 16
+          local.get 3
           i32.const -5
           i32.gt_s
           i32.and
-          local.tee 12
+          local.tee 21
           select
           local.get 10
           i32.add
           local.set 15
           i32.const -1
           i32.const -2
-          local.get 12
+          local.get 21
           select
           local.get 5
           i32.add
@@ -4485,39 +4496,39 @@
           i32.const -9
           local.set 10
           block  ;; label = @4
-            local.get 3
+            local.get 12
             br_if 0 (;@4;)
             local.get 11
             i32.const -4
             i32.add
             i32.load
-            local.tee 12
+            local.tee 21
             i32.eqz
             br_if 0 (;@4;)
             i32.const 10
-            local.set 3
+            local.set 12
             i32.const 0
             local.set 10
-            local.get 12
+            local.get 21
             i32.const 10
             i32.rem_u
             br_if 0 (;@4;)
             loop  ;; label = @5
               local.get 10
-              local.tee 21
+              local.tee 22
               i32.const 1
               i32.add
               local.set 10
+              local.get 21
               local.get 12
-              local.get 3
               i32.const 10
               i32.mul
-              local.tee 3
+              local.tee 12
               i32.rem_u
               i32.eqz
               br_if 0 (;@5;)
             end
-            local.get 21
+            local.get 22
             i32.const -1
             i32.xor
             local.set 10
@@ -4529,7 +4540,7 @@
           i32.shr_s
           i32.const 9
           i32.mul
-          local.set 3
+          local.set 12
           block  ;; label = @4
             local.get 5
             i32.const -33
@@ -4540,7 +4551,7 @@
             i32.const 0
             local.set 21
             local.get 15
-            local.get 3
+            local.get 12
             local.get 10
             i32.add
             i32.const -9
@@ -4562,8 +4573,8 @@
           i32.const 0
           local.set 21
           local.get 15
-          local.get 16
           local.get 3
+          local.get 12
           i32.add
           local.get 10
           i32.add
@@ -4590,37 +4601,36 @@
         local.get 15
         local.get 21
         i32.or
-        local.tee 10
+        local.tee 22
         select
         i32.gt_s
         br_if 1 (;@1;)
         local.get 15
-        local.get 10
+        local.get 22
         i32.const 0
         i32.ne
-        local.tee 20
         i32.add
         i32.const 1
         i32.add
-        local.set 3
+        local.set 23
         block  ;; label = @3
           block  ;; label = @4
             local.get 5
             i32.const -33
             i32.and
-            local.tee 19
+            local.tee 20
             i32.const 70
             i32.ne
             br_if 0 (;@4;)
-            local.get 16
-            i32.const 2147483647
             local.get 3
+            i32.const 2147483647
+            local.get 23
             i32.sub
             i32.gt_s
             br_if 3 (;@1;)
-            local.get 16
+            local.get 3
             i32.const 0
-            local.get 16
+            local.get 3
             i32.const 0
             i32.gt_s
             select
@@ -4629,14 +4639,14 @@
           end
           block  ;; label = @4
             local.get 13
-            local.get 16
-            local.get 16
+            local.get 3
+            local.get 3
             i32.const 31
             i32.shr_s
             local.tee 10
-            i32.add
-            local.get 10
             i32.xor
+            local.get 10
+            i32.sub
             i64.extend_i32_u
             local.get 13
             call 49
@@ -4663,7 +4673,7 @@
           local.get 10
           i32.const -2
           i32.add
-          local.tee 22
+          local.tee 19
           local.get 5
           i32.store8
           i32.const -1
@@ -4673,17 +4683,17 @@
           i32.add
           i32.const 45
           i32.const 43
-          local.get 16
+          local.get 3
           i32.const 0
           i32.lt_s
           select
           i32.store8
           local.get 13
-          local.get 22
+          local.get 19
           i32.sub
           local.tee 10
           i32.const 2147483647
-          local.get 3
+          local.get 23
           i32.sub
           i32.gt_s
           br_if 2 (;@1;)
@@ -4691,7 +4701,7 @@
         i32.const -1
         local.set 12
         local.get 10
-        local.get 3
+        local.get 23
         i32.add
         local.tee 10
         local.get 8
@@ -4705,7 +4715,7 @@
         local.get 10
         local.get 8
         i32.add
-        local.tee 5
+        local.tee 23
         local.get 4
         call 50
         local.get 0
@@ -4715,7 +4725,7 @@
         local.get 0
         i32.const 48
         local.get 2
-        local.get 5
+        local.get 23
         local.get 4
         i32.const 65536
         i32.xor
@@ -4724,7 +4734,7 @@
           block  ;; label = @4
             block  ;; label = @5
               block  ;; label = @6
-                local.get 19
+                local.get 20
                 i32.const 70
                 i32.ne
                 br_if 0 (;@6;)
@@ -4733,31 +4743,31 @@
                 i32.add
                 i32.const 8
                 i32.or
-                local.set 12
+                local.set 21
                 local.get 6
                 i32.const 16
                 i32.add
                 i32.const 9
                 i32.or
-                local.set 16
+                local.set 3
                 local.get 17
                 local.get 18
                 local.get 18
                 local.get 17
                 i32.gt_u
                 select
-                local.tee 3
+                local.tee 12
                 local.set 18
                 loop  ;; label = @7
                   local.get 18
                   i64.load32_u
-                  local.get 16
+                  local.get 3
                   call 49
                   local.set 10
                   block  ;; label = @8
                     block  ;; label = @9
                       local.get 18
-                      local.get 3
+                      local.get 12
                       i32.eq
                       br_if 0 (;@9;)
                       local.get 10
@@ -4784,18 +4794,18 @@
                       unreachable
                     end
                     local.get 10
-                    local.get 16
+                    local.get 3
                     i32.ne
                     br_if 0 (;@8;)
                     local.get 6
                     i32.const 48
                     i32.store8 offset=24
-                    local.get 12
+                    local.get 21
                     local.set 10
                   end
                   local.get 0
                   local.get 10
-                  local.get 16
+                  local.get 3
                   local.get 10
                   i32.sub
                   call 44
@@ -4807,15 +4817,15 @@
                   i32.le_u
                   br_if 0 (;@7;)
                 end
-                i32.const 0
-                local.set 10
-                local.get 20
-                i32.eqz
-                br_if 2 (;@4;)
-                local.get 0
-                i32.const 1074
-                i32.const 1
-                call 44
+                block  ;; label = @7
+                  local.get 22
+                  i32.eqz
+                  br_if 0 (;@7;)
+                  local.get 0
+                  i32.const 1074
+                  i32.const 1
+                  call 44
+                end
                 local.get 18
                 local.get 11
                 i32.ge_u
@@ -4828,7 +4838,7 @@
                   block  ;; label = @8
                     local.get 18
                     i64.load32_u
-                    local.get 16
+                    local.get 3
                     call 49
                     local.tee 10
                     local.get 6
@@ -4874,10 +4884,10 @@
                   local.get 15
                   i32.const 9
                   i32.gt_s
-                  local.set 3
+                  local.set 12
                   local.get 10
                   local.set 15
-                  local.get 3
+                  local.get 12
                   br_if 0 (;@7;)
                   br 3 (;@4;)
                 end
@@ -4896,35 +4906,35 @@
                 local.get 18
                 i32.gt_u
                 select
-                local.set 12
-                local.get 6
-                i32.const 16
-                i32.add
-                i32.const 9
-                i32.or
-                local.set 16
+                local.set 22
                 local.get 6
                 i32.const 16
                 i32.add
                 i32.const 8
                 i32.or
-                local.set 19
+                local.set 17
+                local.get 6
+                i32.const 16
+                i32.add
+                i32.const 9
+                i32.or
+                local.set 3
                 local.get 18
                 local.set 11
                 loop  ;; label = @7
                   block  ;; label = @8
                     local.get 11
                     i64.load32_u
-                    local.get 16
+                    local.get 3
                     call 49
                     local.tee 10
-                    local.get 16
+                    local.get 3
                     i32.ne
                     br_if 0 (;@8;)
                     local.get 6
                     i32.const 48
                     i32.store8 offset=24
-                    local.get 19
+                    local.get 17
                     local.set 10
                   end
                   block  ;; label = @8
@@ -4964,15 +4974,11 @@
                     i32.const 1
                     i32.add
                     local.set 10
-                    block  ;; label = @9
-                      local.get 15
-                      i32.const 0
-                      i32.gt_s
-                      br_if 0 (;@9;)
-                      local.get 21
-                      i32.eqz
-                      br_if 1 (;@8;)
-                    end
+                    local.get 15
+                    local.get 21
+                    i32.or
+                    i32.eqz
+                    br_if 0 (;@8;)
                     local.get 0
                     i32.const 1074
                     i32.const 1
@@ -4980,25 +4986,25 @@
                   end
                   local.get 0
                   local.get 10
-                  local.get 16
-                  local.get 10
-                  i32.sub
-                  local.tee 3
-                  local.get 15
                   local.get 15
                   local.get 3
-                  i32.gt_s
+                  local.get 10
+                  i32.sub
+                  local.tee 12
+                  local.get 15
+                  local.get 12
+                  i32.lt_s
                   select
                   call 44
                   local.get 15
-                  local.get 3
+                  local.get 12
                   i32.sub
                   local.set 15
                   local.get 11
                   i32.const 4
                   i32.add
                   local.tee 11
-                  local.get 12
+                  local.get 22
                   i32.ge_u
                   br_if 1 (;@6;)
                   local.get 15
@@ -5016,9 +5022,9 @@
               i32.const 0
               call 50
               local.get 0
-              local.get 22
+              local.get 19
               local.get 13
-              local.get 22
+              local.get 19
               i32.sub
               call 44
               br 2 (;@3;)
@@ -5038,16 +5044,16 @@
         local.get 0
         i32.const 32
         local.get 2
-        local.get 5
+        local.get 23
         local.get 4
         i32.const 8192
         i32.xor
         call 50
+        local.get 23
         local.get 2
-        local.get 5
-        local.get 5
+        local.get 23
         local.get 2
-        i32.lt_s
+        i32.gt_s
         select
         local.set 12
         br 1 (;@1;)
@@ -5061,7 +5067,7 @@
       i32.const 9
       i32.and
       i32.add
-      local.set 19
+      local.set 23
       block  ;; label = @2
         local.get 3
         i32.const 11
@@ -5070,16 +5076,14 @@
         i32.const 12
         local.get 3
         i32.sub
-        local.tee 10
-        i32.eqz
-        br_if 0 (;@2;)
+        local.set 10
         f64.const 0x1p+4 (;=16;)
-        local.set 25
+        local.set 26
         loop  ;; label = @3
-          local.get 25
+          local.get 26
           f64.const 0x1p+4 (;=16;)
           f64.mul
-          local.set 25
+          local.set 26
           local.get 10
           i32.const -1
           i32.add
@@ -5087,15 +5091,15 @@
           br_if 0 (;@3;)
         end
         block  ;; label = @3
-          local.get 19
+          local.get 23
           i32.load8_u
           i32.const 45
           i32.ne
           br_if 0 (;@3;)
-          local.get 25
+          local.get 26
           local.get 1
           f64.neg
-          local.get 25
+          local.get 26
           f64.sub
           f64.add
           f64.neg
@@ -5103,9 +5107,9 @@
           br 1 (;@2;)
         end
         local.get 1
-        local.get 25
+        local.get 26
         f64.add
-        local.get 25
+        local.get 26
         f64.sub
         local.set 1
       end
@@ -5117,9 +5121,9 @@
         i32.const 31
         i32.shr_s
         local.tee 10
-        i32.add
-        local.get 10
         i32.xor
+        local.get 10
+        i32.sub
         i64.extend_i32_u
         local.get 13
         call 49
@@ -5167,7 +5171,7 @@
       local.get 4
       i32.const 8
       i32.and
-      local.set 16
+      local.set 12
       local.get 6
       i32.const 16
       i32.add
@@ -5219,16 +5223,15 @@
           i32.ne
           br_if 0 (;@3;)
           block  ;; label = @4
-            local.get 1
-            f64.const 0x0p+0 (;=0;)
-            f64.ne
+            local.get 12
             br_if 0 (;@4;)
             local.get 3
             i32.const 0
             i32.gt_s
             br_if 0 (;@4;)
-            local.get 16
-            i32.eqz
+            local.get 1
+            f64.const 0x0p+0 (;=0;)
+            f64.eq
             br_if 1 (;@3;)
           end
           local.get 10
@@ -5251,7 +5254,7 @@
       local.get 13
       local.get 22
       i32.sub
-      local.tee 16
+      local.tee 19
       i32.add
       local.tee 10
       i32.sub
@@ -5298,7 +5301,7 @@
       local.get 4
       call 50
       local.get 0
-      local.get 19
+      local.get 23
       local.get 21
       call 44
       local.get 0
@@ -5325,7 +5328,7 @@
       call 50
       local.get 0
       local.get 22
-      local.get 16
+      local.get 19
       call 44
       local.get 0
       i32.const 32
@@ -5335,11 +5338,11 @@
       i32.const 8192
       i32.xor
       call 50
-      local.get 2
-      local.get 10
       local.get 10
       local.get 2
-      i32.lt_s
+      local.get 10
+      local.get 2
+      i32.gt_s
       select
       local.set 12
     end
@@ -5408,7 +5411,7 @@
     i32.add
     call 5
     call 55
-    local.set 0
+    local.set 2
     local.get 3
     i64.load offset=8
     local.set 1
@@ -5418,7 +5421,7 @@
     global.set 0
     i64.const -1
     local.get 1
-    local.get 0
+    local.get 2
     select)
   (func (;59;) (type 6) (param i32 i64 i32) (result i64)
     local.get 0
@@ -5739,8 +5742,6 @@
         local.set 5
         local.get 0
         i64.const 576460752303423488
-        i64.xor
-        i64.const 0
         i64.ne
         br_if 1 (;@1;)
         local.get 5
@@ -5855,8 +5856,6 @@
       end
       local.get 4
       i64.const 576460752303423488
-      i64.xor
-      i64.const 0
       i64.ne
       br_if 0 (;@1;)
       local.get 5

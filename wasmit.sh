@@ -70,10 +70,19 @@ echo "wasi-sdk dependencies are installed"
 
 sudo apt update && sudo apt upgrade 
 
-cd $pathToScript
-
-
 mkdir $pathToScript$path1 && mkdir $pathToScript$path2 && mkdir $pathToScript$path3 && mkdir $pathToScript$path4
+
+## cargo-rust
+cd && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup install 1.43.0
+rustup override set 1.43.0
+
+git clone https://github.com/sola-st/wasm-binary-security
+cd wasm-binary-security/tool/wasm-security-analysis
+cargo clean
+cargo build && echo "cargo build success"
+
+
 
 
 for i in $@ ;do
@@ -97,10 +106,9 @@ cp $nameext $pathToScript$path4
 
 ##cheerp##
 echo "cheerp setup for input file $i ..."
-$cheerp -target cheerp $pathToScript$path1$nameext -O3 -o $pathToScript$path1$name"cheerp.js"
-$cheerp -target cheerp -cheerp-mode=wasm -cheerp-wasm-loader=$pathToScript$path1$name"cheerp.js" -o0 -o $pathToScript$path1$name"cheerp.wasm" $pathToScript$path1$nameext -cheerp-pretty-code -cheerp-no-lto
-wasm2wat $pathToScript$path1$name"cheerp.wasm" -o $pathToScript$path1$name"cheerp.wat"
-echo "done"
+$cheerp -target cheerp $pathToScript$path1$nameext -O3 -o $pathToScript$path1$name"cheerp.js" && echo "js loader file created <cheerp>"
+$cheerp -target cheerp -cheerp-mode=wasm -cheerp-wasm-loader=$pathToScript$path1$name"cheerp.js" -o0 -o $pathToScript$path1$name"cheerp.wasm" $pathToScript$path1$nameext -cheerp-pretty-code -cheerp-no-lto && echo "wasm binary created <cheerp>"
+wasm2wat $pathToScript$path1$name"cheerp.wasm" -o $pathToScript$path1$name"cheerp.wat" && echo "wat file created <cheerp>"
 
 
 ##llvlm-clang##
@@ -109,24 +117,49 @@ echo "llvm-clang setup for input file $i ..."
 #cd $pathToScript$path2 && llc -march=wasm32 -filetype=obj $name".ll" 
 #wasm-objdump -x $path2$name.o
 #wasm-ld -m wasm32 -L/tmp/wasi-libc/lib/wasm32-wasi --import-memory --no-entry --export-all $pathToScript$path2$name".o" -lc  -o $pathToScript$path2$name"llvm.wasm"
-cd $pathToScript$path2 && clang-11 --target=wasm32-unkown-wasi --sysroot /tmp/wasi-libc -Os -s -o $name"llvm.wasm" $nameext
-wasm2wat --enable-all $pathToScript$path2$name"llvm.wasm" -o $pathToScript$path2$name"llvm.wat"
-echo "done"
+cd $pathToScript$path2 && clang-11 --target=wasm32-unkown-wasi --sysroot /tmp/wasi-libc -Os -s -o $name"llvm.wasm" $nameext && echo "wasm binary created <llvm>"
+wasm2wat --enable-all $pathToScript$path2$name"llvm.wasm" -o $pathToScript$path2$name"llvm.wat" && echo"wat file created <llvm>"
 
 
-##emcc##
-echo "emcc setup for input file $i ..."
-emcc $pathToScript$path3$nameext -o $pathToScript$path3$name"emcc.wasm" 
-wasm2wat $pathToScript$path3$name"emcc.wasm" -o $pathToScript$path3$name"emcc.wat"
-echo "done"
+##emsdk##
+echo "emsdk setup for input file $i ..."
+emcc $pathToScript$path3$nameext -o $pathToScript$path3$name"emcc.wasm" && echo "wasm binary created <emsdk>"
+wasm2wat $pathToScript$path3$name"emcc.wasm" -o $pathToScript$path3$name"emcc.wat" && echo "wat file created <emsdk>"
 
 
 ##wasi-sdk##
 echo "wasi-sdk setup for input file $i ..."
 #$wasi"bin/clang" --sysroot=$wasi"share/wasi-sysroot" $path4$nameext -o $path4$name"wasi.wasm"
-$CC $pathToScript$path4$nameext -o $pathToScript$path4$name"wasi.wasm"
-wasm2wat $pathToScript$path4$name"wasi.wasm" -o $pathToScript$path4$name"wasi.wat"
-echo "done"
+$CC $pathToScript$path4$nameext -o $pathToScript$path4$name"wasi.wasm" && echo "wasm binary created <wasi-sdk>"
+wasm2wat $pathToScript$path4$name"wasi.wasm" -o $pathToScript$path4$name"wasi.wat" && echo "wat file created <wasi-sdk>"
 
 done
+
+cd 
+home=`pwd`
+
+for i in $(find $pathToScript"/" -name "*.wasm");do
+
+pathnameext=$i
+revname=$(echo $pathnameext | rev)
+revy="${revname%%/*}"
+nameext=$(echo $revy | rev)
+name="${nameext%%.*}"
+
+cp $i $home/wasm-binary-security/tool/wasm-security-analysis
+
+cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo clean 
+cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo run $nameext >> $name"-analysis.txt"
+
+#path=$(echo $i | cut -c 2-)
+#path=${pathnameext#"$namext"}
+path=$( echo "$i" | sed -e "s/$nameext$//")
+
+cp $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
+rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $i
+
+done
+
+rm -rf ~/.local/share/Trash/*
+
 exit 1 
