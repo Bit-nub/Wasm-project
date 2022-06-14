@@ -156,7 +156,8 @@ cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo run $nameext 
 path=$( echo "$i" | sed -e "s/$nameext$//")
 
 cp $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
-rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $i
+rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" 
+rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$nameext
 
 done
 
