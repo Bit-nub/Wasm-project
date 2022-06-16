@@ -40,7 +40,7 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 source ~/.bashrc
 echo "Unpacking wasi-libc ..."
 cd && git clone https://github.com/CraneStation/wasi-libc.git > /dev/null 2>&1
-cd wasi-libc && sudo make && sudo make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && echo "wasi-libc setup is complete"
+cd wasi-libc &&  make > /dev/null &&  make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && echo "wasi-libc setup is complete"
 cd
 #sudo apt install lld
 echo "# llvm's dependencies are installed #"
@@ -150,8 +150,7 @@ wasm2wat $pathToScript$path4$name"wasi.wasm" -o $pathToScript$path4$name"wasi.wa
 
 done
 
-cd 
-home=`pwd`
+cd && home=`pwd`
 
 for i in $(find $pathToScript"/" -name "*.wasm");do
 
@@ -174,6 +173,8 @@ cp $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt"
 rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" 
 rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$nameext
 done
+
+cd && rm -rf  wasi-sdk*.tar.*
 
 rm -rf ~/.local/share/Trash/* && echo "Trash has been cleared"
 
