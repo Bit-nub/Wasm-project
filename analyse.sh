@@ -1,6 +1,5 @@
 pathToScript=`pwd`
-cd 
-home=`pwd`
+cd  && home=`pwd`
 
 for i in $(find $pathToScript"/" -name "*.wasm");do
 
