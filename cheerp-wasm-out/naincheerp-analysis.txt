@@ -1,5 +1,5 @@
-Input file: haincheerp.wasm
-  binary:    haincheerp.wasm
+Input file: naincheerp.wasm
+  binary:    naincheerp.wasm
 
 Functions:          116
   Imported:           3
@@ -31,31 +31,31 @@ Globals:
      init: i32.const 1049224
      10 × global.get    0 × global.set   10 total (100/0% split)
   #5 i32
-     init: i32.const 1051592
+     init: i32.const 1051704
       9 × global.get    0 × global.set    9 total (100/0% split)
   #6 i32
-     init: i32.const 1050296
+     init: i32.const 1051384
       9 × global.get    0 × global.set    9 total (100/0% split)
   #7 i32
      init: i32.const 1051488
       9 × global.get    0 × global.set    9 total (100/0% split)
   #8 i32
-     init: i32.const 1051704
+     init: i32.const 1051592
       9 × global.get    0 × global.set    9 total (100/0% split)
   #9 i32
-     init: i32.const 1051384
+     init: i32.const 1050296
       9 × global.get    0 × global.set    9 total (100/0% split)
   #10 i32
-     init: i32.const 1049240
+     init: i32.const 1049208
       4 × global.get    0 × global.set    4 total (100/0% split)
-  #11 i32
-     init: i32.const 1049244
-      4 × global.get    0 × global.set    4 total (100/0% split)
-  #12 f64
+  #11 f64
      init: f64.const 0
       4 × global.get    0 × global.set    4 total (100/0% split)
-  #13 f64
+  #12 f64
      init: f64.const 0.5
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #13 i32
+     init: i32.const 1049244
       4 × global.get    0 × global.set    4 total (100/0% split)
   #14 i32
      init: i32.const 1051744
@@ -64,7 +64,7 @@ Globals:
      init: i32.const 1050300
       4 × global.get    0 × global.set    4 total (100/0% split)
   #16 i32
-     init: i32.const 1049208
+     init: i32.const 1049240
       4 × global.get    0 × global.set    4 total (100/0% split)
 
 Likely the stack pointer:       Global #0
@@ -75,7 +75,7 @@ Stack increments: (How many functions increment the stack pointer by how much? C
 
 CSV for sp analysis and plots:
 binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
-sp_csv_line:"haincheerp.wasm",113,100,"[]",0,0
+sp_csv_line:"naincheerp.wasm",113,100,"[]",0,0
 
 Counts of function types (20 unique types):
     1  (0.86%) × [i32] -> [f32]
@@ -231,18 +231,18 @@ call_indirect target equivalence classes (CFI equivalence classes):
     count (how often class appears): 8
   total classes: 11
 
-CSV data for further analysis: haincheerp.wasm,22438,273,41,13.057324,116,19,13,11,1,8,3.727272727272727,2,778,166,21.336761,142,18.251928,91,11.696658
+CSV data for further analysis: naincheerp.wasm,22438,273,41,13.057324,116,19,13,11,1,8,3.727272727272727,2,778,166,21.336761,142,18.251928,91,11.696658
 
 CSV data on CFI classes:
 benchmark,binary,class,size,count,source
-"haincheerp.wasm",0,1,1,"local.(get|tee)"
-"haincheerp.wasm",1,2,1,"other"
-"haincheerp.wasm",2,1,1,"i32.const"
-"haincheerp.wasm",3,5,2,"local.(get|tee)"
-"haincheerp.wasm",4,1,2,"local.(get|tee)"
-"haincheerp.wasm",5,0,2,"i32.const"
-"haincheerp.wasm",6,1,5,"i32.const"
-"haincheerp.wasm",7,5,6,"i32.load"
-"haincheerp.wasm",8,5,6,"local.(get|tee)"
-"haincheerp.wasm",9,3,7,"i32.load"
-"haincheerp.wasm",10,5,8,"i32.load"
+"naincheerp.wasm",0,1,1,"local.(get|tee)"
+"naincheerp.wasm",1,2,1,"other"
+"naincheerp.wasm",2,1,1,"i32.const"
+"naincheerp.wasm",3,5,2,"local.(get|tee)"
+"naincheerp.wasm",4,1,2,"local.(get|tee)"
+"naincheerp.wasm",5,0,2,"i32.const"
+"naincheerp.wasm",6,1,5,"i32.const"
+"naincheerp.wasm",7,5,6,"i32.load"
+"naincheerp.wasm",8,5,6,"local.(get|tee)"
+"naincheerp.wasm",9,3,7,"i32.load"
+"naincheerp.wasm",10,5,8,"i32.load"

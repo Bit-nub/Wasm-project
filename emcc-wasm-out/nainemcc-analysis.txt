@@ -1,5 +1,5 @@
-Input file: hainemcc.wasm
-  binary:    hainemcc.wasm
+Input file: nainemcc.wasm
+  binary:    nainemcc.wasm
 
 Functions:          114
   Imported:           5
@@ -47,21 +47,21 @@ Stack increments: (How many functions increment the stack pointer by how much? C
 
 CSV for sp analysis and plots:
 binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-8976]",-8976,8976
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-560]",-560,560
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-432]",-432,432
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-336]",-336,336
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-304]",-304,304
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-256]",-256,256
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-208]",-208,208
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-128]",-128,128
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-112]",-112,112
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-96]",-96,96
-sp_csv_line:"hainemcc.wasm",1,0.9174312,"[-48]",-48,48
-sp_csv_line:"hainemcc.wasm",2,1.8348624,"[-80]",-80,80
-sp_csv_line:"hainemcc.wasm",4,3.6697247,"[-32]",-32,32
-sp_csv_line:"hainemcc.wasm",12,11.009174,"[-16]",-16,16
-sp_csv_line:"hainemcc.wasm",80,73.39449,"[]",0,0
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-8976]",-8976,8976
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-560]",-560,560
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-432]",-432,432
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-336]",-336,336
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-304]",-304,304
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-256]",-256,256
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-208]",-208,208
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-128]",-128,128
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-112]",-112,112
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-96]",-96,96
+sp_csv_line:"nainemcc.wasm",1,0.9174312,"[-48]",-48,48
+sp_csv_line:"nainemcc.wasm",2,1.8348624,"[-80]",-80,80
+sp_csv_line:"nainemcc.wasm",4,3.6697247,"[-32]",-32,32
+sp_csv_line:"nainemcc.wasm",12,11.009174,"[-16]",-16,16
+sp_csv_line:"nainemcc.wasm",80,73.39449,"[]",0,0
 
 Counts of function types (35 unique types):
     1  (0.88%) × [i32, i32] -> [i64]
@@ -166,12 +166,12 @@ call_indirect target equivalence classes (CFI equivalence classes):
     count (how often class appears): 6
   total classes: 5
 
-CSV data for further analysis: hainemcc.wasm,22465,404,10,2.415459,114,9,5,5,1,6,2,1,69,17,24.637682,17,24.637682,15,21.73913
+CSV data for further analysis: nainemcc.wasm,22465,404,10,2.415459,114,9,5,5,1,6,2,1,69,17,24.637682,17,24.637682,15,21.73913
 
 CSV data on CFI classes:
 benchmark,binary,class,size,count,source
-"hainemcc.wasm",0,1,1,"i32.load"
-"hainemcc.wasm",1,1,1,"local.(get|tee)"
-"hainemcc.wasm",2,2,1,"i32.load"
-"hainemcc.wasm",3,1,1,"local.(get|tee)"
-"hainemcc.wasm",4,2,6,"i32.load"
+"nainemcc.wasm",0,1,1,"i32.load"
+"nainemcc.wasm",1,1,1,"local.(get|tee)"
+"nainemcc.wasm",2,2,1,"i32.load"
+"nainemcc.wasm",3,1,1,"local.(get|tee)"
+"nainemcc.wasm",4,2,6,"i32.load"

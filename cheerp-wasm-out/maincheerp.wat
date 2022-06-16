@@ -2218,7 +2218,7 @@
       end
     end
     local.get 2
-    global.get 5
+    global.get 7
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -2226,7 +2226,7 @@
       local.set 3
     else
       local.get 2
-      global.get 6
+      global.get 5
       i32.eq
       if  ;; label = @2
         local.get 0
@@ -2234,7 +2234,7 @@
         local.set 3
       else
         local.get 2
-        global.get 7
+        global.get 6
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -2476,7 +2476,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 7
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -2484,7 +2484,7 @@
       local.set 2
     else
       local.get 1
-      global.get 6
+      global.get 5
       i32.eq
       if  ;; label = @2
         local.get 0
@@ -2492,7 +2492,7 @@
         local.set 2
       else
         local.get 1
-        global.get 7
+        global.get 6
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -2827,7 +2827,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 7
     i32.eq
     if  ;; label = @1
       local.get 2
@@ -2835,7 +2835,7 @@
       local.set 2
     else
       local.get 1
-      global.get 6
+      global.get 5
       i32.eq
       if  ;; label = @2
         local.get 2
@@ -2843,7 +2843,7 @@
         local.set 2
       else
         local.get 1
-        global.get 7
+        global.get 6
         i32.eq
         if  ;; label = @3
           local.get 2
@@ -3232,7 +3232,7 @@
     i32.const 16
     i32.add
     local.set 2
-    global.get 11
+    global.get 9
     i32.load
     i32.const -1
     i32.ne
@@ -3299,12 +3299,12 @@
               br 2 (;@3;)
             end
           end
-          global.get 11
+          global.get 9
           i32.load
           i32.const -1
           i32.eq
           if  ;; label = @4
-            global.get 11
+            global.get 9
             local.get 4
             i32.store
           else
@@ -3675,7 +3675,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 7
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -3683,7 +3683,7 @@
       local.set 4
     else
       local.get 1
-      global.get 6
+      global.get 5
       i32.eq
       if  ;; label = @2
         local.get 0
@@ -3691,7 +3691,7 @@
         local.set 4
       else
         local.get 1
-        global.get 7
+        global.get 6
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -4810,7 +4810,7 @@
                               local.get 1
                               i32.const 88
                               i32.store8 offset=69
-                              global.get 8
+                              global.get 10
                               local.set 8
                               br 8 (;@5;)
                               br 6 (;@7;)
@@ -4895,7 +4895,7 @@
                             i32.eq
                             select
                             local.set 7
-                            global.get 8
+                            global.get 10
                             local.set 8
                             br 8 (;@4;)
                             br 5 (;@7;)
@@ -5012,13 +5012,13 @@
                             local.get 1
                             i32.const 45
                             i32.store8 offset=67
-                            global.get 8
+                            global.get 10
                             local.set 8
                             i32.const 10
                             local.set 7
                             br 9 (;@3;)
                           else
-                            global.get 8
+                            global.get 10
                             local.set 8
                             i32.const 10
                             local.set 7
@@ -5824,7 +5824,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 7
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -5832,7 +5832,7 @@
       local.set 2
     else
       local.get 1
-      global.get 6
+      global.get 5
       i32.eq
       if  ;; label = @2
         local.get 0
@@ -5840,7 +5840,7 @@
         local.set 2
       else
         local.get 1
-        global.get 7
+        global.get 6
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -6219,7 +6219,7 @@
         if  ;; label = @3
           global.get 4
           local.get 2
-          global.get 11
+          global.get 9
           i32.load
           i32.sub
           i32.store
@@ -6376,7 +6376,7 @@
     i32.load)
   (func $_sbrk_r (type 5) (param i32 i32) (result i32)
     (local i32 i32 i32)
-    global.get 9
+    global.get 11
     i32.load
     local.tee 2
     i32.eqz
@@ -6384,19 +6384,19 @@
       i32.const 1049884
       i32.load
       local.set 2
-      global.get 9
+      global.get 11
       local.get 2
       i32.store
     end
     local.get 1
     i32.eqz
     if  ;; label = @1
-      global.get 10
+      global.get 8
       i32.load
       local.tee 2
       return
     end
-    global.get 10
+    global.get 8
     i32.load
     local.set 3
     local.get 1
@@ -6417,18 +6417,18 @@
         i32.const -1
         return
       end
-      global.get 10
+      global.get 8
       i32.load
       local.set 4
-      global.get 10
+      global.get 8
       local.get 3
       local.get 4
       i32.add
       i32.store
     end
-    global.get 9
+    global.get 11
     local.get 1
-    global.get 9
+    global.get 11
     i32.load
     i32.add
     i32.store
@@ -7228,13 +7228,13 @@
   (global (;2;) i32 (i32.const 1048868))
   (global (;3;) i32 (i32.const 1050428))
   (global (;4;) i32 (i32.const 1050376))
-  (global (;5;) i32 (i32.const 1050056))
-  (global (;6;) i32 (i32.const 1050160))
-  (global (;7;) i32 (i32.const 1050264))
-  (global (;8;) i32 (i32.const 1049888))
-  (global (;9;) i32 (i32.const 1050416))
-  (global (;10;) i32 (i32.const 1048840))
-  (global (;11;) i32 (i32.const 1048844))
+  (global (;5;) i32 (i32.const 1050160))
+  (global (;6;) i32 (i32.const 1050264))
+  (global (;7;) i32 (i32.const 1050056))
+  (global (;8;) i32 (i32.const 1048840))
+  (global (;9;) i32 (i32.const 1048844))
+  (global (;10;) i32 (i32.const 1049888))
+  (global (;11;) i32 (i32.const 1050416))
   (global (;12;) i32 (i32.const 1048832))
   (export "memory" (memory 0))
   (export "_main" (func $main))

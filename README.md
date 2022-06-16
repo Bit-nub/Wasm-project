@@ -24,42 +24,43 @@ $ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project
     
     $ bash analyse.sh <source-code1.wasm> <source-code2.wasm>..
 
-the architecture (Eg. main.c hainc as inputs) should look like this :
-cheerp-wasm-out
-├── main.c
-├── maincheerp-analysis.txt
-├── maincheerp.js
-├── maincheerp.wasm
-├── maincheerp.wat
-├── nain.c
-├── naincheerp-analysis.txt
-├── naincheerp.js
-├── naincheerp.wasm
-└── naincheerp.wat
-emcc-wasm-out
-├── main.c
-├── mainemcc-analysis.txt
-├── mainemcc.wasm
-├── mainemcc.wat
-├── nain.c
-├── nainemcc-analysis.txt
-├── nainemcc.wasm
-└── nainemcc.wat
-llvm-clang-wasm-out
-├── main.c
-├── mainllvm-analysis.txt
-├── mainllvm.wasm
-├── mainllvm.wat
-├── nain.c
-├── nainllvm-analysis.txt
-├── nainllvm.wasm
-└── nainllvm.wat
-wasi-sdk-wasm-out
-├── main.c
-├── mainwasi-analysis.txt
-├── mainwasi.wasm
-├── mainwasi.wat
-├── nain.c
-├── nainwasi-analysis.txt
-├── nainwasi.wasm
-└── nainwasi.wat
+the architecture (Eg. main.c hainc as inputs) should look like this :  
+
+cheerp-wasm-out  
+├── main.c  
+├── maincheerp-analysis.txt  
+├── maincheerp.js  
+├── maincheerp.wasm  
+├── maincheerp.wat  
+├── nain.c  
+├── naincheerp-analysis.txt  
+├── naincheerp.js  
+├── naincheerp.wasm  
+└── naincheerp.wat  
+emcc-wasm-out  
+├── main.c  
+├── mainemcc-analysis.txt  
+├── mainemcc.wasm  
+├── mainemcc.wat  
+├── nain.c  
+├── nainemcc-analysis.txt  
+├── nainemcc.wasm  
+└── nainemcc.wat  
+llvm-clang-wasm-out  
+├── main.c  
+├── mainllvm-analysis.txt  
+├── mainllvm.wasm  
+├── mainllvm.wat  
+├── nain.c  
+├── nainllvm-analysis.txt  
+├── nainllvm.wasm  
+└── nainllvm.wat  
+wasi-sdk-wasm-out  
+├── main.c  
+├── mainwasi-analysis.txt  
+├── mainwasi.wasm  
+├── mainwasi.wat  
+├── nain.c  
+├── nainwasi-analysis.txt  
+├── nainwasi.wasm  
+└── nainwasi.wat  
