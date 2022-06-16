@@ -37,7 +37,7 @@ cd
 
 ##llvm dependencies
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-exec bash
+source ~/.bashrc
 echo "Unpacking wasi-libc ..."
 cd && git clone https://github.com/CraneStation/wasi-libc.git > /dev/null 2>&1
 cd wasi-libc && sudo make && sudo make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && echo "wasi-libc setup is complete"
@@ -93,7 +93,7 @@ mkdir $pathToScript$path1 && mkdir $pathToScript$path2 && mkdir $pathToScript$pa
 
 ## cargo-rust
 cd && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
-exec bash
+source ~/.bashrc
 rustup install 1.43.0 > /dev/null 2>&1
 rustup override set 1.43.0 
 
