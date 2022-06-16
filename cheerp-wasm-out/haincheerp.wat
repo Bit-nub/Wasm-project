@@ -88,7 +88,7 @@
       local.get 0
       i32.const 0
       i32.store offset=224
-      global.get 13
+      global.get 16
       i32.load
       local.get 0
       i32.eq
@@ -2040,7 +2040,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -2056,7 +2056,7 @@
         local.set 2
       else
         local.get 1
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -2088,7 +2088,7 @@
     i32.add
     local.tee 2
     global.set 0
-    global.get 9
+    global.get 6
     i32.load
     local.tee 3
     if  ;; label = @1
@@ -2125,7 +2125,7 @@
     i32.add
     local.tee 2
     global.set 0
-    global.get 9
+    global.get 6
     i32.load
     local.tee 3
     if  ;; label = @1
@@ -2403,7 +2403,7 @@
       end
     end
     local.get 2
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -2419,7 +2419,7 @@
         local.set 3
       else
         local.get 2
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -5087,7 +5087,7 @@
     i32.add)
   (func $__swsetup_r (type 5) (param i32 i32) (result i32)
     (local i32 i32 i32)
-    global.get 9
+    global.get 6
     i32.load
     local.tee 2
     if  ;; label = @1
@@ -5100,7 +5100,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 2
@@ -5116,7 +5116,7 @@
         local.set 2
       else
         local.get 1
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 2
@@ -5736,7 +5736,7 @@
     local.get 4)
   (func $puts (type 2) (param i32) (result i32)
     (local i32)
-    global.get 9
+    global.get 6
     i32.load
     local.get 0
     call $_puts_r
@@ -6408,7 +6408,7 @@
   (func $__sfp (type 2) (param i32) (result i32)
     (local i32 i32 i32 i32)
     call $__sinit_lock_release_icf
-    global.get 13
+    global.get 16
     i32.load
     local.tee 1
     i32.load offset=24
@@ -6874,7 +6874,7 @@
                               local.get 1
                               i32.const 88
                               i32.store8 offset=69
-                              global.get 11
+                              global.get 15
                               local.set 8
                               br 8 (;@5;)
                               br 6 (;@7;)
@@ -6959,7 +6959,7 @@
                             i32.eq
                             select
                             local.set 7
-                            global.get 11
+                            global.get 15
                             local.set 8
                             br 8 (;@4;)
                             br 5 (;@7;)
@@ -7076,13 +7076,13 @@
                             local.get 1
                             i32.const 45
                             i32.store8 offset=67
-                            global.get 11
+                            global.get 15
                             local.set 8
                             i32.const 10
                             local.set 7
                             br 9 (;@3;)
                           else
-                            global.get 11
+                            global.get 15
                             local.set 8
                             i32.const 10
                             local.set 7
@@ -8865,7 +8865,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -8895,7 +8895,7 @@
       return
     end
     local.get 1
-    global.get 8
+    global.get 5
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -10877,7 +10877,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -10893,7 +10893,7 @@
         local.set 2
       else
         local.get 1
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -11051,7 +11051,7 @@
         local.get 2
         i32.const 1
         i32.store16 offset=12
-        global.get 13
+        global.get 16
         i32.load
         i32.const 16
         call $_fwalk
@@ -11135,7 +11135,7 @@
       end
     end
     local.get 2
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -11151,7 +11151,7 @@
         local.set 3
       else
         local.get 2
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -11232,7 +11232,7 @@
     local.tee 3)
   (func $putchar (type 2) (param i32) (result i32)
     (local i32)
-    global.get 9
+    global.get 6
     i32.load
     local.tee 1
     if  ;; label = @1
@@ -11606,7 +11606,7 @@
       end
     end
     local.get 2
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -11622,7 +11622,7 @@
         local.set 3
       else
         local.get 2
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -15594,15 +15594,15 @@
                                                   f64.convert_i32_s
                                                   f64.lt
                                                   if  ;; label = @24
-                                                    global.get 15
+                                                    global.get 13
                                                     local.set 29
                                                   else
                                                     local.get 28
-                                                    global.get 15
+                                                    global.get 13
                                                     f64.mul
                                                     local.set 29
                                                   end
-                                                  global.get 16
+                                                  global.get 12
                                                   local.get 29
                                                   f64.sub
                                                   local.set 28
@@ -15640,13 +15640,13 @@
                                         end
                                       else
                                         local.get 28
-                                        global.get 15
+                                        global.get 13
                                         f64.mul
                                         local.set 29
                                         local.get 10
                                         i32.eqz
                                         if  ;; label = @19
-                                          global.get 16
+                                          global.get 12
                                           local.get 29
                                           f64.sub
                                           local.set 28
@@ -15662,7 +15662,7 @@
                                         i32.eqz
                                         if  ;; label = @19
                                           local.get 28
-                                          global.get 15
+                                          global.get 13
                                           f64.add
                                           local.set 28
                                           local.get 19
@@ -15768,7 +15768,7 @@
                                               local.get 10
                                               i32.eqz
                                               if  ;; label = @22
-                                                global.get 16
+                                                global.get 12
                                                 local.get 29
                                                 f64.sub
                                                 local.set 28
@@ -16063,7 +16063,7 @@
     end
     local.get 23
     global.set 0
-    global.get 16
+    global.get 12
     local.get 28
     f64.sub)
   (func $sprintf (type 5) (param i32 i32) (result i32)
@@ -16098,7 +16098,7 @@
     local.tee 4
     local.get 2
     i32.store
-    global.get 9
+    global.get 6
     i32.load
     local.get 3
     local.get 1
@@ -16132,7 +16132,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -16148,7 +16148,7 @@
         local.set 2
       else
         local.get 1
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -17011,9 +17011,9 @@
         i32.const 15
         i32.gt_s
         if  ;; label = @3
-          global.get 6
+          global.get 8
           local.get 2
-          global.get 10
+          global.get 11
           i32.load
           i32.sub
           i32.store
@@ -17035,8 +17035,8 @@
       i32.const 1
       i32.or
       i32.store offset=4
-      global.get 6
-      global.get 6
+      global.get 8
+      global.get 8
       i32.load
       local.get 3
       i32.sub
@@ -17280,14 +17280,14 @@
     local.get 0
     i32.eqz
     if  ;; label = @1
-      global.get 13
+      global.get 16
       i32.load
       i32.const 1
       call $_fwalk_reent
       local.tee 1
       return
     end
-    global.get 9
+    global.get 6
     i32.load
     local.get 0
     call $_fflush_r
@@ -17314,7 +17314,7 @@
       end
     end
     local.get 1
-    global.get 5
+    global.get 9
     i32.eq
     if  ;; label = @1
       local.get 0
@@ -17330,7 +17330,7 @@
         local.set 4
       else
         local.get 1
-        global.get 8
+        global.get 5
         i32.eq
         if  ;; label = @3
           local.get 0
@@ -17921,7 +17921,7 @@
     end
     i32.const 0)
   (func $__errno (type 12) (result i32)
-    global.get 9
+    global.get 6
     i32.load)
   (func $_close_r (type 5) (param i32 i32) (result i32)
     (local i32 i32)
@@ -20115,7 +20115,7 @@
     i32.const 16
     i32.add
     local.set 2
-    global.get 10
+    global.get 11
     i32.load
     i32.const -1
     i32.ne
@@ -20151,11 +20151,11 @@
         end
         block  ;; label = @3
           local.get 2
-          global.get 6
+          global.get 8
           i32.load
           i32.add
           local.set 3
-          global.get 6
+          global.get 8
           local.get 3
           i32.store
           local.get 4
@@ -20182,16 +20182,16 @@
               br 2 (;@3;)
             end
           end
-          global.get 10
+          global.get 11
           i32.load
           i32.const -1
           i32.eq
           if  ;; label = @4
-            global.get 10
+            global.get 11
             local.get 4
             i32.store
           else
-            global.get 6
+            global.get 8
             local.get 3
             local.get 4
             local.get 6
@@ -20243,9 +20243,9 @@
           local.get 7
           select
           local.set 2
-          global.get 6
+          global.get 8
           local.get 2
-          global.get 6
+          global.get 8
           i32.load
           i32.add
           i32.store
@@ -20318,7 +20318,7 @@
             end
           end
         end
-        global.get 6
+        global.get 8
         i32.load
         local.tee 2
         i32.const 1051752
@@ -20342,7 +20342,7 @@
     end)
   (func $_sbrk_r (type 5) (param i32 i32) (result i32)
     (local i32 i32 i32)
-    global.get 12
+    global.get 14
     i32.load
     local.tee 2
     i32.eqz
@@ -20350,19 +20350,19 @@
       i32.const 1049252
       i32.load
       local.set 2
-      global.get 12
+      global.get 14
       local.get 2
       i32.store
     end
     local.get 1
     i32.eqz
     if  ;; label = @1
-      global.get 14
+      global.get 10
       i32.load
       local.tee 2
       return
     end
-    global.get 14
+    global.get 10
     i32.load
     local.set 3
     local.get 1
@@ -20383,18 +20383,18 @@
         i32.const -1
         return
       end
-      global.get 14
+      global.get 10
       i32.load
       local.set 4
-      global.get 14
+      global.get 10
       local.get 3
       local.get 4
       i32.add
       i32.store
     end
-    global.get 12
+    global.get 14
     local.get 1
-    global.get 12
+    global.get 14
     i32.load
     i32.add
     i32.store
@@ -22158,7 +22158,7 @@
     local.get 0)
   (func $malloc (type 2) (param i32) (result i32)
     (local i32)
-    global.get 9
+    global.get 6
     i32.load
     local.get 0
     call $mALLOc
@@ -22564,18 +22564,18 @@
   (global (;2;) i32 (i32.const 1049280))
   (global (;3;) i32 (i32.const 1051748))
   (global (;4;) i32 (i32.const 1049224))
-  (global (;5;) i32 (i32.const 1051384))
-  (global (;6;) i32 (i32.const 1051704))
+  (global (;5;) i32 (i32.const 1051592))
+  (global (;6;) i32 (i32.const 1050296))
   (global (;7;) i32 (i32.const 1051488))
-  (global (;8;) i32 (i32.const 1051592))
-  (global (;9;) i32 (i32.const 1050296))
-  (global (;10;) i32 (i32.const 1049244))
-  (global (;11;) i32 (i32.const 1050300))
-  (global (;12;) i32 (i32.const 1051744))
-  (global (;13;) i32 (i32.const 1049208))
-  (global (;14;) i32 (i32.const 1049240))
-  (global (;15;) f64 (f64.const 0x1p-1 (;=0.5;)))
-  (global (;16;) f64 (f64.const -0x0p+0 (;=-0;)))
+  (global (;8;) i32 (i32.const 1051704))
+  (global (;9;) i32 (i32.const 1051384))
+  (global (;10;) i32 (i32.const 1049240))
+  (global (;11;) i32 (i32.const 1049244))
+  (global (;12;) f64 (f64.const -0x0p+0 (;=-0;)))
+  (global (;13;) f64 (f64.const 0x1p-1 (;=0.5;)))
+  (global (;14;) i32 (i32.const 1051744))
+  (global (;15;) i32 (i32.const 1050300))
+  (global (;16;) i32 (i32.const 1049208))
   (export "memory" (memory 0))
   (export "_main" (func $main))
   (elem (;0;) (i32.const 0) func $__wasm_nullptr $_fflush_r $__sclose $__srefill_r $_fclose_r $_sbrk_r $__sseek $__ssputs_r $__sread $__swrite $__sfputs_r $_lseek_icf $__cheerpwrite $_ungetc_r $_cleanup_r $__ascii_wctomb $lflush $_strtoull_r $_strtoll_r)
