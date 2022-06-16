@@ -21,6 +21,11 @@ cheerp="/opt/cheerp/bin/clang"
 #echo "deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
 #echo "deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
 
+
+echo "Installing llvm-11 - wasbt - lld - clang-11 - gcc - clang ..."
+sudo apt install llvm-11 wabt lld-11 clang-11 gcc clang > /dev/null 2>&1 && echo "Installation of llvm 11 - wabt - lld - clang 11 - gcc - clang is complete"
+
+
 ## libclang 
 cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo rm wasi > /dev/null 2>&1
 cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo mkdir wasi > /dev/null 2>&1
@@ -31,8 +36,6 @@ cd
 
 
 ##llvm dependencies
-echo "Installing llvm-11 - wasbt - lld - clang-11 - gcc - clang ..."
-sudo apt install llvm-11 wabt lld-11 clang-11 gcc clang > /dev/null 2>&1 && echo "Installation of llvm 11 - wabt - lld - clang 11 - gcc - clang is complete"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 echo "Unpacking wasi-libc ..."
 cd && git clone https://github.com/CraneStation/wasi-libc.git > /dev/null 2>&1
