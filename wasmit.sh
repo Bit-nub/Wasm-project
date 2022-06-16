@@ -22,7 +22,7 @@ cheerp="/opt/cheerp/bin/clang"
 
 
 echo "Installing llvm - llvm-11 - wasbt - lld - lld-11 - clang - clang-11 - gcc ..."
-sudo apt install llvm llvm-11 wabt lld lld-11 clang-11 gcc clang > /dev/null 2>&1 && echo "Installation of llvm 11 - wabt - lld - clang 11 - gcc - clang is complete"
+sudo apt install llvm llvm-11 wabt lld lld-11 clang-11 gcc clang > /dev/null 2>&1 && echo "Installation of llvm - llvm 11 - wabt - lld - lld-11 - clang 11 - gcc - clang is complete"
 
 
 ## libclang 
@@ -156,22 +156,22 @@ done
 
 cd && home=`pwd`
 
-for j in $(find $pathToScript"/" -name "*.wasm");do
+for i in $(find $pathToScript"/" -name "*.wasm");do
 
-pathnameext=$j
+pathnameext=$i
 revname=$(echo $pathnameext | rev)
 revy="${revname%%/*}"
 nameext=$(echo $revy | rev)
 name="${nameext%%.*}"
 
-cp $j $home/wasm-binary-security/tool/wasm-security-analysis
+cp $i $home/wasm-binary-security/tool/wasm-security-analysis
 
 cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo clean > /dev/null 2>&1
 cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo run  > /dev/null 2>&1 $nameext >> $name"-analysis.txt" && echo "static analysis dump file has been created for $nameext."
 
 #path=$(echo $i | cut -c 2-)
 #path=${pathnameext#"$namext"}
-path=$( echo "$j" | sed -e "s/$nameext$//")
+path=$( echo "$i" | sed -e "s/$nameext$//")
 
 cp $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
 rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" 
