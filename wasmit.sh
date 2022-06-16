@@ -21,7 +21,7 @@ cheerp="/opt/cheerp/bin/clang"
 #echo "deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
 
 
-echo "Installing llvm - llvm-11 - wasbt - lld - lld-11 - clang - clang-11 - gcc ..."
+echo "Installing llvm - llvm-11 - wabt - lld - lld-11 - clang - clang-11 - gcc ..."
 sudo apt install llvm llvm-11 wabt lld lld-11 clang-11 gcc clang > /dev/null 2>&1 && echo "Installation of llvm - llvm 11 - wabt - lld - lld-11 - clang 11 - gcc - clang is complete"
 
 
