@@ -12,7 +12,7 @@ $ sudo apt install make wget git curl tree
 
 $ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project
 
-- the "wasmit.sh" script is the main tool, it compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm bianry created and analyses these binaries staticaly : 
+- the "wasmit.sh" script is the main tool, it compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm bianry and then analyses these binaries staticaly : 
     
     $ chmod +x wasmit.sh
     
@@ -22,4 +22,4 @@ $ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project
     
     $ chmod +x analyse.sh
     
-    $ bash analyse.sh <source-code1.c> <source-code2.c>..
+    $ bash analyse.sh <source-code1.wasm> <source-code2.wasm>..
