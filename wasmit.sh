@@ -1,6 +1,6 @@
 #!bin/bash
 
-echo "resolving dependencies"
+echo "Resolving dependencies .."
 
 pathToScript=`pwd`
 
@@ -22,81 +22,89 @@ cheerp="/opt/cheerp/bin/clang"
 #echo "deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | sudo tee -a /etc/apt/sources.list
 
 ## libclang 
-cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo rm wasi 
-cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo mkdir wasi
-cd && git clone https://github.com/jedisct1/libclang_rt.builtins-wasm32.a.git
-cd libclang*/precompiled && sudo cp libclang_rt.builtins-wasm32.a /usr/lib/llvm-11/lib/clang/11.*/lib/wasi/ 
+cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo rm wasi > /dev/null 2>&1
+cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo mkdir wasi > /dev/null 2>&1
+echo "Unpacking libclang ..."
+cd && git clone https://github.com/jedisct1/libclang_rt.builtins-wasm32.a.git > /dev/null 2>&1
+cd libclang*/precompiled && sudo cp libclang_rt.builtins-wasm32.a /usr/lib/llvm-11/lib/clang/11.*/lib/wasi/ && echo "libclang setup is complete"
 cd
 
 
 ##llvm dependencies
-sudo apt install llvm-11 wabt lld-11 clang-11 gcc clang
+echo "Installing llvm-11 - wasbt - lld - clang-11 - gcc - clang ..."
+sudo apt install llvm-11 wabt lld-11 clang-11 gcc clang > /dev/null 2>&1 && echo "Installation of llvm 11 - wabt - lld - clang 11 - gcc - clang is complete"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-cd && git clone https://github.com/CraneStation/wasi-libc.git 
-cd wasi-libc && make install INSTALL_DIR=/tmp/wasi-libc && export PATH="/usr/local/opt/llvm/bin:$PATH"
+echo "Unpacking wasi-libc ..."
+cd && git clone https://github.com/CraneStation/wasi-libc.git > /dev/null 2>&1
+cd wasi-libc && make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && export PATH="/usr/local/opt/llvm/bin:$PATH" && echo "wasi-libc setup is complete"
 #sudo apt install lld
-echo "llvm dependencies are installed"
+echo "# llvm's dependencies are installed #"
 
 
 ## emscripten dependencies
-git clone https://github.com/emscripten-core/emsdk.git
-cd emsdk && ./emsdk install latest && ./emsdk activate latest && source ./emsdk_env.sh
+echo "Unpacking emsdk ..."
+git clone https://github.com/emscripten-core/emsdk.git > /dev/null 2>&1
+cd emsdk && ./emsdk install latest > /dev/null 2>&1 && ./emsdk activate latest > /dev/null 2>&1 && source ./emsdk_env.sh > /dev/null 2>&1 && echo "emsdk setup is complete"
 cd
 C_INCLUDE_PATH="/home/theos/emsdk/upstream/emscripten/system/include/"   
 export C_INCLUDE_PATH 
 CPLUS_INCLUDE_PATH="/home/theos/emsdk/upstream/emscripten/system/include/"  
 export CPLUS_INCLUDE_PATH 
-echo "emscripten dependencies are installed"
+echo "# emscripten's dependencies are installed #"
 
 
 ## cheerp dependencies
 #sudo add-apt-repository  http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main
-echo "deb http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main " | sudo tee -a /etc/apt/sources.list
 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 84540D4B9BF457D5
-sudo apt update
-sudo apt install cheerp-core
-echo "cheerp dependencies are installed"
+
+REPO="deb http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main"
+if ! grep -q "$REPO" /etc/apt/sources.list; then
+echo "deb http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 84540D4B9BF457D5 > /dev/null 2>&1
+cd /etc/apt && sudo cp trusted.gpg trusted.gpg.d && cd 
+else echo "cheerp-ppa already exists in /etc/apt/sources.list"
+fi
+
+sudo apt update > /dev/null 2>&1
+echo "Installing cheerp-core ..." && sudo apt install cheerp-core > /dev/null 2>&1
+
+echo "# cheerp's dependencies are installed #"
 
 
 ## wasi-sdk dependencies
 export WASI_VERSION=14 
 export WASI_VERSION_FULL=${WASI_VERSION}.0 
-wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_VERSION}/wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz 
-tar xvf wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz
+echo "Unpacking wasi-sdk ..."
+wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_VERSION}/wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz > /dev/null 2>&1
+tar xvf wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz > /dev/null 2>&1 
 export WASI_SDK_PATH=`pwd`/wasi-sdk-${WASI_VERSION_FULL} 
-CC="${WASI_SDK_PATH}/bin/clang --sysroot=${WASI_SDK_PATH}/share/wasi-sysroot" 
-echo "wasi-sdk dependencies are installed"
+CC="${WASI_SDK_PATH}/bin/clang --sysroot=${WASI_SDK_PATH}/share/wasi-sysroot" && echo "wasi-sdk setup is complete"
+echo "# wasi-sdk's dependencies are installed #"
 
-sudo apt update && sudo apt upgrade 
+sudo apt update > /dev/null 2>&1 && sudo apt upgrade > /dev/null 2>&1
 
 mkdir $pathToScript$path1 && mkdir $pathToScript$path2 && mkdir $pathToScript$path3 && mkdir $pathToScript$path4
 
 ## cargo-rust
-cd && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup install 1.43.0
-rustup override set 1.43.0
+cd && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh > /dev/null 2>&1
+rustup install 1.43.0 > /dev/null 2>&1
+rustup override set 1.43.0 
 
-git clone https://github.com/sola-st/wasm-binary-security
+git clone https://github.com/sola-st/wasm-binary-security > /dev/null 2>&1
 cd wasm-binary-security/tool/wasm-security-analysis
-cargo clean
-cargo build && echo "cargo build success"
-
-
+cargo clean > /dev/null 2>&1
+cargo build > /dev/null 2>&1 && echo "cargo build succeeded"
 
 
 for i in $@ ;do
 
 cd $pathToScript
-
 pathnameext=$i
 
 revname=$(echo $pathnameext | rev)
 revy="${revname%%/*}"
-
 nameext=$(echo $revy | rev)
 name="${nameext%%.*}"
-
 
 cp $nameext $pathToScript$path1 
 cp $nameext $pathToScript$path2 
@@ -118,7 +126,7 @@ echo "llvm-clang setup for input file $i ..."
 #wasm-objdump -x $path2$name.o
 #wasm-ld -m wasm32 -L/tmp/wasi-libc/lib/wasm32-wasi --import-memory --no-entry --export-all $pathToScript$path2$name".o" -lc  -o $pathToScript$path2$name"llvm.wasm"
 cd $pathToScript$path2 && clang-11 --target=wasm32-unkown-wasi --sysroot /tmp/wasi-libc -Os -s -o $name"llvm.wasm" $nameext && echo "wasm binary created <llvm>"
-wasm2wat --enable-all $pathToScript$path2$name"llvm.wasm" -o $pathToScript$path2$name"llvm.wat" && echo"wat file created <llvm>"
+wasm2wat --enable-all $pathToScript$path2$name"llvm.wasm" -o $pathToScript$path2$name"llvm.wat" && echo "wat file created <llvm>"
 
 
 ##emsdk##
@@ -148,8 +156,8 @@ name="${nameext%%.*}"
 
 cp $i $home/wasm-binary-security/tool/wasm-security-analysis
 
-cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo clean 
-cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo run $nameext >> $name"-analysis.txt"
+cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo clean > /dev/null 2>&1
+cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo run $nameext >> $name"-analysis.txt" > /dev/null 2>&1 && echo "static analysis dump file has been created for $nameext."
 
 #path=$(echo $i | cut -c 2-)
 #path=${pathnameext#"$namext"}
@@ -158,9 +166,12 @@ path=$( echo "$i" | sed -e "s/$nameext$//")
 cp $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
 rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" 
 rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$nameext
-
 done
 
-rm -rf ~/.local/share/Trash/*
+rm -rf ~/.local/share/Trash/* && echo "Trash has been cleared"
 
-exit 1 
+echo "Process completed"
+
+cd $pathToScript && tree
+
+echo "Exiting script :)" && exit 1 
