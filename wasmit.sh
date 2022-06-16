@@ -37,9 +37,11 @@ cd
 
 ##llvm dependencies
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+exec bash
 echo "Unpacking wasi-libc ..."
 cd && git clone https://github.com/CraneStation/wasi-libc.git > /dev/null 2>&1
-cd wasi-libc && make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && export PATH="/usr/local/opt/llvm/bin:$PATH" && echo "wasi-libc setup is complete"
+cd wasi-libc && sudo make && sudo make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && echo "wasi-libc setup is complete"
+cd
 #sudo apt install lld
 echo "# llvm's dependencies are installed #"
 
@@ -62,15 +64,16 @@ echo "# emscripten's dependencies are installed #"
 
 REPO="deb http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main"
 if ! grep -q "$REPO" /etc/apt/sources.list; then
-echo "deb http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
+echo "deb http://ppa.launchpad.net/leaningtech-dev/cheerp-ppa/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list > /dev/null 2>&1
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 84540D4B9BF457D5 > /dev/null 2>&1
 cd /etc/apt && sudo cp trusted.gpg trusted.gpg.d && cd 
+echo "cheerp-ppa added to /etc/apt/sources.list"
 else echo "cheerp-ppa already exists in /etc/apt/sources.list"
 fi
 
 sudo apt update > /dev/null 2>&1
 echo "Installing cheerp-core ..." && sudo apt install cheerp-core > /dev/null 2>&1
-
+cd
 echo "# cheerp's dependencies are installed #"
 
 
@@ -89,7 +92,8 @@ sudo apt update > /dev/null 2>&1 && sudo apt upgrade > /dev/null 2>&1
 mkdir $pathToScript$path1 && mkdir $pathToScript$path2 && mkdir $pathToScript$path3 && mkdir $pathToScript$path4
 
 ## cargo-rust
-cd && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh > /dev/null 2>&1
+cd && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+exec bash
 rustup install 1.43.0 > /dev/null 2>&1
 rustup override set 1.43.0 
 
