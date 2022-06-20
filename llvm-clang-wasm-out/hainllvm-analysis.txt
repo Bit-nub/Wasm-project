@@ -1,3 +1,0 @@
-Input file: hainllvm.wasm
-  binary:    hainllvm.wasm
-
