@@ -32,7 +32,7 @@ cd /usr/lib/llvm-11/lib/clang/11.*/lib/ && sudo mkdir wasi > /dev/null 2>&1
 echo "Unpacking libclang ..."
 cd && git clone https://github.com/jedisct1/libclang_rt.builtins-wasm32.a.git > /dev/null 2>&1
 cd libclang*/precompiled && sudo cp libclang_rt.builtins-wasm32.a /usr/lib/llvm-11/lib/clang/11.*/lib/wasi/ && echo "libclang setup is complete"
-cd
+cd && home=`pwd`
 
 
 ##llvm dependencies
@@ -54,9 +54,9 @@ echo "Unpacking emsdk ..."
 git clone https://github.com/emscripten-core/emsdk.git > /dev/null 2>&1
 cd emsdk && ./emsdk install latest > /dev/null 2>&1 && ./emsdk activate latest > /dev/null 2>&1 && source ./emsdk_env.sh > /dev/null 2>&1 && echo "emsdk setup is complete"
 cd
-C_INCLUDE_PATH="/home/theos/emsdk/upstream/emscripten/system/include/"   
+C_INCLUDE_PATH=$home"/emsdk/upstream/emscripten/system/include/"   
 export C_INCLUDE_PATH 
-CPLUS_INCLUDE_PATH="/home/theos/emsdk/upstream/emscripten/system/include/"  
+CPLUS_INCLUDE_PATH=$home"/emsdk/upstream/emscripten/system/include/"  
 export CPLUS_INCLUDE_PATH 
 echo "# emscripten's dependencies are installed #"
 
