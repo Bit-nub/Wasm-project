@@ -52,8 +52,12 @@ echo "# llvm's dependencies are installed #"
 
 echo "Unpacking emsdk ..."
 git clone https://github.com/emscripten-core/emsdk.git > /dev/null 2>&1
-cd emsdk && ./emsdk install latest > /dev/null 2>&1 && ./emsdk activate latest > /dev/null 2>&1 && source ./emsdk_env.sh > /dev/null 2>&1 && echo "emsdk setup is complete"
-cd
+cd emsdk && ./emsdk install latest > /dev/null 2>&1 || echo "./emsdk install latest failed"
+cd 
+cd emsdk && ./emsdk activate latest > /dev/null 2>&1 || echo "./emsdk activate latest failed"  
+cd && source ~/.bashrc
+chmod +x /emsdk/emsdk_env.sh && source /emsdk/emsdk_env.sh > /dev/null 2>&1 && echo "emsdk setup is complete"
+cd && source ~/.bashrc
 C_INCLUDE_PATH=$home"/emsdk/upstream/emscripten/system/include/"   
 export C_INCLUDE_PATH 
 CPLUS_INCLUDE_PATH=$home"/emsdk/upstream/emscripten/system/include/"  
