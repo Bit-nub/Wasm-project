@@ -190,6 +190,6 @@ rm -rf ~/.local/share/Trash/* && echo "Trash has been cleared"
 
 echo "Process completed"
 
-cd $pathToScript && tree "*out"
+cd $pathToScript && tree out
 
 echo "Exiting script :)" && exit 1 
