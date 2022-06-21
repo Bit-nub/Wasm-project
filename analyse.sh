@@ -1,5 +1,5 @@
 pathToScript=`pwd`
-cd  && home=`pwd`
+git clone https://github.com/sola-st/wasm-binary-security 
 
 for i in $(find $pathToScript"/" -name "*.wasm");do
 
@@ -9,17 +9,17 @@ revy="${revname%%/*}"
 nameext=$(echo $revy | rev)
 name="${nameext%%.*}"
 
-cp $i $home/wasm-binary-security/tool/wasm-security-analysis
+cp $i $HOME/wasm-binary-security/tool/wasm-security-analysis
 
-cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo clean 
-cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo run $nameext >> $name"-analysis.txt"
+cd $HOME/wasm-binary-security/tool/wasm-security-analysis && cargo clean 
+cd $HOME/wasm-binary-security/tool/wasm-security-analysis && cargo run $nameext >> $name"-analysis.txt"
 
 #path=$(echo $i | cut -c 2-)
 #path=${pathnameext#"$namext"}
 path=$( echo "$i" | sed -e "s/$nameext$//")
 
-cp $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
-rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $i
+cp $HOME/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
+rm $HOME/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $i
 
 done
 rm -rf ~/.local/share/Trash/*

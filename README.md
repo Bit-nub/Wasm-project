@@ -22,7 +22,7 @@ $ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project
     
     $ chmod +x analyse.sh
     
-    $ bash analyse.sh <source-code1.wasm> <source-code2.wasm>..
+    $ bash analyse.sh <byte-code1.wasm> <byte-code2.wasm>..
 
 the architecture (Eg. main.c hainc as inputs) should look like this :  
 

@@ -1,0 +1,3 @@
+Input file: nainllvm.wasm
+  binary:    nainllvm.wasm
+
