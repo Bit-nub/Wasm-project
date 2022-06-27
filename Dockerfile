@@ -8,10 +8,10 @@ RUN apt-get update -y > /dev/null 2>&1 && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 84540D4B9BF457D5 > /dev/null 2>&1 && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6084F3CF814B57C1CF12EFD515CF4D18AF4F7421 > /dev/null 2>&1 && \
     apt-get update -y > /dev/null 2>&1 && \
-    apt-get install -y git  apt-utils sudo curl wget make tree xz-utils gnupg libzip4 wabt cheerp-core > /dev/null 2>&1 && \
+    apt-get install -y git apt-utils sudo curl wget make tree xz-utils gnupg libzip4 wabt cheerp-core > /dev/null 2>&1 && \
     echo "---- Installation of  apt-utils wabt gcc wget make tree xz-utils gnupg libzip4 cheerp-core is complete !" && \
-    apt-get install -y --fix-missing llvm-14 lld-14 clang-14 > /dev/null 2>&1 && \
-    echo "---- Installation of llvm-14 lld-14 clang-14 is complete !" && \
+    apt-get install -y --fix-missing build-essential llvm-14 lld-14 clang-14 > /dev/null 2>&1 && \
+    echo "---- Installation of build-essential llvm-14 lld-14 clang-14 is complete !" && \
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y > /dev/null 2>&1 && \
     echo "---- Installation of rustup is complete !" 
 

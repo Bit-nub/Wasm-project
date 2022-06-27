@@ -1,6 +1,6 @@
 #!bin/bash
 
-echo "---- Resolving dependencies .."
+echo "++++ Resolving dependencies .."
 
 pathToScript=`pwd`
 
@@ -22,7 +22,7 @@ cd && git clone https://github.com/jedisct1/libclang_rt.builtins-wasm32.a.git > 
 cd libclang*/precompiled && \
  sudo cp libclang_rt.builtins-wasm32.a /usr/lib/llvm-14/lib/clang/14.*/lib/wasi/ && \
  echo "---- libclang setup is complete"
-cd && home=`pwd`
+cd && HOME=`pwd`
 
 
 ##llvm dependencies
@@ -45,11 +45,11 @@ cd emsdk && ./emsdk install latest > /dev/null 2>&1 || echo "---- ./emsdk instal
 cd 
 cd emsdk && ./emsdk activate latest > /dev/null 2>&1 || echo "---- ./emsdk activate latest failed"  
 cd && source ~/.bashrc
-chmod +x $home"/emsdk/emsdk_env.sh" && source $home"/emsdk/emsdk_env.sh" > /dev/null 2>&1 && echo "---- emsdk setup is complete"
+chmod +x $HOME"/emsdk/emsdk_env.sh" && source $HOME"/emsdk/emsdk_env.sh" > /dev/null 2>&1 && echo "---- emsdk setup is complete"
 cd && source ~/.bashrc
-C_INCLUDE_PATH=$home"/emsdk/upstream/emscripten/system/include/"   
+C_INCLUDE_PATH=$HOME"/emsdk/upstream/emscripten/system/include/"   
 export C_INCLUDE_PATH 
-CPLUS_INCLUDE_PATH=$home"/emsdk/upstream/emscripten/system/include/"  
+CPLUS_INCLUDE_PATH=$HOME"/emsdk/upstream/emscripten/system/include/"  
 export CPLUS_INCLUDE_PATH 
 echo "#### emscripten's dependencies are installed"
 
@@ -86,10 +86,7 @@ sudo apt update > /dev/null 2>&1 && sudo apt upgrade > /dev/null 2>&1
 
 mkdir $pathToScript"/out"
 
-mkdir $pathToScript$path1 && \
- mkdir $pathToScript$path2 && \
- mkdir $pathToScript$path3 && \
- mkdir $pathToScript$path4
+mkdir $pathToScript$path1 && mkdir $pathToScript$path2 && mkdir $pathToScript$path3 && mkdir $pathToScript$path4
 
 ## cargo-rust
 
@@ -98,10 +95,9 @@ rustup install 1.43.0 > /dev/null 2>&1 && echo "---- installing rustc 1.43.0"
 rustup override set 1.43.0 > /dev/null 2>&1 && echo "---- rustc version set to 1.43.0"
 source $HOME/.cargo/env
 
-cd && git clone https://github.com/sola-st/wasm-binary-security > /dev/null 2>&1
-cd wasm-binary-security/tool/wasm-security-analysis
-cargo clean > /dev/null 2>&1
-cargo build > /dev/null 2>&1 && echo "---- cargo build succeeded"
+cd $HOME && git clone https://github.com/sola-st/wasm-binary-security > /dev/null 2>&1 && echo "---- wasm-binary-security cloned"
+cd $HOME/wasm-binary-security/tool/wasm-security-analysis && cargo clean > /dev/null 2>&1 && echo "---- issuing cargo clean"
+cd $HOME/wasm-binary-security/tool/wasm-security-analysis && cargo build > /dev/null 2>&1 && echo "---- First cargo build succeeded"
 
 echo "++++ Starting compilation" 
 
@@ -208,26 +204,24 @@ wasm2wat \
  echo "---- wat file created <wasi-sdk>"
 done
 
-cd && home=`pwd`
-
 echo "++++ Starting static analysis"
 
-for i in $(find $pathToScript"/" -name "*.wasm");
+for i in $(find $pathToScript"/out/" -name "*.wasm");
 do
 pathnameext=$i
 revname=$(echo $pathnameext | rev)
 revy="${revname%%/*}"
 nameext=$(echo $revy | rev)
 name="${nameext%%.*}"
-cp $i $home/wasm-binary-security/tool/wasm-security-analysis
-cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo clean > /dev/null 2>&1
-cd $home/wasm-binary-security/tool/wasm-security-analysis && cargo run  > /dev/null 2>&1 $nameext >> $name"-analysis.txt" && echo "---- static analysis dump file has been created for $nameext"
+cp $i $HOME/wasm-binary-security/tool/wasm-security-analysis
+cd $HOME/wasm-binary-security/tool/wasm-security-analysis && cargo clean > /dev/null 2>&1
+cd $HOME/wasm-binary-security/tool/wasm-security-analysis && cargo run  > /dev/null 2>&1 $nameext >> $name"-analysis.txt" && echo "---- static analysis dump file has been created for $nameext"
 #path=$(echo $i | cut -c 2-)
 #path=${pathnameext#"$namext"}
 path=$( echo "$i" | sed -e "s/$nameext$//")
-cp $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
-rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" 
-rm $home/wasm-binary-security/tool/wasm-security-analysis"/"$nameext
+cp $HOME/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" $path
+rm $HOME/wasm-binary-security/tool/wasm-security-analysis"/"$name"-analysis.txt" 
+rm $HOME/wasm-binary-security/tool/wasm-security-analysis"/"$nameext
 done
 
 cd && rm -rf  wasi-sdk*.tar.*
