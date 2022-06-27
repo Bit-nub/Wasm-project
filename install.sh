@@ -11,7 +11,7 @@ docker cp src/. $container_id:/src
 #docker start $container_id
 
 ## to avoid installing clang llvm and lld default versions and avoid make errors 127/ any command related to llvm,lld,clang not found (not recognized globally)
-docker exec $container_id /bin/bash -c "cp /usr/lib/llvm-11/bin/* /usr/bin/"
+docker exec $container_id /bin/bash -c "cp /usr/lib/llvm-14/bin/* /usr/bin/"
 
 docker exec $container_id /bin/sh -c "cd /src;chmod +x wasmit.sh;bash wasmit.sh *.c"
 docker cp $container_id:/src/out $install_path/
