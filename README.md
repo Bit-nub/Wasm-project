@@ -2,15 +2,11 @@
 
 The script supports debian based distros for now and targets compilation from C to wasm under 4 different tool chains; cheerp - wasi-sdk - emsdk - llvm/clang 
 
-make - wget - git - curl - tree are needed before launching script
-
-$ sudo apt update 
-
-$ sudo apt install make wget git curl tree
+docker is needed
 
 ## Usage
 
-$ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project
+$ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bash install.sh
 
 - the "wasmit.sh" script is the main tool, it compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm bianry and then analyses these binaries staticaly : 
     
