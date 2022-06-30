@@ -15,34 +15,34 @@ cheerp="/opt/cheerp/bin/clang"
 
 ## libclang 
 
-cd /usr/lib/llvm-14/lib/clang/14.*/lib/ && sudo rm wasi > /dev/null 2>&1
-cd /usr/lib/llvm-14/lib/clang/14.*/lib/ && sudo mkdir wasi > /dev/null 2>&1
-echo "---- Unpacking libclang"
-cd && git clone https://github.com/jedisct1/libclang_rt.builtins-wasm32.a.git > /dev/null 2>&1
-cd libclang*/precompiled && \
- sudo cp libclang_rt.builtins-wasm32.a /usr/lib/llvm-14/lib/clang/14.*/lib/wasi/ && \
- echo "---- libclang setup is complete"
-cd && HOME=`pwd`
+# cd /usr/lib/llvm-14/lib/clang/14.*/lib/ && sudo rm wasi > /dev/null 2>&1
+# cd /usr/lib/llvm-14/lib/clang/14.*/lib/ && sudo mkdir wasi > /dev/null 2>&1
+# echo "---- Unpacking libclang"
+# cd && git clone https://github.com/jedisct1/libclang_rt.builtins-wasm32.a.git > /dev/null 2>&1
+# cd libclang*/precompiled && \
+#  sudo cp libclang_rt.builtins-wasm32.a /usr/lib/llvm-14/lib/clang/14.*/lib/wasi/ && \
+#  echo "---- libclang setup is complete"
+# cd && HOME=`pwd`
 
 
 ##llvm dependencies
 
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-echo "---- Unpacking wasi-libc"
-cd && git clone https://github.com/CraneStation/wasi-libc.git > /dev/null 2>&1
-cd wasi-libc && sudo make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && \
- echo "---- wasi-libc setup is complete"
-source ~/.bashrc
-cd
-echo "#### llvm's dependencies are installed"
+# export PATH="/usr/local/opt/llvm/bin:$PATH"
+# echo "---- Unpacking wasi-libc"
+# cd && git clone https://github.com/CraneStation/wasi-libc.git > /dev/null 2>&1
+# cd wasi-libc && sudo make install INSTALL_DIR=/tmp/wasi-libc > /dev/null 2>&1 && \
+#  echo "---- wasi-libc setup is complete"
+# source ~/.bashrc
+# cd
+# echo "#### llvm's dependencies are installed"
 
 
 ## emscripten dependencies
 
 echo "---- Unpacking emsdk"
-git clone https://github.com/emscripten-core/emsdk.git > /dev/null 2>&1
+cd $HOME && git clone https://github.com/emscripten-core/emsdk.git > /dev/null 2>&1
 cd emsdk && ./emsdk install latest > /dev/null 2>&1 || echo "---- ./emsdk install latest failed"
-cd 
+cd $HOME
 cd emsdk && ./emsdk activate latest > /dev/null 2>&1 || echo "---- ./emsdk activate latest failed"  
 cd && source ~/.bashrc
 chmod +x $HOME"/emsdk/emsdk_env.sh" && source $HOME"/emsdk/emsdk_env.sh" > /dev/null 2>&1 && echo "---- emsdk setup is complete"
@@ -148,26 +148,37 @@ wasm2wat \
 
 ##llvlm-clang##
 
-echo "---- llvm-clang setup for input file $i"
-llvm="/usr/lib/llvm-14/bin/clang-14"
+echo "---- llvm setup for input file $i"
+# llvm="/usr/lib/llvm-14/bin/clang-14"
 #cd $pathToScript$path2 && clang-11 --target=wasm32-unkown-wasi --sysroot /tmp/wasi-libc -Os -s -o $name"llvm.wasm" $nameext && echo "---- wasm binary created <llvm>"
 #cd $pathToScript$path2 && clang-11 --target=wasm32-unknown-wasi --sysroot /tmp/wasi-libc -Os -s -nostartfiles -Wl,--import-memory -Wl,--no-entry -Wl,--export-all -o $name"llvm.wasm" $nameext && echo "---- wasm binary created <llvm>"
 ggc_version=$(ls /usr/lib/gcc/x86_64-linux-gnu/)
 
+llvm="/wasmception/dist/bin/clang"
+# cd $pathToScript$path2 && \
+#  $llvm \
+#  --target=wasm32-unknown-wasi \
+#  --sysroot /tmp/wasi-libc \
+#  -O3 \
+#  -flto \
+#  -Wl,--allow-undefined \
+#  -Wl,--import-memory \
+#  -Wl,--no-entry \
+#  -Wl,--export-all \
+#  -Wl,--lto-O3 \
+#  -L/usr/lib/gcc/x86_64-linux-gnu/$ggc_version/ \
+#  -o $name"llvm.wasm" \
+#  $nameext && \
+#  echo "---- wasm binary created <llvm>"
+
 cd $pathToScript$path2 && \
  $llvm \
- --target=wasm32-unknown-wasi \
- --sysroot /tmp/wasi-libc \
- -O3 \
- -flto \
- -Wl,--allow-undefined \
- -Wl,--import-memory \
- -Wl,--no-entry \
- -Wl,--export-all \
- -Wl,--lto-O3 \
- -L/usr/lib/gcc/x86_64-linux-gnu/$ggc_version/ \
+ --sysroot=/wasmception/sysroot/ \
+ $nameext \
  -o $name"llvm.wasm" \
- $nameext && \
+ -nostartfiles \
+ -Wl,--no-entry,\
+ -Wl,--export-all && \
  echo "---- wasm binary created <llvm>"
 
 wasm2wat \

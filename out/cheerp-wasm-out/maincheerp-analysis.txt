@@ -43,16 +43,16 @@ Globals:
      init: i32.const 1048844
       4 × global.get    0 × global.set    4 total (100/0% split)
   #9 i32
-     init: i32.const 1049888
-      4 × global.get    0 × global.set    4 total (100/0% split)
-  #10 i32
-     init: i32.const 1048840
-      4 × global.get    0 × global.set    4 total (100/0% split)
-  #11 i32
      init: i32.const 1048832
       4 × global.get    0 × global.set    4 total (100/0% split)
-  #12 i32
+  #10 i32
+     init: i32.const 1049888
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #11 i32
      init: i32.const 1050416
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #12 i32
+     init: i32.const 1048840
       4 × global.get    0 × global.set    4 total (100/0% split)
 
 Likely the stack pointer:       Global #0
@@ -129,7 +129,7 @@ function #0 is indirectly called with a fixed table index
   end
   ...
 function #10 is indirectly called with a fixed table index
-  global.get 12
+  global.get 11
   i32.load
   local.tee 2
   ...

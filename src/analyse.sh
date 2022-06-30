@@ -1,5 +1,5 @@
-pathToScript=$1
-for i in $(find $pathToScript"/" -name "*.wasm");
+pathToWasm=$1
+for i in $(find $pathToWasm"/" -name "*.wasm");
 do
 pathnameext=$i
 revname=$(echo $pathnameext | rev)
