@@ -1,0 +1,24 @@
+mainemcc-analysis.txt
+['Functions', '           74']
+['  Imported', '           6']
+['  Non-imported', '      68']
+['  Exported', '          10']
+
+mainwasi-analysis.txt
+['Functions', '           68']
+['  Imported', '           7']
+['  Non-imported', '      61']
+['  Exported', '           1']
+
+mainllvm-analysis.txt
+['Functions', '           65']
+['  Imported', '           3']
+['  Non-imported', '      62']
+['  Exported', '          60']
+
+maincheerp-analysis.txt
+['Functions', '           62']
+['  Imported', '           3']
+['  Non-imported', '      59']
+['  Exported', '           1']
+

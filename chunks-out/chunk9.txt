@@ -1,0 +1,12 @@
+mainemcc-analysis.txt
+['Functions with at least one call_indirect', ' 7 (10.29% of all functions)']
+
+mainwasi-analysis.txt
+['Functions with at least one call_indirect', ' 5 (8.20% of all functions)']
+
+mainllvm-analysis.txt
+['Functions with at least one call_indirect', ' 5 (8.06% of all functions)']
+
+maincheerp-analysis.txt
+['Functions with at least one call_indirect', ' 11 (18.64% of all functions)']
+

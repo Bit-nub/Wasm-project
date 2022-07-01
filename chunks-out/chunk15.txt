@@ -1,0 +1,13 @@
+maincheerp-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"maincheerp.wasm",0,3,1,"i32.load"']
+['"maincheerp.wasm",1,0,1,"i32.const"']
+['"maincheerp.wasm",2,1,1,"i32.const"']
+['"maincheerp.wasm",3,3,2,"local.(get|tee)"']
+['"maincheerp.wasm",4,4,2,"i32.load"']
+['"maincheerp.wasm",5,1,2,"local.(get|tee)"']
+['"maincheerp.wasm",6,1,5,"i32.const"']
+['"maincheerp.wasm",7,4,6,"local.(get|tee)"']
+['']
+

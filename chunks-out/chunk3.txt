@@ -1,0 +1,20 @@
+mainemcc-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         12']
+['  Of those, unique functions', '    12 (i.e., at least 16.22% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+mainwasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          8']
+['  Of those, unique functions', '     8 (i.e., at least 11.76% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+mainllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          8']
+['  Of those, unique functions', '     8 (i.e., at least 12.31% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+maincheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         14']
+['  Of those, unique functions', '    14 (i.e., at least 22.58% of all functions can be called indirectly, because they are in the [indirect call] table)']
+

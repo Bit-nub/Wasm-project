@@ -1,0 +1,16 @@
+mainemcc-analysis.txt
+['Input file', ' mainemcc.wasm']
+['  binary', '    mainemcc.wasm']
+
+mainwasi-analysis.txt
+['Input file', ' mainwasi.wasm']
+['  binary', '    mainwasi.wasm']
+
+mainllvm-analysis.txt
+['Input file', ' mainllvm.wasm']
+['  binary', '    mainllvm.wasm']
+
+maincheerp-analysis.txt
+['Input file', ' maincheerp.wasm']
+['  binary', '    maincheerp.wasm']
+
