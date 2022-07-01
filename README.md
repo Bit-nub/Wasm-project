@@ -6,7 +6,7 @@ docker is needed
 
 ## Usage
 
-$ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bash install.sh
+$ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bash install.sh   
 
 - the "wasmit.sh" script is the main tool, it compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm bianry and then analyses these binaries staticaly : 
     
@@ -20,43 +20,43 @@ $ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bas
     
     $ bash analyse.sh <byte-code1.wasm> <byte-code2.wasm>..
 
-the architecture (Eg. main.c hainc as inputs) should look like this :  
+the output architecture (Eg. main.c as input) should look like this :  
 
-cheerp-wasm-out  
-├── main.c  
-├── maincheerp-analysis.txt  
-├── maincheerp.js  
-├── maincheerp.wasm  
-├── maincheerp.wat  
-├── nain.c  
-├── naincheerp-analysis.txt  
-├── naincheerp.js  
-├── naincheerp.wasm  
-└── naincheerp.wat  
-emcc-wasm-out  
-├── main.c  
-├── mainemcc-analysis.txt  
-├── mainemcc.wasm  
-├── mainemcc.wat  
-├── nain.c  
-├── nainemcc-analysis.txt  
-├── nainemcc.wasm  
-└── nainemcc.wat  
-llvm-clang-wasm-out  
-├── main.c  
-├── mainllvm-analysis.txt  
-├── mainllvm.wasm  
-├── mainllvm.wat  
-├── nain.c  
-├── nainllvm-analysis.txt  
-├── nainllvm.wasm  
-└── nainllvm.wat  
-wasi-sdk-wasm-out  
-├── main.c  
-├── mainwasi-analysis.txt  
-├── mainwasi.wasm  
-├── mainwasi.wat  
-├── nain.c  
-├── nainwasi-analysis.txt  
-├── nainwasi.wasm  
-└── nainwasi.wat  
+chunks-out  
+├── chunk10.txt  
+├── chunk11.txt  
+├── chunk12.txt  
+├── chunk13.txt  
+├── chunk14.txt  
+├── chunk15.txt  
+├── chunk1.txt  
+├── chunk2.txt  
+├── chunk3.txt  
+├── chunk4.txt  
+├── chunk5.txt  
+├── chunk6.txt  
+├── chunk7.txt  
+├── chunk8.txt  
+└── chunk9.txt  
+out  
+├── cheerp-wasm-out  
+│   ├── main.c  
+│   ├── maincheerp-analysis.txt  
+│   ├── maincheerp.js  
+│   ├── maincheerp.wasm  
+│   └── maincheerp.wat  
+├── emcc-wasm-out  
+│   ├── main.c  
+│   ├── mainemcc-analysis.txt  
+│   ├── mainemcc.wasm  
+│   └── mainemcc.wat  
+├── llvm-clang-wasm-out  
+│   ├── main.c  
+│   ├── mainllvm-analysis.txt  
+│   ├── mainllvm.wasm  
+│   └── mainllvm.wat  
+└── wasi-sdk-wasm-out  
+    ├── main.c  
+    ├── mainwasi-analysis.txt  
+    ├── mainwasi.wasm  
+    └── mainwasi.wat  
