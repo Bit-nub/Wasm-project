@@ -16,7 +16,7 @@ $ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bas
     
     $ chmod +x analyse.sh && bash analyse.sh <byte-code1.wasm> <byte-code2.wasm>..
 
-- the "parser.py" script parses static analysis dump files and redistributes all static analysis dump files based chunks (nº 15) :
+- the "parser.py" script parses static analysis dump files and redistributes all static analysis dump files based on chunks (total number of chunks 15) :
 
     $ python parser.py
 
