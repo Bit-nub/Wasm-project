@@ -2,7 +2,9 @@
 
 The script supports debian based distros for now and targets compilation from C to wasm under 4 different tool chains; cheerp - wasi-sdk - emsdk - llvm/clang 
 
-docker is needed
+## Dependencies
+
+docker
 
 ## Usage
 
