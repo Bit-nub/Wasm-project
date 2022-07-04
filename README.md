@@ -8,19 +8,19 @@ docker
 
 ## Usage
 
-$ git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bash install.sh   
+$ `git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bash install.sh`   
 
 - the "wasmit.sh" script is the main tool, it compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm bianry and then analyses these binaries staticaly : 
     
-    $ chmod +x wasmit.sh && bash wasmit.sh <source-code1.c> <source-code2.c>..
+    $ `chmod +x wasmit.sh && bash wasmit.sh` <source-code1.c> <source-code2.c>..
 
 - the "analyse.sh" script automates only the process of static analysis over given wasm binaries :
     
-    $ chmod +x analyse.sh && bash analyse.sh <byte-code1.wasm> <byte-code2.wasm>..
+    $ `chmod +x analyse.sh && bash analyse.sh` <byte-code1.wasm> <byte-code2.wasm>..
 
 - the "parser.py" script parses static analysis dump files and redistributes all static analysis dump files based on chunks (total number of chunks 15) :
 
-    $ python parser.py
+    $ `python parser.py`
 
 The output architecture (E.g. main.c as input) should look like this :  
 
