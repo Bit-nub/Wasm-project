@@ -128,7 +128,7 @@ function _asm___Z7printlnPKcj(Lline,Llen){
 	__Z7printlnPKcj(HEAP8,Lline,Llen);
 }
 function __dummy(){throw new Error('this should be unreachable');};
-fetchBuffer('maincheerp.wasm').then(r=>
+fetchBuffer('temp3cheerp.wasm').then(r=>
 WebAssembly.instantiate(r,
 {i:{
 		__Z7printlnPKcj:_asm___Z7printlnPKcj,

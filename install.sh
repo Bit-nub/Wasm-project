@@ -27,3 +27,7 @@ docker cp $container_id:/root/src/out $install_path/
 echo "---- Removing container and image"
 docker rm -f $container_id > /dev/null 2>&1
 docker rmi $(docker images penta) > /dev/null 2>&1
+
+echo "---- Writing analysis chunks in chunks-out/."
+python $install_path"/parser.py" && echo "-- Done !"
+

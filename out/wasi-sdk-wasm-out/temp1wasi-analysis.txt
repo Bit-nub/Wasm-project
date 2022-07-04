@@ -1,5 +1,5 @@
-Input file: mainwasi.wasm
-  binary:    mainwasi.wasm
+Input file: temp1wasi.wasm
+  binary:    temp1wasi.wasm
 
 Functions:           68
   Imported:           7
@@ -32,12 +32,12 @@ Stack increments: (How many functions increment the stack pointer by how much? C
 
 CSV for sp analysis and plots:
 binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
-sp_csv_line:"mainwasi.wasm",1,1.6393442,"[-880]",-880,880
-sp_csv_line:"mainwasi.wasm",1,1.6393442,"[-256]",-256,256
-sp_csv_line:"mainwasi.wasm",1,1.6393442,"[-208]",-208,208
-sp_csv_line:"mainwasi.wasm",1,1.6393442,"[-32]",-32,32
-sp_csv_line:"mainwasi.wasm",6,9.836065,"[-16]",-16,16
-sp_csv_line:"mainwasi.wasm",51,83.60656,"[]",0,0
+sp_csv_line:"temp1wasi.wasm",1,1.6393442,"[-880]",-880,880
+sp_csv_line:"temp1wasi.wasm",1,1.6393442,"[-256]",-256,256
+sp_csv_line:"temp1wasi.wasm",1,1.6393442,"[-208]",-208,208
+sp_csv_line:"temp1wasi.wasm",1,1.6393442,"[-32]",-32,32
+sp_csv_line:"temp1wasi.wasm",6,9.836065,"[-16]",-16,16
+sp_csv_line:"temp1wasi.wasm",51,83.60656,"[]",0,0
 
 Counts of function types (13 unique types):
     1  (1.47%) × [i32, i32, i32] -> []
@@ -98,10 +98,10 @@ call_indirect target equivalence classes (CFI equivalence classes):
     count (how often class appears): 9
   total classes: 3
 
-CSV data for further analysis: mainwasi.wasm,12280,167,14,7.7348065,68,8,3,3,1,9,4.666666666666667,4,99,26,26.262627,26,26.262627,22,22.222221
+CSV data for further analysis: temp1wasi.wasm,12280,167,14,7.7348065,68,8,3,3,1,9,4.666666666666667,4,99,26,26.262627,26,26.262627,22,22.222221
 
 CSV data on CFI classes:
 benchmark,binary,class,size,count,source
-"mainwasi.wasm",0,4,1,"local.(get|tee)"
-"mainwasi.wasm",1,1,4,"i32.load"
-"mainwasi.wasm",2,2,9,"i32.load"
+"temp1wasi.wasm",0,4,1,"local.(get|tee)"
+"temp1wasi.wasm",1,1,4,"i32.load"
+"temp1wasi.wasm",2,2,9,"i32.load"

@@ -1,37 +1,163 @@
-mainemcc-analysis.txt
+temp4emcc-analysis.txt
 ['CSV for sp analysis and plots', '']
 ['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
-['sp_csv_line', '"mainemcc.wasm",1,1.4705882,"[-560]",-560,560']
-['sp_csv_line', '"mainemcc.wasm",1,1.4705882,"[-256]",-256,256']
-['sp_csv_line', '"mainemcc.wasm",1,1.4705882,"[-208]",-208,208']
-['sp_csv_line', '"mainemcc.wasm",1,1.4705882,"[-80]",-80,80']
-['sp_csv_line', '"mainemcc.wasm",2,2.9411764,"[-32]",-32,32']
-['sp_csv_line', '"mainemcc.wasm",3,4.4117646,"[-16]",-16,16']
-['sp_csv_line', '"mainemcc.wasm",59,86.76471,"[]",0,0']
+['sp_csv_line', '"temp4emcc.wasm",1,1.6393442,"[-560]",-560,560']
+['sp_csv_line', '"temp4emcc.wasm",1,1.6393442,"[-256]",-256,256']
+['sp_csv_line', '"temp4emcc.wasm",1,1.6393442,"[-208]",-208,208']
+['sp_csv_line', '"temp4emcc.wasm",1,1.6393442,"[-80]",-80,80']
+['sp_csv_line', '"temp4emcc.wasm",2,3.2786884,"[-32]",-32,32']
+['sp_csv_line', '"temp4emcc.wasm",2,3.2786884,"[-16]",-16,16']
+['sp_csv_line', '"temp4emcc.wasm",53,86.88525,"[]",0,0']
 
-mainwasi-analysis.txt
+temp3emcc-analysis.txt
 ['CSV for sp analysis and plots', '']
 ['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
-['sp_csv_line', '"mainwasi.wasm",1,1.6393442,"[-880]",-880,880']
-['sp_csv_line', '"mainwasi.wasm",1,1.6393442,"[-256]",-256,256']
-['sp_csv_line', '"mainwasi.wasm",1,1.6393442,"[-208]",-208,208']
-['sp_csv_line', '"mainwasi.wasm",1,1.6393442,"[-32]",-32,32']
-['sp_csv_line', '"mainwasi.wasm",6,9.836065,"[-16]",-16,16']
-['sp_csv_line', '"mainwasi.wasm",51,83.60656,"[]",0,0']
+['sp_csv_line', '"temp3emcc.wasm",1,1.6393442,"[-560]",-560,560']
+['sp_csv_line', '"temp3emcc.wasm",1,1.6393442,"[-256]",-256,256']
+['sp_csv_line', '"temp3emcc.wasm",1,1.6393442,"[-208]",-208,208']
+['sp_csv_line', '"temp3emcc.wasm",1,1.6393442,"[-80]",-80,80']
+['sp_csv_line', '"temp3emcc.wasm",2,3.2786884,"[-32]",-32,32']
+['sp_csv_line', '"temp3emcc.wasm",2,3.2786884,"[-16]",-16,16']
+['sp_csv_line', '"temp3emcc.wasm",53,86.88525,"[]",0,0']
 
-mainllvm-analysis.txt
+temp1emcc-analysis.txt
 ['CSV for sp analysis and plots', '']
 ['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
-['sp_csv_line', '"mainllvm.wasm",1,1.6129032,"[-8064]",-8064,8064']
-['sp_csv_line', '"mainllvm.wasm",1,1.6129032,"[-288]",-288,288']
-['sp_csv_line', '"mainllvm.wasm",1,1.6129032,"[-112]",-112,112']
-['sp_csv_line', '"mainllvm.wasm",1,1.6129032,"[-96]",-96,96']
-['sp_csv_line', '"mainllvm.wasm",1,1.6129032,"[-32]",-32,32']
-['sp_csv_line', '"mainllvm.wasm",11,17.741936,"[-16]",-16,16']
-['sp_csv_line', '"mainllvm.wasm",46,74.19355,"[]",0,0']
+['sp_csv_line', '"temp1emcc.wasm",1,1.4705882,"[-560]",-560,560']
+['sp_csv_line', '"temp1emcc.wasm",1,1.4705882,"[-256]",-256,256']
+['sp_csv_line', '"temp1emcc.wasm",1,1.4705882,"[-208]",-208,208']
+['sp_csv_line', '"temp1emcc.wasm",1,1.4705882,"[-80]",-80,80']
+['sp_csv_line', '"temp1emcc.wasm",2,2.9411764,"[-32]",-32,32']
+['sp_csv_line', '"temp1emcc.wasm",3,4.4117646,"[-16]",-16,16']
+['sp_csv_line', '"temp1emcc.wasm",59,86.76471,"[]",0,0']
 
-maincheerp-analysis.txt
+temp2emcc-analysis.txt
 ['CSV for sp analysis and plots', '']
 ['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
-['sp_csv_line', '"maincheerp.wasm",59,100,"[]",0,0']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-8976]",-8976,8976']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-560]",-560,560']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-432]",-432,432']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-336]",-336,336']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-304]",-304,304']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-256]",-256,256']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-208]",-208,208']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-128]",-128,128']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-112]",-112,112']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-96]",-96,96']
+['sp_csv_line', '"temp2emcc.wasm",1,0.8064516,"[-48]",-48,48']
+['sp_csv_line', '"temp2emcc.wasm",2,1.6129032,"[-80]",-80,80']
+['sp_csv_line', '"temp2emcc.wasm",5,4.032258,"[-32]",-32,32']
+['sp_csv_line', '"temp2emcc.wasm",14,11.290322,"[-16]",-16,16']
+['sp_csv_line', '"temp2emcc.wasm",92,74.19355,"[]",0,0']
+
+temp4wasi-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp4wasi.wasm",1,2.2222223,"[-880]",-880,880']
+['sp_csv_line', '"temp4wasi.wasm",1,2.2222223,"[-256]",-256,256']
+['sp_csv_line', '"temp4wasi.wasm",1,2.2222223,"[-208]",-208,208']
+['sp_csv_line', '"temp4wasi.wasm",1,2.2222223,"[-32]",-32,32']
+['sp_csv_line', '"temp4wasi.wasm",4,8.888889,"[-16]",-16,16']
+['sp_csv_line', '"temp4wasi.wasm",37,82.22222,"[]",0,0']
+
+temp1wasi-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp1wasi.wasm",1,1.6393442,"[-880]",-880,880']
+['sp_csv_line', '"temp1wasi.wasm",1,1.6393442,"[-256]",-256,256']
+['sp_csv_line', '"temp1wasi.wasm",1,1.6393442,"[-208]",-208,208']
+['sp_csv_line', '"temp1wasi.wasm",1,1.6393442,"[-32]",-32,32']
+['sp_csv_line', '"temp1wasi.wasm",6,9.836065,"[-16]",-16,16']
+['sp_csv_line', '"temp1wasi.wasm",51,83.60656,"[]",0,0']
+
+temp2wasi-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp2wasi.wasm",1,1.010101,"[-880]",-880,880']
+['sp_csv_line', '"temp2wasi.wasm",1,1.010101,"[-512]",-512,512']
+['sp_csv_line', '"temp2wasi.wasm",1,1.010101,"[-304]",-304,304']
+['sp_csv_line', '"temp2wasi.wasm",1,1.010101,"[-256]",-256,256']
+['sp_csv_line', '"temp2wasi.wasm",1,1.010101,"[-208]",-208,208']
+['sp_csv_line', '"temp2wasi.wasm",4,4.040404,"[-32]",-32,32']
+['sp_csv_line', '"temp2wasi.wasm",15,15.151515,"[-16]",-16,16']
+['sp_csv_line', '"temp2wasi.wasm",75,75.757576,"[]",0,0']
+
+temp3wasi-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp3wasi.wasm",1,2.2222223,"[-880]",-880,880']
+['sp_csv_line', '"temp3wasi.wasm",1,2.2222223,"[-256]",-256,256']
+['sp_csv_line', '"temp3wasi.wasm",1,2.2222223,"[-208]",-208,208']
+['sp_csv_line', '"temp3wasi.wasm",1,2.2222223,"[-32]",-32,32']
+['sp_csv_line', '"temp3wasi.wasm",4,8.888889,"[-16]",-16,16']
+['sp_csv_line', '"temp3wasi.wasm",37,82.22222,"[]",0,0']
+
+temp1llvm-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp1llvm.wasm",1,1.6129032,"[-8064]",-8064,8064']
+['sp_csv_line', '"temp1llvm.wasm",1,1.6129032,"[-288]",-288,288']
+['sp_csv_line', '"temp1llvm.wasm",1,1.6129032,"[-112]",-112,112']
+['sp_csv_line', '"temp1llvm.wasm",1,1.6129032,"[-96]",-96,96']
+['sp_csv_line', '"temp1llvm.wasm",1,1.6129032,"[-32]",-32,32']
+['sp_csv_line', '"temp1llvm.wasm",11,17.741936,"[-16]",-16,16']
+['sp_csv_line', '"temp1llvm.wasm",46,74.19355,"[]",0,0']
+
+temp3llvm-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp3llvm.wasm",1,1.754386,"[-8064]",-8064,8064']
+['sp_csv_line', '"temp3llvm.wasm",1,1.754386,"[-288]",-288,288']
+['sp_csv_line', '"temp3llvm.wasm",1,1.754386,"[-112]",-112,112']
+['sp_csv_line', '"temp3llvm.wasm",1,1.754386,"[-96]",-96,96']
+['sp_csv_line', '"temp3llvm.wasm",1,1.754386,"[-32]",-32,32']
+['sp_csv_line', '"temp3llvm.wasm",11,19.298246,"[-16]",-16,16']
+['sp_csv_line', '"temp3llvm.wasm",41,71.929825,"[]",0,0']
+
+temp2llvm-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-9472]",-9472,9472']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-8064]",-8064,8064']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-320]",-320,320']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-288]",-288,288']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-192]",-192,192']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-112]",-112,112']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-96]",-96,96']
+['sp_csv_line', '"temp2llvm.wasm",1,0.88495576,"[-80]",-80,80']
+['sp_csv_line', '"temp2llvm.wasm",2,1.7699115,"[-128]",-128,128']
+['sp_csv_line', '"temp2llvm.wasm",3,2.6548672,"[-32]",-32,32']
+['sp_csv_line', '"temp2llvm.wasm",21,18.58407,"[-16]",-16,16']
+['sp_csv_line', '"temp2llvm.wasm",79,69.91151,"[]",0,0']
+
+temp4llvm-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp4llvm.wasm",1,1.754386,"[-8064]",-8064,8064']
+['sp_csv_line', '"temp4llvm.wasm",1,1.754386,"[-288]",-288,288']
+['sp_csv_line', '"temp4llvm.wasm",1,1.754386,"[-112]",-112,112']
+['sp_csv_line', '"temp4llvm.wasm",1,1.754386,"[-96]",-96,96']
+['sp_csv_line', '"temp4llvm.wasm",1,1.754386,"[-32]",-32,32']
+['sp_csv_line', '"temp4llvm.wasm",11,19.298246,"[-16]",-16,16']
+['sp_csv_line', '"temp4llvm.wasm",41,71.929825,"[]",0,0']
+
+temp1cheerp-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp1cheerp.wasm",59,100,"[]",0,0']
+
+temp3cheerp-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp3cheerp.wasm",63,100,"[]",0,0']
+
+temp2cheerp-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp2cheerp.wasm",113,100,"[]",0,0']
+
+temp4cheerp-analysis.txt
+['CSV for sp analysis and plots', '']
+['binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs']
+['sp_csv_line', '"temp4cheerp.wasm",63,100,"[]",0,0']
 

@@ -1,12 +1,48 @@
-mainemcc-analysis.txt
+temp4emcc-analysis.txt
+['Functions with at least one call_indirect', ' 6 (9.84% of all functions)']
+
+temp3emcc-analysis.txt
+['Functions with at least one call_indirect', ' 6 (9.84% of all functions)']
+
+temp1emcc-analysis.txt
 ['Functions with at least one call_indirect', ' 7 (10.29% of all functions)']
 
-mainwasi-analysis.txt
+temp2emcc-analysis.txt
+['Functions with at least one call_indirect', ' 10 (8.06% of all functions)']
+
+temp4wasi-analysis.txt
+['Functions with at least one call_indirect', ' 4 (8.89% of all functions)']
+
+temp1wasi-analysis.txt
 ['Functions with at least one call_indirect', ' 5 (8.20% of all functions)']
 
-mainllvm-analysis.txt
+temp2wasi-analysis.txt
+['Functions with at least one call_indirect', ' 8 (8.08% of all functions)']
+
+temp3wasi-analysis.txt
+['Functions with at least one call_indirect', ' 4 (8.89% of all functions)']
+
+temp1llvm-analysis.txt
 ['Functions with at least one call_indirect', ' 5 (8.06% of all functions)']
 
-maincheerp-analysis.txt
+temp3llvm-analysis.txt
+['Functions with at least one call_indirect', ' 4 (7.02% of all functions)']
+
+temp2llvm-analysis.txt
+['Functions with at least one call_indirect', ' 8 (7.08% of all functions)']
+
+temp4llvm-analysis.txt
+['Functions with at least one call_indirect', ' 4 (7.02% of all functions)']
+
+temp1cheerp-analysis.txt
 ['Functions with at least one call_indirect', ' 11 (18.64% of all functions)']
+
+temp3cheerp-analysis.txt
+['Functions with at least one call_indirect', ' 11 (17.46% of all functions)']
+
+temp2cheerp-analysis.txt
+['Functions with at least one call_indirect', ' 19 (16.81% of all functions)']
+
+temp4cheerp-analysis.txt
+['Functions with at least one call_indirect', ' 11 (17.46% of all functions)']
 

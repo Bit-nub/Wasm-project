@@ -1,20 +1,80 @@
-mainemcc-analysis.txt
+temp4emcc-analysis.txt
+['Instructions', '      5768']
+['  call', '             116 (2.01% of all instructions)']
+['  call_indirect', '      8 (0.14% of all instructions, 6.45% of all calls)']
+
+temp3emcc-analysis.txt
+['Instructions', '      5716']
+['  call', '             116 (2.03% of all instructions)']
+['  call_indirect', '      8 (0.14% of all instructions, 6.45% of all calls)']
+
+temp1emcc-analysis.txt
 ['Instructions', '      5833']
 ['  call', '             125 (2.14% of all instructions)']
 ['  call_indirect', '      9 (0.15% of all instructions, 6.72% of all calls)']
 
-mainwasi-analysis.txt
+temp2emcc-analysis.txt
+['Instructions', '     22412']
+['  call', '             441 (1.97% of all instructions)']
+['  call_indirect', '     13 (0.06% of all instructions, 2.86% of all calls)']
+
+temp4wasi-analysis.txt
+['Instructions', '      7837']
+['  call', '             134 (1.71% of all instructions)']
+['  call_indirect', '     13 (0.17% of all instructions, 8.84% of all calls)']
+
+temp1wasi-analysis.txt
 ['Instructions', '     12280']
 ['  call', '             167 (1.36% of all instructions)']
 ['  call_indirect', '     14 (0.11% of all instructions, 7.73% of all calls)']
 
-mainllvm-analysis.txt
+temp2wasi-analysis.txt
+['Instructions', '     21268']
+['  call', '             321 (1.51% of all instructions)']
+['  call_indirect', '     20 (0.09% of all instructions, 5.87% of all calls)']
+
+temp3wasi-analysis.txt
+['Instructions', '      7787']
+['  call', '             134 (1.72% of all instructions)']
+['  call_indirect', '     13 (0.17% of all instructions, 8.84% of all calls)']
+
+temp1llvm-analysis.txt
 ['Instructions', '     12336']
 ['  call', '             206 (1.67% of all instructions)']
 ['  call_indirect', '     12 (0.10% of all instructions, 5.50% of all calls)']
 
-maincheerp-analysis.txt
+temp3llvm-analysis.txt
+['Instructions', '     12281']
+['  call', '             202 (1.64% of all instructions)']
+['  call_indirect', '     11 (0.09% of all instructions, 5.16% of all calls)']
+
+temp2llvm-analysis.txt
+['Instructions', '     25996']
+['  call', '             609 (2.34% of all instructions)']
+['  call_indirect', '     18 (0.07% of all instructions, 2.87% of all calls)']
+
+temp4llvm-analysis.txt
+['Instructions', '     12385']
+['  call', '             202 (1.63% of all instructions)']
+['  call_indirect', '     11 (0.09% of all instructions, 5.16% of all calls)']
+
+temp1cheerp-analysis.txt
 ['Instructions', '      7162']
 ['  call', '              86 (1.20% of all instructions)']
 ['  call_indirect', '     20 (0.28% of all instructions, 18.87% of all calls)']
+
+temp3cheerp-analysis.txt
+['Instructions', '      9094']
+['  call', '             111 (1.22% of all instructions)']
+['  call_indirect', '     22 (0.24% of all instructions, 16.54% of all calls)']
+
+temp2cheerp-analysis.txt
+['Instructions', '     22216']
+['  call', '             263 (1.18% of all instructions)']
+['  call_indirect', '     43 (0.19% of all instructions, 14.05% of all calls)']
+
+temp4cheerp-analysis.txt
+['Instructions', '      9112']
+['  call', '             111 (1.22% of all instructions)']
+['  call_indirect', '     22 (0.24% of all instructions, 16.54% of all calls)']
 

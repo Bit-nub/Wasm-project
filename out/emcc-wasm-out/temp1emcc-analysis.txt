@@ -1,5 +1,5 @@
-Input file: mainemcc.wasm
-  binary:    mainemcc.wasm
+Input file: temp1emcc.wasm
+  binary:    temp1emcc.wasm
 
 Functions:           74
   Imported:           6
@@ -39,13 +39,13 @@ Stack increments: (How many functions increment the stack pointer by how much? C
 
 CSV for sp analysis and plots:
 binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
-sp_csv_line:"mainemcc.wasm",1,1.4705882,"[-560]",-560,560
-sp_csv_line:"mainemcc.wasm",1,1.4705882,"[-256]",-256,256
-sp_csv_line:"mainemcc.wasm",1,1.4705882,"[-208]",-208,208
-sp_csv_line:"mainemcc.wasm",1,1.4705882,"[-80]",-80,80
-sp_csv_line:"mainemcc.wasm",2,2.9411764,"[-32]",-32,32
-sp_csv_line:"mainemcc.wasm",3,4.4117646,"[-16]",-16,16
-sp_csv_line:"mainemcc.wasm",59,86.76471,"[]",0,0
+sp_csv_line:"temp1emcc.wasm",1,1.4705882,"[-560]",-560,560
+sp_csv_line:"temp1emcc.wasm",1,1.4705882,"[-256]",-256,256
+sp_csv_line:"temp1emcc.wasm",1,1.4705882,"[-208]",-208,208
+sp_csv_line:"temp1emcc.wasm",1,1.4705882,"[-80]",-80,80
+sp_csv_line:"temp1emcc.wasm",2,2.9411764,"[-32]",-32,32
+sp_csv_line:"temp1emcc.wasm",3,4.4117646,"[-16]",-16,16
+sp_csv_line:"temp1emcc.wasm",59,86.76471,"[]",0,0
 
 Counts of function types (22 unique types):
     1  (1.35%) × [i32, i32] -> []
@@ -146,13 +146,13 @@ call_indirect target equivalence classes (CFI equivalence classes):
     count (how often class appears): 4
   total classes: 6
 
-CSV data for further analysis: mainemcc.wasm,5833,125,9,6.716418,74,12,4,6,1,4,1.5,1,52,13,25,13,25,7,13.461538
+CSV data for further analysis: temp1emcc.wasm,5833,125,9,6.716418,74,12,4,6,1,4,1.5,1,52,13,25,13,25,7,13.461538
 
 CSV data on CFI classes:
 benchmark,binary,class,size,count,source
-"mainemcc.wasm",0,1,1,"i32.load"
-"mainemcc.wasm",1,4,1,"local.(get|tee)"
-"mainemcc.wasm",2,1,1,"local.(get|tee)"
-"mainemcc.wasm",3,2,1,"i32.load"
-"mainemcc.wasm",4,1,1,"local.(get|tee)"
-"mainemcc.wasm",5,1,4,"i32.load"
+"temp1emcc.wasm",0,1,1,"i32.load"
+"temp1emcc.wasm",1,4,1,"local.(get|tee)"
+"temp1emcc.wasm",2,1,1,"local.(get|tee)"
+"temp1emcc.wasm",3,2,1,"i32.load"
+"temp1emcc.wasm",4,1,1,"local.(get|tee)"
+"temp1emcc.wasm",5,1,4,"i32.load"

@@ -1,24 +1,96 @@
-mainemcc-analysis.txt
+temp4emcc-analysis.txt
+['Functions', '           65']
+['  Imported', '           4']
+['  Non-imported', '      61']
+['  Exported', '           9']
+
+temp3emcc-analysis.txt
+['Functions', '           65']
+['  Imported', '           4']
+['  Non-imported', '      61']
+['  Exported', '           9']
+
+temp1emcc-analysis.txt
 ['Functions', '           74']
 ['  Imported', '           6']
 ['  Non-imported', '      68']
 ['  Exported', '          10']
 
-mainwasi-analysis.txt
+temp2emcc-analysis.txt
+['Functions', '          129']
+['  Imported', '           5']
+['  Non-imported', '     124']
+['  Exported', '           9']
+
+temp4wasi-analysis.txt
+['Functions', '           50']
+['  Imported', '           5']
+['  Non-imported', '      45']
+['  Exported', '           1']
+
+temp1wasi-analysis.txt
 ['Functions', '           68']
 ['  Imported', '           7']
 ['  Non-imported', '      61']
 ['  Exported', '           1']
 
-mainllvm-analysis.txt
+temp2wasi-analysis.txt
+['Functions', '          109']
+['  Imported', '          10']
+['  Non-imported', '      99']
+['  Exported', '           1']
+
+temp3wasi-analysis.txt
+['Functions', '           50']
+['  Imported', '           5']
+['  Non-imported', '      45']
+['  Exported', '           1']
+
+temp1llvm-analysis.txt
 ['Functions', '           65']
 ['  Imported', '           3']
 ['  Non-imported', '      62']
 ['  Exported', '          60']
 
-maincheerp-analysis.txt
+temp3llvm-analysis.txt
+['Functions', '           60']
+['  Imported', '           3']
+['  Non-imported', '      57']
+['  Exported', '          55']
+
+temp2llvm-analysis.txt
+['Functions', '          120']
+['  Imported', '           7']
+['  Non-imported', '     113']
+['  Exported', '         105']
+
+temp4llvm-analysis.txt
+['Functions', '           60']
+['  Imported', '           3']
+['  Non-imported', '      57']
+['  Exported', '          55']
+
+temp1cheerp-analysis.txt
 ['Functions', '           62']
 ['  Imported', '           3']
 ['  Non-imported', '      59']
+['  Exported', '           1']
+
+temp3cheerp-analysis.txt
+['Functions', '           66']
+['  Imported', '           3']
+['  Non-imported', '      63']
+['  Exported', '           1']
+
+temp2cheerp-analysis.txt
+['Functions', '          117']
+['  Imported', '           4']
+['  Non-imported', '     113']
+['  Exported', '           1']
+
+temp4cheerp-analysis.txt
+['Functions', '           66']
+['  Imported', '           3']
+['  Non-imported', '      63']
 ['  Exported', '           1']
 

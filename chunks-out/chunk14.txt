@@ -1,30 +1,114 @@
-mainemcc-analysis.txt
+temp4emcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"mainemcc.wasm",0,1,1,"i32.load"']
-['"mainemcc.wasm",1,4,1,"local.(get|tee)"']
-['"mainemcc.wasm",2,1,1,"local.(get|tee)"']
-['"mainemcc.wasm",3,2,1,"i32.load"']
-['"mainemcc.wasm",4,1,1,"local.(get|tee)"']
-['"mainemcc.wasm",5,1,4,"i32.load"']
+['"temp4emcc.wasm",0,1,1,"i32.load"']
+['"temp4emcc.wasm",1,1,1,"local.(get|tee)"']
+['"temp4emcc.wasm",2,2,1,"i32.load"']
+['"temp4emcc.wasm",3,1,1,"local.(get|tee)"']
+['"temp4emcc.wasm",4,1,4,"i32.load"']
 ['']
 
-mainwasi-analysis.txt
+temp3emcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"mainwasi.wasm",0,4,1,"local.(get|tee)"']
-['"mainwasi.wasm",1,1,4,"i32.load"']
-['"mainwasi.wasm",2,2,9,"i32.load"']
+['"temp3emcc.wasm",0,1,1,"i32.load"']
+['"temp3emcc.wasm",1,1,1,"local.(get|tee)"']
+['"temp3emcc.wasm",2,2,1,"i32.load"']
+['"temp3emcc.wasm",3,1,1,"local.(get|tee)"']
+['"temp3emcc.wasm",4,1,4,"i32.load"']
 ['']
 
-mainllvm-analysis.txt
+temp1emcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"mainllvm.wasm",0,4,1,"local.(get|tee)"']
-['"mainllvm.wasm",1,1,3,"i32.load"']
-['"mainllvm.wasm",2,2,8,"i32.load"']
+['"temp1emcc.wasm",0,1,1,"i32.load"']
+['"temp1emcc.wasm",1,4,1,"local.(get|tee)"']
+['"temp1emcc.wasm",2,1,1,"local.(get|tee)"']
+['"temp1emcc.wasm",3,2,1,"i32.load"']
+['"temp1emcc.wasm",4,1,1,"local.(get|tee)"']
+['"temp1emcc.wasm",5,1,4,"i32.load"']
 ['']
 
-maincheerp-analysis.txt
-['CSV data for further analysis', ' maincheerp.wasm,7162,86,20,18.867924,62,14,7,8,1,6,2.5,2,202,61,30.198019,49,24.257425,11,5.4455447']
+temp2emcc-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp2emcc.wasm",0,1,1,"i32.load"']
+['"temp2emcc.wasm",1,2,1,"i32.load"']
+['"temp2emcc.wasm",2,1,1,"local.(get|tee)"']
+['"temp2emcc.wasm",3,1,1,"local.(get|tee)"']
+['"temp2emcc.wasm",4,2,2,"i32.load"']
+['"temp2emcc.wasm",5,2,7,"i32.load"']
+['']
+
+temp4wasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp4wasi.wasm",0,1,4,"i32.load"']
+['"temp4wasi.wasm",1,2,9,"i32.load"']
+['']
+
+temp1wasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp1wasi.wasm",0,4,1,"local.(get|tee)"']
+['"temp1wasi.wasm",1,1,4,"i32.load"']
+['"temp1wasi.wasm",2,2,9,"i32.load"']
+['']
+
+temp2wasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp2wasi.wasm",0,1,1,"i32.load"']
+['"temp2wasi.wasm",1,1,6,"i32.load"']
+['"temp2wasi.wasm",2,3,13,"i32.load"']
+['']
+
+temp3wasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp3wasi.wasm",0,1,4,"i32.load"']
+['"temp3wasi.wasm",1,2,9,"i32.load"']
+['']
+
+temp1llvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp1llvm.wasm",0,4,1,"local.(get|tee)"']
+['"temp1llvm.wasm",1,1,3,"i32.load"']
+['"temp1llvm.wasm",2,2,8,"i32.load"']
+['']
+
+temp3llvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp3llvm.wasm",0,1,3,"i32.load"']
+['"temp3llvm.wasm",1,2,8,"i32.load"']
+['']
+
+temp2llvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp2llvm.wasm",0,1,1,"i32.load"']
+['"temp2llvm.wasm",1,1,5,"i32.load"']
+['"temp2llvm.wasm",2,3,12,"i32.load"']
+['']
+
+temp4llvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"temp4llvm.wasm",0,1,3,"i32.load"']
+['"temp4llvm.wasm",1,2,8,"i32.load"']
+['']
+
+temp1cheerp-analysis.txt
+['CSV data for further analysis', ' temp1cheerp.wasm,7162,86,20,18.867924,62,14,7,8,1,6,2.5,2,202,61,30.198019,49,24.257425,11,5.4455447']
+
+temp3cheerp-analysis.txt
+['CSV data for further analysis', ' temp3cheerp.wasm,9094,111,22,16.541353,66,12,4,7,1,6,3.142857142857143,2,220,70,31.818182,58,26.363636,20,9.090909']
+
+temp2cheerp-analysis.txt
+['CSV data for further analysis', ' temp2cheerp.wasm,22216,263,43,14.052288,117,19,13,12,1,10,3.5833333333333335,2,872,174,19.954128,147,16.857798,76,8.715596']
+
+temp4cheerp-analysis.txt
+['CSV data for further analysis', ' temp4cheerp.wasm,9112,111,22,16.541353,66,12,4,7,1,6,3.142857142857143,2,220,70,31.818182,58,26.363636,20,9.090909']
 

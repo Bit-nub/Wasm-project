@@ -1,5 +1,5 @@
-Input file: mainllvm.wasm
-  binary:    mainllvm.wasm
+Input file: temp1llvm.wasm
+  binary:    temp1llvm.wasm
 
 Functions:           65
   Imported:           3
@@ -89,13 +89,13 @@ Stack increments: (How many functions increment the stack pointer by how much? C
 
 CSV for sp analysis and plots:
 binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
-sp_csv_line:"mainllvm.wasm",1,1.6129032,"[-8064]",-8064,8064
-sp_csv_line:"mainllvm.wasm",1,1.6129032,"[-288]",-288,288
-sp_csv_line:"mainllvm.wasm",1,1.6129032,"[-112]",-112,112
-sp_csv_line:"mainllvm.wasm",1,1.6129032,"[-96]",-96,96
-sp_csv_line:"mainllvm.wasm",1,1.6129032,"[-32]",-32,32
-sp_csv_line:"mainllvm.wasm",11,17.741936,"[-16]",-16,16
-sp_csv_line:"mainllvm.wasm",46,74.19355,"[]",0,0
+sp_csv_line:"temp1llvm.wasm",1,1.6129032,"[-8064]",-8064,8064
+sp_csv_line:"temp1llvm.wasm",1,1.6129032,"[-288]",-288,288
+sp_csv_line:"temp1llvm.wasm",1,1.6129032,"[-112]",-112,112
+sp_csv_line:"temp1llvm.wasm",1,1.6129032,"[-96]",-96,96
+sp_csv_line:"temp1llvm.wasm",1,1.6129032,"[-32]",-32,32
+sp_csv_line:"temp1llvm.wasm",11,17.741936,"[-16]",-16,16
+sp_csv_line:"temp1llvm.wasm",46,74.19355,"[]",0,0
 
 Counts of function types (17 unique types):
     1  (1.54%) × [i32, i32, i32] -> []
@@ -160,10 +160,10 @@ call_indirect target equivalence classes (CFI equivalence classes):
     count (how often class appears): 8
   total classes: 3
 
-CSV data for further analysis: mainllvm.wasm,12336,206,12,5.504587,65,8,3,3,1,8,4,3,74,23,31.081081,23,31.081081,19,25.675676
+CSV data for further analysis: temp1llvm.wasm,12336,206,12,5.504587,65,8,3,3,1,8,4,3,74,23,31.081081,23,31.081081,19,25.675676
 
 CSV data on CFI classes:
 benchmark,binary,class,size,count,source
-"mainllvm.wasm",0,4,1,"local.(get|tee)"
-"mainllvm.wasm",1,1,3,"i32.load"
-"mainllvm.wasm",2,2,8,"i32.load"
+"temp1llvm.wasm",0,4,1,"local.(get|tee)"
+"temp1llvm.wasm",1,1,3,"i32.load"
+"temp1llvm.wasm",2,2,8,"i32.load"
