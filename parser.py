@@ -1,7 +1,3 @@
-
-
-#ffile = open("/home/theos/Wasm-project/out/emcc-wasm-out/mainemcc-analysis.txt", "r")
-
 import os
 
 homeDir = os.getenv('HOME')
