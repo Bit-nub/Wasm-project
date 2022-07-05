@@ -4,11 +4,11 @@ The script supports debian based distros for now and targets compilation from C 
 
 ## Dependencies
 
-docker
+docker - python 3.8.8
 
 ## Usage
 
-$ `git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && bash install.sh`   
+$ `git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && cp <PathToSourceFile1> <PathToSourceFile2> ./src/. && bash install.sh`    
 
 - the "wasmit.sh" script is the main tool, it compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm bianry and then analyses these binaries staticaly : 
     
