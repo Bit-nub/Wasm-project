@@ -108,7 +108,7 @@ def get_general_attributes():
     display(df_wasi.to_string())
     print("\n -- emscipten table :\n")
     display(df_emcc.to_string())
-    #needs nb of globals/ nb of classes/ which gb is the stack pointer 
+    #needs nb of globals/ nb of classes/ which gb is the stack pointer /nb of unique func types
 
 
 #get_general_attributes()
@@ -132,7 +132,7 @@ def get_source_tool_names(rootDir) :
 
 def get_globals():
     column_entries=get_source_tool_names(rootDir)
-    line_entries=[['Global_id','type','export','init_method','init_value','gets','sets']]
+    line_entries=['Global_id','type','export','init_method','init_value','gets','sets']
     df_globals=pd.DataFrame(index=line_entries, columns=column_entries)
     chunkname=['chunk5.txt']
     for item in chunkname:
@@ -184,4 +184,40 @@ def get_globals():
 
         #display(df_globals.to_string())          
                  
-get_globals()
+#get_globals()
+
+def get_count_of_func_types():
+    column_entries=get_source_tool_names(rootDir)
+    line_entries=['Unique_types','func_type','','']
+    chunkname=['chunk8.txt']
+    for item in chunkname:
+        itm_file= open(os.path.join(chunksDir,str(item)),"r+")
+        file = itm_file.read()
+        src_comp,ufc="",""
+        src_comps,unique_func_count=([],[])
+        for paragraph in file.split("\n\n"):
+            func_type,func_type_count,func_type_pct=([],[],[])
+            for line in paragraph.split("\n"):
+                if ".txt" in line:
+                    src_comp=line.split("-")[0].strip("")
+                    src_comps.append(src_comp)
+                if "unique" in line:
+                    ufc=line.split("(")[1].strip("").split()[0]
+                    unique_func_count.append(ufc)
+                if "×" in line:
+                    func_type_count.append(line.split("×")[0].strip(" '[").split()[0])
+                    func_type_pct.append(line.split("×")[0].strip(" '[").split()[1].strip("()"))
+                    func_type.append(line.split("×")[1].strip().split("'")[0].strip())
+            idx=len(func_type_count)
+            df_cft=pd.DataFrame(index=range(idx),columns=['function_type','type_count','type_count_%_'])
+            df_cft.at[:,'function_type']=func_type
+            df_cft.at[:,'type_count']=func_type_count
+            df_cft.at[:,'type_count_%_']=func_type_pct
+            print("\n",src_comp)
+            print("have ",ufc," unique_types")
+            display(df_cft.to_string())
+
+        #returns df and 2d tuple containing src_comps + ufcs for general attributes            
+            
+            
+get_count_of_func_types()
