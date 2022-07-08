@@ -1,14 +1,15 @@
 import os
+from attr import attr
 import pandas as pd
 from IPython.display import display
+import numpy as np
 
 homeDir = os.getenv('HOME')
 rootDir=str(homeDir)+"/Wasm-project/out/"
 chunksDir=str(homeDir)+"/Wasm-project/chunks-out/"
 
-def get_general_attributes():
-    # table_name lists the names for each tool chain's table
-    table_name=['Cheerp_tool_chain','Emscripten_tool_chain','Clang/llvm_tool_chain','Wasi_tool_chain']
+
+def get_source_names(rootDir) :
     #source names define colum entries in each tool chain's table (line entries are the attributes we get)
     source_name=[]
     for root,dirnames,filenames in os.walk(rootDir):
@@ -31,6 +32,14 @@ def get_general_attributes():
     source_name[:]=list(set(source_name))
     source_name.sort()
     column_entries=source_name
+    return column_entries
+
+
+def get_general_attributes():
+    # table_name lists the names for each tool chain's table
+    table_name=['Cheerp_tool_chain','Emscripten_tool_chain','Clang/llvm_tool_chain','Wasi_tool_chain']
+    
+    column_entries=get_source_names(rootDir)
     line_entries=['Functions','Imported','Non-imported','Exported','Tables','Table entries at init','Of those unique functions','Instructions','call','call_indirect']
     
     df_emcc=pd.DataFrame(index=line_entries, columns=column_entries)
@@ -99,6 +108,80 @@ def get_general_attributes():
     display(df_wasi.to_string())
     print("\n -- emscipten table :\n")
     display(df_emcc.to_string())
+    #needs nb of globals/ nb of classes/ which gb is the stack pointer 
 
 
-get_general_attributes()
+#get_general_attributes()
+
+def get_source_tool_names(rootDir) :
+    #source names define colum entries in each tool chain's table (line entries are the attributes we get)
+    source_tool_name=[]
+    for root,dirnames,filenames in os.walk(rootDir):
+    # search all text files recursively
+        for filename in filenames:
+            #strip tool chain names from source file names
+            if ".txt" in filename:
+                srccomp=filename.split("-")[0]
+                source_tool_name.append(srccomp)
+    #updated list of source file names
+    source_tool_name[:]=list(set(source_tool_name))
+    source_tool_name.sort()
+    column_entries=source_tool_name
+    return column_entries
+
+
+def get_globals():
+    column_entries=get_source_tool_names(rootDir)
+    line_entries=[['Global_id','type','export','init_method','init_value','gets','sets']]
+    df_globals=pd.DataFrame(index=line_entries, columns=column_entries)
+    chunkname=['chunk5.txt']
+    for item in chunkname:
+        itm_file= open(os.path.join(chunksDir,str(item)),"r+")
+        file = itm_file.read()
+        for paragraph in file.split("\n\n"):
+            src_comp=""
+            attrs0=""
+            global_id,global_type,init_method,init_val,export_attr,gets,sets=([],[],[],[],[],[],[])
+            for line in enumerate(paragraph.split("\n")):
+                if ".txt" in line[1]:
+                    src_comp=line[1].split("-")[0].strip("")
+                    print("\n"+src_comp)           
+                if "Globals" or "init" or "export" in line[1]: 
+                    attrs=line[1].split(",")
+                    if "Globals" in attrs[0] :
+                        print("")
+                    if "init" in attrs[0]:
+                        interm_var=attrs[1].strip(" []'")
+                        init_method.append(interm_var.split()[0])
+                        init_val.append(interm_var.split()[1])
+                    if "export" in attrs[0]:
+                        interm_var=attrs[1].strip(" []'")
+                        export_attr.append(interm_var)
+                if "global.get" or "#" in line[1] :  
+                    attrs0=line[1].strip("' []")
+                    if "global.get" in attrs0:
+                        gets.append(attrs0.split()[0])
+                        sets.append(attrs0.split()[3])
+                    if "#" in attrs0:
+                        attrs0=attrs0.strip(" #")
+                        global_id.append(attrs0.split()[0])
+                        global_type.append(attrs0.split()[1])
+                        if not "export" in paragraph.split("\n")[line[0]+1] :
+                            export_attr.append(None)
+            
+            dfGlobal=pd.DataFrame(index=range(7),columns=range(len(global_id)))
+            for item in dfGlobal.columns:
+                dfGlobal.at[0,item]=global_id[int(item)]
+                dfGlobal.at[1,item]=global_type[int(item)]
+                dfGlobal.at[2,item]=export_attr[int(item)]
+                dfGlobal.at[3,item]=init_method[int(item)]
+                dfGlobal.at[4,item]=init_val[int(item)]
+                dfGlobal.at[5,item]=gets[int(item)]
+                dfGlobal.at[6,item]=sets[int(item)]
+            df = dfGlobal.set_axis(['Global_id','type','export','init_method','init_value','gets','sets'],axis=0)
+            display(df.to_string())
+
+
+        #display(df_globals.to_string())          
+                 
+get_globals()
