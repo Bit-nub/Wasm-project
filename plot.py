@@ -51,9 +51,9 @@ def get_general_attributes():
     #print(df)
     chunkname=['chunk2.txt','chunk3.txt','chunk4.txt']
     for item in chunkname:
-        itm_file= open(os.path.join(chunksDir,str(item)),"r+")
-        file = itm_file.read()
-        for paragraph in file.split("\n\n"):
+        itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
+        file = itm1_file.read()
+        for paragraph in file.strip().split("\n\n"):
             src_comp=""
             src=""
             for line in paragraph.split("\n"):
@@ -108,7 +108,7 @@ def get_general_attributes():
     display(df_wasi.to_string())
     print("\n -- emscipten table :\n")
     display(df_emcc.to_string())
-    #needs nb of globals/ nb of classes/ which gb is the stack pointer /nb of unique func types
+    #needs nb of globals/ nb of classes/ which gb is the stack pointer /nb of unique func types / chunk 9 
 
 
 #get_general_attributes()
@@ -136,9 +136,9 @@ def get_globals():
     df_globals=pd.DataFrame(index=line_entries, columns=column_entries)
     chunkname=['chunk5.txt']
     for item in chunkname:
-        itm_file= open(os.path.join(chunksDir,str(item)),"r+")
-        file = itm_file.read()
-        for paragraph in file.split("\n\n"):
+        itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
+        file = itm1_file.read()
+        for paragraph in file.strip().split("\n\n"):
             src_comp=""
             attrs0=""
             global_id,global_type,init_method,init_val,export_attr,gets,sets=([],[],[],[],[],[],[])
@@ -191,11 +191,11 @@ def get_count_of_func_types():
     line_entries=['Unique_types','func_type','','']
     chunkname=['chunk8.txt']
     for item in chunkname:
-        itm_file= open(os.path.join(chunksDir,str(item)),"r+")
-        file = itm_file.read()
+        itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
+        file = itm1_file.read()
         src_comp,ufc="",""
         src_comps,unique_func_count=([],[])
-        for paragraph in file.split("\n\n"):
+        for paragraph in file.strip().split("\n\n"):
             func_type,func_type_count,func_type_pct=([],[],[])
             for line in paragraph.split("\n"):
                 if ".txt" in line:
@@ -220,4 +220,40 @@ def get_count_of_func_types():
         #returns df and 2d tuple containing src_comps + ufcs for general attributes            
             
             
-get_count_of_func_types()
+#get_count_of_func_types()
+
+def get_init_tables():
+    chunkname=['chunk10.txt']
+    for item in chunkname:
+        itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
+        file = itm1_file.read()
+        src_comp,tir="",""
+        src_comps,table_init_ranges=([],[])
+        for paragraph in file.strip().split("\n\n"):
+            ranges,lengths,unique_funcs,types=([],[],[],[])
+            for line in paragraph.split("\n"):
+                if ".txt" in line:
+                    src_comp=line.split("-")[0].strip("")
+                    src_comps.append(src_comp)
+                if "table init ranges in total" in line:
+                    tir=line.split("t")[0].strip(" '[")
+                    table_init_ranges.append(tir)
+                if "range'" in line:
+                    itm0=line.split("'")
+                    itm1=line.split(",")
+                    ranges.append(itm0[3].strip().split("l")[0].strip())
+                    lengths.append(itm1[3].strip("'").split("u")[0].strip(" '"))
+                    unique_funcs.append(itm1[4].strip(" '").split("t")[0].strip())
+                    types.append(itm0[9].strip())
+            idx=len(ranges)
+            df_it=pd.DataFrame(index=range(idx),columns=['range','length','unique_functions','type'])
+            df_it.at[:,'range']=ranges
+            df_it.at[:,'length']=lengths
+            df_it.at[:,'unique_functions']=unique_funcs
+            df_it.at[:,'type']=types
+            print("\n",src_comp)
+            print("have ",tir," table init ranges")
+            display(df_it.to_string())
+        # returns df and 2d tuple src_comps + tirs for general attributes
+
+get_init_tables()
