@@ -41,7 +41,7 @@ def get_general_attributes():
     table_name=['Cheerp_tool_chain','Emscripten_tool_chain','Clang/llvm_tool_chain','Wasi_tool_chain']
     
     column_entries=get_source_names(rootDir)
-    line_entries=['Functions','Imported','Non-imported','Exported','Tables','Table entries at init','Of those unique functions','Instructions','call','call_indirect','Globals','Likely Stack Pointer (global id)','Functions using stack pointer','Functions w/ stack allocation','Unique Function Types','Functions w/ AL. one indirect call','Classes']
+    line_entries=['Functions','Imported','Non-imported','Exported','Tables','Table entries at init','Of those unique functions','Instructions','call','call_indirect','Globals','Likely Stack Pointer (global id)','Functions using stack pointer','Functions w/ stack allocation','Unique Function Types','Functions w/ AL. one indirect call','CFI_Classes']
     
     df_emcc=pd.DataFrame(index=line_entries, columns=column_entries)
     df_wasi=pd.DataFrame(index=line_entries, columns=column_entries)
@@ -195,13 +195,13 @@ def get_general_attributes():
                     if "#" in line:
                         j+=1
                 if comp == "emcc":
-                    df_emcc.at['Classes',src]=j
+                    df_emcc.at['CFI_Classes',src]=j
                 if comp == "cheerp":
-                    df_cheerp.at['Classes',src]=j
+                    df_cheerp.at['CFI_Classes',src]=j
                 if comp == "llvm":
-                    df_llvm.at['Classes',src]=j
+                    df_llvm.at['CFI_Classes',src]=j
                 if comp == "wasi":
-                    df_wasi.at['Classes',src]=j
+                    df_wasi.at['CFI_Classes',src]=j
     print("\n -- cheerp table :\n")
     display(df_cheerp.to_string())  
     print("\n -- llvm table :\n")
@@ -213,7 +213,7 @@ def get_general_attributes():
     #needs nb of globals/ nb of classes/ which gb is the stack pointer /nb of unique func types / chunk 9 
 
 
-get_general_attributes()
+#get_general_attributes()
 
 def get_source_tool_names(rootDir) :
     #source names define colum entries in each tool chain's table (line entries are the attributes we get)
@@ -359,3 +359,43 @@ def get_init_tables():
         # returns df and 2d tuple src_comps + tirs for general attributes
 
 #get_init_tables()
+
+def get_CFI_classes():
+    chunkname=['chunk11.txt','chunk12.txt','chunk13.txt']
+    line_entries=['CFI_Class_id','Type','Start_idx','End_idx','Size','Count']
+    for item in chunkname:
+        itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
+        file = itm1_file.read()
+        for paragraph in file.strip().split("\n\n"):
+            src_comp=""
+            class_idx,type_,start_idx,end_idx,size,count=([],[],[],[],[],[])
+            for line in paragraph.split("\n"):
+                if "call_indirect target equivalence classes" in paragraph :
+                    if ".txt" in line :
+                        src_comp=line.split("-")[0]
+                    if "class #" in line:
+                        class_idx.append(line.split("'")[1].strip(" ']"))              
+                    if "type" in line :
+                        type_.append(line.split("'")[3].strip())
+                    if "start idx" in line :
+                        start_idx.append(line.split(",")[1].strip(" ']"))
+                        end_idx.append(line.split(",")[3].strip(" ']"))
+                    if "size (of class)" in line :
+                        size.append(line.split(",")[1].strip(" '[]"))
+                    if "count (how often class appears)" in line :
+                        count.append(line.split(",")[1].strip(" '[]"))
+            # for in paragraph search for item == item_df then set item patterns  
+            if len(class_idx)!= 0:
+                df_cfi_classes=pd.DataFrame(index=line_entries,columns=range(len(class_idx)))
+                df_cfi_classes.at['CFI_Class_id',:]=class_idx
+                df_cfi_classes.at['Type',:]=type_
+                df_cfi_classes.at['Start_idx',:]=start_idx
+                df_cfi_classes.at['End_idx',:]=end_idx
+                df_cfi_classes.at['Size',:]=size
+                df_cfi_classes.at['Count',:]=count
+                print("\n",src_comp,"table :")
+                display(df_cfi_classes.to_string())
+
+
+
+get_CFI_classes()
