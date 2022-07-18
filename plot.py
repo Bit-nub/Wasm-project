@@ -360,19 +360,53 @@ def get_init_tables():
 
 #get_init_tables()
 
+def get_column_from_df_matching_value(df,typep,countp,idxp):
+    try :
+        idx="Some("+idxp.split(":")[1]+")"
+    except:
+        idx="None" 
+    for col_item in df.columns.values:
+        if df.at['Type',col_item] == typep:
+            if df.at['Count',col_item] == countp:
+                if df.at['Start_idx',col_item] == idx:
+                    result = col_item
+                    return result
+
+
+def paragraph_to_subparagraph(paragraph):
+    list=[]
+    subp=""
+    for line in enumerate(paragraph.split("\n")):
+        if "×" in line[1]:
+            subp+=paragraph.split("\n")[line[0]]
+            subp+="\n"
+            subp+=paragraph.split("\n")[line[0]+1]
+            subp+="\n"
+            subp+=paragraph.split("\n")[line[0]+2]
+            subp+="\n"
+            subp+=paragraph.split("\n")[line[0]+3]
+            list.append(subp.strip())
+        subp=""
+    return list
+
 def get_CFI_classes():
-    chunkname=['chunk11.txt','chunk12.txt','chunk13.txt']
-    line_entries=['CFI_Class_id','Type','Start_idx','End_idx','Size','Count']
+    pd.set_option('display.width', 11)
+    chunkname=['chunk12.txt','chunk13.txt','chunk11.txt']
+    line_entries=['CFI_Class_id','Type','Start_idx','End_idx','Size','Count','Pattern_Restriction','Pattern_Source','functions matching by type','functions matching by type and present in table','functions matching by type and present in permissable table index range']
+    dict_df={}
+    dict_pattern={}
+    sc=[]
     for item in chunkname:
         itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
         file = itm1_file.read()
         for paragraph in file.strip().split("\n\n"):
             src_comp=""
             class_idx,type_,start_idx,end_idx,size,count=([],[],[],[],[],[])
-            for line in paragraph.split("\n"):
-                if "call_indirect target equivalence classes" in paragraph :
+            if "call_indirect target equivalence classes" in paragraph :    
+                for line in paragraph.split("\n"):
                     if ".txt" in line :
                         src_comp=line.split("-")[0]
+                        sc.append(src_comp)
                     if "class #" in line:
                         class_idx.append(line.split("'")[1].strip(" ']"))              
                     if "type" in line :
@@ -384,18 +418,54 @@ def get_CFI_classes():
                         size.append(line.split(",")[1].strip(" '[]"))
                     if "count (how often class appears)" in line :
                         count.append(line.split(",")[1].strip(" '[]"))
+                if len(class_idx)!= 0:
+                    dict_df[src_comp]=pd.DataFrame(index=line_entries,columns=range(len(class_idx)))
+                    dict_df[src_comp].at['CFI_Class_id',:]=class_idx
+                    dict_df[src_comp].at['Type',:]=type_
+                    dict_df[src_comp].at['Start_idx',:]=start_idx
+                    dict_df[src_comp].at['End_idx',:]=end_idx
+                    dict_df[src_comp].at['Size',:]=size
+                    dict_df[src_comp].at['Count',:]=count
             # for in paragraph search for item == item_df then set item patterns  
-            if len(class_idx)!= 0:
-                df_cfi_classes=pd.DataFrame(index=line_entries,columns=range(len(class_idx)))
-                df_cfi_classes.at['CFI_Class_id',:]=class_idx
-                df_cfi_classes.at['Type',:]=type_
-                df_cfi_classes.at['Start_idx',:]=start_idx
-                df_cfi_classes.at['End_idx',:]=end_idx
-                df_cfi_classes.at['Size',:]=size
-                df_cfi_classes.at['Count',:]=count
-                print("\n",src_comp,"table :")
-                display(df_cfi_classes.to_string())
+            if "Patterns (=preceding instructions) of call_indirect" in paragraph :
+                filename=""
+                filename=paragraph.split("['Patterns (=preceding instructions) of call_indirect', '']")[0].split("-")[0]
+                for sub_paragraph in paragraph_to_subparagraph(paragraph.split("['Patterns (=preceding instructions) of call_indirect', '']")[1]):
+                    pattern=[]
+                    for line in sub_paragraph.split("\n"):
+                        if "source" in line:
+                            #filename
+                            pattern.append(filename)
+                            #count
+                            pattern.append(line.split("×")[0].strip("['").strip())
+                            #restriction
+                            pattern.append(line.split("source")[0].replace("', '",":").strip().replace(" ","").split("×")[1])
+                            #source
+                            pattern.append(line.split("source")[1].split()[2].strip())
+                            #type
+                            pattern.append(line.split("source")[1].split("type")[1].strip("', '").split("'")[0])
+                        elif "functions matching by type (regardless whether they are in the table)" in line:    
+                            #functions matching by type (regardless whether they are in the table)
+                            pattern.append(line.split(",")[1].strip("' ]"))
+                        elif "functions matching by type and present in table (regardless at which table index)" in line:    
+                            #functions matching by type (regardless whether they are in the table)
+                            pattern.append(line.split(",")[1].strip("' ]"))
+                        elif "functions matching by type and present in permissable table index range" in line:    
+                            #functions matching by type (regardless whether they are in the table)
+                            pattern.append(line.split(",")[1].strip("' ]"))
+                    # setting patterns for respective types in the created dataframes
+                    for item in sc:
+                        if item == pattern[0]:
+                            column=get_column_from_df_matching_value(dict_df[item],pattern[4],pattern[1],pattern[2])
+                            if column is not None :
+                                dict_df[item].iloc[6:,int(column)] =pattern[2:4]+pattern[5:]
+                    pattern=[]
 
-
+    for item in sc:
+        print("\n",item,"table :")
+        print(dict_df[item])
+        #display(dict_df[item].to_string())
+            
+            
 
 get_CFI_classes()
