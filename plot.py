@@ -233,6 +233,9 @@ def get_source_tool_names(rootDir) :
 
 
 def get_globals():
+    pd.set_option('display.width', 11)
+    dict_df={}
+    sc=[]
     column_entries=get_source_tool_names(rootDir)
     line_entries=['Global_id','type','export','init_method','init_value','gets','sets']
     df_globals=pd.DataFrame(index=line_entries, columns=column_entries)
@@ -247,11 +250,9 @@ def get_globals():
             for line in enumerate(paragraph.split("\n")):
                 if ".txt" in line[1]:
                     src_comp=line[1].split("-")[0].strip("")
-                    print("\n"+src_comp)           
+                    sc.append(src_comp)           
                 if "Globals" or "init" or "export" in line[1]: 
                     attrs=line[1].split(",")
-                    if "Globals" in attrs[0] :
-                        print("")
                     if "init" in attrs[0]:
                         interm_var=attrs[1].strip(" []'")
                         init_method.append(interm_var.split()[0])
@@ -271,38 +272,37 @@ def get_globals():
                         if not "export" in paragraph.split("\n")[line[0]+1] :
                             export_attr.append(None)
             
-            dfGlobal=pd.DataFrame(index=range(7),columns=range(len(global_id)))
-            for item in dfGlobal.columns:
-                dfGlobal.at[0,item]=global_id[int(item)]
-                dfGlobal.at[1,item]=global_type[int(item)]
-                dfGlobal.at[2,item]=export_attr[int(item)]
-                dfGlobal.at[3,item]=init_method[int(item)]
-                dfGlobal.at[4,item]=init_val[int(item)]
-                dfGlobal.at[5,item]=gets[int(item)]
-                dfGlobal.at[6,item]=sets[int(item)]
-            df = dfGlobal.set_axis(['Global_id','type','export','init_method','init_value','gets','sets'],axis=0)
-            display(df.to_string())
+            dict_df[src_comp]=pd.DataFrame(index=['Global_id','type','export','init_method','init_value','gets','sets'],columns=range(len(global_id)))
+            for item in dict_df[src_comp].columns:
+                dict_df[src_comp].at['Global_id',item]=global_id[int(item)]
+                dict_df[src_comp].at['type',item]=global_type[int(item)]
+                dict_df[src_comp].at['export',item]=export_attr[int(item)]
+                dict_df[src_comp].at['init_method',item]=init_method[int(item)]
+                dict_df[src_comp].at['init_value',item]=init_val[int(item)]
+                dict_df[src_comp].at['gets',item]=gets[int(item)]
+                dict_df[src_comp].at['sets',item]=sets[int(item)]
 
-
-        #display(df_globals.to_string())          
+    for item in sc:
+        print("\n",item,"table :")
+        print(dict_df[item])         
                  
 #get_globals()
 
 def get_count_of_func_types():
-    column_entries=get_source_tool_names(rootDir)
-    line_entries=['Unique_types','func_type','','']
+    dict_df={}
+    sc=[]
     chunkname=['chunk8.txt']
     for item in chunkname:
         itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
         file = itm1_file.read()
         src_comp,ufc="",""
-        src_comps,unique_func_count=([],[])
+        unique_func_count=[]
         for paragraph in file.strip().split("\n\n"):
             func_type,func_type_count,func_type_pct=([],[],[])
             for line in paragraph.split("\n"):
                 if ".txt" in line:
                     src_comp=line.split("-")[0].strip("")
-                    src_comps.append(src_comp)
+                    sc.append(src_comp)
                 if "unique" in line:
                     ufc=line.split("(")[1].strip("").split()[0]
                     unique_func_count.append(ufc)
@@ -311,32 +311,32 @@ def get_count_of_func_types():
                     func_type_pct.append(line.split("×")[0].strip(" '[").split()[1].strip("()"))
                     func_type.append(line.split("×")[1].strip().split("'")[0].strip())
             idx=len(func_type_count)
-            df_uft=pd.DataFrame(index=range(idx),columns=['function_type','type_count','type_count_%_'])
-            df_uft.at[:,'function_type']=func_type
-            df_uft.at[:,'type_count']=func_type_count
-            df_uft.at[:,'type_count_%_']=func_type_pct
-            print("\n",src_comp)
-            print("have ",ufc," unique_types")
-            display(df_uft.to_string())
-
-        #returns df and 2d tuple containing src_comps + ufcs for general attributes            
-            
-            
+            dict_df[src_comp]=pd.DataFrame(index=range(idx),columns=['function_type','type_count','type_count_%_'])
+            dict_df[src_comp].at[:,'function_type']=func_type
+            dict_df[src_comp].at[:,'type_count']=func_type_count
+            dict_df[src_comp].at[:,'type_count_%_']=func_type_pct
+    for item in sc:
+        print("\n",item,"table :")
+        print(dict_df[item])
+           
+                        
 #get_count_of_func_types()
 
 def get_init_tables():
+    dict_df ={}
+    sc=[]
     chunkname=['chunk10.txt']
     for item in chunkname:
         itm1_file= open(os.path.join(chunksDir,str(item)),"r+")
         file = itm1_file.read()
         src_comp,tir="",""
-        src_comps,table_init_ranges=([],[])
+        table_init_ranges=[]
         for paragraph in file.strip().split("\n\n"):
             ranges,lengths,unique_funcs,types=([],[],[],[])
             for line in paragraph.split("\n"):
                 if ".txt" in line:
                     src_comp=line.split("-")[0].strip("")
-                    src_comps.append(src_comp)
+                    sc.append(src_comp)
                 if "table init ranges in total" in line:
                     tir=line.split("t")[0].strip(" '[")
                     table_init_ranges.append(tir)
@@ -348,15 +348,14 @@ def get_init_tables():
                     unique_funcs.append(itm1[4].strip(" '").split("t")[0].strip())
                     types.append(itm0[9].strip())
             idx=len(ranges)
-            df_it=pd.DataFrame(index=range(idx),columns=['range','length','unique_functions','type'])
-            df_it.at[:,'range']=ranges
-            df_it.at[:,'length']=lengths
-            df_it.at[:,'unique_functions']=unique_funcs
-            df_it.at[:,'type']=types
-            print("\n",src_comp)
-            print("have ",tir," table init ranges")
-            display(df_it.to_string())
-        # returns df and 2d tuple src_comps + tirs for general attributes
+            dict_df[src_comp]=pd.DataFrame(index=range(idx),columns=['range','length','unique_functions','type'])
+            dict_df[src_comp].at[:,'range']=ranges
+            dict_df[src_comp].at[:,'length']=lengths
+            dict_df[src_comp].at[:,'unique_functions']=unique_funcs
+            dict_df[src_comp].at[:,'type']=types
+    for item in sc:
+        print("\n",item,"table :")
+        print(dict_df[item])
 
 #get_init_tables()
 
@@ -468,4 +467,4 @@ def get_CFI_classes():
             
             
 
-get_CFI_classes()
+#get_CFI_classes()
