@@ -1,48 +1,129 @@
-temp4emcc-analysis.txt
-['Functions with at least one call_indirect', ' 6 (9.84% of all functions)']
+valid_ipv4emcc-analysis.txt
+['Functions with at least one call_indirect', ' 6 (8.70% of all functions)']
 
-temp3emcc-analysis.txt
-['Functions with at least one call_indirect', ' 6 (9.84% of all functions)']
+upper_triangular_matrixemcc-analysis.txt
+['Functions with at least one call_indirect', ' 8 (7.55% of all functions)']
 
-temp1emcc-analysis.txt
+orphan_processemcc-analysis.txt
+['Functions with at least one call_indirect', ' 6 (8.33% of all functions)']
+
+forkemcc-analysis.txt
+['Functions with at least one call_indirect', ' 6 (9.52% of all functions)']
+
+floyd_triangleemcc-analysis.txt
+['Functions with at least one call_indirect', ' 8 (7.48% of all functions)']
+
+stack_overflowemcc-analysis.txt
 ['Functions with at least one call_indirect', ' 7 (10.29% of all functions)']
 
-temp2emcc-analysis.txt
-['Functions with at least one call_indirect', ' 10 (8.06% of all functions)']
+2dmatrixemcc-analysis.txt
+['Functions with at least one call_indirect', ' 6 (9.84% of all functions)']
 
-temp4wasi-analysis.txt
+euclidianemcc-analysis.txt
+['Functions with at least one call_indirect', ' 6 (9.84% of all functions)']
+
+sum_seriesemcc-analysis.txt
+['Functions with at least one call_indirect', ' 8 (7.48% of all functions)']
+
+horner_methodemcc-analysis.txt
+['Functions with at least one call_indirect', ' 8 (7.55% of all functions)']
+
+zombie_processemcc-analysis.txt
+['Functions with at least one call_indirect', ' 2 (5.26% of all functions)']
+
+sum_serieswasi-analysis.txt
+['Functions with at least one call_indirect', ' 6 (8.22% of all functions)']
+
+horner_methodwasi-analysis.txt
+['Functions with at least one call_indirect', ' 6 (8.33% of all functions)']
+
+euclidianwasi-analysis.txt
 ['Functions with at least one call_indirect', ' 4 (8.89% of all functions)']
 
-temp1wasi-analysis.txt
+upper_triangular_matrixwasi-analysis.txt
+['Functions with at least one call_indirect', ' 6 (8.33% of all functions)']
+
+valid_ipv4wasi-analysis.txt
+['Functions with at least one call_indirect', ' 4 (7.84% of all functions)']
+
+2dmatrixwasi-analysis.txt
+['Functions with at least one call_indirect', ' 4 (8.89% of all functions)']
+
+floyd_trianglewasi-analysis.txt
+['Functions with at least one call_indirect', ' 6 (8.22% of all functions)']
+
+stack_overflowwasi-analysis.txt
 ['Functions with at least one call_indirect', ' 5 (8.20% of all functions)']
 
-temp2wasi-analysis.txt
-['Functions with at least one call_indirect', ' 8 (8.08% of all functions)']
+floyd_trianglellvm-analysis.txt
+['Functions with at least one call_indirect', ' 6 (5.83% of all functions)']
 
-temp3wasi-analysis.txt
-['Functions with at least one call_indirect', ' 4 (8.89% of all functions)']
+horner_methodllvm-analysis.txt
+['Functions with at least one call_indirect', ' 6 (5.88% of all functions)']
 
-temp1llvm-analysis.txt
+sum_seriesllvm-analysis.txt
+['Functions with at least one call_indirect', ' 6 (5.83% of all functions)']
+
+upper_triangular_matrixllvm-analysis.txt
+['Functions with at least one call_indirect', ' 6 (5.88% of all functions)']
+
+2dmatrixllvm-analysis.txt
+['Functions with at least one call_indirect', ' 4 (7.02% of all functions)']
+
+tic_tac_toellvm-analysis.txt
+['Functions with at least one call_indirect', ' 8 (5.59% of all functions)']
+
+euclidianllvm-analysis.txt
+['Functions with at least one call_indirect', ' 4 (7.14% of all functions)']
+
+orphan_processllvm-analysis.txt
+['Functions with at least one call_indirect', ' 4 (6.06% of all functions)']
+
+valid_ipv4llvm-analysis.txt
+['Functions with at least one call_indirect', ' 4 (6.35% of all functions)']
+
+forkllvm-analysis.txt
+['Functions with at least one call_indirect', ' 4 (6.45% of all functions)']
+
+stack_overflowllvm-analysis.txt
 ['Functions with at least one call_indirect', ' 5 (8.06% of all functions)']
 
-temp3llvm-analysis.txt
-['Functions with at least one call_indirect', ' 4 (7.02% of all functions)']
+zombie_processllvm-analysis.txt
+['Functions with at least one call_indirect', ' 1 (5.88% of all functions)']
 
-temp2llvm-analysis.txt
-['Functions with at least one call_indirect', ' 8 (7.08% of all functions)']
+upper_triangular_matrixcheerp-analysis.txt
+['Functions with at least one call_indirect', ' 18 (16.36% of all functions)']
 
-temp4llvm-analysis.txt
-['Functions with at least one call_indirect', ' 4 (7.02% of all functions)']
+valid_ipv4cheerp-analysis.txt
+['Functions with at least one call_indirect', ' 10 (15.62% of all functions)']
 
-temp1cheerp-analysis.txt
+tic_tac_toecheerp-analysis.txt
+['Functions with at least one call_indirect', ' 18 (15.13% of all functions)']
+
+forkcheerp-analysis.txt
+['Functions with at least one call_indirect', ' 11 (16.67% of all functions)']
+
+zombie_processcheerp-analysis.txt
+['Functions with at least one call_indirect', ' 0 (0.00% of all functions)']
+
+orphan_processcheerp-analysis.txt
+['Functions with at least one call_indirect', ' 11 (16.67% of all functions)']
+
+euclidiancheerp-analysis.txt
+['Functions with at least one call_indirect', ' 10 (17.24% of all functions)']
+
+sum_seriescheerp-analysis.txt
+['Functions with at least one call_indirect', ' 16 (14.55% of all functions)']
+
+floyd_trianglecheerp-analysis.txt
+['Functions with at least one call_indirect', ' 17 (15.74% of all functions)']
+
+stack_overflowcheerp-analysis.txt
 ['Functions with at least one call_indirect', ' 11 (18.64% of all functions)']
 
-temp3cheerp-analysis.txt
+2dmatrixcheerp-analysis.txt
 ['Functions with at least one call_indirect', ' 11 (17.46% of all functions)']
 
-temp2cheerp-analysis.txt
-['Functions with at least one call_indirect', ' 19 (16.81% of all functions)']
-
-temp4cheerp-analysis.txt
-['Functions with at least one call_indirect', ' 11 (17.46% of all functions)']
+horner_methodcheerp-analysis.txt
+['Functions with at least one call_indirect', ' 17 (15.18% of all functions)']
 

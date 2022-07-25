@@ -1,80 +1,215 @@
-temp4emcc-analysis.txt
+valid_ipv4emcc-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '          8']
-['  Of those, unique functions', '     8 (i.e., at least 12.31% of all functions can be called indirectly, because they are in the [indirect call] table)']
+['  Of those, unique functions', '     8 (i.e., at least 10.96% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp3emcc-analysis.txt
+upper_triangular_matrixemcc-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          9']
+['  Of those, unique functions', '     9 (i.e., at least 8.11% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+orphan_processemcc-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '          8']
-['  Of those, unique functions', '     8 (i.e., at least 12.31% of all functions can be called indirectly, because they are in the [indirect call] table)']
+['  Of those, unique functions', '     8 (i.e., at least 10.39% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp1emcc-analysis.txt
+forkemcc-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          8']
+['  Of those, unique functions', '     8 (i.e., at least 11.94% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+floyd_triangleemcc-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          9']
+['  Of those, unique functions', '     9 (i.e., at least 8.04% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+stack_overflowemcc-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '         12']
 ['  Of those, unique functions', '    12 (i.e., at least 16.22% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp2emcc-analysis.txt
-['Tables', ' 1 (should be 1 in Wasm v1)']
-['  Table entries at init', '          9']
-['  Of those, unique functions', '     9 (i.e., at least 6.98% of all functions can be called indirectly, because they are in the [indirect call] table)']
-
-temp4wasi-analysis.txt
-['Tables', ' 1 (should be 1 in Wasm v1)']
-['  Table entries at init', '          4']
-['  Of those, unique functions', '     4 (i.e., at least 8.00% of all functions can be called indirectly, because they are in the [indirect call] table)']
-
-temp1wasi-analysis.txt
-['Tables', ' 1 (should be 1 in Wasm v1)']
-['  Table entries at init', '          8']
-['  Of those, unique functions', '     8 (i.e., at least 11.76% of all functions can be called indirectly, because they are in the [indirect call] table)']
-
-temp2wasi-analysis.txt
-['Tables', ' 1 (should be 1 in Wasm v1)']
-['  Table entries at init', '          5']
-['  Of those, unique functions', '     5 (i.e., at least 4.59% of all functions can be called indirectly, because they are in the [indirect call] table)']
-
-temp3wasi-analysis.txt
-['Tables', ' 1 (should be 1 in Wasm v1)']
-['  Table entries at init', '          4']
-['  Of those, unique functions', '     4 (i.e., at least 8.00% of all functions can be called indirectly, because they are in the [indirect call] table)']
-
-temp1llvm-analysis.txt
+2dmatrixemcc-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '          8']
 ['  Of those, unique functions', '     8 (i.e., at least 12.31% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp3llvm-analysis.txt
+euclidianemcc-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
-['  Table entries at init', '          4']
-['  Of those, unique functions', '     4 (i.e., at least 6.67% of all functions can be called indirectly, because they are in the [indirect call] table)']
+['  Table entries at init', '          8']
+['  Of those, unique functions', '     8 (i.e., at least 12.31% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp2llvm-analysis.txt
+sum_seriesemcc-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          9']
+['  Of those, unique functions', '     9 (i.e., at least 8.04% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+horner_methodemcc-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          9']
+['  Of those, unique functions', '     9 (i.e., at least 8.11% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+zombie_processemcc-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          6']
+['  Of those, unique functions', '     6 (i.e., at least 13.95% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+sum_serieswasi-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '          5']
-['  Of those, unique functions', '     5 (i.e., at least 4.17% of all functions can be called indirectly, because they are in the [indirect call] table)']
+['  Of those, unique functions', '     5 (i.e., at least 6.33% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp4llvm-analysis.txt
+horner_methodwasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          5']
+['  Of those, unique functions', '     5 (i.e., at least 6.41% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+euclidianwasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          4']
+['  Of those, unique functions', '     4 (i.e., at least 8.00% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+upper_triangular_matrixwasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          5']
+['  Of those, unique functions', '     5 (i.e., at least 6.41% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+valid_ipv4wasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          4']
+['  Of those, unique functions', '     4 (i.e., at least 7.14% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+2dmatrixwasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          4']
+['  Of those, unique functions', '     4 (i.e., at least 8.00% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+floyd_trianglewasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          5']
+['  Of those, unique functions', '     5 (i.e., at least 6.33% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+stack_overflowwasi-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          8']
+['  Of those, unique functions', '     8 (i.e., at least 11.76% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+floyd_trianglellvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          5']
+['  Of those, unique functions', '     5 (i.e., at least 4.55% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+horner_methodllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          5']
+['  Of those, unique functions', '     5 (i.e., at least 4.59% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+sum_seriesllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          5']
+['  Of those, unique functions', '     5 (i.e., at least 4.55% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+upper_triangular_matrixllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          5']
+['  Of those, unique functions', '     5 (i.e., at least 4.59% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+2dmatrixllvm-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '          4']
 ['  Of those, unique functions', '     4 (i.e., at least 6.67% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp1cheerp-analysis.txt
+tic_tac_toellvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          9']
+['  Of those, unique functions', '     9 (i.e., at least 5.96% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+euclidianllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          4']
+['  Of those, unique functions', '     4 (i.e., at least 6.78% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+orphan_processllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          4']
+['  Of those, unique functions', '     4 (i.e., at least 5.56% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+valid_ipv4llvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          4']
+['  Of those, unique functions', '     4 (i.e., at least 6.06% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+forkllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          4']
+['  Of those, unique functions', '     4 (i.e., at least 5.97% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+stack_overflowllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          8']
+['  Of those, unique functions', '     8 (i.e., at least 12.31% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+zombie_processllvm-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          0']
+['  Of those, unique functions', '     0 (i.e., at least 0.00% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+upper_triangular_matrixcheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         19']
+['  Of those, unique functions', '    19 (i.e., at least 16.81% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+valid_ipv4cheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         12']
+['  Of those, unique functions', '    12 (i.e., at least 17.91% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+tic_tac_toecheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         19']
+['  Of those, unique functions', '    19 (i.e., at least 15.57% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+forkcheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         12']
+['  Of those, unique functions', '    12 (i.e., at least 16.67% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+zombie_processcheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '          1']
+['  Of those, unique functions', '     1 (i.e., at least 8.33% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+orphan_processcheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         12']
+['  Of those, unique functions', '    12 (i.e., at least 16.44% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+euclidiancheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         12']
+['  Of those, unique functions', '    12 (i.e., at least 19.67% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+sum_seriescheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         19']
+['  Of those, unique functions', '    19 (i.e., at least 16.81% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+floyd_trianglecheerp-analysis.txt
+['Tables', ' 1 (should be 1 in Wasm v1)']
+['  Table entries at init', '         19']
+['  Of those, unique functions', '    19 (i.e., at least 17.12% of all functions can be called indirectly, because they are in the [indirect call] table)']
+
+stack_overflowcheerp-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '         14']
 ['  Of those, unique functions', '    14 (i.e., at least 22.58% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp3cheerp-analysis.txt
+2dmatrixcheerp-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '         12']
 ['  Of those, unique functions', '    12 (i.e., at least 18.18% of all functions can be called indirectly, because they are in the [indirect call] table)']
 
-temp2cheerp-analysis.txt
+horner_methodcheerp-analysis.txt
 ['Tables', ' 1 (should be 1 in Wasm v1)']
 ['  Table entries at init', '         19']
-['  Of those, unique functions', '    19 (i.e., at least 16.24% of all functions can be called indirectly, because they are in the [indirect call] table)']
-
-temp4cheerp-analysis.txt
-['Tables', ' 1 (should be 1 in Wasm v1)']
-['  Table entries at init', '         12']
-['  Of those, unique functions', '    12 (i.e., at least 18.18% of all functions can be called indirectly, because they are in the [indirect call] table)']
+['  Of those, unique functions', '    19 (i.e., at least 16.52% of all functions can be called indirectly, because they are in the [indirect call] table)']
 

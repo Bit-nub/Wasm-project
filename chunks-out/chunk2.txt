@@ -1,96 +1,258 @@
-temp4emcc-analysis.txt
-['Functions', '           65']
+valid_ipv4emcc-analysis.txt
+['Functions', '           73']
 ['  Imported', '           4']
-['  Non-imported', '      61']
+['  Non-imported', '      69']
 ['  Exported', '           9']
 
-temp3emcc-analysis.txt
-['Functions', '           65']
-['  Imported', '           4']
-['  Non-imported', '      61']
+upper_triangular_matrixemcc-analysis.txt
+['Functions', '          111']
+['  Imported', '           5']
+['  Non-imported', '     106']
 ['  Exported', '           9']
 
-temp1emcc-analysis.txt
+orphan_processemcc-analysis.txt
+['Functions', '           77']
+['  Imported', '           5']
+['  Non-imported', '      72']
+['  Exported', '           9']
+
+forkemcc-analysis.txt
+['Functions', '           67']
+['  Imported', '           4']
+['  Non-imported', '      63']
+['  Exported', '           9']
+
+floyd_triangleemcc-analysis.txt
+['Functions', '          112']
+['  Imported', '           5']
+['  Non-imported', '     107']
+['  Exported', '           9']
+
+stack_overflowemcc-analysis.txt
 ['Functions', '           74']
 ['  Imported', '           6']
 ['  Non-imported', '      68']
 ['  Exported', '          10']
 
-temp2emcc-analysis.txt
-['Functions', '          129']
-['  Imported', '           5']
-['  Non-imported', '     124']
+2dmatrixemcc-analysis.txt
+['Functions', '           65']
+['  Imported', '           4']
+['  Non-imported', '      61']
 ['  Exported', '           9']
 
-temp4wasi-analysis.txt
+euclidianemcc-analysis.txt
+['Functions', '           65']
+['  Imported', '           4']
+['  Non-imported', '      61']
+['  Exported', '           9']
+
+sum_seriesemcc-analysis.txt
+['Functions', '          112']
+['  Imported', '           5']
+['  Non-imported', '     107']
+['  Exported', '           9']
+
+horner_methodemcc-analysis.txt
+['Functions', '          111']
+['  Imported', '           5']
+['  Non-imported', '     106']
+['  Exported', '           9']
+
+zombie_processemcc-analysis.txt
+['Functions', '           43']
+['  Imported', '           5']
+['  Non-imported', '      38']
+['  Exported', '           9']
+
+sum_serieswasi-analysis.txt
+['Functions', '           79']
+['  Imported', '           6']
+['  Non-imported', '      73']
+['  Exported', '           1']
+
+horner_methodwasi-analysis.txt
+['Functions', '           78']
+['  Imported', '           6']
+['  Non-imported', '      72']
+['  Exported', '           1']
+
+euclidianwasi-analysis.txt
 ['Functions', '           50']
 ['  Imported', '           5']
 ['  Non-imported', '      45']
 ['  Exported', '           1']
 
-temp1wasi-analysis.txt
+upper_triangular_matrixwasi-analysis.txt
+['Functions', '           78']
+['  Imported', '           6']
+['  Non-imported', '      72']
+['  Exported', '           1']
+
+valid_ipv4wasi-analysis.txt
+['Functions', '           56']
+['  Imported', '           5']
+['  Non-imported', '      51']
+['  Exported', '           1']
+
+2dmatrixwasi-analysis.txt
+['Functions', '           50']
+['  Imported', '           5']
+['  Non-imported', '      45']
+['  Exported', '           1']
+
+floyd_trianglewasi-analysis.txt
+['Functions', '           79']
+['  Imported', '           6']
+['  Non-imported', '      73']
+['  Exported', '           1']
+
+stack_overflowwasi-analysis.txt
 ['Functions', '           68']
 ['  Imported', '           7']
 ['  Non-imported', '      61']
 ['  Exported', '           1']
 
-temp2wasi-analysis.txt
+floyd_trianglellvm-analysis.txt
+['Functions', '          110']
+['  Imported', '           7']
+['  Non-imported', '     103']
+['  Exported', '          95']
+
+horner_methodllvm-analysis.txt
 ['Functions', '          109']
-['  Imported', '          10']
-['  Non-imported', '      99']
-['  Exported', '           1']
+['  Imported', '           7']
+['  Non-imported', '     102']
+['  Exported', '          94']
 
-temp3wasi-analysis.txt
-['Functions', '           50']
+sum_seriesllvm-analysis.txt
+['Functions', '          110']
+['  Imported', '           7']
+['  Non-imported', '     103']
+['  Exported', '          95']
+
+upper_triangular_matrixllvm-analysis.txt
+['Functions', '          109']
+['  Imported', '           7']
+['  Non-imported', '     102']
+['  Exported', '          94']
+
+2dmatrixllvm-analysis.txt
+['Functions', '           60']
+['  Imported', '           3']
+['  Non-imported', '      57']
+['  Exported', '          55']
+
+tic_tac_toellvm-analysis.txt
+['Functions', '          151']
+['  Imported', '           8']
+['  Non-imported', '     143']
+['  Exported', '         134']
+
+euclidianllvm-analysis.txt
+['Functions', '           59']
+['  Imported', '           3']
+['  Non-imported', '      56']
+['  Exported', '          54']
+
+orphan_processllvm-analysis.txt
+['Functions', '           72']
+['  Imported', '           6']
+['  Non-imported', '      66']
+['  Exported', '          64']
+
+valid_ipv4llvm-analysis.txt
+['Functions', '           66']
+['  Imported', '           3']
+['  Non-imported', '      63']
+['  Exported', '          61']
+
+forkllvm-analysis.txt
+['Functions', '           67']
 ['  Imported', '           5']
-['  Non-imported', '      45']
-['  Exported', '           1']
+['  Non-imported', '      62']
+['  Exported', '          60']
 
-temp1llvm-analysis.txt
+stack_overflowllvm-analysis.txt
 ['Functions', '           65']
 ['  Imported', '           3']
 ['  Non-imported', '      62']
 ['  Exported', '          60']
 
-temp3llvm-analysis.txt
-['Functions', '           60']
-['  Imported', '           3']
-['  Non-imported', '      57']
-['  Exported', '          55']
+zombie_processllvm-analysis.txt
+['Functions', '           21']
+['  Imported', '           4']
+['  Non-imported', '      17']
+['  Exported', '          17']
 
-temp2llvm-analysis.txt
-['Functions', '          120']
+upper_triangular_matrixcheerp-analysis.txt
+['Functions', '          113']
+['  Imported', '           3']
+['  Non-imported', '     110']
+['  Exported', '           1']
+
+valid_ipv4cheerp-analysis.txt
+['Functions', '           67']
+['  Imported', '           3']
+['  Non-imported', '      64']
+['  Exported', '           1']
+
+tic_tac_toecheerp-analysis.txt
+['Functions', '          122']
+['  Imported', '           3']
+['  Non-imported', '     119']
+['  Exported', '           1']
+
+forkcheerp-analysis.txt
+['Functions', '           72']
+['  Imported', '           6']
+['  Non-imported', '      66']
+['  Exported', '           1']
+
+zombie_processcheerp-analysis.txt
+['Functions', '           12']
+['  Imported', '           4']
+['  Non-imported', '       8']
+['  Exported', '           1']
+
+orphan_processcheerp-analysis.txt
+['Functions', '           73']
 ['  Imported', '           7']
-['  Non-imported', '     113']
-['  Exported', '         105']
+['  Non-imported', '      66']
+['  Exported', '           1']
 
-temp4llvm-analysis.txt
-['Functions', '           60']
+euclidiancheerp-analysis.txt
+['Functions', '           61']
 ['  Imported', '           3']
-['  Non-imported', '      57']
-['  Exported', '          55']
+['  Non-imported', '      58']
+['  Exported', '           1']
 
-temp1cheerp-analysis.txt
+sum_seriescheerp-analysis.txt
+['Functions', '          113']
+['  Imported', '           3']
+['  Non-imported', '     110']
+['  Exported', '           1']
+
+floyd_trianglecheerp-analysis.txt
+['Functions', '          111']
+['  Imported', '           3']
+['  Non-imported', '     108']
+['  Exported', '           1']
+
+stack_overflowcheerp-analysis.txt
 ['Functions', '           62']
 ['  Imported', '           3']
 ['  Non-imported', '      59']
 ['  Exported', '           1']
 
-temp3cheerp-analysis.txt
+2dmatrixcheerp-analysis.txt
 ['Functions', '           66']
 ['  Imported', '           3']
 ['  Non-imported', '      63']
 ['  Exported', '           1']
 
-temp2cheerp-analysis.txt
-['Functions', '          117']
-['  Imported', '           4']
-['  Non-imported', '     113']
-['  Exported', '           1']
-
-temp4cheerp-analysis.txt
-['Functions', '           66']
+horner_methodcheerp-analysis.txt
+['Functions', '          115']
 ['  Imported', '           3']
-['  Non-imported', '      63']
+['  Non-imported', '     112']
 ['  Exported', '           1']
 

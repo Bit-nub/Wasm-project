@@ -1,114 +1,283 @@
-temp4emcc-analysis.txt
+valid_ipv4emcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp4emcc.wasm",0,1,1,"i32.load"']
-['"temp4emcc.wasm",1,1,1,"local.(get|tee)"']
-['"temp4emcc.wasm",2,2,1,"i32.load"']
-['"temp4emcc.wasm",3,1,1,"local.(get|tee)"']
-['"temp4emcc.wasm",4,1,4,"i32.load"']
+['"valid_ipv4emcc.wasm",0,1,1,"i32.load"']
+['"valid_ipv4emcc.wasm",1,1,1,"local.(get|tee)"']
+['"valid_ipv4emcc.wasm",2,2,1,"i32.load"']
+['"valid_ipv4emcc.wasm",3,1,1,"local.(get|tee)"']
+['"valid_ipv4emcc.wasm",4,1,4,"i32.load"']
 ['']
 
-temp3emcc-analysis.txt
+upper_triangular_matrixemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp3emcc.wasm",0,1,1,"i32.load"']
-['"temp3emcc.wasm",1,1,1,"local.(get|tee)"']
-['"temp3emcc.wasm",2,2,1,"i32.load"']
-['"temp3emcc.wasm",3,1,1,"local.(get|tee)"']
-['"temp3emcc.wasm",4,1,4,"i32.load"']
+['"upper_triangular_matrixemcc.wasm",0,1,1,"i32.load"']
+['"upper_triangular_matrixemcc.wasm",1,1,1,"local.(get|tee)"']
+['"upper_triangular_matrixemcc.wasm",2,2,1,"i32.load"']
+['"upper_triangular_matrixemcc.wasm",3,1,1,"local.(get|tee)"']
+['"upper_triangular_matrixemcc.wasm",4,2,6,"i32.load"']
 ['']
 
-temp1emcc-analysis.txt
+orphan_processemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp1emcc.wasm",0,1,1,"i32.load"']
-['"temp1emcc.wasm",1,4,1,"local.(get|tee)"']
-['"temp1emcc.wasm",2,1,1,"local.(get|tee)"']
-['"temp1emcc.wasm",3,2,1,"i32.load"']
-['"temp1emcc.wasm",4,1,1,"local.(get|tee)"']
-['"temp1emcc.wasm",5,1,4,"i32.load"']
+['"orphan_processemcc.wasm",0,1,1,"i32.load"']
+['"orphan_processemcc.wasm",1,1,1,"local.(get|tee)"']
+['"orphan_processemcc.wasm",2,2,1,"i32.load"']
+['"orphan_processemcc.wasm",3,1,1,"local.(get|tee)"']
+['"orphan_processemcc.wasm",4,1,4,"i32.load"']
 ['']
 
-temp2emcc-analysis.txt
+forkemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp2emcc.wasm",0,1,1,"i32.load"']
-['"temp2emcc.wasm",1,2,1,"i32.load"']
-['"temp2emcc.wasm",2,1,1,"local.(get|tee)"']
-['"temp2emcc.wasm",3,1,1,"local.(get|tee)"']
-['"temp2emcc.wasm",4,2,2,"i32.load"']
-['"temp2emcc.wasm",5,2,7,"i32.load"']
+['"forkemcc.wasm",0,1,1,"i32.load"']
+['"forkemcc.wasm",1,1,1,"local.(get|tee)"']
+['"forkemcc.wasm",2,2,1,"i32.load"']
+['"forkemcc.wasm",3,1,1,"local.(get|tee)"']
+['"forkemcc.wasm",4,1,4,"i32.load"']
 ['']
 
-temp4wasi-analysis.txt
+floyd_triangleemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp4wasi.wasm",0,1,4,"i32.load"']
-['"temp4wasi.wasm",1,2,9,"i32.load"']
+['"floyd_triangleemcc.wasm",0,1,1,"i32.load"']
+['"floyd_triangleemcc.wasm",1,1,1,"local.(get|tee)"']
+['"floyd_triangleemcc.wasm",2,2,1,"i32.load"']
+['"floyd_triangleemcc.wasm",3,1,1,"local.(get|tee)"']
+['"floyd_triangleemcc.wasm",4,2,6,"i32.load"']
 ['']
 
-temp1wasi-analysis.txt
+stack_overflowemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp1wasi.wasm",0,4,1,"local.(get|tee)"']
-['"temp1wasi.wasm",1,1,4,"i32.load"']
-['"temp1wasi.wasm",2,2,9,"i32.load"']
+['"stack_overflowemcc.wasm",0,1,1,"i32.load"']
+['"stack_overflowemcc.wasm",1,4,1,"local.(get|tee)"']
+['"stack_overflowemcc.wasm",2,1,1,"local.(get|tee)"']
+['"stack_overflowemcc.wasm",3,2,1,"i32.load"']
+['"stack_overflowemcc.wasm",4,1,1,"local.(get|tee)"']
+['"stack_overflowemcc.wasm",5,1,4,"i32.load"']
 ['']
 
-temp2wasi-analysis.txt
+2dmatrixemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp2wasi.wasm",0,1,1,"i32.load"']
-['"temp2wasi.wasm",1,1,6,"i32.load"']
-['"temp2wasi.wasm",2,3,13,"i32.load"']
+['"2dmatrixemcc.wasm",0,1,1,"i32.load"']
+['"2dmatrixemcc.wasm",1,1,1,"local.(get|tee)"']
+['"2dmatrixemcc.wasm",2,2,1,"i32.load"']
+['"2dmatrixemcc.wasm",3,1,1,"local.(get|tee)"']
+['"2dmatrixemcc.wasm",4,1,4,"i32.load"']
 ['']
 
-temp3wasi-analysis.txt
+euclidianemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp3wasi.wasm",0,1,4,"i32.load"']
-['"temp3wasi.wasm",1,2,9,"i32.load"']
+['"euclidianemcc.wasm",0,1,1,"i32.load"']
+['"euclidianemcc.wasm",1,1,1,"local.(get|tee)"']
+['"euclidianemcc.wasm",2,2,1,"i32.load"']
+['"euclidianemcc.wasm",3,1,1,"local.(get|tee)"']
+['"euclidianemcc.wasm",4,1,4,"i32.load"']
 ['']
 
-temp1llvm-analysis.txt
+sum_seriesemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp1llvm.wasm",0,4,1,"local.(get|tee)"']
-['"temp1llvm.wasm",1,1,3,"i32.load"']
-['"temp1llvm.wasm",2,2,8,"i32.load"']
+['"sum_seriesemcc.wasm",0,1,1,"i32.load"']
+['"sum_seriesemcc.wasm",1,1,1,"local.(get|tee)"']
+['"sum_seriesemcc.wasm",2,2,1,"i32.load"']
+['"sum_seriesemcc.wasm",3,1,1,"local.(get|tee)"']
+['"sum_seriesemcc.wasm",4,2,6,"i32.load"']
 ['']
 
-temp3llvm-analysis.txt
+horner_methodemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp3llvm.wasm",0,1,3,"i32.load"']
-['"temp3llvm.wasm",1,2,8,"i32.load"']
+['"horner_methodemcc.wasm",0,1,1,"i32.load"']
+['"horner_methodemcc.wasm",1,1,1,"local.(get|tee)"']
+['"horner_methodemcc.wasm",2,2,1,"i32.load"']
+['"horner_methodemcc.wasm",3,1,1,"local.(get|tee)"']
+['"horner_methodemcc.wasm",4,2,6,"i32.load"']
 ['']
 
-temp2llvm-analysis.txt
+zombie_processemcc-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp2llvm.wasm",0,1,1,"i32.load"']
-['"temp2llvm.wasm",1,1,5,"i32.load"']
-['"temp2llvm.wasm",2,3,12,"i32.load"']
+['"zombie_processemcc.wasm",0,1,1,"i32.load"']
+['"zombie_processemcc.wasm",1,1,1,"i32.load"']
+['"zombie_processemcc.wasm",2,2,1,"i32.load"']
 ['']
 
-temp4llvm-analysis.txt
+sum_serieswasi-analysis.txt
 ['CSV data on CFI classes', '']
 ['benchmark,binary,class,size,count,source']
-['"temp4llvm.wasm",0,1,3,"i32.load"']
-['"temp4llvm.wasm",1,2,8,"i32.load"']
+['"sum_serieswasi.wasm",0,1,4,"i32.load"']
+['"sum_serieswasi.wasm",1,3,11,"i32.load"']
 ['']
 
-temp1cheerp-analysis.txt
-['CSV data for further analysis', ' temp1cheerp.wasm,7162,86,20,18.867924,62,14,7,8,1,6,2.5,2,202,61,30.198019,49,24.257425,11,5.4455447']
+horner_methodwasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"horner_methodwasi.wasm",0,1,4,"i32.load"']
+['"horner_methodwasi.wasm",1,3,11,"i32.load"']
+['']
 
-temp3cheerp-analysis.txt
-['CSV data for further analysis', ' temp3cheerp.wasm,9094,111,22,16.541353,66,12,4,7,1,6,3.142857142857143,2,220,70,31.818182,58,26.363636,20,9.090909']
+euclidianwasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"euclidianwasi.wasm",0,1,4,"i32.load"']
+['"euclidianwasi.wasm",1,2,9,"i32.load"']
+['']
 
-temp2cheerp-analysis.txt
-['CSV data for further analysis', ' temp2cheerp.wasm,22216,263,43,14.052288,117,19,13,12,1,10,3.5833333333333335,2,872,174,19.954128,147,16.857798,76,8.715596']
+upper_triangular_matrixwasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"upper_triangular_matrixwasi.wasm",0,1,4,"i32.load"']
+['"upper_triangular_matrixwasi.wasm",1,3,11,"i32.load"']
+['']
 
-temp4cheerp-analysis.txt
-['CSV data for further analysis', ' temp4cheerp.wasm,9112,111,22,16.541353,66,12,4,7,1,6,3.142857142857143,2,220,70,31.818182,58,26.363636,20,9.090909']
+valid_ipv4wasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"valid_ipv4wasi.wasm",0,1,4,"i32.load"']
+['"valid_ipv4wasi.wasm",1,2,9,"i32.load"']
+['']
+
+2dmatrixwasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"2dmatrixwasi.wasm",0,1,4,"i32.load"']
+['"2dmatrixwasi.wasm",1,2,9,"i32.load"']
+['']
+
+floyd_trianglewasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"floyd_trianglewasi.wasm",0,1,4,"i32.load"']
+['"floyd_trianglewasi.wasm",1,3,11,"i32.load"']
+['']
+
+stack_overflowwasi-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"stack_overflowwasi.wasm",0,4,1,"local.(get|tee)"']
+['"stack_overflowwasi.wasm",1,1,4,"i32.load"']
+['"stack_overflowwasi.wasm",2,2,9,"i32.load"']
+['']
+
+floyd_trianglellvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"floyd_trianglellvm.wasm",0,1,3,"i32.load"']
+['"floyd_trianglellvm.wasm",1,3,10,"i32.load"']
+['']
+
+horner_methodllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"horner_methodllvm.wasm",0,1,3,"i32.load"']
+['"horner_methodllvm.wasm",1,3,10,"i32.load"']
+['']
+
+sum_seriesllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"sum_seriesllvm.wasm",0,1,3,"i32.load"']
+['"sum_seriesllvm.wasm",1,3,10,"i32.load"']
+['']
+
+upper_triangular_matrixllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"upper_triangular_matrixllvm.wasm",0,1,3,"i32.load"']
+['"upper_triangular_matrixllvm.wasm",1,3,10,"i32.load"']
+['']
+
+2dmatrixllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"2dmatrixllvm.wasm",0,1,3,"i32.load"']
+['"2dmatrixllvm.wasm",1,2,8,"i32.load"']
+['']
+
+tic_tac_toellvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"tic_tac_toellvm.wasm",0,1,5,"i32.load"']
+['"tic_tac_toellvm.wasm",1,4,13,"i32.load"']
+['']
+
+euclidianllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"euclidianllvm.wasm",0,1,3,"i32.load"']
+['"euclidianllvm.wasm",1,2,8,"i32.load"']
+['']
+
+orphan_processllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"orphan_processllvm.wasm",0,1,3,"i32.load"']
+['"orphan_processllvm.wasm",1,2,8,"i32.load"']
+['']
+
+valid_ipv4llvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"valid_ipv4llvm.wasm",0,1,3,"i32.load"']
+['"valid_ipv4llvm.wasm",1,2,8,"i32.load"']
+['']
+
+forkllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"forkllvm.wasm",0,1,3,"i32.load"']
+['"forkllvm.wasm",1,2,8,"i32.load"']
+['']
+
+stack_overflowllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"stack_overflowllvm.wasm",0,4,1,"local.(get|tee)"']
+['"stack_overflowllvm.wasm",1,1,3,"i32.load"']
+['"stack_overflowllvm.wasm",2,2,8,"i32.load"']
+['']
+
+zombie_processllvm-analysis.txt
+['CSV data on CFI classes', '']
+['benchmark,binary,class,size,count,source']
+['"zombie_processllvm.wasm",0,0,1,"i32.load"']
+['']
+
+upper_triangular_matrixcheerp-analysis.txt
+['CSV data for further analysis', ' upper_triangular_matrixcheerp.wasm,22339,269,41,13.225806,113,19,13,11,1,8,3.727272727272727,2,778,166,21.336761,142,18.251928,91,11.696658']
+
+valid_ipv4cheerp-analysis.txt
+['CSV data for further analysis', ' valid_ipv4cheerp.wasm,7704,102,19,15.702479,67,12,4,7,1,6,2.7142857142857144,2,208,58,27.884615,46,22.115385,8,3.8461537']
+
+tic_tac_toecheerp-analysis.txt
+['CSV data for further analysis', ' tic_tac_toecheerp.wasm,22876,287,41,12.5,122,19,13,11,1,8,3.727272727272727,2,825,166,20.121212,142,17.212122,91,11.030303']
+
+forkcheerp-analysis.txt
+['CSV data for further analysis', ' forkcheerp.wasm,8911,117,22,15.827338,72,12,4,7,1,6,3.142857142857143,2,220,70,31.818182,58,26.363636,20,9.090909']
+
+orphan_processcheerp-analysis.txt
+['CSV data for further analysis', ' orphan_processcheerp.wasm,8962,124,22,15.068493,73,12,4,7,1,6,3.142857142857143,2,220,70,31.818182,58,26.363636,20,9.090909']
+
+euclidiancheerp-analysis.txt
+['CSV data for further analysis', ' euclidiancheerp.wasm,7036,85,19,18.26923,61,12,4,7,1,6,2.7142857142857144,2,192,58,30.208334,46,23.958334,8,4.1666665']
+
+sum_seriescheerp-analysis.txt
+['CSV data for further analysis', ' sum_seriescheerp.wasm,25268,289,55,15.988372,113,19,13,10,1,25,5.5,3,1043,244,23.394056,222,21.284756,76,7.286673']
+
+floyd_trianglecheerp-analysis.txt
+['CSV data for further analysis', ' floyd_trianglecheerp.wasm,21362,243,38,13.523131,111,19,13,11,1,8,3.4545454545454546,2,700,151,21.571428,127,18.142857,76,10.857142']
+
+stack_overflowcheerp-analysis.txt
+['CSV data for further analysis', ' stack_overflowcheerp.wasm,7162,86,20,18.867924,62,14,7,8,1,6,2.5,2,202,61,30.198019,49,24.257425,11,5.4455447']
+
+2dmatrixcheerp-analysis.txt
+['CSV data for further analysis', ' 2dmatrixcheerp.wasm,9094,111,22,16.541353,66,12,4,7,1,6,3.142857142857143,2,220,70,31.818182,58,26.363636,20,9.090909']
+
+horner_methodcheerp-analysis.txt
+['CSV data for further analysis', ' horner_methodcheerp.wasm,26035,310,58,15.76087,115,19,13,10,1,25,5.8,5,1120,259,23.125,237,21.160715,91,8.125']
 

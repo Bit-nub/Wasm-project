@@ -1,64 +1,172 @@
-temp4emcc-analysis.txt
-['Input file', ' temp4emcc.wasm']
-['  binary', '    temp4emcc.wasm']
+valid_ipv4emcc-analysis.txt
+['Input file', ' valid_ipv4emcc.wasm']
+['  binary', '    valid_ipv4emcc.wasm']
 
-temp3emcc-analysis.txt
-['Input file', ' temp3emcc.wasm']
-['  binary', '    temp3emcc.wasm']
+upper_triangular_matrixemcc-analysis.txt
+['Input file', ' upper_triangular_matrixemcc.wasm']
+['  binary', '    upper_triangular_matrixemcc.wasm']
 
-temp1emcc-analysis.txt
-['Input file', ' temp1emcc.wasm']
-['  binary', '    temp1emcc.wasm']
+orphan_processemcc-analysis.txt
+['Input file', ' orphan_processemcc.wasm']
+['  binary', '    orphan_processemcc.wasm']
 
-temp2emcc-analysis.txt
-['Input file', ' temp2emcc.wasm']
-['  binary', '    temp2emcc.wasm']
+forkemcc-analysis.txt
+['Input file', ' forkemcc.wasm']
+['  binary', '    forkemcc.wasm']
 
-temp4wasi-analysis.txt
-['Input file', ' temp4wasi.wasm']
-['  binary', '    temp4wasi.wasm']
+floyd_triangleemcc-analysis.txt
+['Input file', ' floyd_triangleemcc.wasm']
+['  binary', '    floyd_triangleemcc.wasm']
 
-temp1wasi-analysis.txt
-['Input file', ' temp1wasi.wasm']
-['  binary', '    temp1wasi.wasm']
+stack_overflowemcc-analysis.txt
+['Input file', ' stack_overflowemcc.wasm']
+['  binary', '    stack_overflowemcc.wasm']
 
-temp2wasi-analysis.txt
-['Input file', ' temp2wasi.wasm']
-['  binary', '    temp2wasi.wasm']
+2dmatrixemcc-analysis.txt
+['Input file', ' 2dmatrixemcc.wasm']
+['  binary', '    2dmatrixemcc.wasm']
 
-temp3wasi-analysis.txt
-['Input file', ' temp3wasi.wasm']
-['  binary', '    temp3wasi.wasm']
+euclidianemcc-analysis.txt
+['Input file', ' euclidianemcc.wasm']
+['  binary', '    euclidianemcc.wasm']
 
-temp1llvm-analysis.txt
-['Input file', ' temp1llvm.wasm']
-['  binary', '    temp1llvm.wasm']
+sum_seriesemcc-analysis.txt
+['Input file', ' sum_seriesemcc.wasm']
+['  binary', '    sum_seriesemcc.wasm']
 
-temp3llvm-analysis.txt
-['Input file', ' temp3llvm.wasm']
-['  binary', '    temp3llvm.wasm']
+horner_methodemcc-analysis.txt
+['Input file', ' horner_methodemcc.wasm']
+['  binary', '    horner_methodemcc.wasm']
 
-temp2llvm-analysis.txt
-['Input file', ' temp2llvm.wasm']
-['  binary', '    temp2llvm.wasm']
+zombie_processemcc-analysis.txt
+['Input file', ' zombie_processemcc.wasm']
+['  binary', '    zombie_processemcc.wasm']
 
-temp4llvm-analysis.txt
-['Input file', ' temp4llvm.wasm']
-['  binary', '    temp4llvm.wasm']
+sum_serieswasi-analysis.txt
+['Input file', ' sum_serieswasi.wasm']
+['  binary', '    sum_serieswasi.wasm']
 
-temp1cheerp-analysis.txt
-['Input file', ' temp1cheerp.wasm']
-['  binary', '    temp1cheerp.wasm']
+horner_methodwasi-analysis.txt
+['Input file', ' horner_methodwasi.wasm']
+['  binary', '    horner_methodwasi.wasm']
 
-temp3cheerp-analysis.txt
-['Input file', ' temp3cheerp.wasm']
-['  binary', '    temp3cheerp.wasm']
+euclidianwasi-analysis.txt
+['Input file', ' euclidianwasi.wasm']
+['  binary', '    euclidianwasi.wasm']
 
-temp2cheerp-analysis.txt
-['Input file', ' temp2cheerp.wasm']
-['  binary', '    temp2cheerp.wasm']
+upper_triangular_matrixwasi-analysis.txt
+['Input file', ' upper_triangular_matrixwasi.wasm']
+['  binary', '    upper_triangular_matrixwasi.wasm']
 
-temp4cheerp-analysis.txt
-['Input file', ' temp4cheerp.wasm']
-['  binary', '    temp4cheerp.wasm']
+valid_ipv4wasi-analysis.txt
+['Input file', ' valid_ipv4wasi.wasm']
+['  binary', '    valid_ipv4wasi.wasm']
+
+2dmatrixwasi-analysis.txt
+['Input file', ' 2dmatrixwasi.wasm']
+['  binary', '    2dmatrixwasi.wasm']
+
+floyd_trianglewasi-analysis.txt
+['Input file', ' floyd_trianglewasi.wasm']
+['  binary', '    floyd_trianglewasi.wasm']
+
+stack_overflowwasi-analysis.txt
+['Input file', ' stack_overflowwasi.wasm']
+['  binary', '    stack_overflowwasi.wasm']
+
+floyd_trianglellvm-analysis.txt
+['Input file', ' floyd_trianglellvm.wasm']
+['  binary', '    floyd_trianglellvm.wasm']
+
+horner_methodllvm-analysis.txt
+['Input file', ' horner_methodllvm.wasm']
+['  binary', '    horner_methodllvm.wasm']
+
+sum_seriesllvm-analysis.txt
+['Input file', ' sum_seriesllvm.wasm']
+['  binary', '    sum_seriesllvm.wasm']
+
+upper_triangular_matrixllvm-analysis.txt
+['Input file', ' upper_triangular_matrixllvm.wasm']
+['  binary', '    upper_triangular_matrixllvm.wasm']
+
+2dmatrixllvm-analysis.txt
+['Input file', ' 2dmatrixllvm.wasm']
+['  binary', '    2dmatrixllvm.wasm']
+
+tic_tac_toellvm-analysis.txt
+['Input file', ' tic_tac_toellvm.wasm']
+['  binary', '    tic_tac_toellvm.wasm']
+
+euclidianllvm-analysis.txt
+['Input file', ' euclidianllvm.wasm']
+['  binary', '    euclidianllvm.wasm']
+
+orphan_processllvm-analysis.txt
+['Input file', ' orphan_processllvm.wasm']
+['  binary', '    orphan_processllvm.wasm']
+
+valid_ipv4llvm-analysis.txt
+['Input file', ' valid_ipv4llvm.wasm']
+['  binary', '    valid_ipv4llvm.wasm']
+
+forkllvm-analysis.txt
+['Input file', ' forkllvm.wasm']
+['  binary', '    forkllvm.wasm']
+
+stack_overflowllvm-analysis.txt
+['Input file', ' stack_overflowllvm.wasm']
+['  binary', '    stack_overflowllvm.wasm']
+
+zombie_processllvm-analysis.txt
+['Input file', ' zombie_processllvm.wasm']
+['  binary', '    zombie_processllvm.wasm']
+
+upper_triangular_matrixcheerp-analysis.txt
+['Input file', ' upper_triangular_matrixcheerp.wasm']
+['  binary', '    upper_triangular_matrixcheerp.wasm']
+
+valid_ipv4cheerp-analysis.txt
+['Input file', ' valid_ipv4cheerp.wasm']
+['  binary', '    valid_ipv4cheerp.wasm']
+
+tic_tac_toecheerp-analysis.txt
+['Input file', ' tic_tac_toecheerp.wasm']
+['  binary', '    tic_tac_toecheerp.wasm']
+
+forkcheerp-analysis.txt
+['Input file', ' forkcheerp.wasm']
+['  binary', '    forkcheerp.wasm']
+
+zombie_processcheerp-analysis.txt
+['Input file', ' zombie_processcheerp.wasm']
+['  binary', '    zombie_processcheerp.wasm']
+
+orphan_processcheerp-analysis.txt
+['Input file', ' orphan_processcheerp.wasm']
+['  binary', '    orphan_processcheerp.wasm']
+
+euclidiancheerp-analysis.txt
+['Input file', ' euclidiancheerp.wasm']
+['  binary', '    euclidiancheerp.wasm']
+
+sum_seriescheerp-analysis.txt
+['Input file', ' sum_seriescheerp.wasm']
+['  binary', '    sum_seriescheerp.wasm']
+
+floyd_trianglecheerp-analysis.txt
+['Input file', ' floyd_trianglecheerp.wasm']
+['  binary', '    floyd_trianglecheerp.wasm']
+
+stack_overflowcheerp-analysis.txt
+['Input file', ' stack_overflowcheerp.wasm']
+['  binary', '    stack_overflowcheerp.wasm']
+
+2dmatrixcheerp-analysis.txt
+['Input file', ' 2dmatrixcheerp.wasm']
+['  binary', '    2dmatrixcheerp.wasm']
+
+horner_methodcheerp-analysis.txt
+['Input file', ' horner_methodcheerp.wasm']
+['  binary', '    horner_methodcheerp.wasm']
 

@@ -1,80 +1,215 @@
-temp4emcc-analysis.txt
-['Instructions', '      5768']
-['  call', '             116 (2.01% of all instructions)']
-['  call_indirect', '      8 (0.14% of all instructions, 6.45% of all calls)']
+valid_ipv4emcc-analysis.txt
+['Instructions', '      6536']
+['  call', '             136 (2.08% of all instructions)']
+['  call_indirect', '      8 (0.12% of all instructions, 5.56% of all calls)']
 
-temp3emcc-analysis.txt
-['Instructions', '      5716']
-['  call', '             116 (2.03% of all instructions)']
-['  call_indirect', '      8 (0.14% of all instructions, 6.45% of all calls)']
+upper_triangular_matrixemcc-analysis.txt
+['Instructions', '     22165']
+['  call', '             400 (1.80% of all instructions)']
+['  call_indirect', '     10 (0.05% of all instructions, 2.44% of all calls)']
 
-temp1emcc-analysis.txt
-['Instructions', '      5833']
+orphan_processemcc-analysis.txt
+['Instructions', '      5794']
+['  call', '             144 (2.49% of all instructions)']
+['  call_indirect', '      8 (0.14% of all instructions, 5.26% of all calls)']
+
+forkemcc-analysis.txt
+['Instructions', '      5456']
+['  call', '             123 (2.25% of all instructions)']
+['  call_indirect', '      8 (0.15% of all instructions, 6.11% of all calls)']
+
+floyd_triangleemcc-analysis.txt
+['Instructions', '     21551']
+['  call', '             391 (1.81% of all instructions)']
+['  call_indirect', '     10 (0.05% of all instructions, 2.49% of all calls)']
+
+stack_overflowemcc-analysis.txt
+['Instructions', '      5838']
 ['  call', '             125 (2.14% of all instructions)']
 ['  call_indirect', '      9 (0.15% of all instructions, 6.72% of all calls)']
 
-temp2emcc-analysis.txt
-['Instructions', '     22412']
-['  call', '             441 (1.97% of all instructions)']
-['  call_indirect', '     13 (0.06% of all instructions, 2.86% of all calls)']
+2dmatrixemcc-analysis.txt
+['Instructions', '      5721']
+['  call', '             116 (2.03% of all instructions)']
+['  call_indirect', '      8 (0.14% of all instructions, 6.45% of all calls)']
 
-temp4wasi-analysis.txt
-['Instructions', '      7837']
-['  call', '             134 (1.71% of all instructions)']
+euclidianemcc-analysis.txt
+['Instructions', '      5566']
+['  call', '             116 (2.08% of all instructions)']
+['  call_indirect', '      8 (0.14% of all instructions, 6.45% of all calls)']
+
+sum_seriesemcc-analysis.txt
+['Instructions', '     21570']
+['  call', '             389 (1.80% of all instructions)']
+['  call_indirect', '     10 (0.05% of all instructions, 2.51% of all calls)']
+
+horner_methodemcc-analysis.txt
+['Instructions', '     21654']
+['  call', '             393 (1.81% of all instructions)']
+['  call_indirect', '     10 (0.05% of all instructions, 2.48% of all calls)']
+
+zombie_processemcc-analysis.txt
+['Instructions', '       756']
+['  call', '              45 (5.95% of all instructions)']
+['  call_indirect', '      3 (0.40% of all instructions, 6.25% of all calls)']
+
+sum_serieswasi-analysis.txt
+['Instructions', '     19726']
+['  call', '             248 (1.26% of all instructions)']
+['  call_indirect', '     15 (0.08% of all instructions, 5.70% of all calls)']
+
+horner_methodwasi-analysis.txt
+['Instructions', '     19810']
+['  call', '             252 (1.27% of all instructions)']
+['  call_indirect', '     15 (0.08% of all instructions, 5.62% of all calls)']
+
+euclidianwasi-analysis.txt
+['Instructions', '      7636']
+['  call', '             134 (1.75% of all instructions)']
 ['  call_indirect', '     13 (0.17% of all instructions, 8.84% of all calls)']
 
-temp1wasi-analysis.txt
-['Instructions', '     12280']
-['  call', '             167 (1.36% of all instructions)']
-['  call_indirect', '     14 (0.11% of all instructions, 7.73% of all calls)']
+upper_triangular_matrixwasi-analysis.txt
+['Instructions', '     20315']
+['  call', '             259 (1.27% of all instructions)']
+['  call_indirect', '     15 (0.07% of all instructions, 5.47% of all calls)']
 
-temp2wasi-analysis.txt
-['Instructions', '     21268']
-['  call', '             321 (1.51% of all instructions)']
-['  call_indirect', '     20 (0.09% of all instructions, 5.87% of all calls)']
+valid_ipv4wasi-analysis.txt
+['Instructions', '      8696']
+['  call', '             150 (1.72% of all instructions)']
+['  call_indirect', '     13 (0.15% of all instructions, 7.98% of all calls)']
 
-temp3wasi-analysis.txt
+2dmatrixwasi-analysis.txt
 ['Instructions', '      7787']
 ['  call', '             134 (1.72% of all instructions)']
 ['  call_indirect', '     13 (0.17% of all instructions, 8.84% of all calls)']
 
-temp1llvm-analysis.txt
-['Instructions', '     12336']
-['  call', '             206 (1.67% of all instructions)']
-['  call_indirect', '     12 (0.10% of all instructions, 5.50% of all calls)']
+floyd_trianglewasi-analysis.txt
+['Instructions', '     19708']
+['  call', '             250 (1.27% of all instructions)']
+['  call_indirect', '     15 (0.08% of all instructions, 5.66% of all calls)']
 
-temp3llvm-analysis.txt
+stack_overflowwasi-analysis.txt
+['Instructions', '     12280']
+['  call', '             167 (1.36% of all instructions)']
+['  call_indirect', '     14 (0.11% of all instructions, 7.73% of all calls)']
+
+floyd_trianglellvm-analysis.txt
+['Instructions', '     25074']
+['  call', '             561 (2.24% of all instructions)']
+['  call_indirect', '     13 (0.05% of all instructions, 2.26% of all calls)']
+
+horner_methodllvm-analysis.txt
+['Instructions', '     25174']
+['  call', '             563 (2.24% of all instructions)']
+['  call_indirect', '     13 (0.05% of all instructions, 2.26% of all calls)']
+
+sum_seriesllvm-analysis.txt
+['Instructions', '     25092']
+['  call', '             559 (2.23% of all instructions)']
+['  call_indirect', '     13 (0.05% of all instructions, 2.27% of all calls)']
+
+upper_triangular_matrixllvm-analysis.txt
+['Instructions', '     25716']
+['  call', '             570 (2.22% of all instructions)']
+['  call_indirect', '     13 (0.05% of all instructions, 2.23% of all calls)']
+
+2dmatrixllvm-analysis.txt
 ['Instructions', '     12281']
 ['  call', '             202 (1.64% of all instructions)']
 ['  call_indirect', '     11 (0.09% of all instructions, 5.16% of all calls)']
 
-temp2llvm-analysis.txt
-['Instructions', '     25996']
-['  call', '             609 (2.34% of all instructions)']
-['  call_indirect', '     18 (0.07% of all instructions, 2.87% of all calls)']
+tic_tac_toellvm-analysis.txt
+['Instructions', '     29220']
+['  call', '             707 (2.42% of all instructions)']
+['  call_indirect', '     18 (0.06% of all instructions, 2.48% of all calls)']
 
-temp4llvm-analysis.txt
-['Instructions', '     12385']
-['  call', '             202 (1.63% of all instructions)']
+euclidianllvm-analysis.txt
+['Instructions', '     12136']
+['  call', '             202 (1.66% of all instructions)']
 ['  call_indirect', '     11 (0.09% of all instructions, 5.16% of all calls)']
 
-temp1cheerp-analysis.txt
+orphan_processllvm-analysis.txt
+['Instructions', '     12227']
+['  call', '             231 (1.89% of all instructions)']
+['  call_indirect', '     11 (0.09% of all instructions, 4.55% of all calls)']
+
+valid_ipv4llvm-analysis.txt
+['Instructions', '     13209']
+['  call', '             219 (1.66% of all instructions)']
+['  call_indirect', '     11 (0.08% of all instructions, 4.78% of all calls)']
+
+forkllvm-analysis.txt
+['Instructions', '     12090']
+['  call', '             219 (1.81% of all instructions)']
+['  call_indirect', '     11 (0.09% of all instructions, 4.78% of all calls)']
+
+stack_overflowllvm-analysis.txt
+['Instructions', '     12336']
+['  call', '             206 (1.67% of all instructions)']
+['  call_indirect', '     12 (0.10% of all instructions, 5.50% of all calls)']
+
+zombie_processllvm-analysis.txt
+['Instructions', '       279']
+['  call', '              26 (9.32% of all instructions)']
+['  call_indirect', '      1 (0.36% of all instructions, 3.70% of all calls)']
+
+upper_triangular_matrixcheerp-analysis.txt
+['Instructions', '     22339']
+['  call', '             269 (1.20% of all instructions)']
+['  call_indirect', '     41 (0.18% of all instructions, 13.23% of all calls)']
+
+valid_ipv4cheerp-analysis.txt
+['Instructions', '      7704']
+['  call', '             102 (1.32% of all instructions)']
+['  call_indirect', '     19 (0.25% of all instructions, 15.70% of all calls)']
+
+tic_tac_toecheerp-analysis.txt
+['Instructions', '     22876']
+['  call', '             287 (1.25% of all instructions)']
+['  call_indirect', '     41 (0.18% of all instructions, 12.50% of all calls)']
+
+forkcheerp-analysis.txt
+['Instructions', '      8911']
+['  call', '             117 (1.31% of all instructions)']
+['  call_indirect', '     22 (0.25% of all instructions, 15.83% of all calls)']
+
+zombie_processcheerp-analysis.txt
+['Instructions', '       715']
+['  call', '               6 (0.84% of all instructions)']
+['  call_indirect', '      0 (0.00% of all instructions, 0.00% of all calls)']
+
+orphan_processcheerp-analysis.txt
+['Instructions', '      8962']
+['  call', '             124 (1.38% of all instructions)']
+['  call_indirect', '     22 (0.25% of all instructions, 15.07% of all calls)']
+
+euclidiancheerp-analysis.txt
+['Instructions', '      7036']
+['  call', '              85 (1.21% of all instructions)']
+['  call_indirect', '     19 (0.27% of all instructions, 18.27% of all calls)']
+
+sum_seriescheerp-analysis.txt
+['Instructions', '     25268']
+['  call', '             289 (1.14% of all instructions)']
+['  call_indirect', '     55 (0.22% of all instructions, 15.99% of all calls)']
+
+floyd_trianglecheerp-analysis.txt
+['Instructions', '     21362']
+['  call', '             243 (1.14% of all instructions)']
+['  call_indirect', '     38 (0.18% of all instructions, 13.52% of all calls)']
+
+stack_overflowcheerp-analysis.txt
 ['Instructions', '      7162']
 ['  call', '              86 (1.20% of all instructions)']
 ['  call_indirect', '     20 (0.28% of all instructions, 18.87% of all calls)']
 
-temp3cheerp-analysis.txt
+2dmatrixcheerp-analysis.txt
 ['Instructions', '      9094']
 ['  call', '             111 (1.22% of all instructions)']
 ['  call_indirect', '     22 (0.24% of all instructions, 16.54% of all calls)']
 
-temp2cheerp-analysis.txt
-['Instructions', '     22216']
-['  call', '             263 (1.18% of all instructions)']
-['  call_indirect', '     43 (0.19% of all instructions, 14.05% of all calls)']
-
-temp4cheerp-analysis.txt
-['Instructions', '      9112']
-['  call', '             111 (1.22% of all instructions)']
-['  call_indirect', '     22 (0.24% of all instructions, 16.54% of all calls)']
+horner_methodcheerp-analysis.txt
+['Instructions', '     26035']
+['  call', '             310 (1.19% of all instructions)']
+['  call_indirect', '     58 (0.22% of all instructions, 15.76% of all calls)']
 

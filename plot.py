@@ -4,6 +4,7 @@ import pandas as pd
 from IPython.display import display
 import numpy as np
 import re
+import matplotlib.pyplot as plt
 
 homeDir = os.getenv('HOME')
 rootDir=str(homeDir)+"/Wasm-project/out/"
@@ -35,6 +36,14 @@ def get_source_names(rootDir) :
     column_entries=source_name
     return column_entries
 
+def change_dtype(value):
+    try:
+        return int(value)
+    except ValueError:
+        try:
+            return float(value)
+        except ValueError:
+            return value
 
 def get_general_attributes():
     # table_name lists the names for each tool chain's table
@@ -109,45 +118,47 @@ def get_general_attributes():
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
                         src_comp=line.split("-")[0]
-                        digit=re.search(r'\d',src_comp)
-                        comp=src_comp.split(digit.group())[1]
-                        src=src_comp.replace(comp,"")
                     if "#" in line:
                         i+=1
-                if comp == "emcc":
+                if "emcc" in src_comp:
+                    src=src_comp.replace("emcc","")
                     df_emcc.at['Globals',src]=i
-                if comp == "cheerp":
+                elif "cheerp" in src_comp:
+                    src=src_comp.replace("cheerp","")
                     df_cheerp.at['Globals',src]=i
-                if comp == "llvm":
+                elif "llvm" in src_comp:
+                    src=src_comp.replace("llvm","")
                     df_llvm.at['Globals',src]=i
-                if comp == "wasi":
+                elif "wasi" in src_comp:
+                    src=src_comp.replace("wasi","")
                     df_wasi.at['Globals',src]=i
             if "Likely the stack pointer" in paragraph: #chunk6
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
                         src_comp=line.split("-")[0]
-                        digit=re.search(r'\d',src_comp)
-                        comp=src_comp.split(digit.group())[1]
-                        src=src_comp.replace(comp,"")
                     if "Likely the stack pointer" in line:
                         lsp=line.split(",")[1].strip(" '[]")
                     if "Functions using stack pointer" in line : 
                         fsp=line.split(",")[1].split("(")[0].strip(" '")
                     if "functions with stack allocation total" in line :
                         fsa=line.split(",")[1].split("(")[0].strip(" '")
-                if comp == "emcc":
+                if "emcc" in src_comp:
+                    src=src_comp.replace("emcc","")
                     df_emcc.at['Likely Stack Pointer (global id)',src]=lsp
                     df_emcc.at['Functions using stack pointer',src]=fsp
                     df_emcc.at['Functions w/ stack allocation',src]=fsa
-                if comp == "cheerp":
+                elif "cheerp" in src_comp:
+                    src=src_comp.replace("cheerp","")
                     df_cheerp.at['Likely Stack Pointer (global id)',src]=lsp
                     df_cheerp.at['Functions using stack pointer',src]=fsp
                     df_cheerp.at['Functions w/ stack allocation',src]=fsa
-                if comp == "llvm":
+                elif "llvm" in src_comp:
+                    src=src_comp.replace("llvm","")
                     df_llvm.at['Likely Stack Pointer (global id)',src]=lsp
                     df_llvm.at['Functions using stack pointer',src]=fsp
                     df_llvm.at['Functions w/ stack allocation',src]=fsa
-                if comp == "wasi":
+                elif "wasi" in src_comp:
+                    src=src_comp.replace("wasi","")
                     df_wasi.at['Likely Stack Pointer (global id)',src]=lsp
                     df_wasi.at['Functions using stack pointer',src]=fsp
                     df_wasi.at['Functions w/ stack allocation',src]=fsa
@@ -155,65 +166,72 @@ def get_general_attributes():
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
                         src_comp=line.split("-")[0]
-                        digit=re.search(r'\d',src_comp)
-                        comp=src_comp.split(digit.group())[1]
-                        src=src_comp.replace(comp,"")
                     if "Counts of function types" in line:
                         uft=line.split("(")[1].split()[0].strip()
-                if comp == "emcc":
+                if "emcc" in src_comp:
+                    src=src_comp.replace("emcc","")
                     df_emcc.at['Unique Function Types',src]=uft
-                if comp == "cheerp":
+                elif "cheerp" in src_comp:
+                    src=src_comp.replace("cheerp","")
                     df_cheerp.at['Unique Function Types',src]=uft
-                if comp == "llvm":
+                elif "llvm" in src_comp:
+                    src=src_comp.replace("llvm","")
                     df_llvm.at['Unique Function Types',src]=uft
-                if comp == "wasi":
+                elif "wasi" in src_comp:
+                    src=src_comp.replace("wasi","")
                     df_wasi.at['Unique Function Types',src]=uft
             if "Functions with at least one call_indirect" in paragraph: #chunk9
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
                         src_comp=line.split("-")[0]
-                        digit=re.search(r'\d',src_comp)
-                        comp=src_comp.split(digit.group())[1]
-                        src=src_comp.replace(comp,"")
                     if "Functions with at least one call_indirect" in line:
                         fic=line.split(",")[1].split("(")[0].strip(" '")
-                if comp == "emcc":
+                if "emcc" in src_comp:
+                    src=src_comp.replace("emcc","")
                     df_emcc.at['Functions w/ AL. one indirect call',src]=fic
-                if comp == "cheerp":
+                elif "cheerp" in src_comp:
+                    src=src_comp.replace("cheerp","")
                     df_cheerp.at['Functions w/ AL. one indirect call',src]=fic
-                if comp == "llvm":
+                elif "llvm" in src_comp:
+                    src=src_comp.replace("llvm","")
                     df_llvm.at['Functions w/ AL. one indirect call',src]=fic
-                if comp == "wasi":
+                elif "wasi" in src_comp:
+                    src=src_comp.replace("wasi","")
                     df_wasi.at['Functions w/ AL. one indirect call',src]=fic
             if "call_indirect target equivalence classes" in paragraph: #chunk5
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
                         src_comp=line.split("-")[0]
-                        digit=re.search(r'\d',src_comp)
-                        comp=src_comp.split(digit.group())[1]
-                        src=src_comp.replace(comp,"")
                     if "#" in line:
                         j+=1
-                if comp == "emcc":
+                if "emcc" in src_comp:
+                    src=src_comp.replace("emcc","")
                     df_emcc.at['CFI_Classes',src]=j
-                if comp == "cheerp":
+                elif "cheerp" in src_comp:
+                    src=src_comp.replace("cheerp","")
                     df_cheerp.at['CFI_Classes',src]=j
-                if comp == "llvm":
+                elif "llvm" in src_comp:
+                    src=src_comp.replace("llvm","")
                     df_llvm.at['CFI_Classes',src]=j
-                if comp == "wasi":
+                elif "wasi" in src_comp:
+                    src=src_comp.replace("wasi","")
                     df_wasi.at['CFI_Classes',src]=j
     print("\n -- cheerp table :\n")
-    display(df_cheerp.to_string())  
+    # for column in df_cheerp.columns:
+    #     df_cheerp.loc[:, column] = df_cheerp[column].apply(change_dtype)
+    # df_cheerp.loc["Functions",:].plot()
+    display(df_cheerp)  
     print("\n -- llvm table :\n")
-    display(df_llvm.to_string())
+    display(df_llvm)
     print("\n -- wasi table :\n")
-    display(df_wasi.to_string())
+    display(df_wasi)
     print("\n -- emscipten table :\n")
-    display(df_emcc.to_string())
+    display(df_emcc)
+    plt.show()
     #needs nb of globals/ nb of classes/ which gb is the stack pointer /nb of unique func types / chunk 9 
 
 
-#get_general_attributes()
+get_general_attributes()
 
 def get_source_tool_names(rootDir) :
     #source names define colum entries in each tool chain's table (line entries are the attributes we get)
@@ -465,6 +483,4 @@ def get_CFI_classes():
         print(dict_df[item])
         #display(dict_df[item].to_string())
             
-            
-
 #get_CFI_classes()
