@@ -231,7 +231,7 @@ def get_general_attributes():
     #needs nb of globals/ nb of classes/ which gb is the stack pointer /nb of unique func types / chunk 9 
 
 
-get_general_attributes()
+#get_general_attributes()
 
 def get_source_tool_names(rootDir) :
     #source names define colum entries in each tool chain's table (line entries are the attributes we get)
@@ -301,12 +301,13 @@ def get_globals():
                 dict_df[src_comp].at['sets',item]=sets[int(item)]
 
     for item in sc:
-        print("\n",item,"table :")
-        print(dict_df[item])         
+        if item in dict_df:
+            print("\n",item,"table :")
+            print(dict_df[item])         
                  
 #get_globals()
 
-def get_count_of_func_types():
+def get_function_types():
     dict_df={}
     sc=[]
     chunkname=['chunk8.txt']
@@ -334,8 +335,9 @@ def get_count_of_func_types():
             dict_df[src_comp].at[:,'type_count']=func_type_count
             dict_df[src_comp].at[:,'type_count_%_']=func_type_pct
     for item in sc:
-        print("\n",item,"table :")
-        print(dict_df[item])
+        if item in dict_df:
+            print("\n",item,"table :")
+            print(dict_df[item])
            
                         
 #get_count_of_func_types()
@@ -372,8 +374,9 @@ def get_init_tables():
             dict_df[src_comp].at[:,'unique_functions']=unique_funcs
             dict_df[src_comp].at[:,'type']=types
     for item in sc:
-        print("\n",item,"table :")
-        print(dict_df[item])
+        if item in dict_df:
+            print("\n",item,"table :")
+            print(dict_df[item])
 
 #get_init_tables()
 
@@ -479,8 +482,29 @@ def get_CFI_classes():
                     pattern=[]
 
     for item in sc:
-        print("\n",item,"table :")
-        print(dict_df[item])
+        if item in dict_df:
+            print("\n",item,"table :")
+            print(dict_df[item])
         #display(dict_df[item].to_string())
             
 #get_CFI_classes()
+
+
+def main():
+    while True :
+        inp = input("\nEnter : 0) to exit\n\t1) to list general attributes\n\t2) to list globals\n\t3) to list function types\n\t4) to list init tables\n\t5) to list cfi classes\n")
+        if inp == "0":
+            break
+        elif inp == "1":
+            get_general_attributes()
+        elif inp == "2":
+            get_globals()
+        elif inp == "3":
+            get_function_types()
+        elif inp == "4":
+            get_init_tables()
+        elif inp == "5":
+            get_CFI_classes()
+
+if __name__ == '__main__':
+    main()
