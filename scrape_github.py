@@ -19,7 +19,7 @@ def print_project_data(text, csvwriter):
         for repo in data.get('repositories', []):
             csvwriter.writerow([repo[arg] for arg in ARG_NAMES])
 
-def main(): 
+def main():
     for lang in LANGUAGES:
         with open(lang + '.csv', 'w') as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
