@@ -10,7 +10,7 @@ docker - python 3.8.8
 
 $ `git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && cp <PathToSourceFile1> <PathToSourceFile2> ./src/. && bash install.sh`    
 
-The output architecture (E.g. <filex>.c as input) should look like this :  
+The output architecture (E.g. <filex.c> as input) should look like this :  
 
 chunks-out  
 ├── chunk1.txt  
@@ -20,26 +20,26 @@ chunks-out
 └── chunk15.txt  
 out  
 ├── cheerp-wasm-out  
-│   ├── <filex>.c  
-│   ├── <filex>cheerp-analysis.txt  
-│   ├── <filex>cheerp.js  
-│   ├── <filex>cheerp.wasm  
-│   └── <filex>cheerp.wat  
+│   ├── filex.c  
+│   ├── filexcheerp-analysis.txt  
+│   ├── filexcheerp.js  
+│   ├── filexcheerp.wasm  
+│   └── filexcheerp.wat  
 ├── emcc-wasm-out  
-│   ├── <filex>.c  
-│   ├── <filex>emcc-analysis.txt  
-│   ├── <filex>emcc.wasm  
-│   └── <filex>emcc.wat  
+│   ├── filex.c  
+│   ├── filexemcc-analysis.txt  
+│   ├── filexemcc.wasm  
+│   └── filexemcc.wat  
 ├── llvm-clang-wasm-out  
-│   ├── <filex>.c  
-│   ├── <filex>llvm-analysis.txt  
-│   ├── <filex>llvm.wasm  
-│   └── <filex>llvm.wat  
+│   ├── filex.c  
+│   ├── filexllvm-analysis.txt  
+│   ├── filexllvm.wasm  
+│   └── filexllvm.wat  
 └── wasi-sdk-wasm-out  
-    ├── <filex>.c  
-    ├── <filex>wasi-analysis.txt  
-    ├── <filex>wasi.wasm  
-    └── <filex>wasi.wat  
+    ├── filex.c  
+    ├── filexwasi-analysis.txt  
+    ├── filexwasi.wasm  
+    └── filexwasi.wat  
 
 ## Scripts 
 
