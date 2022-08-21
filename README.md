@@ -63,4 +63,4 @@ out
 
     $ `python scrapeGithub.py`
 
-- the /src/tool/ folder is a sub repo for this project : `https://github.com/sola-st/wasm-binary-security/tree/master/tool/wasm-security-analysis`
+- the /src/tool/ folder is a sub repo from this project : `https://github.com/sola-st/wasm-binary-security/tree/master/tool/wasm-security-analysis`
