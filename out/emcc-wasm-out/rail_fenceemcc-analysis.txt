@@ -1,0 +1,177 @@
+Input file: rail_fenceemcc.wasm
+  binary:    rail_fenceemcc.wasm
+
+Functions:          115
+  Imported:           5
+  Non-imported:     110
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          9
+  Of those, unique functions:     9 (i.e., at least 7.83% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     23259
+  call:             413 (1.78% of all instructions)
+  call_indirect:     10 (0.04% of all instructions, 2.36% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5248352
+     36 × global.get   68 × global.set  104 total (35/65% split)
+  #1 i32
+     init: i32.const 0
+      2 × global.get    1 × global.set    3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+      1 × global.get    1 × global.set    2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     37 (33.64% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.91%) × [-8976]
+    1  (0.91%) × [-560]
+    1  (0.91%) × [-432]
+    1  (0.91%) × [-336]
+    1  (0.91%) × [-304]
+    1  (0.91%) × [-256]
+    1  (0.91%) × [-208]
+    1  (0.91%) × [-128]
+    1  (0.91%) × [-112]
+    1  (0.91%) × [-96]
+    1  (0.91%) × [-48]
+    2  (1.82%) × [-80]
+    4  (3.64%) × [-32]
+   12 (10.91%) × [-16]
+   81 (73.64%) × []
+  functions with stack allocation total: 29 (26.36%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-8976]",-8976,8976
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-560]",-560,560
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-432]",-432,432
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-336]",-336,336
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-304]",-304,304
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-256]",-256,256
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-208]",-208,208
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-128]",-128,128
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-112]",-112,112
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-96]",-96,96
+sp_csv_line:"rail_fenceemcc.wasm",1,0.90909094,"[-48]",-48,48
+sp_csv_line:"rail_fenceemcc.wasm",2,1.8181819,"[-80]",-80,80
+sp_csv_line:"rail_fenceemcc.wasm",4,3.6363637,"[-32]",-32,32
+sp_csv_line:"rail_fenceemcc.wasm",12,10.909091,"[-16]",-16,16
+sp_csv_line:"rail_fenceemcc.wasm",81,73.63636,"[]",0,0
+
+Counts of function types (35 unique types):
+    1  (0.87%) × [i32, i32] -> [i64]
+    1  (0.87%) × [i32, i32, i32] -> []
+    1  (0.87%) × [i32, i32, i32, i32, i32] -> []
+    1  (0.87%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (0.87%) × [i32, i32, i32, i32, i32, i32] -> []
+    1  (0.87%) × [i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (0.87%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.87%) × [i32, i32, i32, i64] -> [i64]
+    1  (0.87%) × [i32, i32, i64] -> []
+    1  (0.87%) × [i32, i64] -> []
+    1  (0.87%) × [i32, i64, i32, i32] -> [i32]
+    1  (0.87%) × [i32, i64, i64] -> []
+    1  (0.87%) × [i32, f32] -> []
+    1  (0.87%) × [i32, f64] -> []
+    1  (0.87%) × [i32, f64, i32, i32, i32, i32] -> [i32]
+    1  (0.87%) × [i64, i32, i32] -> [i32]
+    1  (0.87%) × [i64, i64] -> [i32]
+    1  (0.87%) × [i64, i64] -> [f32]
+    1  (0.87%) × [i64, i64] -> [f64]
+    1  (0.87%) × [f64] -> [i64]
+    2  (1.74%) × [i32, i32, i32, i32] -> []
+    2  (1.74%) × [i64, i32] -> [i32]
+    2  (1.74%) × [i64, i64, i64, i64] -> [i32]
+    2  (1.74%) × [f64, i32] -> [f64]
+    3  (2.61%) × [i32, i32, i32, i32] -> [i32]
+    3  (2.61%) × [i32, i64, i32] -> [i64]
+    3  (2.61%) × [i32, i64, i64, i32] -> []
+    4  (3.48%) × [i32, i32] -> []
+    7  (6.09%) × [] -> []
+    7  (6.09%) × [i32, i64, i64, i64, i64] -> []
+    8  (6.96%) × [i32] -> []
+   10  (8.70%) × [i32, i32] -> [i32]
+   10  (8.70%) × [i32, i32, i32] -> [i32]
+   13 (11.30%) × [] -> [i32]
+   19 (16.52%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 8 (7.27% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    5,    5]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    6,    6]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    7,    7]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    8,    8]   length:   1   unique funcs:    1   type: [i32, f64, i32, i32, i32, i32] -> [i32]
+         range: [    9,    9]   length:   1   unique funcs:    1   type: [i32, i32] -> []
+  9 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                7
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> []
+         functions matching by type (regardless whether they are in the table):                4
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     6 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               10
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source: local.(get|tee)   type [i32, f64, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  5 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i32] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #3
+    type: [i32, f64, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #4
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 6
+  total classes: 5
+
+CSV data for further analysis: rail_fenceemcc.wasm,23259,413,10,2.3640661,115,9,5,5,1,6,2,1,75,17,22.666666,17,22.666666,15,20
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"rail_fenceemcc.wasm",0,1,1,"i32.load"
+"rail_fenceemcc.wasm",1,1,1,"local.(get|tee)"
+"rail_fenceemcc.wasm",2,2,1,"i32.load"
+"rail_fenceemcc.wasm",3,1,1,"local.(get|tee)"
+"rail_fenceemcc.wasm",4,2,6,"i32.load"

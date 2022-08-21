@@ -1,0 +1,173 @@
+Input file: test_strtoldemcc.wasm
+  binary:    test_strtoldemcc.wasm
+
+Functions:           94
+  Imported:           4
+  Non-imported:      90
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          8
+  Of those, unique functions:     8 (i.e., at least 8.51% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     14571
+  call:             352 (2.42% of all instructions)
+  call_indirect:     10 (0.07% of all instructions, 2.76% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5246256
+     28 × global.get   52 × global.set   80 total (35/65% split)
+  #1 i32
+     init: i32.const 0
+      2 × global.get    1 × global.set    3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+      1 × global.get    1 × global.set    2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     29 (32.22% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.11%) × [-8976]
+    1  (1.11%) × [-560]
+    1  (1.11%) × [-432]
+    1  (1.11%) × [-336]
+    1  (1.11%) × [-256]
+    1  (1.11%) × [-208]
+    1  (1.11%) × [-160]
+    1  (1.11%) × [-128]
+    1  (1.11%) × [-112]
+    1  (1.11%) × [-96]
+    1  (1.11%) × [-48]
+    2  (2.22%) × [-80]
+    2  (2.22%) × [-32]
+    9 (10.00%) × [-16]
+   66 (73.33%) × []
+  functions with stack allocation total: 24 (26.67%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-8976]",-8976,8976
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-560]",-560,560
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-432]",-432,432
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-336]",-336,336
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-256]",-256,256
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-208]",-208,208
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-160]",-160,160
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-128]",-128,128
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-112]",-112,112
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-96]",-96,96
+sp_csv_line:"test_strtoldemcc.wasm",1,1.1111112,"[-48]",-48,48
+sp_csv_line:"test_strtoldemcc.wasm",2,2.2222223,"[-80]",-80,80
+sp_csv_line:"test_strtoldemcc.wasm",2,2.2222223,"[-32]",-32,32
+sp_csv_line:"test_strtoldemcc.wasm",9,10,"[-16]",-16,16
+sp_csv_line:"test_strtoldemcc.wasm",66,73.333336,"[]",0,0
+
+Counts of function types (32 unique types):
+    1  (1.06%) × [i32, i32] -> [i64]
+    1  (1.06%) × [i32, i32, i32, i32] -> [i32]
+    1  (1.06%) × [i32, i32, i32, i32, i32] -> []
+    1  (1.06%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (1.06%) × [i32, i32, i32, i32, i32, i32] -> []
+    1  (1.06%) × [i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (1.06%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (1.06%) × [i32, i64] -> []
+    1  (1.06%) × [i32, i64, i32, i32] -> [i32]
+    1  (1.06%) × [i32, i64, i64] -> []
+    1  (1.06%) × [i32, f32] -> []
+    1  (1.06%) × [i32, f64] -> []
+    1  (1.06%) × [i32, f64, i32, i32, i32, i32] -> [i32]
+    1  (1.06%) × [i64, i32, i32] -> [i32]
+    1  (1.06%) × [i64, i64] -> [i32]
+    1  (1.06%) × [i64, i64] -> [f64]
+    1  (1.06%) × [f64] -> [i64]
+    2  (2.13%) × [i32, i32, i32] -> []
+    2  (2.13%) × [i64, i32] -> [i32]
+    2  (2.13%) × [i64, i64, i64, i64] -> [i32]
+    2  (2.13%) × [f64, i32] -> [f64]
+    3  (3.19%) × [i32, i32] -> []
+    3  (3.19%) × [i32, i32] -> [i32]
+    3  (3.19%) × [i32, i32, i32, i32] -> []
+    3  (3.19%) × [i32, i64, i32] -> [i64]
+    3  (3.19%) × [i32, i64, i64, i32] -> []
+    7  (7.45%) × [] -> []
+    7  (7.45%) × [i32] -> []
+    7  (7.45%) × [i32, i32, i32] -> [i32]
+    7  (7.45%) × [i32, i64, i64, i64, i64] -> []
+   12 (12.77%) × [] -> [i32]
+   14 (14.89%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 8 (8.89% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    5,    5]   length:   1   unique funcs:    1   type: [i32, f64, i32, i32, i32, i32] -> [i32]
+         range: [    6,    6]   length:   1   unique funcs:    1   type: [i32, i32] -> []
+         range: [    7,    7]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    8,    8]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+  8 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                7
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> []
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     6 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                7
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source: local.(get|tee)   type [i32, f64, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  5 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i32] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #3
+    type: [i32, f64, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #4
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 6
+  total classes: 5
+
+CSV data for further analysis: test_strtoldemcc.wasm,14571,352,10,2.762431,94,8,4,5,1,6,2,1,56,11,19.642857,11,19.642857,9,16.071428
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"test_strtoldemcc.wasm",0,1,1,"i32.load"
+"test_strtoldemcc.wasm",1,1,1,"local.(get|tee)"
+"test_strtoldemcc.wasm",2,2,1,"i32.load"
+"test_strtoldemcc.wasm",3,1,1,"local.(get|tee)"
+"test_strtoldemcc.wasm",4,1,6,"i32.load"

@@ -1,0 +1,52 @@
+Input file: test_asan_no_errorwasi.wasm
+  binary:    test_asan_no_errorwasi.wasm
+
+Functions:           21
+  Imported:           1
+  Non-imported:      20
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          0
+  Of those, unique functions:     0 (i.e., at least 0.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      4875
+  call:              30 (0.62% of all instructions)
+  call_indirect:      0 (0.00% of all instructions, 0.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 67088
+     3 × global.get   6 × global.set   9 total (33/67% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      3 (15.00% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (5.00%) × [-16]
+   19 (95.00%) × []
+  functions with stack allocation total: 1 (5.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test_asan_no_errorwasi.wasm",1,5,"[-16]",-16,16
+sp_csv_line:"test_asan_no_errorwasi.wasm",19,95,"[]",0,0
+
+Counts of function types (5 unique types):
+    1  (4.76%) × [] -> [i32]
+    4 (19.05%) × [i32, i32] -> [i32]
+    5 (23.81%) × [] -> []
+    5 (23.81%) × [i32] -> [i32]
+    6 (28.57%) × [i32] -> []
+
+Functions with at least one call_indirect: 0 (0.00% of all functions)
+
+Table elements initialization:
+  0 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+  0 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  total classes: 0
+

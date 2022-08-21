@@ -20,14 +20,14 @@ docker cp src/. $container_id:/root/src
 ## to avoid installing clang llvm and lld default versions and avoid make errors 127/ any command related to llvm,lld,clang not found (not recognized globally)
 # docker exec $container_id /bin/bash -c "cp /usr/lib/llvm-14/bin/* /usr/bin/ > /dev/null 2>&1"
 
-docker exec $container_id /bin/sh -c "cd /root/src;chmod +x wasmit.sh;bash wasmit.sh *.c"
+docker exec $container_id /bin/sh -c "cd /root/src;chmod +x wasmit.sh unzip.sh resolve.sh clear.sh analyse.sh;bash unzip.sh;mv wasmit.sh resolve.sh clear.sh /root/src/src_files;cd /root/src/src_files;bash resolve.sh;bash wasmit.sh;bash clear.sh;cd /root/src/;bash analyse.sh"
 
 docker cp $container_id:/root/src/out $install_path/
 
 echo "---- Removing container and image"
-docker rm -f $container_id > /dev/null 2>&1
-docker rmi $(docker images penta) > /dev/null 2>&1
+#docker rm -f $container_id > /dev/null 2>&1
+#docker rmi $(docker images penta) > /dev/null 2>&1
 
-echo "---- Writing analysis chunks in chunks-out/."
-python $install_path"/parser.py" > /dev/null 2>&1 && echo "-- Done !"
+# echo "---- Writing analysis chunks in chunks-out/."
+# python $install_path"/parser.py" > /dev/null 2>&1 && echo "-- Done !"
 

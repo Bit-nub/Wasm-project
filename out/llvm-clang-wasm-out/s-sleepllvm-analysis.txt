@@ -1,0 +1,108 @@
+Input file: s-sleepllvm.wasm
+  binary:    s-sleepllvm.wasm
+
+Functions:           47
+  Imported:           8
+  Non-imported:      39
+  Exported:          34
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          0
+  Of those, unique functions:     0 (i.e., at least 0.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      4250
+  call:             150 (3.53% of all instructions)
+  call_indirect:      0 (0.00% of all instructions, 0.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 67824
+      9 × global.get   24 × global.set   33 total (27/73% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 67824
+      0 × global.get    0 × global.set    0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 2288
+      0 × global.get    0 × global.set    0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+      0 × global.get    0 × global.set    0 total
+  #4 i32
+     export: ["__progname"]
+     init: i32.const 1024
+      0 × global.get    0 × global.set    0 total
+  #5 i32
+     export: ["__progname_full"]
+     init: i32.const 1028
+      0 × global.get    0 × global.set    0 total
+  #6 i32
+     export: ["__libc"]
+     init: i32.const 1032
+      0 × global.get    0 × global.set    0 total
+  #7 i32
+     export: ["__hwcap"]
+     init: i32.const 1096
+      0 × global.get    0 × global.set    0 total
+  #8 i32
+     export: ["__sysinfo"]
+     init: i32.const 1100
+      0 × global.get    0 × global.set    0 total
+  #9 i32
+     export: ["program_invocation_short_name"]
+     init: i32.const 1024
+      0 × global.get    0 × global.set    0 total
+  #10 i32
+     export: ["program_invocation_name"]
+     init: i32.const 1028
+      0 × global.get    0 × global.set    0 total
+  #11 i32
+     export: ["__malloc_replaced"]
+     init: i32.const 2152
+      0 × global.get    0 × global.set    0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      9 (23.08% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (2.56%) × [-128]
+    1  (2.56%) × [-32]
+    4 (10.26%) × [-16]
+   33 (84.62%) × []
+  functions with stack allocation total: 6 (15.38%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"s-sleepllvm.wasm",1,2.5641026,"[-128]",-128,128
+sp_csv_line:"s-sleepllvm.wasm",1,2.5641026,"[-32]",-32,32
+sp_csv_line:"s-sleepllvm.wasm",4,10.256411,"[-16]",-16,16
+sp_csv_line:"s-sleepllvm.wasm",33,84.61539,"[]",0,0
+
+Counts of function types (13 unique types):
+    1  (2.13%) × [i32, i32, i32, i32] -> []
+    1  (2.13%) × [i32, i32, i32, i32] -> [i32]
+    1  (2.13%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (2.13%) × [i32, i32, i32, i32, i32, i64] -> [i32]
+    2  (4.26%) × [i32, i32] -> []
+    2  (4.26%) × [i32, i32, i32, i32, i32] -> [i32]
+    3  (6.38%) × [] -> [i32]
+    3  (6.38%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    4  (8.51%) × [i32, i32, i32] -> [i32]
+    5 (10.64%) × [] -> []
+    6 (12.77%) × [i32, i32] -> [i32]
+    8 (17.02%) × [i32] -> [i32]
+   10 (21.28%) × [i32] -> []
+
+Functions with at least one call_indirect: 0 (0.00% of all functions)
+
+Table elements initialization:
+  0 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+  0 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  total classes: 0
+

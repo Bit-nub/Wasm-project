@@ -1,0 +1,104 @@
+Input file: mk251emcc.wasm
+  binary:    mk251emcc.wasm
+
+Functions:           41
+  Imported:           4
+  Non-imported:      37
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          6
+  Of those, unique functions:     6 (i.e., at least 14.63% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:       728
+  call:              38 (5.22% of all instructions)
+  call_indirect:      4 (0.55% of all instructions, 9.52% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5245440
+      7 × global.get   10 × global.set   17 total (41/59% split)
+  #1 i32
+     init: i32.const 0
+      2 × global.get    1 × global.set    3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+      1 × global.get    1 × global.set    2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      8 (21.62% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (2.70%) × [-32]
+    2  (5.41%) × [-16]
+   34 (91.89%) × []
+  functions with stack allocation total: 3 (8.11%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"mk251emcc.wasm",1,2.7027028,"[-32]",-32,32
+sp_csv_line:"mk251emcc.wasm",2,5.4054055,"[-16]",-16,16
+sp_csv_line:"mk251emcc.wasm",34,91.89189,"[]",0,0
+
+Counts of function types (9 unique types):
+    1  (2.44%) × [i32, i32, i32] -> [i32]
+    1  (2.44%) × [i32, i32, i32, i32] -> [i32]
+    1  (2.44%) × [i32, i64, i32, i32] -> [i32]
+    2  (4.88%) × [i32, i32] -> [i32]
+    3  (7.32%) × [i32, i64, i32] -> [i64]
+    6 (14.63%) × [i32] -> []
+    7 (17.07%) × [] -> []
+   10 (24.39%) × [] -> [i32]
+   10 (24.39%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 3 (8.11% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    5,    5]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    6,    6]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+  6 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                7
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     2 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+  3 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #2
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 2
+  total classes: 3
+
+CSV data for further analysis: mk251emcc.wasm,728,38,4,9.523809,41,6,4,3,1,2,1.3333333333333333,1,12,5,41.666668,5,41.666668,5,41.666668
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"mk251emcc.wasm",0,1,1,"i32.load"
+"mk251emcc.wasm",1,2,1,"i32.load"
+"mk251emcc.wasm",2,1,2,"i32.load"

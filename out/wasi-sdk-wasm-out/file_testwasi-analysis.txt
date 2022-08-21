@@ -1,0 +1,98 @@
+Input file: file_testwasi.wasm
+  binary:    file_testwasi.wasm
+
+Functions:           80
+  Imported:          11
+  Non-imported:      69
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          4
+  Of those, unique functions:     4 (i.e., at least 5.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     12726
+  call:             199 (1.56% of all instructions)
+  call_indirect:     13 (0.10% of all instructions, 6.13% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 70880
+     16 × global.get   32 × global.set   48 total (33/67% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     16 (23.19% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.45%) × [-880]
+    1  (1.45%) × [-256]
+    1  (1.45%) × [-208]
+    2  (2.90%) × [-32]
+   10 (14.49%) × [-16]
+   54 (78.26%) × []
+  functions with stack allocation total: 15 (21.74%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"file_testwasi.wasm",1,1.4492754,"[-880]",-880,880
+sp_csv_line:"file_testwasi.wasm",1,1.4492754,"[-256]",-256,256
+sp_csv_line:"file_testwasi.wasm",1,1.4492754,"[-208]",-208,208
+sp_csv_line:"file_testwasi.wasm",2,2.8985507,"[-32]",-32,32
+sp_csv_line:"file_testwasi.wasm",10,14.492754,"[-16]",-16,16
+sp_csv_line:"file_testwasi.wasm",54,78.26087,"[]",0,0
+
+Counts of function types (15 unique types):
+    1  (1.25%) × [i32, i32, i32] -> []
+    1  (1.25%) × [i32, i32, i32, i32, i32] -> []
+    1  (1.25%) × [i32, i32, i32, i32, i32, i64, i64, i32, i32] -> [i32]
+    1  (1.25%) × [i32, i32, i32, i32, i64, i64, i32, i32] -> [i32]
+    1  (1.25%) × [f64, i32] -> [f64]
+    2  (2.50%) × [i32, i32, i32, i32, i32] -> [i32]
+    2  (2.50%) × [i32, i64, i32] -> [i64]
+    2  (2.50%) × [i32, i64, i32, i32] -> [i32]
+    3  (3.75%) × [] -> [i32]
+    6  (7.50%) × [i32] -> []
+    6  (7.50%) × [i32, i32, i32, i32] -> [i32]
+    9 (11.25%) × [] -> []
+   12 (15.00%) × [i32] -> [i32]
+   16 (20.00%) × [i32, i32, i32] -> [i32]
+   17 (21.25%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 4 (5.80% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  4 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     9 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               16
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     4 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 4
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 9
+  total classes: 2
+
+CSV data for further analysis: file_testwasi.wasm,12726,199,13,6.1320753,80,4,3,2,4,9,6.5,9,152,22,14.473684,22,14.473684,22,14.473684
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"file_testwasi.wasm",0,1,4,"i32.load"
+"file_testwasi.wasm",1,2,9,"i32.load"

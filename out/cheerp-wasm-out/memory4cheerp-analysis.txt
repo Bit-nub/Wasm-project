@@ -1,0 +1,91 @@
+Input file: memory4cheerp.wasm
+  binary:    memory4cheerp.wasm
+
+Functions:           17
+  Imported:           3
+  Non-imported:      14
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          2
+  Of those, unique functions:     2 (i.e., at least 11.76% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      2548
+  call:              10 (0.39% of all instructions)
+  call_indirect:      5 (0.20% of all instructions, 33.33% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1048576
+     0 × global.get   0 × global.set   0 total
+  #1 i32
+     init: i32.const 1048840
+     0 × global.get   0 × global.set   0 total
+  #2 i32
+     init: i32.const 1048848
+     0 × global.get   0 × global.set   0 total
+  #3 i32
+     init: i32.const 1050208
+     9 × global.get   0 × global.set   9 total (100/0% split)
+  #4 i32
+     init: i32.const 1049864
+     4 × global.get   0 × global.set   4 total (100/0% split)
+  #5 i32
+     init: i32.const 1049876
+     4 × global.get   0 × global.set   4 total (100/0% split)
+  #6 i32
+     init: i32.const 1050256
+     4 × global.get   0 × global.set   4 total (100/0% split)
+
+Likely the stack pointer:       Global #6
+Functions using stack pointer:      1 (7.14% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+   14(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"memory4cheerp.wasm",14,100,"[]",0,0
+
+Counts of function types (7 unique types):
+    1  (5.88%) × [] -> []
+    2 (11.76%) × [] -> [i32]
+    2 (11.76%) × [i32] -> [i32]
+    3 (17.65%) × [i32] -> []
+    3 (17.65%) × [i32, i32] -> []
+    3 (17.65%) × [i32, i32] -> [i32]
+    3 (17.65%) × [i32, i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 2 (14.29% of all functions)
+
+Table elements initialization:
+         range: [    0,    0]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32, i32] -> [i32]
+  2 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     5 × fixed index:      1                  source:  i32.const   type: [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  1 call_indirect patterns in total
+
+function #1 is indirectly called with a fixed table index
+  global.get 6
+  i32.load
+  local.tee 2
+  ...
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i32] -> [i32]
+    start idx: Some(1), end idx: Some(1)
+    size (of class): 1
+    count (how often class appears): 5
+  total classes: 1
+
+CSV data for further analysis: memory4cheerp.wasm,2548,10,5,33.333332,17,2,0,1,5,5,5,5,15,5,33.333332,5,33.333332,0,0
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"memory4cheerp.wasm",0,1,5,"i32.const"

@@ -1,0 +1,99 @@
+Input file: s-dwarf5wasi.wasm
+  binary:    s-dwarf5wasi.wasm
+
+Functions:           57
+  Imported:           6
+  Non-imported:      51
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          3
+  Of those, unique functions:     3 (i.e., at least 5.26% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     10215
+  call:             111 (1.09% of all instructions)
+  call_indirect:     10 (0.10% of all instructions, 8.26% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 67248
+     18 × global.get   18 × global.set   36 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     18 (35.29% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.96%) × [-512]
+    1  (1.96%) × [-112]
+    6 (11.76%) × [-16]
+   43 (84.31%) × []
+  functions with stack allocation total: 8 (15.69%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"s-dwarf5wasi.wasm",1,1.9607843,"[-512]",-512,512
+sp_csv_line:"s-dwarf5wasi.wasm",1,1.9607843,"[-112]",-112,112
+sp_csv_line:"s-dwarf5wasi.wasm",6,11.764706,"[-16]",-16,16
+sp_csv_line:"s-dwarf5wasi.wasm",43,84.31373,"[]",0,0
+
+Counts of function types (21 unique types):
+    1  (1.75%) × [i32] -> [f64]
+    1  (1.75%) × [i32, i32] -> [i64]
+    1  (1.75%) × [i32, i32] -> [f64]
+    1  (1.75%) × [i32, i32, i32] -> [f64]
+    1  (1.75%) × [i32, i32, i32, i32, i32] -> [f64]
+    1  (1.75%) × [i32, i32, i32, f64] -> [f64]
+    1  (1.75%) × [i32, i64] -> []
+    1  (1.75%) × [f64, i32] -> [f64]
+    1  (1.75%) × [f64, i32, i32, f64] -> [f64]
+    1  (1.75%) × [f64, f64] -> [f64]
+    2  (3.51%) × [i32, i32, i32, i32] -> [i32]
+    2  (3.51%) × [i32, i32, i32, f64] -> [f32]
+    2  (3.51%) × [i32, i64, i32] -> [i64]
+    2  (3.51%) × [i32, i64, i32, i32] -> [i32]
+    3  (5.26%) × [] -> [i32]
+    3  (5.26%) × [i32, i32, i32] -> [i32]
+    5  (8.77%) × [i32, i32, i32, f64] -> [i32]
+    6 (10.53%) × [] -> []
+    6 (10.53%) × [i32] -> []
+    6 (10.53%) × [i32, i32] -> [i32]
+   10 (17.54%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 3 (5.88% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+  3 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     6 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     4 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 4
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 6
+  total classes: 2
+
+CSV data for further analysis: s-dwarf5wasi.wasm,10215,111,10,8.264462,57,3,2,2,4,6,5,6,26,10,38.46154,10,38.46154,10,38.46154
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"s-dwarf5wasi.wasm",0,1,4,"i32.load"
+"s-dwarf5wasi.wasm",1,1,6,"i32.load"

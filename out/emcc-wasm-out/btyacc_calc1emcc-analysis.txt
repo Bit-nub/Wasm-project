@@ -1,0 +1,178 @@
+Input file: btyacc_calc1emcc.wasm
+  binary:    btyacc_calc1emcc.wasm
+
+Functions:          128
+  Imported:           5
+  Non-imported:     123
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          9
+  Of those, unique functions:     9 (i.e., at least 7.03% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     28526
+  call:             414 (1.45% of all instructions)
+  call_indirect:     10 (0.04% of all instructions, 2.36% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5252640
+     42 × global.get   78 × global.set  120 total (35/65% split)
+  #1 i32
+     init: i32.const 0
+      2 × global.get    1 × global.set    3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+      1 × global.get    1 × global.set    2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     43 (34.96% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.81%) × [-8976]
+    1  (0.81%) × [-560]
+    1  (0.81%) × [-432]
+    1  (0.81%) × [-336]
+    1  (0.81%) × [-256]
+    1  (0.81%) × [-208]
+    1  (0.81%) × [-160]
+    1  (0.81%) × [-128]
+    1  (0.81%) × [-112]
+    1  (0.81%) × [-96]
+    1  (0.81%) × [-48]
+    2  (1.63%) × [-80]
+    3  (2.44%) × [-32]
+   11  (8.94%) × [-16]
+   96 (78.05%) × []
+  functions with stack allocation total: 27 (21.95%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-8976]",-8976,8976
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-560]",-560,560
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-432]",-432,432
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-336]",-336,336
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-256]",-256,256
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-208]",-208,208
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-160]",-160,160
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-128]",-128,128
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-112]",-112,112
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-96]",-96,96
+sp_csv_line:"btyacc_calc1emcc.wasm",1,0.8130081,"[-48]",-48,48
+sp_csv_line:"btyacc_calc1emcc.wasm",2,1.6260163,"[-80]",-80,80
+sp_csv_line:"btyacc_calc1emcc.wasm",3,2.4390244,"[-32]",-32,32
+sp_csv_line:"btyacc_calc1emcc.wasm",11,8.9430895,"[-16]",-16,16
+sp_csv_line:"btyacc_calc1emcc.wasm",96,78.04878,"[]",0,0
+
+Counts of function types (36 unique types):
+    1  (0.78%) × [i32] -> [f64]
+    1  (0.78%) × [i32, i32] -> [i64]
+    1  (0.78%) × [i32, i32] -> [f64]
+    1  (0.78%) × [i32, i32, i32] -> []
+    1  (0.78%) × [i32, i32, i32, i32, i32] -> []
+    1  (0.78%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (0.78%) × [i32, i32, i32, i32, i32, i32] -> []
+    1  (0.78%) × [i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (0.78%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.78%) × [i32, i64] -> []
+    1  (0.78%) × [i32, i64, i32, i32] -> [i32]
+    1  (0.78%) × [i32, i64, i64] -> []
+    1  (0.78%) × [i32, f32] -> []
+    1  (0.78%) × [i32, f64] -> []
+    1  (0.78%) × [i32, f64, i32, i32, i32, i32] -> [i32]
+    1  (0.78%) × [i32, f64, f64, f64, f64] -> []
+    1  (0.78%) × [i64, i32, i32] -> [i32]
+    1  (0.78%) × [i64, i64] -> [i32]
+    1  (0.78%) × [i64, i64] -> [f64]
+    1  (0.78%) × [f64] -> [i64]
+    2  (1.56%) × [i32, i32, i32, i32] -> [i32]
+    2  (1.56%) × [i32, f64, f64, i32] -> []
+    2  (1.56%) × [i64, i32] -> [i32]
+    2  (1.56%) × [i64, i64, i64, i64] -> [i32]
+    2  (1.56%) × [f64, i32] -> [f64]
+    3  (2.34%) × [i32, i32, i32, i32] -> []
+    3  (2.34%) × [i32, i64, i32] -> [i64]
+    3  (2.34%) × [i32, i64, i64, i32] -> []
+    4  (3.12%) × [i32, i32] -> []
+    7  (5.47%) × [i32, i32] -> [i32]
+    7  (5.47%) × [i32, i64, i64, i64, i64] -> []
+    8  (6.25%) × [] -> []
+    9  (7.03%) × [i32, i32, i32] -> [i32]
+   11  (8.59%) × [i32] -> []
+   19 (14.84%) × [] -> [i32]
+   24 (18.75%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 8 (6.50% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    5,    5]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    6,    6]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    7,    7]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    8,    8]   length:   1   unique funcs:    1   type: [i32, f64, i32, i32, i32, i32] -> [i32]
+         range: [    9,    9]   length:   1   unique funcs:    1   type: [i32, i32] -> []
+  9 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                8
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> []
+         functions matching by type (regardless whether they are in the table):                4
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     6 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source: local.(get|tee)   type [i32, f64, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  5 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i32] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #3
+    type: [i32, f64, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #4
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 6
+  total classes: 5
+
+CSV data for further analysis: btyacc_calc1emcc.wasm,28526,414,10,2.3584905,128,9,5,5,1,6,2,1,70,17,24.285715,17,24.285715,15,21.428572
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"btyacc_calc1emcc.wasm",0,1,1,"i32.load"
+"btyacc_calc1emcc.wasm",1,1,1,"local.(get|tee)"
+"btyacc_calc1emcc.wasm",2,2,1,"i32.load"
+"btyacc_calc1emcc.wasm",3,1,1,"local.(get|tee)"
+"btyacc_calc1emcc.wasm",4,2,6,"i32.load"

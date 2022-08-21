@@ -1,0 +1,3 @@
+Input file: 28cheerp.wasm
+  binary:    28cheerp.wasm
+

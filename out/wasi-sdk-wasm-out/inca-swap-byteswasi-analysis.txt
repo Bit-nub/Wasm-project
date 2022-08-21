@@ -1,0 +1,83 @@
+Input file: inca-swap-byteswasi.wasm
+  binary:    inca-swap-byteswasi.wasm
+
+Functions:           38
+  Imported:           5
+  Non-imported:      33
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          3
+  Of those, unique functions:     3 (i.e., at least 7.89% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      2278
+  call:              45 (1.98% of all instructions)
+  call_indirect:     11 (0.48% of all instructions, 19.64% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 68464
+      7 × global.get   14 × global.set   21 total (33/67% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      7 (21.21% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    6 (18.18%) × [-16]
+   27 (81.82%) × []
+  functions with stack allocation total: 6 (18.18%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"inca-swap-byteswasi.wasm",6,18.181818,"[-16]",-16,16
+sp_csv_line:"inca-swap-byteswasi.wasm",27,81.818184,"[]",0,0
+
+Counts of function types (9 unique types):
+    2  (5.26%) × [] -> [i32]
+    2  (5.26%) × [i32, i64, i32] -> [i64]
+    2  (5.26%) × [i32, i64, i32, i32] -> [i32]
+    4 (10.53%) × [i32, i32] -> [i32]
+    5 (13.16%) × [] -> []
+    5 (13.16%) × [i32] -> []
+    5 (13.16%) × [i32, i32, i32, i32] -> [i32]
+    6 (15.79%) × [i32, i32, i32] -> [i32]
+    7 (18.42%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 3 (9.09% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+  3 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     7 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                6
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     4 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 4
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 7
+  total classes: 2
+
+CSV data for further analysis: inca-swap-byteswasi.wasm,2278,45,11,19.642857,38,3,2,2,4,7,5.5,7,50,11,22,11,22,11,22
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"inca-swap-byteswasi.wasm",0,1,4,"i32.load"
+"inca-swap-byteswasi.wasm",1,1,7,"i32.load"

@@ -1,0 +1,160 @@
+Input file: main_argsllvm.wasm
+  binary:    main_argsllvm.wasm
+
+Functions:           68
+  Imported:           6
+  Non-imported:      62
+  Exported:          60
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          3
+  Of those, unique functions:     3 (i.e., at least 4.41% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     12482
+  call:             228 (1.83% of all instructions)
+  call_indirect:     15 (0.12% of all instructions, 6.17% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 69520
+     18 × global.get   57 × global.set   75 total (24/76% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 69520
+      0 × global.get    0 × global.set    0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 3972
+      0 × global.get    0 × global.set    0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+      0 × global.get    0 × global.set    0 total
+  #4 i32
+     export: ["stderr"]
+     init: i32.const 1268
+      0 × global.get    0 × global.set    0 total
+  #5 i32
+     export: ["__progname"]
+     init: i32.const 3744
+      0 × global.get    0 × global.set    0 total
+  #6 i32
+     export: ["__progname_full"]
+     init: i32.const 3748
+      0 × global.get    0 × global.set    0 total
+  #7 i32
+     export: ["__libc"]
+     init: i32.const 3752
+      0 × global.get    0 × global.set    0 total
+  #8 i32
+     export: ["__hwcap"]
+     init: i32.const 3816
+      0 × global.get    0 × global.set    0 total
+  #9 i32
+     export: ["__sysinfo"]
+     init: i32.const 3820
+      0 × global.get    0 × global.set    0 total
+  #10 i32
+     export: ["program_invocation_short_name"]
+     init: i32.const 3744
+      0 × global.get    0 × global.set    0 total
+  #11 i32
+     export: ["program_invocation_name"]
+     init: i32.const 3748
+      0 × global.get    0 × global.set    0 total
+  #12 i32
+     export: ["__stdin_used"]
+     init: i32.const 3740
+      0 × global.get    0 × global.set    0 total
+  #13 i32
+     export: ["__stdout_used"]
+     init: i32.const 3720
+      0 × global.get    0 × global.set    0 total
+  #14 i32
+     export: ["__stderr_used"]
+     init: i32.const 3968
+      0 × global.get    0 × global.set    0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     18 (29.03% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.61%) × [-8064]
+    1  (1.61%) × [-288]
+    1  (1.61%) × [-128]
+    1  (1.61%) × [-112]
+    1  (1.61%) × [-96]
+    1  (1.61%) × [-32]
+   11 (17.74%) × [-16]
+   45 (72.58%) × []
+  functions with stack allocation total: 17 (27.42%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"main_argsllvm.wasm",1,1.6129032,"[-8064]",-8064,8064
+sp_csv_line:"main_argsllvm.wasm",1,1.6129032,"[-288]",-288,288
+sp_csv_line:"main_argsllvm.wasm",1,1.6129032,"[-128]",-128,128
+sp_csv_line:"main_argsllvm.wasm",1,1.6129032,"[-112]",-112,112
+sp_csv_line:"main_argsllvm.wasm",1,1.6129032,"[-96]",-96,96
+sp_csv_line:"main_argsllvm.wasm",1,1.6129032,"[-32]",-32,32
+sp_csv_line:"main_argsllvm.wasm",11,17.741936,"[-16]",-16,16
+sp_csv_line:"main_argsllvm.wasm",45,72.58064,"[]",0,0
+
+Counts of function types (18 unique types):
+    1  (1.47%) × [i32, i32, i32] -> []
+    1  (1.47%) × [i32, i32, i32, i32] -> []
+    1  (1.47%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (1.47%) × [i32, i64, i32] -> [i64]
+    1  (1.47%) × [i32, f64] -> []
+    2  (2.94%) × [] -> [i32]
+    2  (2.94%) × [i32, i32] -> []
+    2  (2.94%) × [i32, i32, i32, i32] -> [i32]
+    2  (2.94%) × [i32, i32, i32, i32, i32] -> [i32]
+    3  (4.41%) × [i32, i64, i64, i32] -> []
+    3  (4.41%) × [i32, i64, i64, i64, i64] -> []
+    4  (5.88%) × [i64, i64] -> [i32]
+    5  (7.35%) × [] -> []
+    6  (8.82%) × [i32] -> []
+    7 (10.29%) × [i64, i64, i64, i64] -> [i32]
+    8 (11.76%) × [i32, i32] -> [i32]
+    9 (13.24%) × [i32, i32, i32] -> [i32]
+   10 (14.71%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 5 (8.06% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+  3 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+    10 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     5 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 5
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 10
+  total classes: 2
+
+CSV data for further analysis: main_argsllvm.wasm,12482,228,15,6.1728396,68,3,2,2,5,10,7.5,10,95,15,15.789474,15,15.789474,15,15.789474
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"main_argsllvm.wasm",0,1,5,"i32.load"
+"main_argsllvm.wasm",1,1,10,"i32.load"

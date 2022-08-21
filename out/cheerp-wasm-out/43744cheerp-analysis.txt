@@ -1,0 +1,3 @@
+Input file: 43744cheerp.wasm
+  binary:    43744cheerp.wasm
+

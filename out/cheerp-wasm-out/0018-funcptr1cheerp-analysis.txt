@@ -1,0 +1,68 @@
+Input file: 0018-funcptr1cheerp.wasm
+  binary:    0018-funcptr1cheerp.wasm
+
+Functions:            6
+  Imported:           0
+  Non-imported:       6
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          2
+  Of those, unique functions:     2 (i.e., at least 33.33% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:       664
+  call:               0 (0.00% of all instructions)
+  call_indirect:      1 (0.15% of all instructions, 100.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1048576
+     0 × global.get   0 × global.set   0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      0 (0.00% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    6(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"0018-funcptr1cheerp.wasm",6,100,"[]",0,0
+
+Counts of function types (3 unique types):
+    1 (16.67%) × [] -> []
+    2 (33.33%) × [] -> [i32]
+    3 (50.00%) × [i32, i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 1 (16.67% of all functions)
+
+Table elements initialization:
+         range: [    0,    0]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> [i32]
+  2 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × fixed index:      1                  source:  i32.const   type: [] -> [i32]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  1 call_indirect patterns in total
+
+function #1 is indirectly called with a fixed table index
+  i32.const 0
+  end
+  ...
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> [i32]
+    start idx: Some(1), end idx: Some(1)
+    size (of class): 1
+    count (how often class appears): 1
+  total classes: 1
+
+CSV data for further analysis: 0018-funcptr1cheerp.wasm,664,0,1,100,6,2,0,1,1,1,1,1,2,1,50,1,50,0,0
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"0018-funcptr1cheerp.wasm",0,1,1,"i32.const"

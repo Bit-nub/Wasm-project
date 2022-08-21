@@ -1,0 +1,53 @@
+Input file: test_write_stdout_filenowasi.wasm
+  binary:    test_write_stdout_filenowasi.wasm
+
+Functions:           13
+  Imported:           2
+  Non-imported:      11
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          0
+  Of those, unique functions:     0 (i.e., at least 0.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:       247
+  call:              15 (6.07% of all instructions)
+  call_indirect:      0 (0.00% of all instructions, 0.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 66576
+     2 × global.get   4 × global.set   6 total (33/67% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      2 (18.18% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (9.09%) × [-16]
+   10 (90.91%) × []
+  functions with stack allocation total: 1 (9.09%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test_write_stdout_filenowasi.wasm",1,9.090909,"[-16]",-16,16
+sp_csv_line:"test_write_stdout_filenowasi.wasm",10,90.90909,"[]",0,0
+
+Counts of function types (6 unique types):
+    1  (7.69%) × [] -> [i32]
+    1  (7.69%) × [i32] -> [i32]
+    1  (7.69%) × [i32, i32, i32] -> [i32]
+    2 (15.38%) × [i32, i32, i32, i32] -> [i32]
+    4 (30.77%) × [] -> []
+    4 (30.77%) × [i32] -> []
+
+Functions with at least one call_indirect: 0 (0.00% of all functions)
+
+Table elements initialization:
+  0 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+  0 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  total classes: 0
+

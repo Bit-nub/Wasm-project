@@ -1,0 +1,213 @@
+Input file: 8bit_tab_to_hllvm.wasm
+  binary:    8bit_tab_to_hllvm.wasm
+
+Functions:          132
+  Imported:           7
+  Non-imported:     125
+  Exported:         116
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          5
+  Of those, unique functions:     5 (i.e., at least 3.79% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     34688
+  call:             759 (2.19% of all instructions)
+  call_indirect:     19 (0.05% of all instructions, 2.44% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 74144
+      35 × global.get   108 × global.set   143 total (24/76% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 74144
+       0 × global.get     0 × global.set     0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 8604
+       0 × global.get     0 × global.set     0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+       0 × global.get     0 × global.set     0 total
+  #4 i32
+     export: ["stderr"]
+     init: i32.const 3096
+       0 × global.get     0 × global.set     0 total
+  #5 i32
+     export: ["stdin"]
+     init: i32.const 3100
+       0 × global.get     0 × global.set     0 total
+  #6 i32
+     export: ["__progname"]
+     init: i32.const 6096
+       0 × global.get     0 × global.set     0 total
+  #7 i32
+     export: ["__progname_full"]
+     init: i32.const 6100
+       0 × global.get     0 × global.set     0 total
+  #8 i32
+     export: ["__libc"]
+     init: i32.const 6104
+       0 × global.get     0 × global.set     0 total
+  #9 i32
+     export: ["__hwcap"]
+     init: i32.const 6168
+       0 × global.get     0 × global.set     0 total
+  #10 i32
+     export: ["__sysinfo"]
+     init: i32.const 6172
+       0 × global.get     0 × global.set     0 total
+  #11 i32
+     export: ["program_invocation_short_name"]
+     init: i32.const 6096
+       0 × global.get     0 × global.set     0 total
+  #12 i32
+     export: ["program_invocation_name"]
+     init: i32.const 6100
+       0 × global.get     0 × global.set     0 total
+  #13 i32
+     export: ["__malloc_replaced"]
+     init: i32.const 7224
+       0 × global.get     0 × global.set     0 total
+  #14 i32
+     export: ["__fsmu8"]
+     init: i32.const 5888
+       0 × global.get     0 × global.set     0 total
+  #15 i32
+     export: ["__stdin_used"]
+     init: i32.const 8600
+       0 × global.get     0 × global.set     0 total
+  #16 i32
+     export: ["__stdout_used"]
+     init: i32.const 7240
+       0 × global.get     0 × global.set     0 total
+  #17 i32
+     export: ["__stderr_used"]
+     init: i32.const 8448
+       0 × global.get     0 × global.set     0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     35 (28.00% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.80%) × [-9472]
+    1  (0.80%) × [-8064]
+    1  (0.80%) × [-320]
+    1  (0.80%) × [-288]
+    1  (0.80%) × [-192]
+    1  (0.80%) × [-160]
+    1  (0.80%) × [-112]
+    1  (0.80%) × [-96]
+    1  (0.80%) × [-80]
+    2  (1.60%) × [-128]
+    3  (2.40%) × [-32]
+   20 (16.00%) × [-16]
+   91 (72.80%) × []
+  functions with stack allocation total: 34 (27.20%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-9472]",-9472,9472
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-8064]",-8064,8064
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-320]",-320,320
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-288]",-288,288
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-192]",-192,192
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-160]",-160,160
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-112]",-112,112
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-96]",-96,96
+sp_csv_line:"8bit_tab_to_hllvm.wasm",1,0.8,"[-80]",-80,80
+sp_csv_line:"8bit_tab_to_hllvm.wasm",2,1.6,"[-128]",-128,128
+sp_csv_line:"8bit_tab_to_hllvm.wasm",3,2.4,"[-32]",-32,32
+sp_csv_line:"8bit_tab_to_hllvm.wasm",20,16,"[-16]",-16,16
+sp_csv_line:"8bit_tab_to_hllvm.wasm",91,72.8,"[]",0,0
+
+Counts of function types (28 unique types):
+    1  (0.76%) × [i32, i32] -> [i64]
+    1  (0.76%) × [i32, i32, i32] -> []
+    1  (0.76%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.76%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.76%) × [i32, i32, i32, i32, i32, i64] -> [i32]
+    1  (0.76%) × [i32, i32, i32, i64] -> [i64]
+    1  (0.76%) × [i32, i64] -> []
+    1  (0.76%) × [i32, i64, i32] -> [i64]
+    1  (0.76%) × [i32, f32] -> []
+    1  (0.76%) × [i32, f64] -> []
+    1  (0.76%) × [i64, i64] -> [f32]
+    1  (0.76%) × [i64, i64] -> [f64]
+    1  (0.76%) × [f64] -> [f64]
+    1  (0.76%) × [f64, i32] -> [f64]
+    2  (1.52%) × [] -> [i32]
+    2  (1.52%) × [i32, i32, i32, i32] -> []
+    3  (2.27%) × [i32, i32, i32, i32, i32] -> [i32]
+    4  (3.03%) × [i32, i32] -> []
+    4  (3.03%) × [i32, i32, i32, i32] -> [i32]
+    4  (3.03%) × [i32, i64, i64, i32] -> []
+    4  (3.03%) × [i64, i64] -> [i32]
+    7  (5.30%) × [i32, i64, i64, i64, i64] -> []
+    7  (5.30%) × [i64, i64, i64, i64] -> [i32]
+    9  (6.82%) × [] -> []
+   13  (9.85%) × [i32] -> []
+   15 (11.36%) × [i32, i32, i32] -> [i32]
+   20 (15.15%) × [i32, i32] -> [i32]
+   24 (18.18%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 9 (7.20% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    2,    3]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    5,    5]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  4 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    0
+         functions matching by type and present in permissable table index range:              0
+     1 × unrestricted                         source:   i32.load   type [i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               24
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+    12 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               15
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     5 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  4 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 0
+    count (how often class appears): 1
+  class #1
+    type: [i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 5
+  class #3
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 3
+    count (how often class appears): 12
+  total classes: 4
+
+CSV data for further analysis: 8bit_tab_to_hllvm.wasm,34688,759,19,2.4421594,132,5,5,4,1,12,4.75,5,218,42,19.266054,42,19.266054,42,19.266054
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"8bit_tab_to_hllvm.wasm",0,0,1,"i32.load"
+"8bit_tab_to_hllvm.wasm",1,1,1,"i32.load"
+"8bit_tab_to_hllvm.wasm",2,1,5,"i32.load"
+"8bit_tab_to_hllvm.wasm",3,3,12,"i32.load"

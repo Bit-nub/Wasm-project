@@ -1,0 +1,161 @@
+Input file: insert_intervalemcc.wasm
+  binary:    insert_intervalemcc.wasm
+
+Functions:           85
+  Imported:           6
+  Non-imported:      79
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          9
+  Of those, unique functions:     9 (i.e., at least 10.59% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     10864
+  call:             173 (1.59% of all instructions)
+  call_indirect:     14 (0.13% of all instructions, 7.49% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5246576
+     21 × global.get   38 × global.set   59 total (36/64% split)
+  #1 i32
+     init: i32.const 0
+      2 × global.get    1 × global.set    3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+      1 × global.get    1 × global.set    2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     22 (27.85% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.27%) × [-560]
+    1  (1.27%) × [-80]
+    2  (2.53%) × [-256]
+    2  (2.53%) × [-240]
+    2  (2.53%) × [-208]
+    2  (2.53%) × [-32]
+    5  (6.33%) × [-16]
+   64 (81.01%) × []
+  functions with stack allocation total: 15 (18.99%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"insert_intervalemcc.wasm",1,1.2658228,"[-560]",-560,560
+sp_csv_line:"insert_intervalemcc.wasm",1,1.2658228,"[-80]",-80,80
+sp_csv_line:"insert_intervalemcc.wasm",2,2.5316455,"[-256]",-256,256
+sp_csv_line:"insert_intervalemcc.wasm",2,2.5316455,"[-240]",-240,240
+sp_csv_line:"insert_intervalemcc.wasm",2,2.5316455,"[-208]",-208,208
+sp_csv_line:"insert_intervalemcc.wasm",2,2.5316455,"[-32]",-32,32
+sp_csv_line:"insert_intervalemcc.wasm",5,6.329114,"[-16]",-16,16
+sp_csv_line:"insert_intervalemcc.wasm",64,81.01266,"[]",0,0
+
+Counts of function types (23 unique types):
+    1  (1.18%) × [i32, i32, i32, i32] -> [i32]
+    1  (1.18%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (1.18%) × [i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (1.18%) × [i32, i64, i32, i32] -> [i32]
+    1  (1.18%) × [i32, f64, i32, i32, i32, i32] -> [i32]
+    1  (1.18%) × [i64, i32, i32] -> [i32]
+    1  (1.18%) × [i64, i64] -> [f64]
+    1  (1.18%) × [f64] -> [i64]
+    1  (1.18%) × [f64, i32] -> [f64]
+    2  (2.35%) × [i32, i32, i32] -> []
+    2  (2.35%) × [i32, i32, i32, i32] -> []
+    2  (2.35%) × [i32, i32, i32, i32, i32] -> []
+    2  (2.35%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    2  (2.35%) × [i32, i64, i64, i32] -> []
+    2  (2.35%) × [i64, i32] -> [i32]
+    3  (3.53%) × [i32, i32] -> []
+    3  (3.53%) × [i32, i64, i32] -> [i64]
+    7  (8.24%) × [] -> []
+    7  (8.24%) × [i32] -> []
+    7  (8.24%) × [i32, i32] -> [i32]
+    8  (9.41%) × [i32, i32, i32] -> [i32]
+   11 (12.94%) × [] -> [i32]
+   18 (21.18%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 8 (10.13% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32, i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    5,    5]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    6,    6]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    7,    7]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    8,    8]   length:   1   unique funcs:    1   type: [i32, f64, i32, i32, i32, i32] -> [i32]
+         range: [    9,    9]   length:   1   unique funcs:    1   type: [i32, i32] -> []
+  9 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                7
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> []
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     6 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                7
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     4 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                8
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source: local.(get|tee)   type [i32, f64, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  6 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i32] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #3
+    type: [i32, f64, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #4
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 4
+  class #5
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 6
+  total classes: 6
+
+CSV data for further analysis: insert_intervalemcc.wasm,10864,173,14,7.486631,85,9,4,6,1,6,2.3333333333333335,1,88,15,17.045454,15,17.045454,7,7.9545455
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"insert_intervalemcc.wasm",0,1,1,"i32.load"
+"insert_intervalemcc.wasm",1,1,1,"local.(get|tee)"
+"insert_intervalemcc.wasm",2,2,1,"i32.load"
+"insert_intervalemcc.wasm",3,1,1,"local.(get|tee)"
+"insert_intervalemcc.wasm",4,1,4,"i32.load"
+"insert_intervalemcc.wasm",5,1,6,"local.(get|tee)"

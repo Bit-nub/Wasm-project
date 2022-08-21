@@ -1,10 +1,11 @@
 import os
+from tabnanny import verbose
 from attr import attr
 import pandas as pd
 from IPython.display import display
-import numpy as np
-import re
-import matplotlib.pyplot as plt
+# import numpy as np
+# import re
+# import matplotlib.pyplot as plt
 
 homeDir = os.getenv('HOME')
 rootDir=str(homeDir)+"/Wasm-project/out/"
@@ -19,7 +20,7 @@ def get_source_names(rootDir) :
         for filename in filenames:
             #strip tool chain names from source file names
             if ".txt" in filename:
-                srccomp=filename.split("-")[0]
+                srccomp=filename.rsplit('-', 1)[0]
                 if "emcc" in srccomp:
                     srccomp=srccomp.replace("emcc","")
                 if "cheerp" in srccomp:
@@ -45,7 +46,7 @@ def change_dtype(value):
         except ValueError:
             return value
 
-def get_general_attributes():
+def get_general_attributes(verbose=True):
     # table_name lists the names for each tool chain's table
     table_name=['Cheerp_tool_chain','Emscripten_tool_chain','Clang/llvm_tool_chain','Wasi_tool_chain']
     
@@ -97,7 +98,7 @@ def get_general_attributes():
 
                     #rint(first_attr," : ",second_attr)
                 except:
-                    src_comp=attrs[0].split("-")[0]
+                    src_comp=attrs[0].rsplit('-', 1)[0]
                     if "emcc" in src_comp:
                         src=src_comp.replace("emcc","")
                     if "cheerp" in src_comp:
@@ -117,8 +118,8 @@ def get_general_attributes():
             if "Globals" in paragraph: #chunk5
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
-                        src_comp=line.split("-")[0]
-                    if "#" in line:
+                        src_comp=line.rsplit('-', 1)[0]
+                    if "'  #" in line:
                         i+=1
                 if "emcc" in src_comp:
                     src=src_comp.replace("emcc","")
@@ -135,9 +136,9 @@ def get_general_attributes():
             if "Likely the stack pointer" in paragraph: #chunk6
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
-                        src_comp=line.split("-")[0]
+                        src_comp=line.rsplit('-', 1)[0]
                     if "Likely the stack pointer" in line:
-                        lsp=line.split(",")[1].strip(" '[]")
+                        lsp=line.split(",")[1].strip(" '[]").split("#")[1]
                     if "Functions using stack pointer" in line : 
                         fsp=line.split(",")[1].split("(")[0].strip(" '")
                     if "functions with stack allocation total" in line :
@@ -165,7 +166,7 @@ def get_general_attributes():
             if "Counts of function types" in paragraph: #chunk8
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
-                        src_comp=line.split("-")[0]
+                        src_comp=line.rsplit('-', 1)[0]
                     if "Counts of function types" in line:
                         uft=line.split("(")[1].split()[0].strip()
                 if "emcc" in src_comp:
@@ -183,7 +184,7 @@ def get_general_attributes():
             if "Functions with at least one call_indirect" in paragraph: #chunk9
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
-                        src_comp=line.split("-")[0]
+                        src_comp=line.rsplit('-', 1)[0]
                     if "Functions with at least one call_indirect" in line:
                         fic=line.split(",")[1].split("(")[0].strip(" '")
                 if "emcc" in src_comp:
@@ -201,8 +202,8 @@ def get_general_attributes():
             if "call_indirect target equivalence classes" in paragraph: #chunk5
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
-                        src_comp=line.split("-")[0]
-                    if "#" in line:
+                        src_comp=line.rsplit('-', 1)[0]
+                    if "'  #" in line:
                         j+=1
                 if "emcc" in src_comp:
                     src=src_comp.replace("emcc","")
@@ -216,19 +217,25 @@ def get_general_attributes():
                 elif "wasi" in src_comp:
                     src=src_comp.replace("wasi","")
                     df_wasi.at['CFI_Classes',src]=j
-    print("\n -- cheerp table :\n")
-    # for column in df_cheerp.columns:
-    #     df_cheerp.loc[:, column] = df_cheerp[column].apply(change_dtype)
-    # df_cheerp.loc["Functions",:].plot()
-    display(df_cheerp)  
-    print("\n -- llvm table :\n")
-    display(df_llvm)
-    print("\n -- wasi table :\n")
-    display(df_wasi)
-    print("\n -- emscipten table :\n")
-    display(df_emcc)
-    plt.show()
-    #needs nb of globals/ nb of classes/ which gb is the stack pointer /nb of unique func types / chunk 9 
+    
+    if verbose==True:
+        print("\n -- cheerp table :\n")
+        # for column in df_cheerp.columns:
+        #     df_cheerp.loc[:, column] = df_cheerp[column].apply(change_dtype)
+        # df_cheerp.loc["Functions",:].plot()
+        display(df_cheerp)  
+        print("\n -- llvm table :\n")
+        display(df_llvm)
+        print("\n -- wasi table :\n")
+        display(df_wasi)
+        print("\n -- emscipten table :\n")
+        display(df_emcc)
+
+    df_cheerp.name="cheerp"
+    df_llvm.name="llvm"
+    df_wasi.name="wasi"
+    df_emcc.name="emcc"
+    return df_cheerp,df_llvm,df_wasi,df_emcc
 
 
 #get_general_attributes()
@@ -241,7 +248,7 @@ def get_source_tool_names(rootDir) :
         for filename in filenames:
             #strip tool chain names from source file names
             if ".txt" in filename:
-                srccomp=filename.split("-")[0]
+                srccomp=filename.rsplit('-', 1)[0]
                 source_tool_name.append(srccomp)
     #updated list of source file names
     source_tool_name[:]=list(set(source_tool_name))
@@ -250,7 +257,7 @@ def get_source_tool_names(rootDir) :
     return column_entries
 
 
-def get_globals():
+def get_globals(verbose=True):
     pd.set_option('display.width', 11)
     dict_df={}
     sc=[]
@@ -267,29 +274,28 @@ def get_globals():
             global_id,global_type,init_method,init_val,export_attr,gets,sets=([],[],[],[],[],[],[])
             for line in enumerate(paragraph.split("\n")):
                 if ".txt" in line[1]:
-                    src_comp=line[1].split("-")[0].strip("")
+                    src_comp=line[1].rsplit('-', 1)[0].strip("")
                     sc.append(src_comp)           
-                if "Globals" or "init" or "export" in line[1]: 
+                if "Globals" or "init'" or "export" in line[1]: 
                     attrs=line[1].split(",")
-                    if "init" in attrs[0]:
+                    if "init'" in attrs[0]:
                         interm_var=attrs[1].strip(" []'")
                         init_method.append(interm_var.split()[0])
                         init_val.append(interm_var.split()[1])
                     if "export" in attrs[0]:
                         interm_var=attrs[1].strip(" []'")
-                        export_attr.append(interm_var)
-                if "global.get" or "#" in line[1] :  
+                        export_attr.append(interm_var) 
+                if "global.get" or "'  #" in line[1] :  
                     attrs0=line[1].strip("' []")
                     if "global.get" in attrs0:
                         gets.append(attrs0.split()[0])
                         sets.append(attrs0.split()[3])
-                    if "#" in attrs0:
-                        attrs0=attrs0.strip(" #")
-                        global_id.append(attrs0.split()[0])
+                    if "'  #" in line[1]:
+                        attrs0=line[1].strip(" #").strip("' []")
+                        global_id.append(attrs0.strip("#").split()[0])
                         global_type.append(attrs0.split()[1])
                         if not "export" in paragraph.split("\n")[line[0]+1] :
                             export_attr.append(None)
-            
             dict_df[src_comp]=pd.DataFrame(index=['Global_id','type','export','init_method','init_value','gets','sets'],columns=range(len(global_id)))
             for item in dict_df[src_comp].columns:
                 dict_df[src_comp].at['Global_id',item]=global_id[int(item)]
@@ -302,12 +308,16 @@ def get_globals():
 
     for item in sc:
         if item in dict_df:
-            print("\n",item,"table :")
-            print(dict_df[item])         
+            if verbose==True:
+                print("\n",item,"table :")
+                print(dict_df[item])
+            dict_df[item].name=item
+
+    return dict_df
                  
 #get_globals()
 
-def get_function_types():
+def get_function_types(verbose=True):
     dict_df={}
     sc=[]
     chunkname=['chunk8.txt']
@@ -320,14 +330,14 @@ def get_function_types():
             func_type,func_type_count,func_type_pct=([],[],[])
             for line in paragraph.split("\n"):
                 if ".txt" in line:
-                    src_comp=line.split("-")[0].strip("")
+                    src_comp=line.rsplit('-', 1)[0].strip("")
                     sc.append(src_comp)
-                if "unique" in line:
+                if "unique types)'" in line:
                     ufc=line.split("(")[1].strip("").split()[0]
                     unique_func_count.append(ufc)
                 if "×" in line:
-                    func_type_count.append(line.split("×")[0].strip(" '[").split()[0])
-                    func_type_pct.append(line.split("×")[0].strip(" '[").split()[1].strip("()"))
+                    func_type_count.append(line.split("×")[0].strip(" '[").split('(')[0])
+                    func_type_pct.append(line.split("×")[0].strip(" '[").split('(')[1].strip("()"))
                     func_type.append(line.split("×")[1].strip().split("'")[0].strip())
             idx=len(func_type_count)
             dict_df[src_comp]=pd.DataFrame(index=range(idx),columns=['function_type','type_count','type_count_%_'])
@@ -336,13 +346,16 @@ def get_function_types():
             dict_df[src_comp].at[:,'type_count_%_']=func_type_pct
     for item in sc:
         if item in dict_df:
-            print("\n",item,"table :")
-            print(dict_df[item])
-           
+            if verbose==True:
+                print("\n",item,"table :")
+                print(dict_df[item])              
+            dict_df[item].name=item
+
+    return dict_df
                         
 #get_count_of_func_types()
 
-def get_init_tables():
+def get_init_tables(verbose=True):
     dict_df ={}
     sc=[]
     chunkname=['chunk10.txt']
@@ -355,7 +368,7 @@ def get_init_tables():
             ranges,lengths,unique_funcs,types=([],[],[],[])
             for line in paragraph.split("\n"):
                 if ".txt" in line:
-                    src_comp=line.split("-")[0].strip("")
+                    src_comp=line.rsplit('-', 1)[0].strip("")
                     sc.append(src_comp)
                 if "table init ranges in total" in line:
                     tir=line.split("t")[0].strip(" '[")
@@ -375,8 +388,11 @@ def get_init_tables():
             dict_df[src_comp].at[:,'type']=types
     for item in sc:
         if item in dict_df:
-            print("\n",item,"table :")
-            print(dict_df[item])
+            if verbose==True:
+                print("\n",item,"table :")
+                print(dict_df[item])
+            dict_df[item].name=item
+    return dict_df
 
 #get_init_tables()
 
@@ -409,7 +425,7 @@ def paragraph_to_subparagraph(paragraph):
         subp=""
     return list
 
-def get_CFI_classes():
+def get_CFI_classes(verbose=True):
     pd.set_option('display.width', 11)
     chunkname=['chunk12.txt','chunk13.txt','chunk11.txt']
     line_entries=['CFI_Class_id','Type','Start_idx','End_idx','Size','Count','Pattern_Restriction','Pattern_Source','functions matching by type','functions matching by type and present in table','functions matching by type and present in permissable table index range']
@@ -425,13 +441,13 @@ def get_CFI_classes():
             if "call_indirect target equivalence classes" in paragraph :    
                 for line in paragraph.split("\n"):
                     if ".txt" in line :
-                        src_comp=line.split("-")[0]
+                        src_comp=line.rsplit('-', 1)[0]
                         sc.append(src_comp)
                     if "class #" in line:
                         class_idx.append(line.split("'")[1].strip(" ']"))              
-                    if "type" in line :
+                    if "type'" in line :
                         type_.append(line.split("'")[3].strip())
-                    if "start idx" in line :
+                    if "start idx'" in line :
                         start_idx.append(line.split(",")[1].strip(" ']"))
                         end_idx.append(line.split(",")[3].strip(" ']"))
                     if "size (of class)" in line :
@@ -449,11 +465,11 @@ def get_CFI_classes():
             # for in paragraph search for item == item_df then set item patterns  
             if "Patterns (=preceding instructions) of call_indirect" in paragraph :
                 filename=""
-                filename=paragraph.split("['Patterns (=preceding instructions) of call_indirect', '']")[0].split("-")[0]
+                filename=paragraph.split("['Patterns (=preceding instructions) of call_indirect', '']")[0].rsplit('-', 1)[0]
                 for sub_paragraph in paragraph_to_subparagraph(paragraph.split("['Patterns (=preceding instructions) of call_indirect', '']")[1]):
                     pattern=[]
                     for line in sub_paragraph.split("\n"):
-                        if "source" in line:
+                        if "source'," in line:
                             #filename
                             pattern.append(filename)
                             #count
@@ -473,6 +489,7 @@ def get_CFI_classes():
                         elif "functions matching by type and present in permissable table index range" in line:    
                             #functions matching by type (regardless whether they are in the table)
                             pattern.append(line.split(",")[1].strip("' ]"))
+                    #print(pattern)
                     # setting patterns for respective types in the created dataframes
                     for item in sc:
                         if item == pattern[0]:
@@ -483,9 +500,11 @@ def get_CFI_classes():
 
     for item in sc:
         if item in dict_df:
-            print("\n",item,"table :")
-            print(dict_df[item])
-        #display(dict_df[item].to_string())
+            if verbose == True:
+                print("\n",item,"table :")
+                print(dict_df[item])
+            dict_df[item].name=item
+    return dict_df
             
 #get_CFI_classes()
 

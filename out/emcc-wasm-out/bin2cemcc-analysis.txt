@@ -1,0 +1,171 @@
+Input file: bin2cemcc.wasm
+  binary:    bin2cemcc.wasm
+
+Functions:          155
+  Imported:          10
+  Non-imported:     145
+  Exported:          10
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:         10
+  Of those, unique functions:    10 (i.e., at least 6.45% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     15501
+  call:             337 (2.17% of all instructions)
+  call_indirect:     14 (0.09% of all instructions, 3.99% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5247536
+     32 × global.get   59 × global.set   91 total (35/65% split)
+  #1 i32
+     init: i32.const 0
+      2 × global.get    1 × global.set    3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+      1 × global.get    1 × global.set    2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     33 (22.76% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.69%) × [-560]
+    1  (0.69%) × [-304]
+    1  (0.69%) × [-256]
+    1  (0.69%) × [-208]
+    1  (0.69%) × [-160]
+    1  (0.69%) × [-112]
+    1  (0.69%) × [-80]
+    6  (4.14%) × [-32]
+   13  (8.97%) × [-16]
+  119 (82.07%) × []
+  functions with stack allocation total: 26 (17.93%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"bin2cemcc.wasm",1,0.6896552,"[-560]",-560,560
+sp_csv_line:"bin2cemcc.wasm",1,0.6896552,"[-304]",-304,304
+sp_csv_line:"bin2cemcc.wasm",1,0.6896552,"[-256]",-256,256
+sp_csv_line:"bin2cemcc.wasm",1,0.6896552,"[-208]",-208,208
+sp_csv_line:"bin2cemcc.wasm",1,0.6896552,"[-160]",-160,160
+sp_csv_line:"bin2cemcc.wasm",1,0.6896552,"[-112]",-112,112
+sp_csv_line:"bin2cemcc.wasm",1,0.6896552,"[-80]",-80,80
+sp_csv_line:"bin2cemcc.wasm",6,4.137931,"[-32]",-32,32
+sp_csv_line:"bin2cemcc.wasm",13,8.965517,"[-16]",-16,16
+sp_csv_line:"bin2cemcc.wasm",119,82.06896,"[]",0,0
+
+Counts of function types (30 unique types):
+    1  (0.65%) × [i32] -> [i64]
+    1  (0.65%) × [i32, i32] -> [i64]
+    1  (0.65%) × [i32, i32, i32] -> []
+    1  (0.65%) × [i32, i32, i32, i32] -> []
+    1  (0.65%) × [i32, i32, i32, i32, i32] -> []
+    1  (0.65%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (0.65%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.65%) × [i32, i32, i32, i32, i32, i64] -> [i32]
+    1  (0.65%) × [i32, i64] -> []
+    1  (0.65%) × [i32, i64, i32] -> [i32]
+    1  (0.65%) × [i32, i64, i32, i32] -> [i32]
+    1  (0.65%) × [i32, f64, i32, i32, i32, i32] -> [i32]
+    1  (0.65%) × [i64, i32] -> [i64]
+    1  (0.65%) × [i64, i32, i32, i32, i32, i32] -> []
+    1  (0.65%) × [i64, i64] -> [f64]
+    1  (0.65%) × [f64] -> [i64]
+    1  (0.65%) × [f64, i32] -> [f64]
+    2  (1.29%) × [i32, i64, i64, i32] -> []
+    2  (1.29%) × [i64, i32, i32] -> [i32]
+    3  (1.94%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    3  (1.94%) × [i32, i64, i32] -> [i64]
+    3  (1.94%) × [i64, i32] -> [i32]
+    5  (3.23%) × [i32, i32] -> []
+    6  (3.87%) × [i32, i32, i32, i32] -> [i32]
+   11  (7.10%) × [] -> [i32]
+   11  (7.10%) × [i32] -> []
+   12  (7.74%) × [] -> []
+   14  (9.03%) × [i32, i32, i32] -> [i32]
+   33 (21.29%) × [i32] -> [i32]
+   33 (21.29%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 11 (7.59% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    3,    4]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+         range: [    5,    6]   length:   2   unique funcs:    2   type: [i32] -> [i32]
+         range: [    7,    7]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    8,    8]   length:   1   unique funcs:    1   type: [i32, f64, i32, i32, i32, i32] -> [i32]
+         range: [    9,    9]   length:   1   unique funcs:    1   type: [i32, i32] -> []
+         range: [   10,   10]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  8 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):               12
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source:   i32.load   type [i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               33
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> []
+         functions matching by type (regardless whether they are in the table):                5
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     8 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               14
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     2 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source: local.(get|tee)   type [i32, f64, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  6 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #2
+    type: [i32, i32] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #3
+    type: [i32, f64, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #4
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 2
+  class #5
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 3
+    count (how often class appears): 8
+  total classes: 6
+
+CSV data for further analysis: bin2cemcc.wasm,15501,337,14,3.988604,155,10,8,6,1,8,2.3333333333333335,1,169,33,19.526627,33,19.526627,31,18.343195
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"bin2cemcc.wasm",0,1,1,"i32.load"
+"bin2cemcc.wasm",1,2,1,"i32.load"
+"bin2cemcc.wasm",2,1,1,"local.(get|tee)"
+"bin2cemcc.wasm",3,1,1,"local.(get|tee)"
+"bin2cemcc.wasm",4,2,2,"i32.load"
+"bin2cemcc.wasm",5,3,8,"i32.load"

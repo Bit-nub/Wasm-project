@@ -1,0 +1,83 @@
+Input file: 28996emcc.wasm
+  binary:    28996emcc.wasm
+
+Functions:           19
+  Imported:           3
+  Non-imported:      16
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          1
+  Of those, unique functions:     1 (i.e., at least 5.26% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:       188
+  call:              15 (7.98% of all instructions)
+  call_indirect:      2 (1.06% of all instructions, 11.76% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5244032
+     5 × global.get   8 × global.set  13 total (38/62% split)
+  #1 i32
+     init: i32.const 0
+     2 × global.get   1 × global.set   3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+     1 × global.get   1 × global.set   2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      6 (37.50% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (6.25%) × [-16]
+   15 (93.75%) × []
+  functions with stack allocation total: 1 (6.25%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"28996emcc.wasm",1,6.25,"[-16]",-16,16
+sp_csv_line:"28996emcc.wasm",15,93.75,"[]",0,0
+
+Counts of function types (5 unique types):
+    1  (5.26%) × [i32] -> [i32]
+    3 (15.79%) × [i32, i32] -> [i32]
+    4 (21.05%) × [i32] -> []
+    5 (26.32%) × [] -> []
+    6 (31.58%) × [] -> [i32]
+
+Functions with at least one call_indirect: 2 (12.50% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+  1 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                5
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source: local.(get|tee)   type [] -> [i32]
+         functions matching by type (regardless whether they are in the table):                6
+         functions matching by type and present in table (regardless at which table index):    0
+         functions matching by type and present in permissable table index range:              0
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 0
+    count (how often class appears): 1
+  total classes: 2
+
+CSV data for further analysis: 28996emcc.wasm,188,15,2,11.764706,19,1,1,2,1,1,1,1,11,1,9.090909,1,9.090909,1,9.090909
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"28996emcc.wasm",0,1,1,"i32.load"
+"28996emcc.wasm",1,0,1,"local.(get|tee)"

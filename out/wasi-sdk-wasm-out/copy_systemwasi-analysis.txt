@@ -1,0 +1,59 @@
+Input file: copy_systemwasi.wasm
+  binary:    copy_systemwasi.wasm
+
+Functions:           43
+  Imported:           7
+  Non-imported:      36
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          0
+  Of those, unique functions:     0 (i.e., at least 0.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      6182
+  call:              64 (1.04% of all instructions)
+  call_indirect:      0 (0.00% of all instructions, 0.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 67104
+      8 × global.get   15 × global.set   23 total (35/65% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      8 (22.22% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (2.78%) × [-32]
+    6 (16.67%) × [-16]
+   29 (80.56%) × []
+  functions with stack allocation total: 7 (19.44%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"copy_systemwasi.wasm",1,2.7777777,"[-32]",-32,32
+sp_csv_line:"copy_systemwasi.wasm",6,16.666666,"[-16]",-16,16
+sp_csv_line:"copy_systemwasi.wasm",29,80.55556,"[]",0,0
+
+Counts of function types (10 unique types):
+    1  (2.33%) × [] -> [i32]
+    1  (2.33%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (2.33%) × [i32, i32, i32, i32, i32, i64, i64, i32, i32] -> [i32]
+    1  (2.33%) × [i32, i32, i32, i32, i64, i64, i32, i32] -> [i32]
+    5 (11.63%) × [i32] -> [i32]
+    5 (11.63%) × [i32, i32, i32, i32] -> [i32]
+    6 (13.95%) × [i32] -> []
+    6 (13.95%) × [i32, i32] -> [i32]
+    7 (16.28%) × [] -> []
+   10 (23.26%) × [i32, i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 0 (0.00% of all functions)
+
+Table elements initialization:
+  0 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+  0 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  total classes: 0
+

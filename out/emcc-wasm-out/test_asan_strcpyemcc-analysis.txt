@@ -1,0 +1,73 @@
+Input file: test_asan_strcpyemcc.wasm
+  binary:    test_asan_strcpyemcc.wasm
+
+Functions:           22
+  Imported:           1
+  Non-imported:      21
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          1
+  Of those, unique functions:     1 (i.e., at least 4.55% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      3408
+  call:              24 (0.70% of all instructions)
+  call_indirect:      1 (0.03% of all instructions, 4.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5244416
+     5 × global.get   6 × global.set  11 total (45/55% split)
+  #1 i32
+     init: i32.const 0
+     2 × global.get   1 × global.set   3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+     1 × global.get   1 × global.set   2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      6 (28.57% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (4.76%) × [-16]
+   20 (95.24%) × []
+  functions with stack allocation total: 1 (4.76%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test_asan_strcpyemcc.wasm",1,4.7619047,"[-16]",-16,16
+sp_csv_line:"test_asan_strcpyemcc.wasm",20,95.2381,"[]",0,0
+
+Counts of function types (5 unique types):
+    2  (9.09%) × [i32, i32] -> [i32]
+    4 (18.18%) × [i32] -> []
+    4 (18.18%) × [i32] -> [i32]
+    5 (22.73%) × [] -> []
+    7 (31.82%) × [] -> [i32]
+
+Functions with at least one call_indirect: 1 (4.76% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+  1 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                5
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  1 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  total classes: 1
+
+CSV data for further analysis: test_asan_strcpyemcc.wasm,3408,24,1,4,22,1,1,1,1,1,1,1,5,1,20,1,20,1,20
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"test_asan_strcpyemcc.wasm",0,1,1,"i32.load"

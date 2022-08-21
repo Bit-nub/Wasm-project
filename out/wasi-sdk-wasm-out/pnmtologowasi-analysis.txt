@@ -1,0 +1,110 @@
+Input file: pnmtologowasi.wasm
+  binary:    pnmtologowasi.wasm
+
+Functions:          122
+  Imported:          12
+  Non-imported:     110
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          5
+  Of those, unique functions:     5 (i.e., at least 4.10% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     19927
+  call:             347 (1.74% of all instructions)
+  call_indirect:     21 (0.11% of all instructions, 5.71% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 73312
+     37 × global.get   67 × global.set  104 total (36/64% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     37 (33.64% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.91%) × [-880]
+    1  (0.91%) × [-256]
+    1  (0.91%) × [-208]
+    4  (3.64%) × [-32]
+   15 (13.64%) × [-16]
+   88 (80.00%) × []
+  functions with stack allocation total: 22 (20.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"pnmtologowasi.wasm",1,0.90909094,"[-880]",-880,880
+sp_csv_line:"pnmtologowasi.wasm",1,0.90909094,"[-256]",-256,256
+sp_csv_line:"pnmtologowasi.wasm",1,0.90909094,"[-208]",-208,208
+sp_csv_line:"pnmtologowasi.wasm",4,3.6363637,"[-32]",-32,32
+sp_csv_line:"pnmtologowasi.wasm",15,13.636364,"[-16]",-16,16
+sp_csv_line:"pnmtologowasi.wasm",88,80,"[]",0,0
+
+Counts of function types (17 unique types):
+    1  (0.82%) × [i32, i32] -> []
+    1  (0.82%) × [i32, i32, i32] -> []
+    1  (0.82%) × [i32, i32, i32, i32] -> []
+    1  (0.82%) × [i32, i32, i32, i32, i32] -> []
+    1  (0.82%) × [i32, i32, i32, i32, i32, i64, i64, i32, i32] -> [i32]
+    1  (0.82%) × [i32, i32, i32, i32, i64, i64, i32, i32] -> [i32]
+    1  (0.82%) × [f64, i32] -> [f64]
+    2  (1.64%) × [i32, i32, i32, i32, i32] -> [i32]
+    2  (1.64%) × [i32, i64, i32] -> [i64]
+    2  (1.64%) × [i32, i64, i32, i32] -> [i32]
+    3  (2.46%) × [] -> [i32]
+    6  (4.92%) × [i32, i32, i32, i32] -> [i32]
+    8  (6.56%) × [i32] -> []
+   18 (14.75%) × [] -> []
+   21 (17.21%) × [i32, i32, i32] -> [i32]
+   25 (20.49%) × [i32] -> [i32]
+   28 (22.95%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 9 (8.18% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    4,    5]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+  4 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               25
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+    14 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               21
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     6 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  3 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 6
+  class #2
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 3
+    count (how often class appears): 14
+  total classes: 3
+
+CSV data for further analysis: pnmtologowasi.wasm,19927,347,21,5.7065215,122,5,5,3,1,14,7,6,331,49,14.803625,49,14.803625,49,14.803625
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"pnmtologowasi.wasm",0,1,1,"i32.load"
+"pnmtologowasi.wasm",1,1,6,"i32.load"
+"pnmtologowasi.wasm",2,3,14,"i32.load"

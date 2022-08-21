@@ -1,0 +1,70 @@
+Input file: __mtag_tag_regionemcc.wasm
+  binary:    __mtag_tag_regionemcc.wasm
+
+Functions:           16
+  Imported:           1
+  Non-imported:      15
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          1
+  Of those, unique functions:     1 (i.e., at least 6.25% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:        97
+  call:              10 (10.31% of all instructions)
+  call_indirect:      1 (1.03% of all instructions, 9.09% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5243920
+     4 × global.get   2 × global.set   6 total (67/33% split)
+  #1 i32
+     init: i32.const 0
+     2 × global.get   1 × global.set   3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+     1 × global.get   1 × global.set   2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      5 (33.33% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+   15(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"__mtag_tag_regionemcc.wasm",15,100,"[]",0,0
+
+Counts of function types (4 unique types):
+    1  (6.25%) × [i32] -> [i32]
+    4 (25.00%) × [i32] -> []
+    5 (31.25%) × [] -> []
+    6 (37.50%) × [] -> [i32]
+
+Functions with at least one call_indirect: 1 (6.67% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [] -> []
+  1 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                5
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  1 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  total classes: 1
+
+CSV data for further analysis: __mtag_tag_regionemcc.wasm,97,10,1,9.090909,16,1,1,1,1,1,1,1,5,1,20,1,20,1,20
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"__mtag_tag_regionemcc.wasm",0,1,1,"i32.load"

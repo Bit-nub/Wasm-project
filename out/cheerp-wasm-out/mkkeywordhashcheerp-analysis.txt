@@ -1,0 +1,227 @@
+Input file: mkkeywordhashcheerp.wasm
+  binary:    mkkeywordhashcheerp.wasm
+
+Functions:           76
+  Imported:           3
+  Non-imported:      73
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:         16
+  Of those, unique functions:    16 (i.e., at least 21.05% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     12638
+  call:             184 (1.46% of all instructions)
+  call_indirect:     44 (0.35% of all instructions, 19.30% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1048576
+      67 × global.get   141 × global.set   208 total (32/68% split)
+  #1 i32
+     init: i32.const 1057080
+       0 × global.get     0 × global.set     0 total
+  #2 i32
+     init: i32.const 1057060
+      33 × global.get     0 × global.set    33 total (100/0% split)
+  #3 i32
+     init: i32.const 1057088
+       0 × global.get     0 × global.set     0 total
+  #4 i32
+     init: i32.const 1061983
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #5 i32
+     init: i32.const 1062348
+      10 × global.get     0 × global.set    10 total (100/0% split)
+  #6 i32
+     init: i32.const 1062304
+       9 × global.get     0 × global.set     9 total (100/0% split)
+  #7 i32
+     init: i32.const 1057064
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #8 i32
+     init: i32.const 1061984
+       6 × global.get     0 × global.set     6 total (100/0% split)
+  #9 i32
+     init: i32.const 1062088
+       6 × global.get     0 × global.set     6 total (100/0% split)
+  #10 i32
+     init: i32.const 1062192
+       6 × global.get     0 × global.set     6 total (100/0% split)
+  #11 i32
+     init: i32.const 1059792
+       6 × global.get     0 × global.set     6 total (100/0% split)
+  #12 i32
+     init: i32.const 1059180
+       5 × global.get     0 × global.set     5 total (100/0% split)
+  #13 i32
+     init: i32.const 1059304
+       5 × global.get     0 × global.set     5 total (100/0% split)
+  #14 i32
+     init: i32.const 1059323
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #15 i32
+     init: i32.const 1059555
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #16 i32
+     init: i32.const 1059731
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #17 i32
+     init: i32.const 1058108
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #18 i32
+     init: i32.const 1058112
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #19 i32
+     init: i32.const 1062344
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #20 i32
+     init: i32.const 1048584
+       3 × global.get     0 × global.set     3 total (100/0% split)
+  #21 i32
+     init: i32.const 1059211
+       3 × global.get     0 × global.set     3 total (100/0% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     12 (16.44% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+   73(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"mkkeywordhashcheerp.wasm",73,100,"[]",0,0
+
+Counts of function types (11 unique types):
+    2  (2.63%) × [i32, i32, i32] -> []
+    3  (3.95%) × [] -> []
+    3  (3.95%) × [] -> [i32]
+    3  (3.95%) × [i32] -> []
+    3  (3.95%) × [i32, i32, i32, i32] -> []
+    3  (3.95%) × [i32, i32, i32, i32, i32] -> [i32]
+    4  (5.26%) × [i32, i32] -> []
+    8 (10.53%) × [i32, i32, i32, i32] -> [i32]
+   10 (13.16%) × [i32] -> [i32]
+   16 (21.05%) × [i32, i32, i32] -> [i32]
+   21 (27.63%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 14 (19.18% of all functions)
+
+Table elements initialization:
+         range: [    0,    0]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    1,    5]   length:   5   unique funcs:    5   type: [i32, i32, i32, i32] -> [i32]
+         range: [    6,   11]   length:   6   unique funcs:    6   type: [i32, i32] -> [i32]
+         range: [   12,   12]   length:   1   unique funcs:    1   type: [i32] -> []
+         range: [   13,   14]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+         range: [   15,   15]   length:   1   unique funcs:    1   type: [i32, i32, i32, i32, i32] -> [i32]
+  6 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+    22 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               21
+         functions matching by type and present in table (regardless at which table index):    6
+         functions matching by type and present in permissable table index range:              6
+     5 × unrestricted                         source:   i32.load   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                8
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              5
+     6 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                8
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              5
+     2 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:      0                  source:  i32.const   type: [i32, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              0
+     2 × fixed index:      5                  source:  i32.const   type: [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                8
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              1
+     5 × fixed index:      8                  source:  i32.const   type: [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               21
+         functions matching by type and present in table (regardless at which table index):    6
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:     14                  source:  i32.const   type: [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               16
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              1
+  8 call_indirect patterns in total
+
+function #0 is indirectly called with a fixed table index
+  unreachable
+  end
+  ...
+function #5 is indirectly called with a fixed table index
+  global.get 5
+  i32.const 0
+  i32.store
+  ...
+function #8 is indirectly called with a fixed table index
+  global.get 19
+  i32.load
+  local.tee 2
+  ...
+function #14 is indirectly called with a fixed table index
+  i32.const -1
+  end
+  ...
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i32, i32, i32, i32] -> [i32]
+    start idx: Some(0), end idx: Some(0)
+    size (of class): 0
+    count (how often class appears): 1
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: Some(14), end idx: Some(14)
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 2
+  class #3
+    type: [i32, i32, i32, i32] -> [i32]
+    start idx: Some(5), end idx: Some(5)
+    size (of class): 1
+    count (how often class appears): 2
+  class #4
+    type: [i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 5
+    count (how often class appears): 5
+  class #5
+    type: [i32, i32] -> [i32]
+    start idx: Some(8), end idx: Some(8)
+    size (of class): 1
+    count (how often class appears): 5
+  class #6
+    type: [i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 5
+    count (how often class appears): 6
+  class #7
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 6
+    count (how often class appears): 22
+  total classes: 8
+
+CSV data for further analysis: mkkeywordhashcheerp.wasm,12638,184,44,19.298246,76,16,5,8,1,22,5.5,5,696,232,33.333332,197,28.304598,25,3.591954
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"mkkeywordhashcheerp.wasm",0,0,1,"i32.const"
+"mkkeywordhashcheerp.wasm",1,1,1,"i32.const"
+"mkkeywordhashcheerp.wasm",2,1,2,"local.(get|tee)"
+"mkkeywordhashcheerp.wasm",3,1,2,"i32.const"
+"mkkeywordhashcheerp.wasm",4,5,5,"i32.load"
+"mkkeywordhashcheerp.wasm",5,1,5,"i32.const"
+"mkkeywordhashcheerp.wasm",6,5,6,"local.(get|tee)"
+"mkkeywordhashcheerp.wasm",7,6,22,"local.(get|tee)"

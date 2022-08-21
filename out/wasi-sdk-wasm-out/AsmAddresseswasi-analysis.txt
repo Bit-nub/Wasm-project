@@ -1,0 +1,94 @@
+Input file: AsmAddresseswasi.wasm
+  binary:    AsmAddresseswasi.wasm
+
+Functions:           46
+  Imported:           4
+  Non-imported:      42
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          3
+  Of those, unique functions:     3 (i.e., at least 6.52% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      7395
+  call:             129 (1.74% of all instructions)
+  call_indirect:     13 (0.18% of all instructions, 9.15% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 69248
+      9 × global.get   17 × global.set   26 total (35/65% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      9 (21.43% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (2.38%) × [-880]
+    1  (2.38%) × [-256]
+    1  (2.38%) × [-208]
+    5 (11.90%) × [-16]
+   34 (80.95%) × []
+  functions with stack allocation total: 8 (19.05%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"AsmAddresseswasi.wasm",1,2.3809524,"[-880]",-880,880
+sp_csv_line:"AsmAddresseswasi.wasm",1,2.3809524,"[-256]",-256,256
+sp_csv_line:"AsmAddresseswasi.wasm",1,2.3809524,"[-208]",-208,208
+sp_csv_line:"AsmAddresseswasi.wasm",5,11.904762,"[-16]",-16,16
+sp_csv_line:"AsmAddresseswasi.wasm",34,80.95238,"[]",0,0
+
+Counts of function types (14 unique types):
+    1  (2.17%) × [i32, i32, i32] -> []
+    1  (2.17%) × [i32, i32, i32, i32] -> []
+    1  (2.17%) × [i32, i32, i32, i32, i32] -> []
+    1  (2.17%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (2.17%) × [f64, i32] -> [f64]
+    2  (4.35%) × [] -> [i32]
+    2  (4.35%) × [i32, i64, i32] -> [i64]
+    2  (4.35%) × [i32, i64, i32, i32] -> [i32]
+    3  (6.52%) × [i32, i32, i32, i32] -> [i32]
+    4  (8.70%) × [i32] -> []
+    5 (10.87%) × [i32, i32] -> [i32]
+    7 (15.22%) × [] -> []
+    7 (15.22%) × [i32] -> [i32]
+    9 (19.57%) × [i32, i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 4 (9.52% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+  3 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     9 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     4 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 4
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 9
+  total classes: 2
+
+CSV data for further analysis: AsmAddresseswasi.wasm,7395,129,13,9.154929,46,3,2,2,4,9,6.5,9,89,13,14.606742,13,14.606742,13,14.606742
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"AsmAddresseswasi.wasm",0,1,4,"i32.load"
+"AsmAddresseswasi.wasm",1,1,9,"i32.load"

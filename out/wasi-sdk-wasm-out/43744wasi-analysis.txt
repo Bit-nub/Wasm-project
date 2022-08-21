@@ -1,0 +1,66 @@
+Input file: 43744wasi.wasm
+  binary:    43744wasi.wasm
+
+Functions:           16
+  Imported:           1
+  Non-imported:      15
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          0
+  Of those, unique functions:     0 (i.e., at least 0.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      5145
+  call:              25 (0.49% of all instructions)
+  call_indirect:      1 (0.02% of all instructions, 3.85% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 67152
+     2 × global.get   4 × global.set   6 total (33/67% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      2 (13.33% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (6.67%) × [-16]
+   14 (93.33%) × []
+  functions with stack allocation total: 1 (6.67%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"43744wasi.wasm",1,6.6666665,"[-16]",-16,16
+sp_csv_line:"43744wasi.wasm",14,93.333336,"[]",0,0
+
+Counts of function types (5 unique types):
+    1  (6.25%) × [] -> [i32]
+    1  (6.25%) × [i32, i32, i32] -> [i32]
+    3 (18.75%) × [i32] -> [i32]
+    5 (31.25%) × [] -> []
+    6 (37.50%) × [i32] -> []
+
+Functions with at least one call_indirect: 1 (6.67% of all functions)
+
+Table elements initialization:
+  0 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source: local.(get|tee)   type [] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    0
+         functions matching by type and present in permissable table index range:              0
+  1 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 0
+    count (how often class appears): 1
+  total classes: 1
+
+CSV data for further analysis: 43744wasi.wasm,5145,25,1,3.8461537,16,0,0,1,1,1,1,1,1,0,0,0,0,0,0
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"43744wasi.wasm",0,0,1,"local.(get|tee)"

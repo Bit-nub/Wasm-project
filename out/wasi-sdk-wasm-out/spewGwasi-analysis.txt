@@ -1,0 +1,96 @@
+Input file: spewGwasi.wasm
+  binary:    spewGwasi.wasm
+
+Functions:           67
+  Imported:           7
+  Non-imported:      60
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          4
+  Of those, unique functions:     4 (i.e., at least 5.97% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     12499
+  call:             171 (1.37% of all instructions)
+  call_indirect:     17 (0.14% of all instructions, 9.04% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1071056
+     11 × global.get   22 × global.set   33 total (33/67% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     11 (18.33% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.67%) × [-880]
+    1  (1.67%) × [-256]
+    1  (1.67%) × [-208]
+    1  (1.67%) × [-32]
+    6 (10.00%) × [-16]
+   50 (83.33%) × []
+  functions with stack allocation total: 10 (16.67%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"spewGwasi.wasm",1,1.6666666,"[-880]",-880,880
+sp_csv_line:"spewGwasi.wasm",1,1.6666666,"[-256]",-256,256
+sp_csv_line:"spewGwasi.wasm",1,1.6666666,"[-208]",-208,208
+sp_csv_line:"spewGwasi.wasm",1,1.6666666,"[-32]",-32,32
+sp_csv_line:"spewGwasi.wasm",6,10,"[-16]",-16,16
+sp_csv_line:"spewGwasi.wasm",50,83.333336,"[]",0,0
+
+Counts of function types (13 unique types):
+    1  (1.49%) × [i32, i32, i32, i32, i32] -> []
+    1  (1.49%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (1.49%) × [f64, i32] -> [f64]
+    2  (2.99%) × [i32, i32, i32] -> []
+    2  (2.99%) × [i32, i64, i32] -> [i64]
+    2  (2.99%) × [i32, i64, i32, i32] -> [i32]
+    4  (5.97%) × [] -> [i32]
+    4  (5.97%) × [i32, i32, i32, i32] -> [i32]
+    7 (10.45%) × [i32] -> []
+    8 (11.94%) × [] -> []
+    9 (13.43%) × [i32, i32, i32] -> [i32]
+   12 (17.91%) × [i32] -> [i32]
+   14 (20.90%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 5 (8.33% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  4 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+    11 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     6 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 6
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 11
+  total classes: 2
+
+CSV data for further analysis: spewGwasi.wasm,12499,171,17,9.042553,67,4,3,2,6,11,8.5,11,111,28,25.225225,28,25.225225,28,25.225225
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"spewGwasi.wasm",0,1,6,"i32.load"
+"spewGwasi.wasm",1,2,11,"i32.load"

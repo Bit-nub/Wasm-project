@@ -1,0 +1,49 @@
+Input file: funkycheerp.wasm
+  binary:    funkycheerp.wasm
+
+Functions:            5
+  Imported:           0
+  Non-imported:       5
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          1
+  Of those, unique functions:     1 (i.e., at least 20.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:       660
+  call:               0 (0.00% of all instructions)
+  call_indirect:      0 (0.00% of all instructions, NaN% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1048576
+     0 × global.get   0 × global.set   0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      0 (0.00% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    5(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"funkycheerp.wasm",5,100,"[]",0,0
+
+Counts of function types (3 unique types):
+    1 (20.00%) × [] -> []
+    1 (20.00%) × [] -> [i32]
+    3 (60.00%) × [i32, i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 0 (0.00% of all functions)
+
+Table elements initialization:
+         range: [    0,    0]   length:   1   unique funcs:    1   type: [] -> []
+  1 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+  0 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  total classes: 0
+

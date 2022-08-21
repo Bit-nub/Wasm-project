@@ -1,0 +1,96 @@
+Input file: test-instrwasi.wasm
+  binary:    test-instrwasi.wasm
+
+Functions:           64
+  Imported:           8
+  Non-imported:      56
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          4
+  Of those, unique functions:     4 (i.e., at least 6.25% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     11939
+  call:             167 (1.40% of all instructions)
+  call_indirect:     13 (0.11% of all instructions, 7.22% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 70848
+     12 × global.get   23 × global.set   35 total (34/66% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     12 (21.43% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.79%) × [-880]
+    1  (1.79%) × [-256]
+    1  (1.79%) × [-208]
+    1  (1.79%) × [-32]
+    7 (12.50%) × [-16]
+   45 (80.36%) × []
+  functions with stack allocation total: 11 (19.64%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test-instrwasi.wasm",1,1.7857143,"[-880]",-880,880
+sp_csv_line:"test-instrwasi.wasm",1,1.7857143,"[-256]",-256,256
+sp_csv_line:"test-instrwasi.wasm",1,1.7857143,"[-208]",-208,208
+sp_csv_line:"test-instrwasi.wasm",1,1.7857143,"[-32]",-32,32
+sp_csv_line:"test-instrwasi.wasm",7,12.5,"[-16]",-16,16
+sp_csv_line:"test-instrwasi.wasm",45,80.35714,"[]",0,0
+
+Counts of function types (13 unique types):
+    1  (1.56%) × [i32, i32, i32] -> []
+    1  (1.56%) × [i32, i32, i32, i32, i32] -> []
+    1  (1.56%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (1.56%) × [f64, i32] -> [f64]
+    2  (3.12%) × [i32, i64, i32] -> [i64]
+    2  (3.12%) × [i32, i64, i32, i32] -> [i32]
+    3  (4.69%) × [] -> [i32]
+    5  (7.81%) × [i32, i32, i32, i32] -> [i32]
+    6  (9.38%) × [i32] -> []
+    7 (10.94%) × [] -> []
+   10 (15.62%) × [i32, i32, i32] -> [i32]
+   11 (17.19%) × [i32] -> [i32]
+   14 (21.88%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 4 (7.14% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  4 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     9 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               10
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     4 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  2 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 4
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 9
+  total classes: 2
+
+CSV data for further analysis: test-instrwasi.wasm,11939,167,13,7.2222223,64,4,3,2,4,9,6.5,9,98,22,22.44898,22,22.44898,22,22.44898
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"test-instrwasi.wasm",0,1,4,"i32.load"
+"test-instrwasi.wasm",1,2,9,"i32.load"

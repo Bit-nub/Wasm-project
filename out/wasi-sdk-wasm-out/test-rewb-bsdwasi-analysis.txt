@@ -1,0 +1,88 @@
+Input file: test-rewb-bsdwasi.wasm
+  binary:    test-rewb-bsdwasi.wasm
+
+Functions:           69
+  Imported:           1
+  Non-imported:      68
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          1
+  Of those, unique functions:     1 (i.e., at least 1.45% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     30175
+  call:             545 (1.81% of all instructions)
+  call_indirect:     12 (0.04% of all instructions, 2.15% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 80224
+     11 × global.get   20 × global.set   31 total (35/65% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     11 (16.18% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.47%) × [-736]
+    1  (1.47%) × [-704]
+    1  (1.47%) × [-288]
+    1  (1.47%) × [-64]
+    1  (1.47%) × [-32]
+    2  (2.94%) × [-96]
+    2  (2.94%) × [-16]
+   59 (86.76%) × []
+  functions with stack allocation total: 9 (13.24%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test-rewb-bsdwasi.wasm",1,1.4705882,"[-736]",-736,736
+sp_csv_line:"test-rewb-bsdwasi.wasm",1,1.4705882,"[-704]",-704,704
+sp_csv_line:"test-rewb-bsdwasi.wasm",1,1.4705882,"[-288]",-288,288
+sp_csv_line:"test-rewb-bsdwasi.wasm",1,1.4705882,"[-64]",-64,64
+sp_csv_line:"test-rewb-bsdwasi.wasm",1,1.4705882,"[-32]",-32,32
+sp_csv_line:"test-rewb-bsdwasi.wasm",2,2.9411764,"[-96]",-96,96
+sp_csv_line:"test-rewb-bsdwasi.wasm",2,2.9411764,"[-16]",-16,16
+sp_csv_line:"test-rewb-bsdwasi.wasm",59,86.76471,"[]",0,0
+
+Counts of function types (14 unique types):
+    1  (1.45%) × [] -> [i32]
+    1  (1.45%) × [i32, i32] -> []
+    1  (1.45%) × [i32, i32, i32, i32] -> []
+    1  (1.45%) × [i32, i32, i32, i32, i32, i32] -> []
+    1  (1.45%) × [i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (1.45%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (1.45%) × [i32, i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    3  (4.35%) × [i32, i32, i32, i32] -> [i32]
+    5  (7.25%) × [] -> []
+    6  (8.70%) × [i32, i32, i32, i32, i32] -> [i32]
+    8 (11.59%) × [i32] -> []
+   10 (14.49%) × [i32, i32] -> [i32]
+   10 (14.49%) × [i32, i32, i32] -> [i32]
+   20 (28.99%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 2 (2.94% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32, i32] -> [i32]
+  1 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+    12 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               10
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  1 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 12
+  total classes: 1
+
+CSV data for further analysis: test-rewb-bsdwasi.wasm,30175,545,12,2.1543987,69,1,0,1,12,12,12,12,120,12,10,12,10,0,0
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"test-rewb-bsdwasi.wasm",0,1,12,"local.(get|tee)"

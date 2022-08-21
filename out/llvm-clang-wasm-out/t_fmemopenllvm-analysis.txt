@@ -1,0 +1,231 @@
+Input file: t_fmemopenllvm.wasm
+  binary:    t_fmemopenllvm.wasm
+
+Functions:          165
+  Imported:           7
+  Non-imported:     158
+  Exported:         101
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          8
+  Of those, unique functions:     8 (i.e., at least 4.85% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     30408
+  call:             927 (3.05% of all instructions)
+  call_indirect:     29 (0.10% of all instructions, 3.03% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 77152
+      49 × global.get   127 × global.set   176 total (28/72% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 77152
+       0 × global.get     0 × global.set     0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 11608
+       0 × global.get     0 × global.set     0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+       0 × global.get     0 × global.set     0 total
+  #4 i32
+     export: ["mode_rwa"]
+     init: i32.const 8080
+       0 × global.get     0 × global.set     0 total
+  #5 i32
+     export: ["mode_r"]
+     init: i32.const 8144
+       0 × global.get     0 × global.set     0 total
+  #6 i32
+     export: ["mode_w"]
+     init: i32.const 8176
+       0 × global.get     0 × global.set     0 total
+  #7 i32
+     export: ["mode_a"]
+     init: i32.const 8208
+       0 × global.get     0 × global.set     0 total
+  #8 i32
+     export: ["testcases"]
+     init: i32.const 8240
+       0 × global.get     0 × global.set     0 total
+  #9 i32
+     export: ["mode_rw"]
+     init: i32.const 8960
+       0 × global.get     0 × global.set     0 total
+  #10 i32
+     export: ["mode_rw1"]
+     init: i32.const 9008
+       0 × global.get     0 × global.set     0 total
+  #11 i32
+     export: ["mode_a1"]
+     init: i32.const 9040
+       0 × global.get     0 × global.set     0 total
+  #12 i32
+     export: ["mode_rw2"]
+     init: i32.const 9056
+       0 × global.get     0 × global.set     0 total
+  #13 i32
+     export: ["stderr"]
+     init: i32.const 5620
+       0 × global.get     0 × global.set     0 total
+  #14 i32
+     export: ["__progname"]
+     init: i32.const 9408
+       0 × global.get     0 × global.set     0 total
+  #15 i32
+     export: ["__progname_full"]
+     init: i32.const 9412
+       0 × global.get     0 × global.set     0 total
+  #16 i32
+     export: ["__libc"]
+     init: i32.const 9416
+       0 × global.get     0 × global.set     0 total
+  #17 i32
+     export: ["__hwcap"]
+     init: i32.const 9480
+       0 × global.get     0 × global.set     0 total
+  #18 i32
+     export: ["__sysinfo"]
+     init: i32.const 9484
+       0 × global.get     0 × global.set     0 total
+  #19 i32
+     export: ["program_invocation_short_name"]
+     init: i32.const 9408
+       0 × global.get     0 × global.set     0 total
+  #20 i32
+     export: ["program_invocation_name"]
+     init: i32.const 9412
+       0 × global.get     0 × global.set     0 total
+  #21 i32
+     export: ["__malloc_replaced"]
+     init: i32.const 10536
+       0 × global.get     0 × global.set     0 total
+  #22 i32
+     export: ["__stdin_used"]
+     init: i32.const 10552
+       0 × global.get     0 × global.set     0 total
+  #23 i32
+     export: ["__stdout_used"]
+     init: i32.const 9392
+       0 × global.get     0 × global.set     0 total
+  #24 i32
+     export: ["__stderr_used"]
+     init: i32.const 9240
+       0 × global.get     0 × global.set     0 total
+  #25 i32
+     export: ["stdout"]
+     init: i32.const 5624
+       0 × global.get     0 × global.set     0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     49 (31.01% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.63%) × [-8064]
+    1  (0.63%) × [-288]
+    1  (0.63%) × [-128]
+    1  (0.63%) × [-112]
+    1  (0.63%) × [-96]
+    1  (0.63%) × [-32]
+   19 (12.03%) × [-16]
+  133 (84.18%) × []
+  functions with stack allocation total: 25 (15.82%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"t_fmemopenllvm.wasm",1,0.6329114,"[-8064]",-8064,8064
+sp_csv_line:"t_fmemopenllvm.wasm",1,0.6329114,"[-288]",-288,288
+sp_csv_line:"t_fmemopenllvm.wasm",1,0.6329114,"[-128]",-128,128
+sp_csv_line:"t_fmemopenllvm.wasm",1,0.6329114,"[-112]",-112,112
+sp_csv_line:"t_fmemopenllvm.wasm",1,0.6329114,"[-96]",-96,96
+sp_csv_line:"t_fmemopenllvm.wasm",1,0.6329114,"[-32]",-32,32
+sp_csv_line:"t_fmemopenllvm.wasm",19,12.025316,"[-16]",-16,16
+sp_csv_line:"t_fmemopenllvm.wasm",133,84.177216,"[]",0,0
+
+Counts of function types (22 unique types):
+    1  (0.61%) × [i32, i32, i32] -> []
+    1  (0.61%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.61%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.61%) × [i32, i32, i32, i32, i32, i64] -> [i32]
+    1  (0.61%) × [i32, f64] -> []
+    2  (1.21%) × [i32] -> [i64]
+    2  (1.21%) × [i32, i32, i32, i32] -> []
+    2  (1.21%) × [i32, i64, i32] -> [i32]
+    2  (1.21%) × [i32, i64, i32] -> [i64]
+    3  (1.82%) × [] -> [i32]
+    3  (1.82%) × [i32, i32, i32, i32, i32] -> [i32]
+    3  (1.82%) × [i32, i64, i64, i32] -> []
+    3  (1.82%) × [i32, i64, i64, i64, i64] -> []
+    4  (2.42%) × [i32, i32, i32, i32] -> [i32]
+    4  (2.42%) × [i64, i64] -> [i32]
+    5  (3.03%) × [i32, i32] -> []
+    7  (4.24%) × [i64, i64, i64, i64] -> [i32]
+   12  (7.27%) × [i32] -> []
+   15  (9.09%) × [i32, i32] -> [i32]
+   16  (9.70%) × [i32, i32, i32] -> [i32]
+   24 (14.55%) × [i32] -> [i32]
+   53 (32.12%) × [] -> []
+
+Functions with at least one call_indirect: 16 (10.13% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    2,    3]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+         range: [    4,    5]   length:   2   unique funcs:    2   type: [i32] -> [i32]
+         range: [    6,    6]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    7,    7]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    8,    8]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  6 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               24
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+    17 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               16
+         functions matching by type and present in table (regardless at which table index):    4
+         functions matching by type and present in permissable table index range:              4
+     8 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     3 × unrestricted                         source: local.(get|tee)   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+  4 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #1
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 3
+  class #2
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 8
+  class #3
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 4
+    count (how often class appears): 17
+  total classes: 4
+
+CSV data for further analysis: t_fmemopenllvm.wasm,30408,927,29,3.0334728,165,8,8,4,1,17,7.25,8,318,92,28.930819,92,28.930819,86,27.044025
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"t_fmemopenllvm.wasm",0,2,1,"i32.load"
+"t_fmemopenllvm.wasm",1,2,3,"local.(get|tee)"
+"t_fmemopenllvm.wasm",2,2,8,"i32.load"
+"t_fmemopenllvm.wasm",3,4,17,"i32.load"

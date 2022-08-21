@@ -1,0 +1,139 @@
+Input file: 43617cheerp.wasm
+  binary:    43617cheerp.wasm
+
+Functions:           61
+  Imported:           3
+  Non-imported:      58
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:         12
+  Of those, unique functions:    12 (i.e., at least 19.67% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      7066
+  call:              83 (1.17% of all instructions)
+  call_indirect:     20 (0.28% of all instructions, 19.42% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1048576
+      9 × global.get   25 × global.set   34 total (26/74% split)
+  #1 i32
+     init: i32.const 1048864
+      0 × global.get    0 × global.set    0 total
+  #2 i32
+     init: i32.const 1048872
+      0 × global.get    0 × global.set    0 total
+  #3 i32
+     init: i32.const 1050436
+     12 × global.get    0 × global.set   12 total (100/0% split)
+  #4 i32
+     init: i32.const 1050384
+      9 × global.get    0 × global.set    9 total (100/0% split)
+  #5 i32
+     init: i32.const 1050272
+      5 × global.get    0 × global.set    5 total (100/0% split)
+  #6 i32
+     init: i32.const 1050168
+      5 × global.get    0 × global.set    5 total (100/0% split)
+  #7 i32
+     init: i32.const 1050064
+      5 × global.get    0 × global.set    5 total (100/0% split)
+  #8 i32
+     init: i32.const 1048844
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #9 i32
+     init: i32.const 1048832
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #10 i32
+     init: i32.const 1050424
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #11 i32
+     init: i32.const 1049888
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #12 i32
+     init: i32.const 1048840
+      4 × global.get    0 × global.set    4 total (100/0% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      9 (15.52% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+   58(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"43617cheerp.wasm",58,100,"[]",0,0
+
+Counts of function types (11 unique types):
+    1  (1.64%) × [i32, i32, i32, i32] -> []
+    2  (3.28%) × [i32, i32, i32] -> []
+    3  (4.92%) × [] -> []
+    3  (4.92%) × [i32] -> []
+    3  (4.92%) × [i32, i32, i32, i32, i32] -> [i32]
+    4  (6.56%) × [] -> [i32]
+    4  (6.56%) × [i32, i32] -> []
+    7 (11.48%) × [i32] -> [i32]
+    9 (14.75%) × [i32, i32, i32, i32] -> [i32]
+   12 (19.67%) × [i32, i32, i32] -> [i32]
+   13 (21.31%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 11 (18.97% of all functions)
+
+Table elements initialization:
+         range: [    0,    0]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    1,    4]   length:   4   unique funcs:    4   type: [i32, i32, i32, i32] -> [i32]
+         range: [    5,    7]   length:   3   unique funcs:    3   type: [i32, i32] -> [i32]
+         range: [    8,    9]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+         range: [   10,   10]   length:   1   unique funcs:    1   type: [i32] -> []
+         range: [   11,   11]   length:   1   unique funcs:    1   type: [i32, i32, i32, i32, i32] -> [i32]
+  6 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     2 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               13
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     2 × unrestricted                         source:   i32.load   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    4
+         functions matching by type and present in permissable table index range:              4
+     6 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    4
+         functions matching by type and present in permissable table index range:              4
+     2 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:      0                  source:  i32.const   type: [i32, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              0
+     5 × fixed index:      7                  source:  i32.const   type: [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               13
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:      8                  source:  i32.const   type: [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               12
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:  1049937                  source:  i32.const   type: [] -> []
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              0
+  8 call_indirect patterns in total
+
+function #0 is indirectly called with a fixed table index
+  unreachable
+  end
+  ...
+function #7 is indirectly called with a fixed table index
+  global.get 10
+  i32.load
+  local.tee 2
+  ...
+function #8 is indirectly called with a fixed table index
+  i32.const -1
+  end
+  ...

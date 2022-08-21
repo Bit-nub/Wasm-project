@@ -1,0 +1,3 @@
+Input file: test_asan_no_errorcheerp.wasm
+  binary:    test_asan_no_errorcheerp.wasm
+

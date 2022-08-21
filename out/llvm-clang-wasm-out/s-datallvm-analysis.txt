@@ -1,0 +1,95 @@
+Input file: s-datallvm.wasm
+  binary:    s-datallvm.wasm
+
+Functions:           14
+  Imported:           3
+  Non-imported:      11
+  Exported:          11
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          4
+  Of those, unique functions:     4 (i.e., at least 28.57% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:       418
+  call:              16 (3.83% of all instructions)
+  call_indirect:      0 (0.00% of all instructions, 0.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 67952
+      6 × global.get   10 × global.set   16 total (38/62% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 67952
+      0 × global.get    0 × global.set    0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 2408
+      0 × global.get    0 × global.set    0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+      0 × global.get    0 × global.set    0 total
+  #4 i32
+     export: ["weak_var"]
+     init: i32.const 1028
+      0 × global.get    0 × global.set    0 total
+  #5 i32
+     export: ["global_var"]
+     init: i32.const 1024
+      0 × global.get    0 × global.set    0 total
+  #6 i32
+     export: ["stdout"]
+     init: i32.const 1344
+      0 × global.get    0 × global.set    0 total
+  #7 i32
+     export: ["stderr"]
+     init: i32.const 1340
+      0 × global.get    0 × global.set    0 total
+  #8 i32
+     export: ["__stdout_used"]
+     init: i32.const 1336
+      0 × global.get    0 × global.set    0 total
+  #9 i32
+     export: ["__stderr_used"]
+     init: i32.const 1184
+      0 × global.get    0 × global.set    0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      6 (54.55% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    3 (27.27%) × [-16]
+    8 (72.73%) × []
+  functions with stack allocation total: 3 (27.27%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"s-datallvm.wasm",3,27.272728,"[-16]",-16,16
+sp_csv_line:"s-datallvm.wasm",8,72.72727,"[]",0,0
+
+Counts of function types (8 unique types):
+    1  (7.14%) × [] -> []
+    1  (7.14%) × [i32, i32, i32, i32] -> [i32]
+    1  (7.14%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (7.14%) × [i32, i64, i32] -> [i64]
+    2 (14.29%) × [] -> [i32]
+    2 (14.29%) × [i32, i32, i32] -> [i32]
+    3 (21.43%) × [i32] -> [i32]
+    3 (21.43%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 0 (0.00% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [    3,    3]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    4,    4]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  4 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+  0 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  total classes: 0
+

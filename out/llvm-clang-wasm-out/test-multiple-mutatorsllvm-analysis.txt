@@ -1,0 +1,69 @@
+Input file: test-multiple-mutatorsllvm.wasm
+  binary:    test-multiple-mutatorsllvm.wasm
+
+Functions:           16
+  Imported:           4
+  Non-imported:      12
+  Exported:          12
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          0
+  Of those, unique functions:     0 (i.e., at least 0.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:       210
+  call:              18 (8.57% of all instructions)
+  call_indirect:      0 (0.00% of all instructions, 0.00% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 66576
+     3 × global.get   6 × global.set   9 total (33/67% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 66576
+     0 × global.get   0 × global.set   0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 1040
+     0 × global.get   0 × global.set   0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+     0 × global.get   0 × global.set   0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:      3 (25.00% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (8.33%) × [-128]
+    1  (8.33%) × [-32]
+   10 (83.33%) × []
+  functions with stack allocation total: 2 (16.67%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test-multiple-mutatorsllvm.wasm",1,8.333333,"[-128]",-128,128
+sp_csv_line:"test-multiple-mutatorsllvm.wasm",1,8.333333,"[-32]",-32,32
+sp_csv_line:"test-multiple-mutatorsllvm.wasm",10,83.333336,"[]",0,0
+
+Counts of function types (8 unique types):
+    1  (6.25%) × [] -> [i32]
+    1  (6.25%) × [i32, i32, i32, i32, i32] -> [i32]
+    2 (12.50%) × [] -> []
+    2 (12.50%) × [i32, i32] -> [i32]
+    2 (12.50%) × [i32, i32, i32] -> [i32]
+    2 (12.50%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    3 (18.75%) × [i32] -> []
+    3 (18.75%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 0 (0.00% of all functions)
+
+Table elements initialization:
+  0 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+  0 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  total classes: 0
+

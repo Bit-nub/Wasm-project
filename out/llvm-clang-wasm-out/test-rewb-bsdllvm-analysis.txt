@@ -1,0 +1,136 @@
+Input file: test-rewb-bsdllvm.wasm
+  binary:    test-rewb-bsdllvm.wasm
+
+Functions:          100
+  Imported:           7
+  Non-imported:      93
+  Exported:          74
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          1
+  Of those, unique functions:     1 (i.e., at least 1.00% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     23674
+  call:             618 (2.61% of all instructions)
+  call_indirect:     13 (0.05% of all instructions, 2.06% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 76704
+     11 × global.get   43 × global.set   54 total (20/80% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 76704
+      0 × global.get    0 × global.set    0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 11160
+      0 × global.get    0 × global.set    0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+      0 × global.get    0 × global.set    0 total
+  #4 i32
+     export: ["__progname"]
+     init: i32.const 10016
+      0 × global.get    0 × global.set    0 total
+  #5 i32
+     export: ["__progname_full"]
+     init: i32.const 10020
+      0 × global.get    0 × global.set    0 total
+  #6 i32
+     export: ["__libc"]
+     init: i32.const 10024
+      0 × global.get    0 × global.set    0 total
+  #7 i32
+     export: ["__hwcap"]
+     init: i32.const 10088
+      0 × global.get    0 × global.set    0 total
+  #8 i32
+     export: ["__sysinfo"]
+     init: i32.const 10092
+      0 × global.get    0 × global.set    0 total
+  #9 i32
+     export: ["program_invocation_short_name"]
+     init: i32.const 10016
+      0 × global.get    0 × global.set    0 total
+  #10 i32
+     export: ["program_invocation_name"]
+     init: i32.const 10020
+      0 × global.get    0 × global.set    0 total
+  #11 i32
+     export: ["__malloc_replaced"]
+     init: i32.const 11144
+      0 × global.get    0 × global.set    0 total
+  #12 i32
+     export: ["__fsmu8"]
+     init: i32.const 1216
+      0 × global.get    0 × global.set    0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     11 (11.83% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (1.08%) × [-736]
+    1  (1.08%) × [-688]
+    1  (1.08%) × [-288]
+    1  (1.08%) × [-128]
+    1  (1.08%) × [-64]
+    5  (5.38%) × [-16]
+   83 (89.25%) × []
+  functions with stack allocation total: 10 (10.75%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"test-rewb-bsdllvm.wasm",1,1.0752689,"[-736]",-736,736
+sp_csv_line:"test-rewb-bsdllvm.wasm",1,1.0752689,"[-688]",-688,688
+sp_csv_line:"test-rewb-bsdllvm.wasm",1,1.0752689,"[-288]",-288,288
+sp_csv_line:"test-rewb-bsdllvm.wasm",1,1.0752689,"[-128]",-128,128
+sp_csv_line:"test-rewb-bsdllvm.wasm",1,1.0752689,"[-64]",-64,64
+sp_csv_line:"test-rewb-bsdllvm.wasm",5,5.376344,"[-16]",-16,16
+sp_csv_line:"test-rewb-bsdllvm.wasm",83,89.247314,"[]",0,0
+
+Counts of function types (16 unique types):
+    1  (1.00%) × [i32, i32, i32, i32, i32, i32] -> []
+    1  (1.00%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (1.00%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (1.00%) × [i32, i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (1.00%) × [i32, i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (1.00%) × [i32, i32, i32, i32, i32, i64] -> [i32]
+    2  (2.00%) × [] -> [i32]
+    2  (2.00%) × [i32, i32] -> []
+    2  (2.00%) × [i32, i32, i32, i32] -> []
+    3  (3.00%) × [] -> []
+    3  (3.00%) × [i32, i32, i32, i32] -> [i32]
+    7  (7.00%) × [i32, i32, i32, i32, i32] -> [i32]
+   10 (10.00%) × [i32, i32, i32] -> [i32]
+   11 (11.00%) × [i32] -> []
+   25 (25.00%) × [i32] -> [i32]
+   29 (29.00%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 2 (2.15% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32, i32] -> [i32]
+  1 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+    13 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               29
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  1 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 13
+  total classes: 1
+
+CSV data for further analysis: test-rewb-bsdllvm.wasm,23674,618,13,2.060222,100,1,0,1,13,13,13,13,377,13,3.4482758,13,3.4482758,0,0
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"test-rewb-bsdllvm.wasm",0,1,13,"local.(get|tee)"

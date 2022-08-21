@@ -1,0 +1,3 @@
+Input file: 9-pointercheerp.wasm
+  binary:    9-pointercheerp.wasm
+

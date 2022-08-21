@@ -1,0 +1,3 @@
+Input file: test_lsan_no_leakcheerp.wasm
+  binary:    test_lsan_no_leakcheerp.wasm
+

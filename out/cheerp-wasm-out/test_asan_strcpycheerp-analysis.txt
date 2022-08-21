@@ -1,0 +1,3 @@
+Input file: test_asan_strcpycheerp.wasm
+  binary:    test_asan_strcpycheerp.wasm
+

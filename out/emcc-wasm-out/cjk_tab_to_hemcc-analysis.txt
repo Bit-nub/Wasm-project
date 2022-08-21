@@ -1,0 +1,192 @@
+Input file: cjk_tab_to_hemcc.wasm
+  binary:    cjk_tab_to_hemcc.wasm
+
+Functions:          196
+  Imported:           7
+  Non-imported:     189
+  Exported:           9
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:         46
+  Of those, unique functions:    46 (i.e., at least 23.47% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     55134
+  call:            1183 (2.15% of all instructions)
+  call_indirect:     38 (0.07% of all instructions, 3.11% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 5258048
+     104 × global.get   129 × global.set   233 total (45/55% split)
+  #1 i32
+     init: i32.const 0
+       2 × global.get     1 × global.set     3 total (67/33% split)
+  #2 i32
+     init: i32.const 0
+       1 × global.get     1 × global.set     2 total (50/50% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:    105 (55.56% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.53%) × [-8976]
+    1  (0.53%) × [-560]
+    1  (0.53%) × [-432]
+    1  (0.53%) × [-336]
+    1  (0.53%) × [-304]
+    1  (0.53%) × [-256]
+    1  (0.53%) × [-208]
+    1  (0.53%) × [-160]
+    1  (0.53%) × [-128]
+    1  (0.53%) × [-112]
+    1  (0.53%) × [-96]
+    1  (0.53%) × [-48]
+    2  (1.06%) × [-80]
+    4  (2.12%) × [-32]
+   17  (8.99%) × [-16]
+  154 (81.48%) × []
+  functions with stack allocation total: 35 (18.52%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-8976]",-8976,8976
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-560]",-560,560
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-432]",-432,432
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-336]",-336,336
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-304]",-304,304
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-256]",-256,256
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-208]",-208,208
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-160]",-160,160
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-128]",-128,128
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-112]",-112,112
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-96]",-96,96
+sp_csv_line:"cjk_tab_to_hemcc.wasm",1,0.52910054,"[-48]",-48,48
+sp_csv_line:"cjk_tab_to_hemcc.wasm",2,1.0582011,"[-80]",-80,80
+sp_csv_line:"cjk_tab_to_hemcc.wasm",4,2.1164021,"[-32]",-32,32
+sp_csv_line:"cjk_tab_to_hemcc.wasm",17,8.994709,"[-16]",-16,16
+sp_csv_line:"cjk_tab_to_hemcc.wasm",154,81.48148,"[]",0,0
+
+Counts of function types (36 unique types):
+    1  (0.51%) × [i32, i32] -> [i64]
+    1  (0.51%) × [i32, i32, i32, i32, i32] -> []
+    1  (0.51%) × [i32, i32, i32, i32, i32] -> [i32]
+    1  (0.51%) × [i32, i32, i32, i32, i32, i32] -> []
+    1  (0.51%) × [i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (0.51%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.51%) × [i32, i32, i64] -> []
+    1  (0.51%) × [i32, i64] -> []
+    1  (0.51%) × [i32, i64, i32] -> [i32]
+    1  (0.51%) × [i32, i64, i32, i32] -> [i32]
+    1  (0.51%) × [i32, i64, i64] -> []
+    1  (0.51%) × [i32, f32] -> []
+    1  (0.51%) × [i32, f64] -> []
+    1  (0.51%) × [i32, f64, i32, i32, i32, i32] -> [i32]
+    1  (0.51%) × [i64, i32, i32] -> [i32]
+    1  (0.51%) × [i64, i64] -> [i32]
+    1  (0.51%) × [i64, i64] -> [f32]
+    1  (0.51%) × [i64, i64] -> [f64]
+    1  (0.51%) × [f64] -> [i64]
+    2  (1.02%) × [i32, i32, i32] -> []
+    2  (1.02%) × [i32, i32, i32, i64] -> [i64]
+    2  (1.02%) × [i64, i32] -> [i32]
+    2  (1.02%) × [i64, i64, i64, i64] -> [i32]
+    2  (1.02%) × [f64, i32] -> [f64]
+    3  (1.53%) × [i32, i32, i32, i32] -> []
+    3  (1.53%) × [i32, i64, i32] -> [i64]
+    3  (1.53%) × [i32, i64, i64, i32] -> []
+    4  (2.04%) × [i32, i32, i32, i32] -> [i32]
+    7  (3.57%) × [i32, i32] -> []
+    7  (3.57%) × [i32, i64, i64, i64, i64] -> []
+    8  (4.08%) × [] -> []
+   13  (6.63%) × [] -> [i32]
+   14  (7.14%) × [i32, i32] -> [i32]
+   15  (7.65%) × [i32, i32, i32] -> [i32]
+   31 (15.82%) × [i32] -> []
+   59 (30.10%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 14 (7.41% of all functions)
+
+Table elements initialization:
+         range: [    1,   36]   length:  36   unique funcs:   36   type: [i32] -> [i32]
+         range: [   37,   37]   length:   1   unique funcs:    1   type: [] -> []
+         range: [   38,   38]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [   39,   39]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [   40,   40]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [   41,   41]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+         range: [   42,   42]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [   43,   43]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [   44,   44]   length:   1   unique funcs:    1   type: [i32, f64, i32, i32, i32, i32] -> [i32]
+         range: [   45,   45]   length:   1   unique funcs:    1   type: [i32, i32] -> []
+         range: [   46,   46]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  11 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [] -> []
+         functions matching by type (regardless whether they are in the table):                8
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+    26 × unrestricted                         source: local.(get|tee)   type [i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               59
+         functions matching by type and present in table (regardless at which table index):   38
+         functions matching by type and present in permissable table index range:             38
+     1 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> []
+         functions matching by type (regardless whether they are in the table):                7
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     7 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               15
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     2 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     1 × unrestricted                         source: local.(get|tee)   type [i32, f64, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  6 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i32] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, f64, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #3
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 2
+  class #4
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 3
+    count (how often class appears): 7
+  class #5
+    type: [i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 38
+    count (how often class appears): 26
+  total classes: 6
+
+CSV data for further analysis: cjk_tab_to_hemcc.wasm,55134,1183,38,3.1122031,196,46,6,6,1,26,6.333333333333333,2,1661,1016,61.167973,1016,61.167973,26,1.565322
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"cjk_tab_to_hemcc.wasm",0,1,1,"i32.load"
+"cjk_tab_to_hemcc.wasm",1,1,1,"local.(get|tee)"
+"cjk_tab_to_hemcc.wasm",2,1,1,"local.(get|tee)"
+"cjk_tab_to_hemcc.wasm",3,2,2,"i32.load"
+"cjk_tab_to_hemcc.wasm",4,3,7,"i32.load"
+"cjk_tab_to_hemcc.wasm",5,38,26,"local.(get|tee)"

@@ -1,0 +1,3 @@
+Input file: s-variadiccheerp.wasm
+  binary:    s-variadiccheerp.wasm
+

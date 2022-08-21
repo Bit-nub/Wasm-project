@@ -1,0 +1,260 @@
+Input file: auto_epsgllvm.wasm
+  binary:    auto_epsgllvm.wasm
+
+Functions:          149
+  Imported:           7
+  Non-imported:     142
+  Exported:         113
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:          6
+  Of those, unique functions:     6 (i.e., at least 4.03% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     37906
+  call:            1388 (3.66% of all instructions)
+  call_indirect:     31 (0.08% of all instructions, 2.18% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 101104
+      51 × global.get   132 × global.set   183 total (28/72% split)
+  #1 i32
+     export: ["__heap_base"]
+     init: i32.const 101104
+       0 × global.get     0 × global.set     0 total
+  #2 i32
+     export: ["__data_end"]
+     init: i32.const 35564
+       0 × global.get     0 × global.set     0 total
+  #3 i32
+     export: ["__dso_handle"]
+     init: i32.const 1024
+       0 × global.get     0 × global.set     0 total
+  #4 i32
+     export: ["stderr"]
+     init: i32.const 30840
+       0 × global.get     0 × global.set     0 total
+  #5 i32
+     export: ["__environ"]
+     init: i32.const 35240
+       0 × global.get     0 × global.set     0 total
+  #6 i32
+     export: ["___environ"]
+     init: i32.const 35240
+       0 × global.get     0 × global.set     0 total
+  #7 i32
+     export: ["_environ"]
+     init: i32.const 35240
+       0 × global.get     0 × global.set     0 total
+  #8 i32
+     export: ["environ"]
+     init: i32.const 35240
+       0 × global.get     0 × global.set     0 total
+  #9 i32
+     export: ["__progname"]
+     init: i32.const 34000
+       0 × global.get     0 × global.set     0 total
+  #10 i32
+     export: ["__progname_full"]
+     init: i32.const 34004
+       0 × global.get     0 × global.set     0 total
+  #11 i32
+     export: ["__libc"]
+     init: i32.const 34008
+       0 × global.get     0 × global.set     0 total
+  #12 i32
+     export: ["__hwcap"]
+     init: i32.const 34072
+       0 × global.get     0 × global.set     0 total
+  #13 i32
+     export: ["__sysinfo"]
+     init: i32.const 34076
+       0 × global.get     0 × global.set     0 total
+  #14 i32
+     export: ["program_invocation_short_name"]
+     init: i32.const 34000
+       0 × global.get     0 × global.set     0 total
+  #15 i32
+     export: ["program_invocation_name"]
+     init: i32.const 34004
+       0 × global.get     0 × global.set     0 total
+  #16 i32
+     export: ["__c_dot_utf8"]
+     init: i32.const 33348
+       0 × global.get     0 × global.set     0 total
+  #17 i32
+     export: ["__c_locale"]
+     init: i32.const 33384
+       0 × global.get     0 × global.set     0 total
+  #18 i32
+     export: ["__c_dot_utf8_locale"]
+     init: i32.const 33408
+       0 × global.get     0 × global.set     0 total
+  #19 i32
+     export: ["__malloc_replaced"]
+     init: i32.const 35128
+       0 × global.get     0 × global.set     0 total
+  #20 i32
+     export: ["__stdin_used"]
+     init: i32.const 35148
+       0 × global.get     0 × global.set     0 total
+  #21 i32
+     export: ["__stdout_used"]
+     init: i32.const 35144
+       0 × global.get     0 × global.set     0 total
+  #22 i32
+     export: ["__stderr_used"]
+     init: i32.const 35552
+       0 × global.get     0 × global.set     0 total
+  #23 i32
+     export: ["__daylight"]
+     init: i32.const 35248
+       0 × global.get     0 × global.set     0 total
+  #24 i32
+     export: ["__timezone"]
+     init: i32.const 35244
+       0 × global.get     0 × global.set     0 total
+  #25 i32
+     export: ["__tzname"]
+     init: i32.const 35252
+       0 × global.get     0 × global.set     0 total
+  #26 i32
+     export: ["__utc"]
+     init: i32.const 33888
+       0 × global.get     0 × global.set     0 total
+  #27 i32
+     export: ["timezone"]
+     init: i32.const 35244
+       0 × global.get     0 × global.set     0 total
+  #28 i32
+     export: ["daylight"]
+     init: i32.const 35248
+       0 × global.get     0 × global.set     0 total
+  #29 i32
+     export: ["tzname"]
+     init: i32.const 35252
+       0 × global.get     0 × global.set     0 total
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     51 (35.92% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+    1  (0.70%) × [-8064]
+    1  (0.70%) × [-736]
+    1  (0.70%) × [-688]
+    1  (0.70%) × [-304]
+    1  (0.70%) × [-288]
+    1  (0.70%) × [-160]
+    1  (0.70%) × [-144]
+    1  (0.70%) × [-128]
+    1  (0.70%) × [-112]
+    1  (0.70%) × [-96]
+    2  (1.41%) × [-32]
+   20 (14.08%) × [-16]
+  110 (77.46%) × []
+  functions with stack allocation total: 32 (22.54%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-8064]",-8064,8064
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-736]",-736,736
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-688]",-688,688
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-304]",-304,304
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-288]",-288,288
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-160]",-160,160
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-144]",-144,144
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-128]",-128,128
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-112]",-112,112
+sp_csv_line:"auto_epsgllvm.wasm",1,0.70422536,"[-96]",-96,96
+sp_csv_line:"auto_epsgllvm.wasm",2,1.4084507,"[-32]",-32,32
+sp_csv_line:"auto_epsgllvm.wasm",20,14.084507,"[-16]",-16,16
+sp_csv_line:"auto_epsgllvm.wasm",110,77.46479,"[]",0,0
+
+Counts of function types (26 unique types):
+    1  (0.67%) × [i32] -> [i64]
+    1  (0.67%) × [i32, i32] -> [i64]
+    1  (0.67%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.67%) × [i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.67%) × [i32, i32, i32, i32, i32, i32, i32, i32] -> []
+    1  (0.67%) × [i32, i32, i32, i32, i32, i64] -> [i32]
+    1  (0.67%) × [i32, i64, i32] -> [i64]
+    1  (0.67%) × [i32, f64] -> []
+    1  (0.67%) × [i64, i32] -> [i32]
+    1  (0.67%) × [i64, i32] -> [i64]
+    1  (0.67%) × [i64, i32, i32, i32, i32, i32] -> []
+    2  (1.34%) × [i32, i32, i32] -> []
+    3  (2.01%) × [i32, i32, i32, i32] -> []
+    3  (2.01%) × [i32, i32, i32, i32, i32] -> [i32]
+    3  (2.01%) × [i32, i64, i64, i32] -> []
+    3  (2.01%) × [i32, i64, i64, i64, i64] -> []
+    4  (2.68%) × [] -> [i32]
+    4  (2.68%) × [i32, i32, i32, i32] -> [i32]
+    4  (2.68%) × [i64, i64] -> [i32]
+    7  (4.70%) × [i64, i64, i64, i64] -> [i32]
+    8  (5.37%) × [i32, i32] -> []
+    9  (6.04%) × [] -> []
+   14  (9.40%) × [i32] -> []
+   16 (10.74%) × [i32, i32, i32] -> [i32]
+   26 (17.45%) × [i32, i32] -> [i32]
+   32 (21.48%) × [i32] -> [i32]
+
+Functions with at least one call_indirect: 10 (7.04% of all functions)
+
+Table elements initialization:
+         range: [    1,    1]   length:   1   unique funcs:    1   type: [i32, i32] -> [i32]
+         range: [    2,    2]   length:   1   unique funcs:    1   type: [i32, i64, i32] -> [i64]
+         range: [    3,    4]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+         range: [    5,    5]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [    6,    6]   length:   1   unique funcs:    1   type: [i32, i32, i32] -> [i32]
+  5 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source:   i32.load   type [i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               32
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+    13 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               26
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+    12 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               16
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     5 × unrestricted                         source:   i32.load   type [i32, i64, i32] -> [i64]
+         functions matching by type (regardless whether they are in the table):                1
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+  4 call_indirect patterns in total
+
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32, i64, i32] -> [i64]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 5
+  class #2
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 3
+    count (how often class appears): 12
+  class #3
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 13
+  total classes: 4
+
+CSV data for further analysis: auto_epsgllvm.wasm,37906,1388,31,2.184637,149,6,5,4,1,13,7.75,12,567,55,9.700176,55,9.700176,42,7.4074073
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"auto_epsgllvm.wasm",0,1,1,"i32.load"
+"auto_epsgllvm.wasm",1,1,5,"i32.load"
+"auto_epsgllvm.wasm",2,3,12,"i32.load"
+"auto_epsgllvm.wasm",3,1,13,"local.(get|tee)"

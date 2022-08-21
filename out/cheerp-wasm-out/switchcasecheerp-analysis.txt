@@ -1,0 +1,275 @@
+Input file: switchcasecheerp.wasm
+  binary:    switchcasecheerp.wasm
+
+Functions:          125
+  Imported:           5
+  Non-imported:     120
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:         19
+  Of those, unique functions:    19 (i.e., at least 15.20% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:     28537
+  call:             368 (1.29% of all instructions)
+  call_indirect:     59 (0.21% of all instructions, 13.82% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1048576
+      57 × global.get   209 × global.set   266 total (21/79% split)
+  #1 i32
+     init: i32.const 1049332
+       0 × global.get     0 × global.set     0 total
+  #2 f64
+     init: f64.const 0
+      27 × global.get     0 × global.set    27 total (100/0% split)
+  #3 f64
+     init: f64.const 1
+      19 × global.get     0 × global.set    19 total (100/0% split)
+  #4 i32
+     init: i32.const 1049340
+       0 × global.get     0 × global.set     0 total
+  #5 i32
+     init: i32.const 1052320
+      12 × global.get     0 × global.set    12 total (100/0% split)
+  #6 i32
+     init: i32.const 1049300
+      10 × global.get     0 × global.set    10 total (100/0% split)
+  #7 f64
+     init: f64.const 0.5
+      10 × global.get     0 × global.set    10 total (100/0% split)
+  #8 i32
+     init: i32.const 1052264
+       9 × global.get     0 × global.set     9 total (100/0% split)
+  #9 i32
+     init: i32.const 1052048
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #10 i32
+     init: i32.const 1049292
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #11 i32
+     init: i32.const 1052152
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #12 i32
+     init: i32.const 1051944
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #13 f64
+     init: f64.const 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #14 f64
+     init: f64.const 0
+       8 × global.get     0 × global.set     8 total (100/0% split)
+  #15 f64
+     init: f64.const 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
+       7 × global.get     0 × global.set     7 total (100/0% split)
+  #16 i32
+     init: i32.const 1049272
+       7 × global.get     0 × global.set     7 total (100/0% split)
+  #17 i32
+     init: i32.const 1051505
+       6 × global.get     0 × global.set     6 total (100/0% split)
+  #18 i32
+     init: i32.const 1049296
+       5 × global.get     0 × global.set     5 total (100/0% split)
+  #19 f64
+     init: f64.const inf
+       5 × global.get     0 × global.set     5 total (100/0% split)
+  #20 i32
+     init: i32.const 1049304
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #21 i32
+     init: i32.const 1052312
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #22 i32
+     init: i32.const 1050738
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #23 i32
+     init: i32.const 1050356
+       4 × global.get     0 × global.set     4 total (100/0% split)
+  #24 i32
+     init: i32.const 1051083
+       3 × global.get     0 × global.set     3 total (100/0% split)
+  #25 f64
+     init: f64.const NaN
+       2 × global.get     0 × global.set     2 total (100/0% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     32 (26.67% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+  120(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"switchcasecheerp.wasm",120,100,"[]",0,0
+
+Counts of function types (24 unique types):
+    1  (0.80%) × [i32] -> [f32]
+    1  (0.80%) × [i32] -> [f64]
+    1  (0.80%) × [i32, i32, i32] -> [f64]
+    1  (0.80%) × [i32, i32, i32, i32] -> []
+    1  (0.80%) × [i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.80%) × [i32, f64, i32, i32] -> [i32]
+    1  (0.80%) × [i32, f64, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.80%) × [i32, f64, i32, i32, i32, i32, i32, i32, i32] -> [i32]
+    1  (0.80%) × [f64, i32] -> [f64]
+    2  (1.60%) × [i32, i32] -> [f64]
+    2  (1.60%) × [i32, i32, i32, i32, i32] -> []
+    2  (1.60%) × [f64] -> [i32]
+    2  (1.60%) × [f64] -> [f64]
+    2  (1.60%) × [f64, f64] -> [f64]
+    3  (2.40%) × [] -> []
+    3  (2.40%) × [i32, i32, i32] -> []
+    4  (3.20%) × [] -> [i32]
+    5  (4.00%) × [i32] -> []
+    5  (4.00%) × [i32, i32, i32, i32, i32] -> [i32]
+    7  (5.60%) × [i32, i32] -> []
+   15 (12.00%) × [i32] -> [i32]
+   18 (14.40%) × [i32, i32, i32, i32] -> [i32]
+   22 (17.60%) × [i32, i32, i32] -> [i32]
+   24 (19.20%) × [i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 18 (15.00% of all functions)
+
+Table elements initialization:
+         range: [    0,    0]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    1,    5]   length:   5   unique funcs:    5   type: [i32, i32] -> [i32]
+         range: [    6,   10]   length:   5   unique funcs:    5   type: [i32, i32, i32, i32] -> [i32]
+         range: [   11,   11]   length:   1   unique funcs:    1   type: [i32] -> []
+         range: [   12,   14]   length:   3   unique funcs:    3   type: [i32, i32, i32] -> [i32]
+         range: [   15,   16]   length:   2   unique funcs:    2   type: [i32, i32, i32, i32, i32] -> []
+         range: [   17,   17]   length:   1   unique funcs:    1   type: [i32] -> [i32]
+         range: [   18,   18]   length:   1   unique funcs:    1   type: [i32, i32, i32, i32, i32] -> [i32]
+  8 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     1 × unrestricted                         source: local.(get|tee)   type [i32] -> []
+         functions matching by type (regardless whether they are in the table):                5
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × unrestricted                         source: local.(get|tee)   type [i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               15
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     8 × unrestricted                         source:   i32.load   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               24
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              5
+     2 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               24
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              5
+     7 × unrestricted                         source:   i32.load   type [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               22
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     6 × unrestricted                         source:   i32.load   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               18
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              5
+    25 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               18
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              5
+     1 × unrestricted                         source:      other   type [i32, i32, i32, i32, i32] -> []
+         functions matching by type (regardless whether they are in the table):                2
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              2
+     2 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                5
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     5 × fixed index:      4                  source:  i32.const   type: [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               24
+         functions matching by type and present in table (regardless at which table index):    5
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:     13                  source:  i32.const   type: [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               22
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              1
+  11 call_indirect patterns in total
+
+function #4 is indirectly called with a fixed table index
+  global.get 21
+  i32.load
+  local.tee 2
+  ...
+function #13 is indirectly called with a fixed table index
+  i32.const -1
+  end
+  ...
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32] -> []
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #1
+    type: [i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i32, i32, i32, i32] -> []
+    start idx: None, end idx: None
+    size (of class): 2
+    count (how often class appears): 1
+  class #3
+    type: [i32, i32, i32] -> [i32]
+    start idx: Some(13), end idx: Some(13)
+    size (of class): 1
+    count (how often class appears): 1
+  class #4
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 5
+    count (how often class appears): 2
+  class #5
+    type: [i32, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 2
+  class #6
+    type: [i32, i32] -> [i32]
+    start idx: Some(4), end idx: Some(4)
+    size (of class): 1
+    count (how often class appears): 5
+  class #7
+    type: [i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 5
+    count (how often class appears): 6
+  class #8
+    type: [i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 3
+    count (how often class appears): 7
+  class #9
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 5
+    count (how often class appears): 8
+  class #10
+    type: [i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 5
+    count (how often class appears): 25
+  total classes: 11
+
+CSV data for further analysis: switchcasecheerp.wasm,28537,368,59,13.81733,125,19,13,11,1,25,5.363636363636363,2,1126,260,23.090586,238,21.136766,91,8.081705
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"switchcasecheerp.wasm",0,1,1,"local.(get|tee)"
+"switchcasecheerp.wasm",1,1,1,"local.(get|tee)"
+"switchcasecheerp.wasm",2,2,1,"other"
+"switchcasecheerp.wasm",3,1,1,"i32.const"
+"switchcasecheerp.wasm",4,5,2,"local.(get|tee)"
+"switchcasecheerp.wasm",5,1,2,"local.(get|tee)"
+"switchcasecheerp.wasm",6,1,5,"i32.const"
+"switchcasecheerp.wasm",7,5,6,"i32.load"
+"switchcasecheerp.wasm",8,3,7,"i32.load"
+"switchcasecheerp.wasm",9,5,8,"i32.load"
+"switchcasecheerp.wasm",10,5,25,"local.(get|tee)"

@@ -1,0 +1,185 @@
+Input file: huffman_encodingcheerp.wasm
+  binary:    huffman_encodingcheerp.wasm
+
+Functions:           76
+  Imported:           3
+  Non-imported:      73
+  Exported:           1
+
+Tables: 1 (should be 1 in Wasm v1)
+  Table entries at init:         12
+  Of those, unique functions:    12 (i.e., at least 15.79% of all functions can be called indirectly, because they are in the [indirect call] table)
+
+Instructions:      7607
+  call:             112 (1.47% of all instructions)
+  call_indirect:     19 (0.25% of all instructions, 14.50% of all calls)
+
+Globals:
+  #0 i32
+     init: i32.const 1048576
+     13 × global.get   33 × global.set   46 total (28/72% split)
+  #1 i32
+     init: i32.const 1048856
+      0 × global.get    0 × global.set    0 total
+  #2 i32
+     init: i32.const 1048864
+      0 × global.get    0 × global.set    0 total
+  #3 i32
+     init: i32.const 1050380
+     12 × global.get    0 × global.set   12 total (100/0% split)
+  #4 i32
+     init: i32.const 1050336
+      9 × global.get    0 × global.set    9 total (100/0% split)
+  #5 i32
+     init: i32.const 1050120
+      6 × global.get    0 × global.set    6 total (100/0% split)
+  #6 i32
+     init: i32.const 1050016
+      6 × global.get    0 × global.set    6 total (100/0% split)
+  #7 i32
+     init: i32.const 1050224
+      6 × global.get    0 × global.set    6 total (100/0% split)
+  #8 i32
+     init: i32.const 1049884
+      5 × global.get    0 × global.set    5 total (100/0% split)
+  #9 i32
+     init: i32.const 1050376
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #10 i32
+     init: i32.const 1048824
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #11 i32
+     init: i32.const 1048840
+      4 × global.get    0 × global.set    4 total (100/0% split)
+  #12 i32
+     init: i32.const 1049957
+      4 × global.get    0 × global.set    4 total (100/0% split)
+
+Likely the stack pointer:       Global #0
+Functions using stack pointer:     12 (16.44% of all non-imported functions)
+Stack increments: (How many functions increment the stack pointer by how much? Can also handle multiple increments per function, that's why it is an array of increments.)
+   73(100.00%) × []
+  functions with stack allocation total: 0 (0.00%)
+
+CSV for sp analysis and plots:
+binary,funccount,percent,sp_increments,increment_sum,increment_sum_abs
+sp_csv_line:"huffman_encodingcheerp.wasm",73,100,"[]",0,0
+
+Counts of function types (11 unique types):
+    1  (1.32%) × [i32, i32, i32, i32] -> []
+    3  (3.95%) × [] -> []
+    3  (3.95%) × [i32, i32, i32, i32, i32] -> [i32]
+    4  (5.26%) × [] -> [i32]
+    4  (5.26%) × [i32] -> []
+    4  (5.26%) × [i32, i32, i32] -> []
+    8 (10.53%) × [i32, i32] -> []
+    9 (11.84%) × [i32, i32, i32, i32] -> [i32]
+   11 (14.47%) × [i32] -> [i32]
+   14 (18.42%) × [i32, i32] -> [i32]
+   15 (19.74%) × [i32, i32, i32] -> [i32]
+
+Functions with at least one call_indirect: 10 (13.70% of all functions)
+
+Table elements initialization:
+         range: [    0,    0]   length:   1   unique funcs:    1   type: [] -> []
+         range: [    1,    4]   length:   4   unique funcs:    4   type: [i32, i32, i32, i32] -> [i32]
+         range: [    5,    7]   length:   3   unique funcs:    3   type: [i32, i32] -> [i32]
+         range: [    8,    8]   length:   1   unique funcs:    1   type: [i32] -> []
+         range: [    9,   10]   length:   2   unique funcs:    2   type: [i32, i32, i32] -> [i32]
+         range: [   11,   11]   length:   1   unique funcs:    1   type: [i32, i32, i32, i32, i32] -> [i32]
+  6 table init ranges in total
+
+Patterns (=preceding instructions) of call_indirect:
+     2 × unrestricted                         source: local.(get|tee)   type [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               14
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              3
+     2 × unrestricted                         source:   i32.load   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    4
+         functions matching by type and present in permissable table index range:              4
+     6 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                9
+         functions matching by type and present in table (regardless at which table index):    4
+         functions matching by type and present in permissable table index range:              4
+     2 × unrestricted                         source: local.(get|tee)   type [i32, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:      0                  source:  i32.const   type: [i32, i32, i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):                3
+         functions matching by type and present in table (regardless at which table index):    1
+         functions matching by type and present in permissable table index range:              0
+     5 × fixed index:      6                  source:  i32.const   type: [i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               14
+         functions matching by type and present in table (regardless at which table index):    3
+         functions matching by type and present in permissable table index range:              1
+     1 × fixed index:     10                  source:  i32.const   type: [i32, i32, i32] -> [i32]
+         functions matching by type (regardless whether they are in the table):               15
+         functions matching by type and present in table (regardless at which table index):    2
+         functions matching by type and present in permissable table index range:              1
+  7 call_indirect patterns in total
+
+function #0 is indirectly called with a fixed table index
+  unreachable
+  end
+  ...
+function #6 is indirectly called with a fixed table index
+  global.get 9
+  i32.load
+  local.tee 2
+  ...
+function #10 is indirectly called with a fixed table index
+  i32.const -1
+  end
+  ...
+
+call_indirect target equivalence classes (CFI equivalence classes):
+  class #0
+    type: [i32, i32, i32, i32, i32] -> [i32]
+    start idx: Some(0), end idx: Some(0)
+    size (of class): 0
+    count (how often class appears): 1
+  class #1
+    type: [i32, i32, i32] -> [i32]
+    start idx: Some(10), end idx: Some(10)
+    size (of class): 1
+    count (how often class appears): 1
+  class #2
+    type: [i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 3
+    count (how often class appears): 2
+  class #3
+    type: [i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 4
+    count (how often class appears): 2
+  class #4
+    type: [i32, i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 1
+    count (how often class appears): 2
+  class #5
+    type: [i32, i32] -> [i32]
+    start idx: Some(6), end idx: Some(6)
+    size (of class): 1
+    count (how often class appears): 5
+  class #6
+    type: [i32, i32, i32, i32] -> [i32]
+    start idx: None, end idx: None
+    size (of class): 4
+    count (how often class appears): 6
+  total classes: 7
+
+CSV data for further analysis: huffman_encodingcheerp.wasm,7607,112,19,14.503817,76,12,4,7,1,6,2.7142857142857144,2,194,58,29.896908,46,23.71134,8,4.123711
+
+CSV data on CFI classes:
+benchmark,binary,class,size,count,source
+"huffman_encodingcheerp.wasm",0,0,1,"i32.const"
+"huffman_encodingcheerp.wasm",1,1,1,"i32.const"
+"huffman_encodingcheerp.wasm",2,3,2,"local.(get|tee)"
+"huffman_encodingcheerp.wasm",3,4,2,"i32.load"
+"huffman_encodingcheerp.wasm",4,1,2,"local.(get|tee)"
+"huffman_encodingcheerp.wasm",5,1,5,"i32.const"
+"huffman_encodingcheerp.wasm",6,4,6,"local.(get|tee)"
