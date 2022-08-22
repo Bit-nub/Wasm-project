@@ -8,7 +8,7 @@ docker - python 3.8.8
 
 ## Usage
 
-$ `git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && cp <PathToSourceFile1> <PathToSourceFile2> ./src/. && bash install.sh`    
+$ `git clone https://github.com/rogkey/Wasm-project.git && cd Wasm-project && cp <PathToSourceFile1> <PathToSourceFile2> ./src/. && bash run.sh`    
 
 The output architecture (E.g. <filex.c> as input) should look like this :  
 
