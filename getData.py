@@ -199,11 +199,11 @@ def get_general_attributes(verbose=True):
                 elif "wasi" in src_comp:
                     src=src_comp.replace("wasi","")
                     df_wasi.at['Functions w/ AL. one indirect call',src]=fic
-            if "call_indirect target equivalence classes" in paragraph: #chunk5
+            if "(CFI equivalence classes)" in paragraph: #chunk8
                 for line in paragraph.split("\n"):
                     if ".txt" in line:
                         src_comp=line.rsplit('-', 1)[0]
-                    if "'  #" in line:
+                    if "#" in line:
                         j+=1
                 if "emcc" in src_comp:
                     src=src_comp.replace("emcc","")
