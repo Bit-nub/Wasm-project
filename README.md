@@ -48,7 +48,7 @@ out
 
 ## Scripts
 
-The `wasmit.sh` script is the main tool. It compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm binary, and then analyzes these binaries statically:
+The `wasmit.sh` script is the main tool. It compiles under the 4 different tool chains mentioned above, creates a wat file for each wasm byte code, and then analyzes them statically:
 
 ```sh 
 $ chmod +x wasmit.sh && bash wasmit.sh <source-code1.c> <source-code2.c>..
